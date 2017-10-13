@@ -7,6 +7,7 @@ using DG.Tweening;
 public class HomeController : MonoBehaviour {
 
 	public Button signButton;
+
 	private SceneController controllerInstance;
 	private string destinySceneName;
 

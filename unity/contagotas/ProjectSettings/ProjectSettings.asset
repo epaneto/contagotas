@@ -148,10 +148,10 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Company.ProductName
+    Android: br.com.caixa.contagotas
     Standalone: unity.DefaultCompany.Conta Gotas
     Tizen: com.Company.ProductName
-    iOS: com.Company.ProductName
+    iOS: br.com.caixa.contagotas
     tvOS: com.Company.ProductName
   buildNumber:
     iOS: 0
