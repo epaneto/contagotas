@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class HomeController : MonoBehaviour {
 
+	public Button signButton;
+	private SceneController controllerInstance;
+	private string destinySceneName;
 
-	// Use this for initialization
 	void Start () {
 		
+		GameObject sceneController = GameObject.Find ("AppSceneController");
+		controllerInstance = sceneController.GetComponent<SceneController>();
+
 	}
 	
 	// Update is called once per frame
@@ -15,24 +22,19 @@ public class HomeController : MonoBehaviour {
 		
 	}
 
-	private void show()
+	private void HideScene()
 	{
-
-	}
-
-	private void hide()
-	{
-
+		signButton.transform.DOScale(0, 0.6f).SetEase(Ease.OutQuad).OnComplete(GoToScene);
 	}
 
 	public void CallForScene(string sceneName)
 	{
-		GameObject sceneController = GameObject.Find ("AppSceneController");
-		SceneController controllerInstance = sceneController.GetComponent<SceneController>();
+		destinySceneName = sceneName;
+		HideScene ();
+	}
 
-		controllerInstance.BeforeSceneUnload += hide;
-		controllerInstance.AfterSceneLoad += show;
-
-		controllerInstance.FadeAndLoadScene (sceneName);
+	private void GoToScene()
+	{
+		controllerInstance.FadeAndLoadScene (destinySceneName);
 	}
 }
