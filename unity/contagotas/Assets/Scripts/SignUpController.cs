@@ -26,11 +26,9 @@ public class SignUpController : MonoBehaviour {
 
 	public void CallForScene(string sceneName)
 	{
-		var controllerInstance = SceneController.sceneController;
+		//SceneController.sceneController.BeforeSceneUnload += hide;
+		//SceneController.sceneController.AfterSceneLoad += show;
 
-		controllerInstance.BeforeSceneUnload += hide;
-		controllerInstance.AfterSceneLoad += show;
-
-		controllerInstance.FadeAndLoadScene (sceneName);
+		SceneController.sceneController.FadeAndLoadScene (sceneName);
 	}
 }

@@ -28,7 +28,7 @@ public class UserData : MonoBehaviour {
 
 		PlayerData PD = PlayerData ();
 		PD.playerName = "Epa";
-		PD.playerCity = "SAo Paulo";
+		PD.playerCity = "Sao Paulo";
 		PD.playerState = "SP";
 
 		bf.Serialize (file,PD);
