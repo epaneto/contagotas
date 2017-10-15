@@ -14,6 +14,17 @@ public class SceneController : MonoBehaviour {
 
 	private bool isFading;
 
+	public static SceneController sceneController;
+
+	void Awake() {
+		if (sceneController == null) {
+			DontDestroyOnLoad (gameObject);
+			sceneController = this;
+		} else if (sceneController != this){
+			Destroy (gameObject);
+		}
+	}
+
 	private IEnumerator Start () {
 		transitionCanvas.alpha = 1f;
 		yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));

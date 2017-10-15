@@ -26,8 +26,7 @@ public class SignUpController : MonoBehaviour {
 
 	public void CallForScene(string sceneName)
 	{
-		GameObject sceneController = GameObject.Find ("AppSceneController");
-		SceneController controllerInstance = sceneController.GetComponent<SceneController>();
+		var controllerInstance = SceneController.sceneController;
 
 		controllerInstance.BeforeSceneUnload += hide;
 		controllerInstance.AfterSceneLoad += show;
