@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a5637ae5ee033ad428f720ca3503e7e7
-timeCreated: 1508198547
+guid: e34dcde0418c22d44b11622ffbd4aecf
+timeCreated: 1509218114
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -13,7 +13,8 @@ TrueTypeFontImporter:
   fontName: Lato
   fontNames:
   - Lato
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d056d22b4e07ced4682ce02254751c3b, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
