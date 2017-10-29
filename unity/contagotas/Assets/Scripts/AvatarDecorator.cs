@@ -11,13 +11,23 @@ public class AvatarDecorator : MonoBehaviour {
 	public Material sourceMaterial;
 
 	[Header("Default Body")]
-	public Sprite bodySprite;
+	Sprite bodySprite;
 	[SpineSlot] public string bodySlot;
 	[SpineAttachment(slotField:"body_slot", skinField:"default")] public string bodyKey = "body";
 
+	[Header("Default Hair")]
+	Sprite hairSprite;
+	[SpineSlot] public string hairSlot;
+	[SpineAttachment(slotField:"hair_slot", skinField:"default")] public string hairKey = "hair";
+
 	IEnumerator Start () {
 		yield return new WaitForSeconds(1f); // Delay for one second before applying. For testing.
-		Apply();
+		UpdateTextures();
+	}
+
+	public void UpdateTextures() {
+		bodySprite = Resources.Load("Art/Avatar/Characters/body/body4", typeof(Sprite)) as Sprite;
+		Apply ();
 	}
 
 	void Apply () {
