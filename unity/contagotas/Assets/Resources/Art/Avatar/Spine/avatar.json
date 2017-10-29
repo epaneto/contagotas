@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "WiHrPAxiYyMPY9HaDkm9NxBlZA4", "spine": "3.6.40", "width": 520.16, "height": 725.45, "images": "./character/" },
+"skeleton": { "hash": "wX8jY+fDBsxWYRixdRh5H5bKOWI", "spine": "3.6.40", "width": 520.16, "height": 725.45, "images": "./character/" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "body", "parent": "root", "y": 121 },
@@ -10,41 +10,41 @@
 "slots": [
 	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
 	{ "name": "body_slot", "bone": "body", "attachment": "body_image" },
-	{ "name": "eye_image", "bone": "eye", "attachment": "eye_image" },
-	{ "name": "mouth_image", "bone": "mouth", "attachment": "mouth_image" },
-	{ "name": "shirt_image", "bone": "root", "attachment": "shirt_image" },
-	{ "name": "pants_image", "bone": "root", "attachment": "pants_image" },
-	{ "name": "shoe", "bone": "root", "attachment": "shoe_image" },
-	{ "name": "hair_image", "bone": "root", "attachment": "hair_image" },
-	{ "name": "accessorie_image", "bone": "root", "attachment": "accessorie_image" }
+	{ "name": "eye_slot", "bone": "eye", "attachment": "eye_image" },
+	{ "name": "mouth_slot", "bone": "mouth", "attachment": "mouth_image" },
+	{ "name": "shirt_slot", "bone": "root", "attachment": "shirt_image" },
+	{ "name": "pants_slot", "bone": "root", "attachment": "pants_image" },
+	{ "name": "shoe_slot", "bone": "root", "attachment": "shoe_image" },
+	{ "name": "hair_slot", "bone": "root", "attachment": "hair_image" },
+	{ "name": "accessorie_slot", "bone": "root", "attachment": "accessorie_image" }
 ],
 "skins": {
 	"default": {
-		"accessorie_image": {
+		"accessorie_slot": {
 			"accessorie_image": { "y": 407.71, "width": 512, "height": 512 }
 		},
 		"body_slot": {
 			"body_image": { "y": 165.25, "width": 440, "height": 580 }
 		},
-		"eye_image": {
+		"eye_slot": {
 			"eye_image": { "y": 1.95, "width": 256, "height": 64 }
 		},
-		"hair_image": {
+		"hair_slot": {
 			"hair_image": { "x": 8.16, "y": 431.45, "width": 512, "height": 512 }
 		},
-		"mouth_image": {
+		"mouth_slot": {
 			"mouth_image": { "y": -15.85, "width": 168, "height": 128 }
 		},
-		"pants_image": {
+		"pants_slot": {
 			"pants_image": { "y": 136.14, "width": 372, "height": 240 }
 		},
 		"shadow": {
 			"shadow": { "width": 260, "height": 76 }
 		},
-		"shirt_image": {
+		"shirt_slot": {
 			"shirt_image": { "y": 229.63, "width": 512, "height": 168 }
 		},
-		"shoe": {
+		"shoe_slot": {
 			"shoe_image": { "y": 30.04, "width": 180, "height": 88 }
 		}
 	}
