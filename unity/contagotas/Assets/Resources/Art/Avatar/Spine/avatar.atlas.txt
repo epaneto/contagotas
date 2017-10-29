@@ -1,50 +1,50 @@
 
 avatar.png
-size: 2048,512
+size: 2048,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 accessorie_image
   rotate: false
-  xy: 1012, 246
-  size: 450, 254
+  xy: 2, 250
+  size: 512, 512
   orig: 512, 512
-  offset: 31, 130
+  offset: 0, 0
   index: -1
 body_image
-  rotate: true
-  xy: 2, 80
-  size: 420, 564
+  rotate: false
+  xy: 1030, 182
+  size: 440, 580
   orig: 440, 580
-  offset: 10, 11
+  offset: 0, 0
   index: -1
 eye_image
   rotate: false
-  xy: 568, 120
-  size: 208, 24
+  xy: 516, 184
+  size: 256, 64
   orig: 256, 64
-  offset: 25, 20
+  offset: 0, 0
   index: -1
 hair_image
   rotate: false
-  xy: 568, 146
-  size: 442, 354
+  xy: 516, 250
+  size: 512, 512
   orig: 512, 512
-  offset: 29, 107
+  offset: 0, 0
   index: -1
 mouth_image
   rotate: false
-  xy: 1012, 212
-  size: 77, 32
+  xy: 1472, 392
+  size: 168, 128
   orig: 168, 128
-  offset: 46, 48
+  offset: 0, 0
   index: -1
 pants_image
   rotate: false
-  xy: 1464, 159
-  size: 344, 209
+  xy: 1472, 522
+  size: 372, 240
   orig: 372, 240
-  offset: 16, 16
+  offset: 0, 0
   index: -1
 shadow
   rotate: false
@@ -55,15 +55,15 @@ shadow
   index: -1
 shirt_image
   rotate: false
-  xy: 1464, 370
-  size: 424, 130
+  xy: 2, 80
+  size: 512, 168
   orig: 512, 168
-  offset: 44, 10
+  offset: 0, 0
   index: -1
 shoe_image
   rotate: false
-  xy: 1890, 449
-  size: 135, 51
+  xy: 1846, 674
+  size: 180, 88
   orig: 180, 88
-  offset: 23, 12
+  offset: 0, 0
   index: -1
