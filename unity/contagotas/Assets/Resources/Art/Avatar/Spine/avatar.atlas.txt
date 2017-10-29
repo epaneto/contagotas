@@ -6,63 +6,63 @@ filter: Linear,Linear
 repeat: none
 accessorie_image
   rotate: false
-  xy: 2, 250
+  xy: 2, 510
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 body_image
-  rotate: false
-  xy: 1030, 182
+  rotate: true
+  xy: 2, 68
   size: 440, 580
   orig: 440, 580
   offset: 0, 0
   index: -1
 eye_image
   rotate: false
-  xy: 516, 184
+  xy: 2, 2
   size: 256, 64
   orig: 256, 64
   offset: 0, 0
   index: -1
 hair_image
   rotate: false
-  xy: 516, 250
+  xy: 516, 510
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 mouth_image
   rotate: false
-  xy: 1472, 392
+  xy: 1544, 894
   size: 168, 128
   orig: 168, 128
   offset: 0, 0
   index: -1
 pants_image
   rotate: false
-  xy: 1472, 522
+  xy: 584, 268
   size: 372, 240
   orig: 372, 240
   offset: 0, 0
   index: -1
 shadow
   rotate: false
-  xy: 2, 2
+  xy: 1030, 776
   size: 260, 76
   orig: 260, 76
   offset: 0, 0
   index: -1
 shirt_image
   rotate: false
-  xy: 2, 80
+  xy: 1030, 854
   size: 512, 168
   orig: 512, 168
   offset: 0, 0
   index: -1
 shoe_image
   rotate: false
-  xy: 1846, 674
+  xy: 584, 178
   size: 180, 88
   orig: 180, 88
   offset: 0, 0
