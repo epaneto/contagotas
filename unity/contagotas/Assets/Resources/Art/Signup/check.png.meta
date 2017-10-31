@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d2b0d3bf9f7e44d47b6e0aba51f049ad
-timeCreated: 1509307597
+guid: fece02670999e144cbde2e937b39f8eb
+timeCreated: 1509320607
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -22,7 +22,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -97,7 +97,7 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape: []
-  spritePackingTag: AVATARSCREEN
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
