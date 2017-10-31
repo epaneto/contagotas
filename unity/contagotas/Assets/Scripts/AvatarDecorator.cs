@@ -55,7 +55,7 @@ public class AvatarDecorator : MonoBehaviour {
 	string showItem;
 
 	IEnumerator Start () {
-		yield return new WaitForSeconds(1f); // Delay for one second before applying. For testing.
+		yield return new WaitForSeconds(0.1f); // Delay for one second before applying. For testing.
 		LoadUserDefaultAvatar();
 	}
 
