@@ -7,26 +7,59 @@ using Spine.Unity.Modules.AttachmentTools;
 
 public class AvatarDecorator : MonoBehaviour {
 
+	string avatarResourcesPath = "Art/Avatar/Characters/";
+
 	[SpineSkin] public string templateSkinName = "default";
 	public Material sourceMaterial;
 
-	[Header("Default Body")]
 	Sprite bodySprite;
 	[SpineSlot] public string bodySlot;
 	[SpineAttachment(slotField:"body_slot", skinField:"default")] public string bodyKey = "body";
 
-	[Header("Default Hair")]
 	Sprite hairSprite;
 	[SpineSlot] public string hairSlot;
 	[SpineAttachment(slotField:"hair_slot", skinField:"default")] public string hairKey = "hair";
 
+	Sprite eyeSprite;
+	[SpineSlot] public string eyeSlot;
+	[SpineAttachment(slotField:"eye_slot", skinField:"default")] public string eyeKey = "eye";
+
+	Sprite mouthSprite;
+	[SpineSlot] public string mouthSlot;
+	[SpineAttachment(slotField:"mouth_slot", skinField:"default")] public string mouthKey = "mouth";
+
+	Sprite accSprite;
+	[SpineSlot] public string accSlot;
+	[SpineAttachment(slotField:"acessorie_slot", skinField:"default")] public string accKey = "accessorie";
+
+	Sprite shirtSprite;
+	[SpineSlot] public string shirtSlot;
+	[SpineAttachment(slotField:"shirt_slot", skinField:"default")] public string shirtKey = "shirt";
+
+	Sprite pantsSprite;
+	[SpineSlot] public string pantsSlot;
+	[SpineAttachment(slotField:"pants_slot", skinField:"default")] public string pantsKey = "pants";
+
+	Sprite shoeSprite;
+	[SpineSlot] public string shoeSlot;
+	[SpineAttachment(slotField:"show_slot", skinField:"default")] public string showKey = "shoe";
+
 	IEnumerator Start () {
 		yield return new WaitForSeconds(1f); // Delay for one second before applying. For testing.
-		UpdateTextures();
+		UpdateTextures("","");
 	}
 
-	public void UpdateTextures() {
-		bodySprite = Resources.Load("Art/Avatar/Characters/body/body4", typeof(Sprite)) as Sprite;
+	public void UpdateTextures(string itemCategory, string itemName) {
+		bodySprite = Resources.Load(avatarResourcesPath + "body/body4", typeof(Sprite)) as Sprite;
+		hairSprite = Resources.Load(avatarResourcesPath + "hair/hair1", typeof(Sprite)) as Sprite;
+		eyeSprite = Resources.Load(avatarResourcesPath + "eye/eye2", typeof(Sprite)) as Sprite;
+		mouthSprite = Resources.Load(avatarResourcesPath + "mouth/mouth2", typeof(Sprite)) as Sprite;
+
+		accSprite = Resources.Load(avatarResourcesPath + "accessories/accessorie1", typeof(Sprite)) as Sprite;
+		shirtSprite = Resources.Load(avatarResourcesPath + "shirt/shirt3", typeof(Sprite)) as Sprite;
+		pantsSprite = Resources.Load(avatarResourcesPath + "pants/pants3", typeof(Sprite)) as Sprite;
+		shoeSprite = Resources.Load(avatarResourcesPath + "shoe/shoe3", typeof(Sprite)) as Sprite;
+
 		Apply ();
 	}
 
@@ -35,22 +68,68 @@ public class AvatarDecorator : MonoBehaviour {
 		Skeleton skeleton = skeletonAnimation.skeleton;
 		SkeletonData skeletonData = skeleton.Data;
 
-		// Get the template skin.
+		// Get the template skin. Prepare the custom skin.
 		Skin templateSkin = skeletonData.FindSkin(templateSkinName);
-		// Prepare the custom skin.
 		Skin currentEquipsSkin = new Skin("my custom skin");
 
-		// Get the body
+		//BODY SETUP
 		int bodySlotIndex = skeleton.FindSlotIndex(bodySlot);
 		Attachment templateBody = templateSkin.GetAttachment(bodySlotIndex, bodyKey);
+		Attachment newBody = templateBody.GetRemappedClone(bodySprite, sourceMaterial);
+		if (newBody != null) 
+			currentEquipsSkin.SetAttachment(bodySlotIndex, bodyKey, newBody);
 
-		// Clone the template gun Attachment, and map the sprite onto it.
-		// This sample uses the sprite and material set in the inspector.
-		Attachment newBody = templateBody.GetRemappedClone(bodySprite, sourceMaterial); // This has some optional parameters. See below.
-		//Attachment newGun = templateGun.GetRemappedClone(gunSprite, sourceMaterial, premultiplyAlpha: true, cloneMeshAsLinked: true, useOriginalRegionSize: false); // (Full signature.)
+		//HAIR SETUP
+		int hairSlotIndex = skeleton.FindSlotIndex(hairSlot);
+		Attachment templateHair = templateSkin.GetAttachment(hairSlotIndex, hairKey);
+		Attachment newHair = templateBody.GetRemappedClone(hairSprite, sourceMaterial);
+		if (newHair != null) 
+			currentEquipsSkin.SetAttachment(hairSlotIndex, hairKey, newHair);
 
-		// Add the gun to your new custom skin.
-		if (newBody != null) currentEquipsSkin.SetAttachment(bodySlotIndex, bodyKey, newBody);
+		//EYE SETUP
+		int eyeSlotIndex = skeleton.FindSlotIndex(eyeSlot);
+		Attachment templateEye = templateSkin.GetAttachment(eyeSlotIndex, eyeKey);
+		Attachment newEye = templateEye.GetRemappedClone(eyeSprite, sourceMaterial);
+		if (newEye != null) 
+			currentEquipsSkin.SetAttachment(eyeSlotIndex, eyeKey, newEye);
+
+		//MOUTH SETUP
+		int mouthSlotsIndex = skeleton.FindSlotIndex(mouthSlot);
+		Attachment templateMouth = templateSkin.GetAttachment(mouthSlotsIndex, mouthKey);
+		Attachment newMouth = templateMouth.GetRemappedClone(mouthSprite, sourceMaterial);
+		if (newMouth != null) 
+			currentEquipsSkin.SetAttachment(mouthSlotsIndex, mouthKey, newMouth);
+
+
+		//ACC SETUP
+		int accSlotsIndex = skeleton.FindSlotIndex(accSlot);
+		Attachment templateAcc = templateSkin.GetAttachment(accSlotsIndex, accKey);
+		Attachment newAcc = templateMouth.GetRemappedClone(accSprite, sourceMaterial);
+		if (newAcc != null) 
+			currentEquipsSkin.SetAttachment(accSlotsIndex, accKey, newAcc);
+
+		//SHIRT SETUP
+		int shirtSlotsIndex = skeleton.FindSlotIndex(shirtSlot);
+		Attachment templateShirt = templateSkin.GetAttachment(shirtSlotsIndex, shirtKey);
+		Attachment newShirt = templateMouth.GetRemappedClone(shirtSprite, sourceMaterial);
+		if (newShirt != null) 
+			currentEquipsSkin.SetAttachment(shirtSlotsIndex, shirtKey, newShirt);
+
+		//PANTS SETUP
+		int pantsSlotIndex = skeleton.FindSlotIndex(pantsSlot);
+		Attachment templatePants = templateSkin.GetAttachment(pantsSlotIndex, pantsKey);
+		Attachment newPants = templateMouth.GetRemappedClone(pantsSprite, sourceMaterial);
+		if (newPants != null) 
+			currentEquipsSkin.SetAttachment(pantsSlotIndex, pantsKey, newPants);
+
+		//SHOE SETUP
+		int shoeSlotsIndex = skeleton.FindSlotIndex(shoeSlot);
+		Attachment templateShoe = templateSkin.GetAttachment(shoeSlotsIndex, showKey);
+		Attachment newShoe = templateMouth.GetRemappedClone(shoeSprite, sourceMaterial);
+		if (newShoe != null) 
+			currentEquipsSkin.SetAttachment(shoeSlotsIndex, showKey, newShoe);
+
+
 
 		// Set and apply the Skin to the skeleton.
 		skeleton.SetSkin(currentEquipsSkin);
@@ -59,5 +138,9 @@ public class AvatarDecorator : MonoBehaviour {
 
 		Resources.UnloadUnusedAssets();
 	}
+
+
+	//remove attachments
+	//currentEquipsSkin.RemoveAttachment (bodySlotIndex, bodyKey);
 
 }
