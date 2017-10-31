@@ -82,7 +82,7 @@ public class AvatarDecorator : MonoBehaviour {
 		//HAIR SETUP
 		int hairSlotIndex = skeleton.FindSlotIndex(hairSlot);
 		Attachment templateHair = templateSkin.GetAttachment(hairSlotIndex, hairKey);
-		Attachment newHair = templateBody.GetRemappedClone(hairSprite, sourceMaterial);
+		Attachment newHair = templateHair.GetRemappedClone(hairSprite, sourceMaterial);
 		if (newHair != null) 
 			currentEquipsSkin.SetAttachment(hairSlotIndex, hairKey, newHair);
 
@@ -104,28 +104,28 @@ public class AvatarDecorator : MonoBehaviour {
 		//ACC SETUP
 		int accSlotsIndex = skeleton.FindSlotIndex(accSlot);
 		Attachment templateAcc = templateSkin.GetAttachment(accSlotsIndex, accKey);
-		Attachment newAcc = templateMouth.GetRemappedClone(accSprite, sourceMaterial);
+		Attachment newAcc = templateAcc.GetRemappedClone(accSprite, sourceMaterial);
 		if (newAcc != null) 
 			currentEquipsSkin.SetAttachment(accSlotsIndex, accKey, newAcc);
 
 		//SHIRT SETUP
 		int shirtSlotsIndex = skeleton.FindSlotIndex(shirtSlot);
 		Attachment templateShirt = templateSkin.GetAttachment(shirtSlotsIndex, shirtKey);
-		Attachment newShirt = templateMouth.GetRemappedClone(shirtSprite, sourceMaterial);
+		Attachment newShirt = templateShirt.GetRemappedClone(shirtSprite, sourceMaterial);
 		if (newShirt != null) 
 			currentEquipsSkin.SetAttachment(shirtSlotsIndex, shirtKey, newShirt);
 
 		//PANTS SETUP
 		int pantsSlotIndex = skeleton.FindSlotIndex(pantsSlot);
 		Attachment templatePants = templateSkin.GetAttachment(pantsSlotIndex, pantsKey);
-		Attachment newPants = templateMouth.GetRemappedClone(pantsSprite, sourceMaterial);
+		Attachment newPants = templatePants.GetRemappedClone(pantsSprite, sourceMaterial);
 		if (newPants != null) 
 			currentEquipsSkin.SetAttachment(pantsSlotIndex, pantsKey, newPants);
-
+//
 		//SHOE SETUP
 		int shoeSlotsIndex = skeleton.FindSlotIndex(shoeSlot);
 		Attachment templateShoe = templateSkin.GetAttachment(shoeSlotsIndex, showKey);
-		Attachment newShoe = templateMouth.GetRemappedClone(shoeSprite, sourceMaterial);
+		Attachment newShoe = templateShoe.GetRemappedClone(shoeSprite, sourceMaterial);
 		if (newShoe != null) 
 			currentEquipsSkin.SetAttachment(shoeSlotsIndex, showKey, newShoe);
 
