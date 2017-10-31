@@ -7,7 +7,7 @@ using Spine.Unity.Modules.AttachmentTools;
 
 public class AvatarDecorator : MonoBehaviour {
 
-	string avatarResourcesPath = "Art/Avatar/Characters/";
+	string avatarResourcesPath;
 
 	[SpineSkin] public string templateSkinName = "default";
 	public Material sourceMaterial;
@@ -55,6 +55,7 @@ public class AvatarDecorator : MonoBehaviour {
 	string showItem;
 
 	IEnumerator Start () {
+		avatarResourcesPath = "Art/Avatar/Characters/";
 		yield return new WaitForSeconds(0.1f); // Delay for one second before applying. For testing.
 		LoadUserDefaultAvatar();
 	}
