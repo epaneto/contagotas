@@ -72,14 +72,14 @@ public class AvatarDecorator : MonoBehaviour {
 		Skin templateSkin = skeletonData.FindSkin(templateSkinName);
 		Skin currentEquipsSkin = new Skin("my custom skin");
 
-		//BODY SETUP
+//		BODY SETUP
 		int bodySlotIndex = skeleton.FindSlotIndex(bodySlot);
 		Attachment templateBody = templateSkin.GetAttachment(bodySlotIndex, bodyKey);
 		Attachment newBody = templateBody.GetRemappedClone(bodySprite, sourceMaterial);
 		if (newBody != null) 
 			currentEquipsSkin.SetAttachment(bodySlotIndex, bodyKey, newBody);
 
-		//HAIR SETUP
+//		HAIR SETUP
 		int hairSlotIndex = skeleton.FindSlotIndex(hairSlot);
 		Attachment templateHair = templateSkin.GetAttachment(hairSlotIndex, hairKey);
 		Attachment newHair = templateHair.GetRemappedClone(hairSprite, sourceMaterial);
@@ -92,37 +92,37 @@ public class AvatarDecorator : MonoBehaviour {
 		Attachment newEye = templateEye.GetRemappedClone(eyeSprite, sourceMaterial);
 		if (newEye != null) 
 			currentEquipsSkin.SetAttachment(eyeSlotIndex, eyeKey, newEye);
-//
-//		//MOUTH SETUP
+
+//		MOUTH SETUP
 		int mouthSlotsIndex = skeleton.FindSlotIndex(mouthSlot);
 		Attachment templateMouth = templateSkin.GetAttachment(mouthSlotsIndex, mouthKey);
 		Attachment newMouth = templateMouth.GetRemappedClone(mouthSprite, sourceMaterial);
 		if (newMouth != null) 
 			currentEquipsSkin.SetAttachment(mouthSlotsIndex, mouthKey, newMouth);
-//
-//
-//		//ACC SETUP
+
+
+//		ACC SETUP
 		int accSlotsIndex = skeleton.FindSlotIndex(accSlot);
 		Attachment templateAcc = templateSkin.GetAttachment(accSlotsIndex, accKey);
 		Attachment newAcc = templateAcc.GetRemappedClone(accSprite, sourceMaterial);
 		if (newAcc != null) 
 			currentEquipsSkin.SetAttachment(accSlotsIndex, accKey, newAcc);
-//
-//		//SHIRT SETUP
+
+//		SHIRT SETUP
 		int shirtSlotsIndex = skeleton.FindSlotIndex(shirtSlot);
 		Attachment templateShirt = templateSkin.GetAttachment(shirtSlotsIndex, shirtKey);
 		Attachment newShirt = templateShirt.GetRemappedClone(shirtSprite, sourceMaterial);
 		if (newShirt != null) 
 			currentEquipsSkin.SetAttachment(shirtSlotsIndex, shirtKey, newShirt);
-//
+
 //		//PANTS SETUP
 		int pantsSlotIndex = skeleton.FindSlotIndex(pantsSlot);
 		Attachment templatePants = templateSkin.GetAttachment(pantsSlotIndex, pantsKey);
 		Attachment newPants = templatePants.GetRemappedClone(pantsSprite, sourceMaterial);
 		if (newPants != null) 
 			currentEquipsSkin.SetAttachment(pantsSlotIndex, pantsKey, newPants);
-////
-//		//SHOE SETUP
+
+//		SHOE SETUP
 		int shoeSlotsIndex = skeleton.FindSlotIndex(shoeSlot);
 		Attachment templateShoe = templateSkin.GetAttachment(shoeSlotsIndex, showKey);
 		Attachment newShoe = templateShoe.GetRemappedClone(shoeSprite, sourceMaterial);
