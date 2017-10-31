@@ -1,6 +1,7 @@
 unity/contagotas/Temp
 unity/contagotas/Library
 unity/contagotas/Obj
+unity/contagotas/Assets/Libs/Spine/spine-unity/Assets/Examples
 *.csproj
 *.unityproj
 *.sln

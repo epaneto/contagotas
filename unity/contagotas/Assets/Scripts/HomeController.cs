@@ -7,14 +7,9 @@ using DG.Tweening;
 public class HomeController : MonoBehaviour {
 
 	public Button signButton;
-
-	private SceneController controllerInstance;
 	private string destinySceneName;
 
 	void Start () {
-		
-		GameObject sceneController = GameObject.Find ("AppSceneController");
-		controllerInstance = sceneController.GetComponent<SceneController>();
 
 	}
 	
@@ -36,6 +31,6 @@ public class HomeController : MonoBehaviour {
 
 	private void GoToScene()
 	{
-		controllerInstance.FadeAndLoadScene (destinySceneName);
+		SceneController.sceneController.FadeAndLoadScene (destinySceneName);
 	}
 }
