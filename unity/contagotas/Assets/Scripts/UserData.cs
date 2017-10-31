@@ -9,6 +9,7 @@ using System.IO;
 public class UserData : MonoBehaviour {
 
 	public static UserData userData;
+	public PlayerData playerData;
 
 	// Use this for initialization
 	void Awake () 
@@ -27,9 +28,9 @@ public class UserData : MonoBehaviour {
 		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
 
 		PlayerData PD = new PlayerData ();
-		PD.playerName = "Epa";
-		PD.playerCity = "SAo Paulo";
-		PD.playerState = "SP";
+		PD = UserData.userData.playerData;
+
+		Debug.Log ("saving body " + PD.playerBody);
 
 		bf.Serialize (file,PD);
 		file.Close ();
@@ -37,13 +38,17 @@ public class UserData : MonoBehaviour {
 
 	public void Load()
 	{
-		if(File.Exists(Application.persistentDataPath + "playerInfo.dat"))
+		if(File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
 		{
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
 
 			PlayerData PD = (PlayerData)bf.Deserialize (file);
 			file.Close ();
+
+			UserData.userData.playerData = PD;
+			Debug.Log ("saved body is " + PD.playerBody);
+
 		}
 	}
 
@@ -51,9 +56,19 @@ public class UserData : MonoBehaviour {
 
 
 [Serializable]
-class PlayerData
+public class PlayerData
 {
 	public string playerName;
 	public string playerCity;
 	public string playerState;
+
+	public string playerBody;
+	public string playerEye;
+	public string playerHair;
+	public string playerMouth;
+	public string playerAcc;
+	public string playerShirt;
+	public string playerPants;
+	public string playerShoe;
+
 }

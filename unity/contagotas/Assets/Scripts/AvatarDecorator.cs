@@ -44,36 +44,98 @@ public class AvatarDecorator : MonoBehaviour {
 	[SpineSlot] public string shoeSlot;
 	[SpineAttachment(slotField:"show_slot", skinField:"default")] public string showKey = "shoe";
 
+	string bodyItem;
+	string eyeItem;
+	string hairItem;
+	string mouthItem;
+
+	string accItem;
+	string shirtItem;
+	string pantsItem;
+	string showItem;
+
 	IEnumerator Start () {
 		yield return new WaitForSeconds(1f); // Delay for one second before applying. For testing.
-//		UpdateTextures("","");
+		LoadUserDefaultAvatar();
 	}
 
-	public void UpdateTextures(string itemCategory, string itemName) {
+	public void SaveUserDefaultAvatar()
+	{
+		UserData.userData.playerData.playerBody = bodyItem;
+		UserData.userData.playerData.playerEye = eyeItem;
+		UserData.userData.playerData.playerHair = hairItem;
+		UserData.userData.playerData.playerMouth = mouthItem;
+
+		UserData.userData.playerData.playerAcc = accItem;
+		UserData.userData.playerData.playerShirt = shirtItem;
+		UserData.userData.playerData.playerPants = pantsItem;
+		UserData.userData.playerData.playerShoe = showItem;
+
+		UserData.userData.Save ();
+	}
+
+	public void LoadUserDefaultAvatar()
+	{
+		UserData.userData.Load ();
+
+		bodyItem = UserData.userData.playerData.playerBody;
+		eyeItem = UserData.userData.playerData.playerEye;
+		hairItem = UserData.userData.playerData.playerHair;
+		mouthItem = UserData.userData.playerData.playerMouth;
+
+		accItem = UserData.userData.playerData.playerAcc;
+		shirtItem = UserData.userData.playerData.playerShirt;
+		pantsItem = UserData.userData.playerData.playerPants;
+		showItem = UserData.userData.playerData.playerShoe;
+
+
+		bodySprite = Resources.Load(avatarResourcesPath + bodyItem, typeof(Sprite)) as Sprite;
+		eyeSprite = Resources.Load(avatarResourcesPath + eyeItem, typeof(Sprite)) as Sprite;
+		hairSprite = Resources.Load(avatarResourcesPath + hairItem, typeof(Sprite)) as Sprite;
+		mouthSprite = Resources.Load(avatarResourcesPath + mouthItem, typeof(Sprite)) as Sprite;
+		accSprite = Resources.Load(avatarResourcesPath + accItem, typeof(Sprite)) as Sprite;
+		shirtSprite = Resources.Load(avatarResourcesPath + shirtItem, typeof(Sprite)) as Sprite;
+		pantsSprite = Resources.Load(avatarResourcesPath + pantsItem, typeof(Sprite)) as Sprite;
+		shoeSprite = Resources.Load(avatarResourcesPath + showItem, typeof(Sprite)) as Sprite;
+
+		Apply ();
+	}
+
+	public void UpdateTextures(string itemCategory, string itemName) 
+	{
 		Debug.Log ("change avatar item at category " + itemCategory + " with item named " + itemName);
 
 		if(itemCategory == "body"){
 			bodySprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			bodyItem = itemName;
 		}else if(itemCategory == "eye"){
 			eyeSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			eyeItem = itemName;
 		}else if(itemCategory == "hair"){
 			hairSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			hairItem = itemName;
 		}else if(itemCategory == "mouth"){
 			mouthSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			mouthItem = itemName;
 		}else if(itemCategory == "accessories"){
 			accSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			accItem = itemName;
 		}else if(itemCategory == "shirt"){
 			shirtSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			shirtItem = itemName;
 		}else if(itemCategory == "pants"){
 			pantsSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			pantsItem = itemName;
 		}else if(itemCategory == "shoe"){
 			shoeSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			showItem = itemName;
 		}
 
 		Apply();
 	}
 
-	void Apply () {
+	void Apply () 
+	{
 		SkeletonAnimation skeletonAnimation = GetComponent<SkeletonAnimation>();
 		Skeleton skeleton = skeletonAnimation.skeleton;
 		SkeletonData skeletonData = skeleton.Data;
