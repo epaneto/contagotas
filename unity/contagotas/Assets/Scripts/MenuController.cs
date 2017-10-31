@@ -12,6 +12,10 @@ public class MenuController : MonoBehaviour {
 	{
 		options = GameObject.Find ("options");
 		optionsController = options.GetComponent<OptionsController> ();
+
+		GameObject go = GameObject.Find ("body");
+		CategoryButton cb = go.GetComponent<CategoryButton> ();
+		cb.updateMenu ();
 	}
 
 	public void disableAllButtons(string nextSection)
