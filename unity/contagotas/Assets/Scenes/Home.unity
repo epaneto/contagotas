@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signButton: {fileID: 1842527734}
+  facebookButton: {fileID: 853721250}
 --- !u!4 &709756251
 Transform:
   m_ObjectHideFlags: 0
@@ -491,8 +492,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1060096255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 768, y: 1024, z: 0}
-  m_LocalScale: {x: 1.0400434, y: 1.0400434, z: 1.0400434}
+  m_LocalPosition: {x: 320, y: 568, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1867205985}
   - {fileID: 1448528287}
@@ -622,7 +623,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 0.29803923, g: 0.7960785, b: 0.93725497, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -778,6 +779,10 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379840883114744, guid: fb907f3c200db1c4781e1f264f7f5a84, type: 2}
+      propertyPath: m_Name
+      value: logo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb907f3c200db1c4781e1f264f7f5a84, type: 2}
