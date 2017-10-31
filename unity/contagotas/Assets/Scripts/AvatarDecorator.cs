@@ -46,21 +46,31 @@ public class AvatarDecorator : MonoBehaviour {
 
 	IEnumerator Start () {
 		yield return new WaitForSeconds(1f); // Delay for one second before applying. For testing.
-		UpdateTextures("","");
+//		UpdateTextures("","");
 	}
 
 	public void UpdateTextures(string itemCategory, string itemName) {
-		bodySprite = Resources.Load(avatarResourcesPath + "body/body2", typeof(Sprite)) as Sprite;
-		hairSprite = Resources.Load(avatarResourcesPath + "hair/hair4", typeof(Sprite)) as Sprite;
-		eyeSprite = Resources.Load(avatarResourcesPath + "eye/eye1", typeof(Sprite)) as Sprite;
-		mouthSprite = Resources.Load(avatarResourcesPath + "mouth/mouth1", typeof(Sprite)) as Sprite;
+		Debug.Log ("change avatar item at category " + itemCategory + " with item named " + itemName);
 
-		accSprite = Resources.Load(avatarResourcesPath + "accessories/accessorie1", typeof(Sprite)) as Sprite;
-		shirtSprite = Resources.Load(avatarResourcesPath + "shirt/shirt1", typeof(Sprite)) as Sprite;
-		pantsSprite = Resources.Load(avatarResourcesPath + "pants/pants1", typeof(Sprite)) as Sprite;
-		shoeSprite = Resources.Load(avatarResourcesPath + "shoe/shoe1", typeof(Sprite)) as Sprite;
+		if(itemCategory == "body"){
+			bodySprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+		}else if(itemCategory == "eye"){
+			eyeSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+		}else if(itemCategory == "hair"){
+			hairSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+		}else if(itemCategory == "mouth"){
+			mouthSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+		}else if(itemCategory == "accessories"){
+			accSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+		}else if(itemCategory == "shirt"){
+			shirtSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+		}else if(itemCategory == "pants"){
+			pantsSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+		}else if(itemCategory == "shoe"){
+			shoeSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+		}
 
-		Apply ();
+		Apply();
 	}
 
 	void Apply () {
@@ -73,61 +83,77 @@ public class AvatarDecorator : MonoBehaviour {
 		Skin currentEquipsSkin = new Skin("my custom skin");
 
 //		BODY SETUP
-		int bodySlotIndex = skeleton.FindSlotIndex(bodySlot);
-		Attachment templateBody = templateSkin.GetAttachment(bodySlotIndex, bodyKey);
-		Attachment newBody = templateBody.GetRemappedClone(bodySprite, sourceMaterial);
-		if (newBody != null) 
-			currentEquipsSkin.SetAttachment(bodySlotIndex, bodyKey, newBody);
+		if (bodySprite) {
+			int bodySlotIndex = skeleton.FindSlotIndex (bodySlot);
+			Attachment templateBody = templateSkin.GetAttachment (bodySlotIndex, bodyKey);
+			Attachment newBody = templateBody.GetRemappedClone (bodySprite, sourceMaterial);
+			if (newBody != null)
+				currentEquipsSkin.SetAttachment (bodySlotIndex, bodyKey, newBody);
+		}
 
 //		HAIR SETUP
-		int hairSlotIndex = skeleton.FindSlotIndex(hairSlot);
-		Attachment templateHair = templateSkin.GetAttachment(hairSlotIndex, hairKey);
-		Attachment newHair = templateHair.GetRemappedClone(hairSprite, sourceMaterial);
-		if (newHair != null) 
-			currentEquipsSkin.SetAttachment(hairSlotIndex, hairKey, newHair);
+		if (hairSprite) {
+			int hairSlotIndex = skeleton.FindSlotIndex (hairSlot);
+			Attachment templateHair = templateSkin.GetAttachment (hairSlotIndex, hairKey);
+			Attachment newHair = templateHair.GetRemappedClone (hairSprite, sourceMaterial);
+			if (newHair != null)
+				currentEquipsSkin.SetAttachment (hairSlotIndex, hairKey, newHair);
+		}
 
 //		EYE SETUP
-		int eyeSlotIndex = skeleton.FindSlotIndex(eyeSlot);
-		Attachment templateEye = templateSkin.GetAttachment(eyeSlotIndex, eyeKey);
-		Attachment newEye = templateEye.GetRemappedClone(eyeSprite, sourceMaterial);
-		if (newEye != null) 
-			currentEquipsSkin.SetAttachment(eyeSlotIndex, eyeKey, newEye);
+		if (eyeSprite) {
+			int eyeSlotIndex = skeleton.FindSlotIndex (eyeSlot);
+			Attachment templateEye = templateSkin.GetAttachment (eyeSlotIndex, eyeKey);
+			Attachment newEye = templateEye.GetRemappedClone (eyeSprite, sourceMaterial);
+			if (newEye != null)
+				currentEquipsSkin.SetAttachment (eyeSlotIndex, eyeKey, newEye);
+		}
 
 //		MOUTH SETUP
-		int mouthSlotsIndex = skeleton.FindSlotIndex(mouthSlot);
-		Attachment templateMouth = templateSkin.GetAttachment(mouthSlotsIndex, mouthKey);
-		Attachment newMouth = templateMouth.GetRemappedClone(mouthSprite, sourceMaterial);
-		if (newMouth != null) 
-			currentEquipsSkin.SetAttachment(mouthSlotsIndex, mouthKey, newMouth);
+		if (mouthSprite) {
+			int mouthSlotsIndex = skeleton.FindSlotIndex (mouthSlot);
+			Attachment templateMouth = templateSkin.GetAttachment (mouthSlotsIndex, mouthKey);
+			Attachment newMouth = templateMouth.GetRemappedClone (mouthSprite, sourceMaterial);
+			if (newMouth != null)
+				currentEquipsSkin.SetAttachment (mouthSlotsIndex, mouthKey, newMouth);
+		}
 
 
 //		ACC SETUP
-		int accSlotsIndex = skeleton.FindSlotIndex(accSlot);
-		Attachment templateAcc = templateSkin.GetAttachment(accSlotsIndex, accKey);
-		Attachment newAcc = templateAcc.GetRemappedClone(accSprite, sourceMaterial);
-		if (newAcc != null) 
-			currentEquipsSkin.SetAttachment(accSlotsIndex, accKey, newAcc);
+		if (accSprite) {
+			int accSlotsIndex = skeleton.FindSlotIndex (accSlot);
+			Attachment templateAcc = templateSkin.GetAttachment (accSlotsIndex, accKey);
+			Attachment newAcc = templateAcc.GetRemappedClone (accSprite, sourceMaterial);
+			if (newAcc != null)
+				currentEquipsSkin.SetAttachment (accSlotsIndex, accKey, newAcc);
+		}
 
 //		SHIRT SETUP
-		int shirtSlotsIndex = skeleton.FindSlotIndex(shirtSlot);
-		Attachment templateShirt = templateSkin.GetAttachment(shirtSlotsIndex, shirtKey);
-		Attachment newShirt = templateShirt.GetRemappedClone(shirtSprite, sourceMaterial);
-		if (newShirt != null) 
-			currentEquipsSkin.SetAttachment(shirtSlotsIndex, shirtKey, newShirt);
+		if (shirtSprite) {
+			int shirtSlotsIndex = skeleton.FindSlotIndex (shirtSlot);
+			Attachment templateShirt = templateSkin.GetAttachment (shirtSlotsIndex, shirtKey);
+			Attachment newShirt = templateShirt.GetRemappedClone (shirtSprite, sourceMaterial);
+			if (newShirt != null)
+				currentEquipsSkin.SetAttachment (shirtSlotsIndex, shirtKey, newShirt);
+		}
 
 //		//PANTS SETUP
-		int pantsSlotIndex = skeleton.FindSlotIndex(pantsSlot);
-		Attachment templatePants = templateSkin.GetAttachment(pantsSlotIndex, pantsKey);
-		Attachment newPants = templatePants.GetRemappedClone(pantsSprite, sourceMaterial);
-		if (newPants != null) 
-			currentEquipsSkin.SetAttachment(pantsSlotIndex, pantsKey, newPants);
+		if (pantsSprite) {
+			int pantsSlotIndex = skeleton.FindSlotIndex (pantsSlot);
+			Attachment templatePants = templateSkin.GetAttachment (pantsSlotIndex, pantsKey);
+			Attachment newPants = templatePants.GetRemappedClone (pantsSprite, sourceMaterial);
+			if (newPants != null)
+				currentEquipsSkin.SetAttachment (pantsSlotIndex, pantsKey, newPants);
+		}
 
 //		SHOE SETUP
-		int shoeSlotsIndex = skeleton.FindSlotIndex(shoeSlot);
-		Attachment templateShoe = templateSkin.GetAttachment(shoeSlotsIndex, showKey);
-		Attachment newShoe = templateShoe.GetRemappedClone(shoeSprite, sourceMaterial);
-		if (newShoe != null) 
-			currentEquipsSkin.SetAttachment(shoeSlotsIndex, showKey, newShoe);
+		if (shoeSprite) {
+			int shoeSlotsIndex = skeleton.FindSlotIndex (shoeSlot);
+			Attachment templateShoe = templateSkin.GetAttachment (shoeSlotsIndex, showKey);
+			Attachment newShoe = templateShoe.GetRemappedClone (shoeSprite, sourceMaterial);
+			if (newShoe != null)
+				currentEquipsSkin.SetAttachment (shoeSlotsIndex, showKey, newShoe);
+		}
 
 
 

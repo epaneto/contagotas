@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OptionButton : MonoBehaviour {
 
-	public int itemIndex;
+	public string itemIndex;
 
 	public void updateOption()
 	{

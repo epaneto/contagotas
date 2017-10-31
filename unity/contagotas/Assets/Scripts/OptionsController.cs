@@ -19,16 +19,12 @@ public class OptionsController : MonoBehaviour {
 
 	string activeSection = "";
 
-	public string[] bodyOptionsArray;
-	public string[] eyeOptionsArray;
-	public string[] hairOptionsArray;
-	public string[] mouthOptionsArray;
+	AvatarDecorator avatarController;
 
-	public string[] accOptionsArray;
-	public string[] shirtOptionsArray;
-	public string[] pantsOptionsArray;
-	public string[] shoeOptionsArray;
-
+	public void Start()
+	{
+		avatarController = GameObject.FindObjectOfType<AvatarDecorator> ();
+	}
 	//OPTIONS CONTROLLER
 	public void disableAllOptionButtons()
 	{
@@ -38,9 +34,9 @@ public class OptionsController : MonoBehaviour {
 			toogleButton.DisableMenuButton ();
 	}
 
-	public void loadItemAtIndex(int itemIndex)
+	public void loadItemAtIndex(string itemIndex)
 	{
-
+		avatarController.UpdateTextures (activeSection, activeSection + "/" + activeSection + itemIndex);
 	}
 
 
@@ -48,41 +44,41 @@ public class OptionsController : MonoBehaviour {
 	//CATEGORY CONTROLLER
 	public void updateOptions(string section)
 	{
-		Debug.Log ("update options to " + section);
+		Debug.Log ("update thumb options to " + section);
 		activeSection = section;
 
 		hideAllSections ();
 
 		switch (section) {
-			case "bt_body":
+			case "body":
 				bodyOptions.SetActive (true);
 			break;
 
-			case "bt_eye":
+			case "eye":
 			eyesOptions.SetActive (true);
 			break;
 
-		case "bt_hair":
+		case "hair":
 			hairOptions.SetActive (true);
 			break;
 
-		case "bt_mouth":
+		case "mouth":
 			mouthOptions.SetActive (true);
 			break;
 
-		case "bt_acessory":
+		case "accessories":
 			accOptions.SetActive (true);
 			break;
 
-		case "bt_shirt":
+		case "shirt":
 			shirtOptions.SetActive (true);
 			break;
 
-		case "bt_pants":
+		case "pants":
 			pantsOptions.SetActive (true);
 			break;
 
-		case "bt_shoes":
+		case "shoe":
 			shoeOptions.SetActive (true);
 			break;
 		}

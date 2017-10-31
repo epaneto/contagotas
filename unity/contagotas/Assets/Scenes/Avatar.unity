@@ -1753,7 +1753,7 @@ GameObject:
   - component: {fileID: 383761941}
   - component: {fileID: 383761942}
   m_Layer: 5
-  m_Name: bt_acessory
+  m_Name: accessories
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2800,7 +2800,13 @@ MonoBehaviour:
   shirtOptions: {fileID: 272589896}
   pantsOptions: {fileID: 1075125498}
   shoeOptions: {fileID: 791449217}
-  bodyOptionsArray: []
+  bodyOptionsArray:
+  - body1
+  - body2
+  - body3
+  - body4
+  - body5
+  - body6
   eyeOptionsArray: []
   hairOptionsArray: []
   mouthOptionsArray: []
@@ -3011,7 +3017,7 @@ GameObject:
   - component: {fileID: 702392043}
   - component: {fileID: 702392044}
   m_Layer: 5
-  m_Name: bt_shirt
+  m_Name: shirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4598,7 +4604,7 @@ GameObject:
   - component: {fileID: 1117677973}
   - component: {fileID: 1117677974}
   m_Layer: 5
-  m_Name: bt_pants
+  m_Name: pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4815,7 +4821,7 @@ GameObject:
   - component: {fileID: 1121852986}
   - component: {fileID: 1121852987}
   m_Layer: 5
-  m_Name: bt_shoes
+  m_Name: shoe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5236,7 +5242,7 @@ GameObject:
   - component: {fileID: 1212921347}
   - component: {fileID: 1212921348}
   m_Layer: 5
-  m_Name: bt_mouth
+  m_Name: mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5521,7 +5527,7 @@ GameObject:
   - component: {fileID: 1468704101}
   - component: {fileID: 1468704102}
   m_Layer: 5
-  m_Name: bt_eye
+  m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5771,7 +5777,7 @@ GameObject:
   - component: {fileID: 1578330816}
   - component: {fileID: 1578330817}
   m_Layer: 5
-  m_Name: bt_body
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5920,7 +5926,7 @@ GameObject:
   - component: {fileID: 1627192774}
   - component: {fileID: 1627192775}
   m_Layer: 5
-  m_Name: bt_hair
+  m_Name: hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
