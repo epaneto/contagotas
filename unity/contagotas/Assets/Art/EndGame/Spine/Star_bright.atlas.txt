@@ -1,0 +1,13 @@
+
+Star_bright.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bright_fx
+  rotate: false
+  xy: 2, 2
+  size: 70, 71
+  orig: 70, 71
+  offset: 0, 0
+  index: -1
