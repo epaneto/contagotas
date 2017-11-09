@@ -1,0 +1,41 @@
+
+Stars.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bright_line
+  rotate: false
+  xy: 2, 2
+  size: 128, 8
+  orig: 128, 8
+  offset: 0, 0
+  index: -1
+star_empty1
+  rotate: false
+  xy: 2, 12
+  size: 248, 236
+  orig: 248, 236
+  offset: 0, 0
+  index: -1
+star_empty2
+  rotate: false
+  xy: 502, 36
+  size: 224, 212
+  orig: 224, 212
+  offset: 0, 0
+  index: -1
+star_full1
+  rotate: false
+  xy: 252, 12
+  size: 248, 236
+  orig: 248, 236
+  offset: 0, 0
+  index: -1
+star_full2
+  rotate: false
+  xy: 728, 36
+  size: 224, 212
+  orig: 224, 212
+  offset: 0, 0
+  index: -1
