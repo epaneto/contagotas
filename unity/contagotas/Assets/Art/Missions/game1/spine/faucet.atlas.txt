@@ -1,0 +1,27 @@
+
+faucet.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+game1/game1_faucet
+  rotate: true
+  xy: 2, 82
+  size: 145, 475
+  orig: 145, 475
+  offset: 0, 0
+  index: -1
+game1/game1_water
+  rotate: false
+  xy: 479, 99
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+game1/game1_water_fx
+  rotate: false
+  xy: 2, 2
+  size: 9, 78
+  orig: 9, 78
+  offset: 0, 0
+  index: -1

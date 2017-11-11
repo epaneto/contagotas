@@ -1,0 +1,20 @@
+
+handler.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+game1/game1_handler_base
+  rotate: false
+  xy: 2, 51
+  size: 233, 199
+  orig: 233, 199
+  offset: 0, 0
+  index: -1
+game1/game1_handler_move
+  rotate: true
+  xy: 2, 2
+  size: 47, 82
+  orig: 47, 82
+  offset: 0, 0
+  index: -1
