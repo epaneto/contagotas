@@ -56,7 +56,7 @@ public class AvatarDecorator : MonoBehaviour {
 
 	IEnumerator Start () {
 		avatarResourcesPath = "Art/Avatar/Characters/";
-		yield return new WaitForSeconds(0.1f); // Delay for one second before applying. For testing.
+		yield return new WaitForSeconds(0.1f); // Delay for one second before applying. For testing avatar changing from original to customized.
 		LoadUserDefaultAvatar();
 	}
 

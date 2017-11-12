@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionButton : MonoBehaviour {
+public class AvatarOptionButton : MonoBehaviour {
 
 	public string itemIndex;
 
 	public void updateOption()
 	{
 		GameObject options = GameObject.Find("options");
-		OptionsController optionsController = options.GetComponent (typeof (OptionsController)) as OptionsController;
+		AvatarOptionsController optionsController = options.GetComponent (typeof (AvatarOptionsController)) as AvatarOptionsController;
 		optionsController.disableAllOptionButtons ();
 		optionsController.loadItemAtIndex (itemIndex);
 

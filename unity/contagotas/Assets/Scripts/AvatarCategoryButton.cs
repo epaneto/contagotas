@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CategoryButton : MonoBehaviour {
+public class AvatarCategoryButton : MonoBehaviour {
 
 	public void updateMenu()
 	{
 		////disable all butons and load category
 		GameObject menu = GameObject.Find("menu");
-		MenuController menuController = menu.GetComponent (typeof (MenuController)) as MenuController;
+		AvatarMenuController menuController = menu.GetComponent (typeof (AvatarMenuController)) as AvatarMenuController;
 		menuController.disableAllButtons (gameObject.name);
 
 		//enable this button

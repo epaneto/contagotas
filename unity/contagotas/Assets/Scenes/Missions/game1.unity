@@ -181,6 +181,14 @@ Prefab:
       propertyPath: startingAnimation
       value: stop
       objectReference: {fileID: 0}
+    - target: {fileID: 1224545937894534, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224545937894534, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
+      propertyPath: m_Name
+      value: game_mechanic
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
   m_IsPrefabParent: 0
@@ -272,7 +280,7 @@ RectTransform:
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0050783367, y: 0.0050783367, z: 0.0050783367}
+  m_LocalScale: {x: 0.0044014086, y: 0.0044014086, z: 0.0044014086}
   m_Children:
   - {fileID: 1993169617}
   - {fileID: 262215398}
@@ -384,7 +392,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1248582562743902, guid: da2d4d00969a5fe4388156816874aa1e, type: 2}
       propertyPath: m_Name
-      value: game_animation1
+      value: game_animation
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
@@ -405,6 +413,10 @@ Prefab:
         type: 2}
       propertyPath: startingAnimation
       value: exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248582562743902, guid: da2d4d00969a5fe4388156816874aa1e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da2d4d00969a5fe4388156816874aa1e, type: 2}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionsController : MonoBehaviour {
+public class AvatarOptionsController : MonoBehaviour {
 	string activeSession = "hair";
 
 	public GameObject bodyOptions;

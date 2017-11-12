@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuController : MonoBehaviour {
+public class AvatarMenuController : MonoBehaviour {
 
 	Component[] menuButtons;
 	GameObject options;
-	OptionsController optionsController;
+	AvatarOptionsController optionsController;
 
 	void Start()
 	{
 		options = GameObject.Find ("options");
-		optionsController = options.GetComponent<OptionsController> ();
+		optionsController = options.GetComponent<AvatarOptionsController> ();
 
 		GameObject go = GameObject.Find ("body");
-		CategoryButton cb = go.GetComponent<CategoryButton> ();
+		AvatarCategoryButton cb = go.GetComponent<AvatarCategoryButton> ();
 		cb.updateMenu ();
 	}
 
