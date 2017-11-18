@@ -1,16 +1,64 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using DG.Tweening;
 using Newtonsoft.Json.Linq;
+using UnityEngine.UI;
 
 public class SignUpController : MonoBehaviour {
 
 	private string destinySceneName;
-	private JObject jsonData;
+	private string stateJSONFile = "geo.json";
+	private JArray States;
+
 	void Start()
 	{
+		string filePath = Path.Combine(Application.streamingAssetsPath, stateJSONFile);
+
+		if (File.Exists (filePath)) 
+		{
+			string DataAsJSON = File.ReadAllText (filePath);
+
+			JObject o = JObject.Parse(DataAsJSON);
+			States = (JArray) o["estados"];
+
+			Dropdown statesDrop = GameObject.Find ("drop_state").GetComponent<Dropdown> ();
+			statesDrop.ClearOptions ();
+
+			List <string> statesNames = new List<string>();
+
+			for (int i = 0; i < States.Count; i++) 
+			{
+				JToken name = States [i] ["nome"];
+				statesNames.Add (name.ToString());
+			}
+
+			statesDrop.AddOptions (statesNames);
+		}
+
+		LoadCities (0);
+
 		Show ();
+
+	}
+
+	public void LoadCities(int stateIndex)
+	{
+		JArray cities = (JArray) States[stateIndex]["cidades"];
+
+		Dropdown cityDrop = GameObject.Find ("drop_city").GetComponent<Dropdown> ();
+		cityDrop.ClearOptions ();
+
+		List <string> cityNames = new List<string>();
+
+		for (int i = 0; i < cities.Count; i++) 
+		{
+			JToken name = cities [i];
+			cityNames.Add (name.ToString());
+		}
+
+		cityDrop.AddOptions (cityNames);
 
 	}
 
@@ -54,4 +102,18 @@ public class SignUpController : MonoBehaviour {
 	{
 		SceneController.sceneController.FadeAndLoadScene (destinySceneName, true);
 	}
+}
+
+[System.Serializable]
+public class Estado
+{
+	public string sigla { get; set; }
+	public string nome { get; set; }
+	public List<string> cidades { get; set; }
+}
+
+[System.Serializable]
+public class StateList
+{
+	public List<Estado> estados { get; set; }
 }
