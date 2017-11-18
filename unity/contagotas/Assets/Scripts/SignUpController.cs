@@ -16,9 +16,11 @@ public class SignUpController : MonoBehaviour {
 	{
 		string filePath = Path.Combine(Application.streamingAssetsPath, stateJSONFile);
 
-		if (File.Exists (filePath)) 
-		{
-			string DataAsJSON = File.ReadAllText (filePath);
+		TextAsset t = (TextAsset) Resources.Load("geo", typeof(TextAsset));
+
+//		if (File.Exists (filePath)) 
+//		{
+		string DataAsJSON = t.text;
 
 			JObject o = JObject.Parse(DataAsJSON);
 			States = (JArray) o["estados"];
@@ -35,7 +37,7 @@ public class SignUpController : MonoBehaviour {
 			}
 
 			statesDrop.AddOptions (statesNames);
-		}
+//		}
 
 		LoadCities (0);
 
@@ -84,6 +86,12 @@ public class SignUpController : MonoBehaviour {
 
 	public void SendData()
 	{
+		string username = GameObject.Find ("input_name").GetComponent<InputField> ().text;
+		string email = GameObject.Find ("input_email").GetComponent<InputField> ().text;
+
+		if (username == "Nome" || email == "E-mail")
+			return;
+		
 		CallForScene ("Avatar");
 	}
 
@@ -102,18 +110,4 @@ public class SignUpController : MonoBehaviour {
 	{
 		SceneController.sceneController.FadeAndLoadScene (destinySceneName, true);
 	}
-}
-
-[System.Serializable]
-public class Estado
-{
-	public string sigla { get; set; }
-	public string nome { get; set; }
-	public List<string> cidades { get; set; }
-}
-
-[System.Serializable]
-public class StateList
-{
-	public List<Estado> estados { get; set; }
 }
