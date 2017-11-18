@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Newtonsoft.Json.Linq;
 
 public class SignUpController : MonoBehaviour {
 
 	private string destinySceneName;
-
+	private JObject jsonData;
 	void Start()
 	{
 		Show ();
+
+		jsonData = JObject.Parse (Resources.Load ("geo.json"));
+		Debug.Log (jsonData);
 	}
 
 	private void Show()
