@@ -14,6 +14,8 @@ public class SceneController : MonoBehaviour {
 
 	private bool isFading;
 
+	private Animator anim;
+
 	public static SceneController sceneController;
 
 	void Awake() {
@@ -26,21 +28,26 @@ public class SceneController : MonoBehaviour {
 	}
 
 	private IEnumerator Start () {
+		anim = GameObject.Find("transition").GetComponent<Animator> ();
+		anim.Play ("transition_out");
+
 		transitionCanvas.alpha = 1f;
 		yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));
 		StartCoroutine (Fade (0f));
 	}
 
-	public void FadeAndLoadScene (string sceneName)
+	public void FadeAndLoadScene (string sceneName, bool hasTransition = false)
 	{
 		if (!isFading)
 		{
-			StartCoroutine (FadeAndSwitchScenes (sceneName));
+			StartCoroutine (FadeAndSwitchScenes (sceneName, hasTransition));
 		}
 	}
 
-	private IEnumerator FadeAndSwitchScenes (string sceneName)
+	private IEnumerator FadeAndSwitchScenes (string sceneName, bool hasTransition)
 	{
+		if(hasTransition)
+			anim.Play ("transition_in");
 		yield return StartCoroutine (Fade (1f));
 		if (BeforeSceneUnload != null)
 			BeforeSceneUnload ();
@@ -51,6 +58,8 @@ public class SceneController : MonoBehaviour {
 		if (AfterSceneLoad != null)
 			AfterSceneLoad ();
 
+		if(hasTransition)
+			anim.Play ("transition_out");
 		yield return StartCoroutine (Fade (0f));
 	}
 

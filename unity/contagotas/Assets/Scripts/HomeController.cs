@@ -24,15 +24,19 @@ public class HomeController : MonoBehaviour {
 		GameObject background = GameObject.Find ("background");
 		GameObject logo = GameObject.Find ("logo");
 		GameObject caixalogo = GameObject.Find ("caixa_logo");
+		GameObject leafs1 = GameObject.Find ("leafs1");
+		GameObject leafs2 = GameObject.Find ("leafs2");
 
-		signButton.transform.DOMoveY(-Screen.height - signButton.transform.localScale.y , 0.6f).SetEase(Ease.InQuad).OnComplete(GoToScene);
-		facebookButton.transform.DOMoveY(-Screen.height - facebookButton.transform.localScale.y , 0.6f).SetEase(Ease.InQuad).OnComplete(GoToScene);
+		signButton.transform.DOMoveY (-Screen.height - signButton.transform.localScale.y, 0.6f).SetEase (Ease.InQuad);
+		facebookButton.transform.DOMoveY (-Screen.height - facebookButton.transform.localScale.y, 0.6f).SetEase (Ease.InQuad);
 
-		logo.transform.DOMoveY(-Screen.height - logo.transform.localScale.y , 1f).SetEase(Ease.InQuad).OnComplete(GoToScene);
-		caixalogo.transform.DOMoveY(-Screen.height - caixalogo.transform.localScale.y , 1f).SetEase(Ease.InQuad).OnComplete(GoToScene);
+		logo.transform.DOMoveY (-Screen.height - logo.transform.localScale.y, 1f).SetEase (Ease.InQuad);
+		caixalogo.transform.DOMoveY (-Screen.height - caixalogo.transform.localScale.y, 1f).SetEase (Ease.InQuad);
 
-		//background.gameObject.GetComponent<Image> ().DOFade (0, 2.0f);
 		background.transform.DOMoveY(-Screen.height / 2 , 1.5f).SetEase(Ease.InQuad).OnComplete(GoToScene);
+
+		leafs1.transform.DOMoveY (-Screen.height / 2, 1.7f).SetEase (Ease.InQuad);
+		leafs2.transform.DOMoveY (-Screen.height / 2, 1.7f).SetEase (Ease.InQuad);
 	}
 
 	public void CallForScene(string sceneName)

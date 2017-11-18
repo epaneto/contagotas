@@ -73,6 +73,8 @@ public class AvatarDecorator : MonoBehaviour {
 		UserData.userData.playerData.playerShoe = showItem;
 
 		UserData.userData.Save ();
+
+		SceneController.sceneController.FadeAndLoadScene ("Map", true);
 	}
 
 	public void LoadUserDefaultAvatar()

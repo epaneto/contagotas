@@ -32,9 +32,9 @@ public class SignUpController : MonoBehaviour {
 		btConfirm.transform.DOMoveY(2000, 0.6f).SetEase(Ease.OutQuad).From();
 	}
 
-	private void HideScene()
+	public void SendData()
 	{
-
+		CallForScene ("Avatar");
 	}
 
 	public void CallForScene(string sceneName)
@@ -43,8 +43,13 @@ public class SignUpController : MonoBehaviour {
 		HideScene ();
 	}
 
+	private void HideScene()
+	{
+		GoToScene ();
+	}
+
 	private void GoToScene()
 	{
-		SceneController.sceneController.FadeAndLoadScene (destinySceneName);
+		SceneController.sceneController.FadeAndLoadScene (destinySceneName, true);
 	}
 }
