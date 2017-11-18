@@ -12,8 +12,6 @@ public class SignUpController : MonoBehaviour {
 	{
 		Show ();
 
-		jsonData = JObject.Parse (Resources.Load ("geo.json"));
-		Debug.Log (jsonData);
 	}
 
 	private void Show()
