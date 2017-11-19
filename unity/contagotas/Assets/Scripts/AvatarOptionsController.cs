@@ -36,7 +36,8 @@ public class AvatarOptionsController : MonoBehaviour {
 
 	public void loadItemAtIndex(string itemIndex)
 	{
-		avatarController.UpdateTextures (activeSection, activeSection + "/" + activeSection + itemIndex);
+		avatarController.UpdateTextures (activeSection, itemIndex);
+		Debug.Log (itemIndex);
 	}
 
 
@@ -48,40 +49,39 @@ public class AvatarOptionsController : MonoBehaviour {
 		activeSection = section;
 
 		hideAllSections ();
+		disableAllOptionButtons ();
 
-		switch (section) {
-			case "body":
-				bodyOptions.SetActive (true);
-			break;
+		ToogleButton optionButton = null;
 
-			case "eye":
+		if (section == AvatarCategoryStrings.BODY) {
+			bodyOptions.SetActive (true);
+			optionButton = GameObject.Find ("option" + avatarController.bodyItem).GetComponent<ToogleButton> ();
+		}else if(section == AvatarCategoryStrings.EYE){
 			eyesOptions.SetActive (true);
-			break;
-
-		case "hair":
+			optionButton = GameObject.Find ("option" + avatarController.eyeItem).GetComponent<ToogleButton> ();
+		}else if(section == AvatarCategoryStrings.HAIR){
 			hairOptions.SetActive (true);
-			break;
-
-		case "mouth":
+			optionButton = GameObject.Find ("option" + avatarController.hairItem).GetComponent<ToogleButton> ();
+		}else if(section == AvatarCategoryStrings.MOUTH){
 			mouthOptions.SetActive (true);
-			break;
-
-		case "accessories":
+			optionButton = GameObject.Find ("option" + avatarController.mouthItem).GetComponent<ToogleButton> ();
+		}else if(section == AvatarCategoryStrings.ACC){
 			accOptions.SetActive (true);
-			break;
-
-		case "shirt":
+			optionButton = GameObject.Find ("option" + avatarController.accItem).GetComponent<ToogleButton> ();
+		}else if(section == AvatarCategoryStrings.SHIRT){
 			shirtOptions.SetActive (true);
-			break;
-
-		case "pants":
+			optionButton = GameObject.Find ("option" + avatarController.shirtItem).GetComponent<ToogleButton> ();
+		}else if(section == AvatarCategoryStrings.PANTS){
 			pantsOptions.SetActive (true);
-			break;
-
-		case "shoe":
+			optionButton = GameObject.Find ("option" + avatarController.pantsItem).GetComponent<ToogleButton> ();
+		}else if(section == AvatarCategoryStrings.SHOE){
 			shoeOptions.SetActive (true);
-			break;
+			optionButton = GameObject.Find ("option" + avatarController.showItem).GetComponent<ToogleButton> ();
 		}
+
+		if (optionButton != null)
+			optionButton.EnableMenuButton ();
+
 	}
 
 	void hideAllSections()

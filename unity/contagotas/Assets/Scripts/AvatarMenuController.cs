@@ -10,6 +10,11 @@ public class AvatarMenuController : MonoBehaviour {
 
 	void Start()
 	{
+		
+	}
+
+	public void Setup()
+	{
 		options = GameObject.Find ("options");
 		optionsController = options.GetComponent<AvatarOptionsController> ();
 
