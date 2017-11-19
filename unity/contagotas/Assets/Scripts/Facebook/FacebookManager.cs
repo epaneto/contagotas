@@ -11,27 +11,6 @@ public class FacebookManager : MonoBehaviour {
 
 	List<string> perms = new List<string>(){"public_profile", "email", "user_friends"};
 
-	private void AuthCallback (ILoginResult result) {
-		if (FB.IsLoggedIn) {
-			// AccessToken class will have session details
-			var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
-			// Print current access token's User ID
-			Debug.Log(aToken.UserId);
-			// Print current access token's granted permissions
-			foreach (string perm in aToken.Permissions) {
-				Debug.Log(perm);
-			}
-
-			if (FB.IsLoggedIn) {
-				FB.API ("/me?fields=name", HttpMethod.GET, DispName); 
-				FB.API ("/me/picture?type=square&height=128&width=128", HttpMethod.GET, GetPicture);
-			}
-		} else {
-			feedbackStatus.text = "User cancelled login";
-			Debug.Log("User cancelled login");
-		}
-	}
-
 	// Awake function from Unity's MonoBehavior
 	void Awake ()
 	{
@@ -57,8 +36,11 @@ public class FacebookManager : MonoBehaviour {
 			feedbackStatus.text = "Failed to Initialize the Facebook SDK";
 			Debug.Log("Failed to Initialize the Facebook SDK");
 		}
+	}
 
-
+	public void DoLogin()
+	{
+		FB.LogInWithReadPermissions(perms, AuthCallback);
 	}
 
 	private void OnHideUnity (bool isGameShown)
@@ -69,6 +51,27 @@ public class FacebookManager : MonoBehaviour {
 		} else {
 			// Resume the game - we're getting focus again
 			Time.timeScale = 1;
+		}
+	}
+
+	private void AuthCallback (ILoginResult result) {
+		if (FB.IsLoggedIn) {
+			// AccessToken class will have session details
+			var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
+			// Print current access token's User ID
+			Debug.Log(aToken.UserId);
+			// Print current access token's granted permissions
+			foreach (string perm in aToken.Permissions) {
+				Debug.Log(perm);
+			}
+
+			if (FB.IsLoggedIn) {
+				FB.API ("/me?fields=name", HttpMethod.GET, DispName); 
+				FB.API ("/me/picture?type=square&height=128&width=128", HttpMethod.GET, GetPicture);
+			}
+		} else {
+			feedbackStatus.text = "User cancelled login";
+			Debug.Log("User cancelled login");
 		}
 	}
 
@@ -91,9 +94,6 @@ public class FacebookManager : MonoBehaviour {
 		}
 	}
 
-	public void DoLogin()
-	{
-		FB.LogInWithReadPermissions(perms, AuthCallback);
-	}
+
 
 }
