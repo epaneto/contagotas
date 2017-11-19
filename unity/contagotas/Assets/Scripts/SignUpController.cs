@@ -73,15 +73,17 @@ public class SignUpController : MonoBehaviour {
 		GameObject dropcity = GameObject.Find ("drop_city");
 		GameObject requiredfield = GameObject.Find ("required");
 		GameObject btConfirm = GameObject.Find ("bt_confirmar");
+		GameObject btBack = GameObject.Find ("bt_voltar");
 
 
-		title.transform.DOMoveY(2000, 1.2f).SetEase(Ease.OutQuad).From();
-		inputname.transform.DOMoveY(2000, 1.1f).SetEase(Ease.OutQuad).From();
-		inputmail.transform.DOMoveY(2000, 1.0f).SetEase(Ease.OutQuad).From();
-		dropstate.transform.DOMoveY(2000, 0.9f).SetEase(Ease.OutQuad).From();
-		dropcity.transform.DOMoveY(2000, 0.8f).SetEase(Ease.OutQuad).From();
-		requiredfield.transform.DOMoveY(2000, 0.7f).SetEase(Ease.OutQuad).From();
-		btConfirm.transform.DOMoveY(2000, 0.6f).SetEase(Ease.OutQuad).From();
+		title.transform.DOMoveY(1500, 1.2f).SetEase(Ease.OutQuad).From();
+		inputname.transform.DOMoveY(1500, 1.1f).SetEase(Ease.OutQuad).From();
+		inputmail.transform.DOMoveY(1500, 1.0f).SetEase(Ease.OutQuad).From();
+		dropstate.transform.DOMoveY(1500, 0.9f).SetEase(Ease.OutQuad).From();
+		dropcity.transform.DOMoveY(1500, 0.8f).SetEase(Ease.OutQuad).From();
+		requiredfield.transform.DOMoveY(1500, 0.7f).SetEase(Ease.OutQuad).From();
+		btConfirm.transform.DOMoveY(1500, 0.6f).SetEase(Ease.OutQuad).From();
+		btBack.transform.DOMoveY(1500, 0.6f).SetEase(Ease.OutQuad).From();
 	}
 
 	public void SendData()
@@ -93,6 +95,11 @@ public class SignUpController : MonoBehaviour {
 			return;
 		
 		CallForScene ("Avatar");
+	}
+
+	public void GoBack()
+	{
+		CallForScene ("Home");
 	}
 
 	public void CallForScene(string sceneName)

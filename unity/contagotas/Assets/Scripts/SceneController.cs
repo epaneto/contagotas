@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour {
 
 	public CanvasGroup transitionCanvas;
-	public float fadeDuration = 1f;
+	public float fadeDuration = 0.1f;
 	public string startingSceneName = "Home";
 
 	public event Action BeforeSceneUnload;
@@ -29,7 +29,7 @@ public class SceneController : MonoBehaviour {
 
 	private IEnumerator Start () {
 		anim = GameObject.Find("transition").GetComponent<Animator> ();
-		//anim.Play ("transition_empty");
+		anim.Play ("transition_empty");
 
 		transitionCanvas.alpha = 1f;
 		yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));
