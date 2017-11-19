@@ -71,4 +71,6 @@ public class PlayerData
 	public string playerPants;
 	public string playerShoe;
 
+	public DateTime lastAccess;
+	public int activeMission;
 }
