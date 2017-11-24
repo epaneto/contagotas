@@ -3,9 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+struct MyGroupInfo
+{
+	public string groupName;
+	public int groupID;
+}
+
 public class GroupManager : MonoBehaviour {
 
 	bool hasGroup = false;
+
+	//My User Info
+	int UserId = 1;
+	MyGroupInfo groupInfo;
+	string urlBase = "http://localhost/contagotas/group/";
 
 	public enum ObjectsGroup 
 	{
@@ -14,11 +25,18 @@ public class GroupManager : MonoBehaviour {
 		NEW_GROUP,
 		CREATE_GROUP,
 		JOIN_GROUP,
+		ERROR,
 	}
 
 	[Header("Loading Group References")]
 	[SerializeField]
 	GameObject LoadingGroupGameObjects;
+
+	[Header("Error Group References")]
+	[SerializeField]
+	GameObject ErrorGroupGameObjects;
+	[SerializeField]
+	Text error_text;
 
 	[Header("Existing Group References")]
 	[SerializeField]
@@ -62,6 +80,7 @@ public class GroupManager : MonoBehaviour {
 		NewGroupGameObjects.SetActive (groupToShow == ObjectsGroup.NEW_GROUP);
 		CreateGroupGameObjects.SetActive(groupToShow == ObjectsGroup.CREATE_GROUP);
 		JoinGroupGameObjects.SetActive(groupToShow == ObjectsGroup.JOIN_GROUP);
+		ErrorGroupGameObjects.SetActive(groupToShow == ObjectsGroup.ERROR);
 	}
 
 	public void ShowJoinObjects()
@@ -74,14 +93,30 @@ public class GroupManager : MonoBehaviour {
 		ShowGroup(ObjectsGroup.CREATE_GROUP);
 	}
 
+	public void ShowErrorScreen(string error_message)
+	{
+		error_text.text = error_message;
+		ShowGroup (ObjectsGroup.ERROR);
+	}
+
 	public void CreateAndJoinGroup()
 	{
 		StartCoroutine (CreateGroup(createInput.text));
 	}
 
-	IEnumerator CreateGroup(string groupName)
+	public void LeaveGroup()
 	{
-		string url = "http://localhost/contagotas/group/create/" + groupName + "/";
+		StartCoroutine (LeaveGroup (UserId));
+	}
+
+	public void Retry()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
+	}
+
+	IEnumerator HasGroup(int userID)
+	{
+		string url = urlBase + "hasGroup/" + userID + "/";
 		WWW www = new WWW(url);
 		ShowGroup (ObjectsGroup.LOADING);
 
@@ -95,5 +130,67 @@ public class GroupManager : MonoBehaviour {
 			createFeedback.text = www.text;
 		}
 	}
+
+	IEnumerator CreateGroup(string groupName)
+	{
+		string url = urlBase + "create/" + groupName + "/";
+		WWW www = new WWW(url);
+		ShowGroup (ObjectsGroup.LOADING);
+
+		yield return www;
+		Debug.Log ("url result = " + www.text);
+
+		if (www.text.ToUpper().Contains ("ERROR")) 
+		{
+			ShowErrorScreen ("error creating group:" + www.text);
+			yield break;
+		}
+
+		int groupID;
+		if(!int.TryParse(www.text, out groupID))
+		{
+			ShowErrorScreen ("error on group id:" + www.text);
+			yield break;
+		}
+
+		url = urlBase + "join/" + groupID + "/" + UserId+ "/";
+		www = new WWW(url);
+		yield return www;
+
+		if (www.text.Contains ("sucess")) {
+			SetGroupInfo (groupName, groupID);
+			groupTitle.text = groupName;
+			ShowGroup (ObjectsGroup.EXISTING_GROUP);
+		} else {
+			ShowErrorScreen ("Error joining group ->" + www.text);
+		}
+	}
+
+	IEnumerator LeaveGroup(int userID)
+	{
+		string url = urlBase + "leave/" + userID + "/";
+		WWW www = new WWW(url);
+		ShowGroup (ObjectsGroup.LOADING);
+
+		yield return www;
+		Debug.Log ("url result = " + www.text);
+
+		if (www.text.ToUpper().Contains("SUCESS")) 
+		{
+			ShowGroup (ObjectsGroup.NEW_GROUP);	
+		}
+		else {
+			ShowErrorScreen ("error leaving group:" + www.text);
+			yield break;
+		}
+	}
+
+	public void SetGroupInfo(string groupName, int groupID)
+	{
+		groupInfo = new MyGroupInfo ();
+		groupInfo.groupName = groupName;
+		groupInfo.groupID = groupID;
+	}
+
 
 }
