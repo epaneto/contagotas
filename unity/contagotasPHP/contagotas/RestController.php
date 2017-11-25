@@ -1,5 +1,6 @@
 <?php
 require_once("GroupRestHandler.php");
+require_once("UserRestHandler.php");
 		
 $view = "";
 if(isset($_GET["view"]))
@@ -70,6 +71,21 @@ switch($view){
 		// to handle REST Url /group/score/top/
 		$groupRestHandler = new GroupRestHandler();
 		$groupRestHandler->getTopGroupScore();
+		break;
+		
+	case "create_user":
+		// to handle REST Url /user/create/<user name>/<email>
+		$userRestHandler = new UserRestHandler();
+		
+		$name = $_GET["name"];
+		$email = $_GET["email"];
+		
+		echo "receiving";
+		echo "name = ".$name;
+		echo "email = ".$email;
+		
+		
+		$userRestHandler->createUser($name,$email);
 		break;
 	
 	case "" :
