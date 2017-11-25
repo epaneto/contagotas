@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224645727589436894}
   m_Layer: 5
-  m_Name: game_mechanic3
+  m_Name: game_mechanic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
