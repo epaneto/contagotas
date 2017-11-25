@@ -12,6 +12,17 @@ public class GroupData
 	public int Score;
 }
 
+public enum ObjectsGroup 
+{
+	LOADING,
+	EXISTING_GROUP,
+	NEW_GROUP,
+	CREATE_GROUP,
+	JOIN_GROUP,
+	RANKING_GROUP,
+	ERROR,
+}
+
 public class GroupManager : MonoBehaviour {
 
 	bool hasGroup = false;
@@ -20,17 +31,6 @@ public class GroupManager : MonoBehaviour {
 	int UserId = 1;
 	GroupData groupInfo;
 	string urlBase = "http://localhost/contagotas/group/";
-
-	public enum ObjectsGroup 
-	{
-		LOADING,
-		EXISTING_GROUP,
-		NEW_GROUP,
-		CREATE_GROUP,
-		JOIN_GROUP,
-		RANKING_GROUP,
-		ERROR,
-	}
 
 	[Header("Loading Group References")]
 	[SerializeField]
@@ -60,12 +60,16 @@ public class GroupManager : MonoBehaviour {
 	[SerializeField]
 	InputField createInput;
 
-	[SerializeField]
-	Text createFeedback;
-
 	[Header("Join Group References")]
 	[SerializeField]
 	GameObject JoinGroupGameObjects;
+	[SerializeField]
+	Transform searchResultParent;
+	[SerializeField]
+	InputField groupToSearchInput;
+	[SerializeField]
+	Transform suggestedParent;
+	private GameObject suggestedResultObj;
 
 	[Header("Ranking Group References")]
 	[SerializeField]
@@ -74,43 +78,11 @@ public class GroupManager : MonoBehaviour {
 	Transform RankingGroupParent;
 	[SerializeField]
 	GameObject GroupObjectPrefabs;
+	private List<GameObject> groupInfoObjList = new List<GameObject> ();
 
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (HasGroup (UserId));
-	}
-
-	public void ShowGroup(ObjectsGroup groupToShow)
-	{
-		LoadingGroupGameObjects.SetActive (groupToShow == ObjectsGroup.LOADING);
-		ExistingGroupGameObjects.SetActive (groupToShow == ObjectsGroup.EXISTING_GROUP);
-		NewGroupGameObjects.SetActive (groupToShow == ObjectsGroup.NEW_GROUP);
-		CreateGroupGameObjects.SetActive(groupToShow == ObjectsGroup.CREATE_GROUP);
-		JoinGroupGameObjects.SetActive(groupToShow == ObjectsGroup.JOIN_GROUP);
-		ErrorGroupGameObjects.SetActive(groupToShow == ObjectsGroup.ERROR);
-		RankingGroupGameObjects.SetActive (groupToShow == ObjectsGroup.RANKING_GROUP);
-	}
-
-	public void ShowJoinObjects()
-	{
-		ShowGroup(ObjectsGroup.JOIN_GROUP);
-	}
-
-	public void ShowCreateObjects()
-	{
-		ShowGroup(ObjectsGroup.CREATE_GROUP);
-	}
-
-	public void ShowRankingScreen()
-	{
-		ShowGroup (ObjectsGroup.LOADING);
-		StartCoroutine (LoadRanking ());
-	}
-
-	public void ShowErrorScreen(string error_message)
-	{
-		error_text.text = error_message;
-		ShowGroup (ObjectsGroup.ERROR);
 	}
 
 	public void CreateAndJoinGroup()
@@ -128,6 +100,132 @@ public class GroupManager : MonoBehaviour {
 		UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
 	}
 
+
+	public void ShowGroup(ObjectsGroup groupToShow)
+	{
+		LoadingGroupGameObjects.SetActive (groupToShow == ObjectsGroup.LOADING);
+		ExistingGroupGameObjects.SetActive (groupToShow == ObjectsGroup.EXISTING_GROUP);
+		NewGroupGameObjects.SetActive (groupToShow == ObjectsGroup.NEW_GROUP);
+		CreateGroupGameObjects.SetActive(groupToShow == ObjectsGroup.CREATE_GROUP);
+		JoinGroupGameObjects.SetActive(groupToShow == ObjectsGroup.JOIN_GROUP);
+		ErrorGroupGameObjects.SetActive(groupToShow == ObjectsGroup.ERROR);
+		RankingGroupGameObjects.SetActive (groupToShow == ObjectsGroup.RANKING_GROUP);
+	}
+
+	public void ShowCreateScreen()
+	{
+		ShowGroup(ObjectsGroup.CREATE_GROUP);
+	}
+
+
+	public void ShowErrorScreen(string error_message)
+	{
+		error_text.text = error_message;
+		ShowGroup (ObjectsGroup.ERROR);
+	}
+
+
+	public void ShowRankingScreen()
+	{
+		ShowGroup (ObjectsGroup.LOADING);
+		StartCoroutine (LoadRanking ());
+	}
+
+	public void ShowJoinScreen()
+	{
+		ShowGroup (ObjectsGroup.LOADING);
+		StartCoroutine (LoadSuggestedGroups());
+	}
+
+	public void SearchGroup()
+	{
+		StartCoroutine(StartSearchGroup());
+	}
+
+	IEnumerator StartSearchGroup()
+	{
+		if (groupToSearchInput.text == "")
+			yield break;
+
+		if (suggestedResultObj != null)
+			Destroy (suggestedResultObj);
+		
+		WWW result;
+		yield return result = DoWebRequest("list_by_name/" + groupToSearchInput.text + "/");
+		Debug.Log ("url result = " + result.text);
+
+
+		if (result.text == "[]") {
+			ShowErrorScreen ("Grupo nao encontrado");
+			yield break;
+		}
+
+		if (result.text.ToUpper ().Contains ("ERROR") || result.text.ToUpper ().Contains ("TIMEOUT")) {
+			ShowErrorScreen ("error leaving group:" + result.text);
+			yield break;
+		} 
+
+		ShowGroup (ObjectsGroup.JOIN_GROUP);
+
+		List<GroupData> foundGroups = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+
+		suggestedResultObj = Instantiate (GroupObjectPrefabs, searchResultParent);
+		GroupInfo groupInfoScript = suggestedResultObj.GetComponent<GroupInfo>(); 
+		groupInfoScript.joinGroupClicked += HandleJoinClick;
+		groupInfoScript.SetupGroupInfo (foundGroups[0].Name, foundGroups[0].Score, foundGroups[0].Id, false);
+
+	}
+
+	IEnumerator LoadSuggestedGroups()
+	{
+		WWW result;
+		yield return result = DoWebRequest("list/");
+		Debug.Log ("url result = " + result.text);
+
+
+		if (result.text == "") {
+			ShowErrorScreen ("error acessing group service, try again later");
+			yield break;
+		}
+
+		if (result.text.ToUpper ().Contains ("ERROR")) {
+			ShowErrorScreen ("error leaving group:" + result.text);
+			yield break;
+		} else {
+
+			foreach (var item in groupInfoObjList) {
+				Destroy (item);
+			}
+
+			List<GroupData> suggestedGroups = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+
+			foreach (var group in suggestedGroups) {
+				GameObject item = Instantiate (GroupObjectPrefabs, suggestedParent);
+				groupInfoObjList.Add (item);
+				GroupInfo groupInfoScript = item.GetComponent<GroupInfo>(); 
+				groupInfoScript.joinGroupClicked += HandleJoinClick;
+				groupInfoScript.SetupGroupInfo (group.Name, group.Score, group.Id, false);
+			}
+
+			ShowGroup (ObjectsGroup.JOIN_GROUP);	
+		}
+	}
+
+	void HandleJoinClick(int groupId)
+	{
+		ShowGroup (ObjectsGroup.LOADING);
+		StartCoroutine(Join (groupId));
+	}
+
+
+	public WWW DoWebRequest(string url)
+	{
+		string finalUrl = urlBase + url;
+		ShowGroup (ObjectsGroup.LOADING);
+		return new WWW(finalUrl);
+
+	}
+
 	IEnumerator LoadRanking()
 	{
 		string url = urlBase + "score/top/";
@@ -141,11 +239,17 @@ public class GroupManager : MonoBehaviour {
 			ShowErrorScreen ("error leaving group:" + www.text);
 			yield break;
 		} else {
+
+			foreach (var item in groupInfoObjList) {
+				Destroy (item);
+			}
+
 			List<GroupData> rankedGroups = JsonConvert.DeserializeObject<List<GroupData>>(www.text);
 
 			foreach (var group in rankedGroups) {
 				GameObject item = Instantiate (GroupObjectPrefabs, RankingGroupParent);
-				item.GetComponent<GroupInfo> ().SetupGroupInfo (group.Name, group.Score);
+				groupInfoObjList.Add (item);
+				item.GetComponent<GroupInfo> ().SetupGroupInfo (group.Name, group.Score, group.Id);
 			}
 
 			ShowGroup (ObjectsGroup.RANKING_GROUP);	
@@ -181,7 +285,6 @@ public class GroupManager : MonoBehaviour {
 		}
 		else {
 			ShowGroup (ObjectsGroup.NEW_GROUP);	
-			createFeedback.text = www.text;
 		}
 	}
 
@@ -207,16 +310,22 @@ public class GroupManager : MonoBehaviour {
 			yield break;
 		}
 
-		url = urlBase + "join/" + groupID + "/" + UserId+ "/";
-		www = new WWW(url);
-		yield return www;
+		StartCoroutine (Join (groupID));
+	}
 
-		if (www.text.Contains ("sucess")) {
-			SetGroupData (groupName, groupID);
-			groupTitle.text = groupName;
-			ShowGroup (ObjectsGroup.EXISTING_GROUP);
+	IEnumerator Join(int groupID)
+	{
+		WWW result;
+		yield return result = DoWebRequest ("join/" + groupID + "/" + UserId + "/");
+		Debug.Log ("url result = " + result.text);
+
+		if (result.text.ToUpper().Contains("ERROR") || result.text.ToUpper().Contains("TIMEOUT")) {
+			ShowErrorScreen ("Error joining group ->" + result.text);
 		} else {
-			ShowErrorScreen ("Error joining group ->" + www.text);
+			List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+			groupInfo = account[0];
+			groupTitle.text = groupInfo.Name;
+			ShowGroup (ObjectsGroup.EXISTING_GROUP);	
 		}
 	}
 
@@ -245,6 +354,5 @@ public class GroupManager : MonoBehaviour {
 		groupInfo.Name = groupName;
 		groupInfo.Id = groupID;
 	}
-
 
 }

@@ -69,6 +69,37 @@ Class Group {
 		return $json;
 	}	
 	
+	public function getGroupByName($group_name){
+		
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");
+		 	 
+		$sql = "SELECT * FROM contagotas_app.group where group_name = '" . $group_name . "'";
+		$result = $con->query($sql);
+		
+		$json = "[";
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'}";
+			}
+		} 
+		$json .= "]";		
+
+		if (!mysqli_query($con,$sql))
+		  {
+		  die('Error: ' . mysqli_error($con));
+		  }
+		 
+		mysqli_close($con);
+		return $json;
+	}	
+	
 	public function getGroupByUserId($user_id){
 		
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
@@ -141,6 +172,7 @@ Class Group {
 		  }
 		
 		
+
 		while($row = $result->fetch_assoc()) {
 			$group_id = $row["id_group"];
 		}
@@ -189,19 +221,20 @@ Class Group {
 		(`user_id`,`group_id`)	
 		VALUES 	('" . $user . "','" . $group . "');";
 		 
-		if (!mysqli_query($con,$sql))
-		  {
-		  die('Error: ' . mysqli_error($con));
-		  }
+		$result = $con->query($sql);
+
+		if (!$result)
+		{
+			die('Error: ' . mysqli_error($con));
+		}
 		 
 		mysqli_close($con);
-		return "sucess";
+		$GroupClass = new Group();
+		return $GroupClass->getGroup($group);		
 	}
 	
 	public function LeaveGroup($user){
 
-		//$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
-		
 		$mysqli = new mysqli("mysql.contagotas.online", "contagotas", "c0nt4g0t4s", "contagotas_app");
 
 		/* check connection */
@@ -212,8 +245,6 @@ Class Group {
 		 
 		$mysqli->query("DELETE FROM Language WHERE Percentage < 50");
 		 
-		
-		
 		$con=mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s","contagotas_app");
 		if (mysqli_connect_errno())
 		  {

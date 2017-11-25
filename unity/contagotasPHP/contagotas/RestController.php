@@ -30,6 +30,12 @@ switch($view){
 		$groupRestHandler = new GroupRestHandler();
 		$groupRestHandler->getGroupByUserId($_GET["id"]);
 		break;
+	
+	case "single_by_name":
+		// to handle REST Url /group/list_by_name/<group_name>/
+		$groupRestHandler = new GroupRestHandler();
+		$groupRestHandler->getGroupByName($_GET["group_name"]);
+		break;
 		
 	case "create":
 		// to handle REST Url /group/create/<group name>/
