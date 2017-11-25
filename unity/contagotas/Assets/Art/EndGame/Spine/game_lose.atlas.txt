@@ -1,0 +1,76 @@
+
+game_lose.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 924, 160
+  size: 94, 238
+  orig: 94, 238
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: true
+  xy: 1329, 169
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: true
+  xy: 1164, 205
+  size: 49, 163
+  orig: 74, 163
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 2, 2
+  size: 528, 37
+  orig: 528, 37
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 2, 41
+  size: 528, 213
+  orig: 528, 213
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: false
+  xy: 532, 102
+  size: 312, 36
+  orig: 312, 36
+  offset: 0, 0
+  index: -1
+game1_mouth1
+  rotate: false
+  xy: 846, 107
+  size: 43, 31
+  orig: 43, 31
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: false
+  xy: 1446, 208
+  size: 113, 46
+  orig: 113, 46
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 532, 40
+  size: 60, 207
+  orig: 60, 207
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 532, 140
+  size: 390, 114
+  orig: 390, 114
+  offset: 0, 0
+  index: -1
