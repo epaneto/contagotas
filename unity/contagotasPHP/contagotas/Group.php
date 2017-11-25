@@ -407,7 +407,7 @@ Class Group {
 		FROM contagotas_app.group_invite
 		INNER JOIN contagotas_app.group ON contagotas_app.group_invite.group_id=contagotas_app.group.id_group
 		INNER JOIN contagotas_app.users ON contagotas_app.group_invite.user_id=contagotas_app.users.userid
-		WHERE contagotas_app.group_invite.user_id = " . $user_id . ";";
+		WHERE contagotas_app.group_invite.user_id = '" . $user_id . "' AND contagotas_app.group_invite.verified = false;";
 		$result = $con->query($sql);
 		
 		$json = "[";
@@ -415,7 +415,7 @@ Class Group {
 			// output data of each row
 		
 			while($row = $result->fetch_assoc()) {
-				$json .= "{'id_invite':'" . $row["id_invite"]. "','group_name':'" . $row["group_name"]."','Name':'" . $row["name"] . "'}";
+				$json .= "{'id_invite':'" . $row["id_invite"]. "','group_name':'" . $row["group_name"]."','sender_name':'" . $row["name"] . "'}";
 			}
 		} 
 		$json .= "]";		
@@ -440,6 +440,7 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");
 		
+		$return_data;
 		try {
 			$con->begin_transaction();
 
@@ -448,13 +449,27 @@ Class Group {
 			$con->query("SET @user_id = (SELECT contagotas_app.group_invite.user_id FROM contagotas_app.group_invite WHERE contagotas_app.group_invite.id_invite = @invite_id);");
 			$con->query("INSERT INTO `contagotas_app`.`group_user` (`group_id`,`user_id`) VALUES (@group_id,@user_id);");
 			$con->query("UPDATE `contagotas_app`.`group_invite` SET `verified` = true WHERE `id_invite` = @invite_id;");
+			$result = $con->query("SELECT  `contagotas_app`.`group`.id_group, `contagotas_app`.`group`.group_name FROM contagotas_app.group WHERE id_group = @group_id;");
+			
 			$con->commit();
+			
+			$json = "[";
+			if ($result->num_rows > 0) {
+				
+				while($row = $result->fetch_assoc()) {
+					$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'},";
+				}
+				
+			} 
+			$json .= "]";
+			$return_data = $json;
+			
 		} catch (Exception $e) {
 			$con->rollback();
 			die('Error: ' . mysqli_error($con));
 		}
 	 
-		return 'success';	
+		return $json;
 	}
 	
 	public function denyInvite($invite_id){
