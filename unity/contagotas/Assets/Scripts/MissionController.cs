@@ -35,11 +35,22 @@ public class MissionController : MonoBehaviour {
 			lastDate = user.playerData.lastAccess;
 		
 		DateTime today = DateTime.Now;
+
+		bool isNextDay = false;
+
+		if (today.Year > lastDate.Year) {
+			isNextDay = true;
+		} else if (today.Year < lastDate.Year) {
+			isNextDay = false;
+		}else if(today.Year == lastDate.Year && today.DayOfYear > lastDate.DayOfYear) {
+			isNextDay = true;
+		}
+
 		activeMission = UserData.userData.playerData.activeMission;
 
 		if (lastDate.Year != 1)  {
 			
-			if (today.Day != lastDate.Day && today.Month >= lastDate.Month && today.Year >= lastDate.Year) {
+			if (isNextDay) {
 				
 				Debug.Log ("One day has passed.");
 				lastDate = today;
