@@ -254,7 +254,7 @@ Class Group {
 		mysqli_query($con,"DELETE FROM `contagotas_app`.`group_user` WHERE user_id = " . $user .";");
 
 		if(mysqli_affected_rows($con) > 0)
-			$return = "sucess";
+			$return = "success";
 		else
 			$return = "ERROR - 0 rows affected_rows";
 		
@@ -284,7 +284,7 @@ Class Group {
 		  }
 		
 		if(mysqli_affected_rows($con) > 0)
-			$return = "sucess";
+			$return = "success";
 		else
 			$return = "ERROR - 0 rows affected_rows";
 		
@@ -360,6 +360,123 @@ Class Group {
 		 
 		mysqli_close($con);
 		return $json;
+	}
+	
+	public function createInvite($inviter_id , $user_name){
+
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");		 
+		 
+		$sql="INSERT INTO `contagotas_app`.`group_invite`
+			(`group_id`,
+			`user_id`,
+			`inviter_id`)
+			VALUES
+			( (SELECT group_id FROM contagotas_app.group_user where user_id = '" . $inviter_id. "') ,
+			  (SELECT userid FROM contagotas_app.users where name = '" . $user_name. "'),
+			'" . $inviter_id . "');";
+
+		$result = $con->query($sql);
+
+		if (!$result)
+		{
+			die('Error: ' . mysqli_error($con));
+		}
+		 
+		return 'success';	
+	}
+	
+	public function checkInvite($user_id){
+				
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");
+		 	 
+		$sql="SELECT contagotas_app.group_invite.id_invite, contagotas_app.group.group_name, contagotas_app.users.name
+		FROM contagotas_app.group_invite
+		INNER JOIN contagotas_app.group ON contagotas_app.group_invite.group_id=contagotas_app.group.id_group
+		INNER JOIN contagotas_app.users ON contagotas_app.group_invite.user_id=contagotas_app.users.userid
+		WHERE contagotas_app.group_invite.user_id = " . $user_id . ";";
+		$result = $con->query($sql);
+		
+		$json = "[";
+		if ($result->num_rows > 0) {
+			// output data of each row
+		
+			while($row = $result->fetch_assoc()) {
+				$json .= "{'id_invite':'" . $row["id_invite"]. "','group_name':'" . $row["group_name"]."','Name':'" . $row["name"] . "'}";
+			}
+		} 
+		$json .= "]";		
+
+		if (!mysqli_query($con,$sql))
+		  {
+		  die('Error: ' . mysqli_error($con));
+		  }
+		 
+		mysqli_close($con);
+		return $json;		
+	}
+	
+	public function acceptInvite($invite_id){
+				
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");
+		
+		try {
+			$con->begin_transaction();
+
+			$con->query("SET @invite_id = '" . $invite_id. "';");
+			$con->query("SET @group_id = (SELECT contagotas_app.group_invite.group_id FROM contagotas_app.group_invite WHERE contagotas_app.group_invite.id_invite = @invite_id);");
+			$con->query("SET @user_id = (SELECT contagotas_app.group_invite.user_id FROM contagotas_app.group_invite WHERE contagotas_app.group_invite.id_invite = @invite_id);");
+			$con->query("INSERT INTO `contagotas_app`.`group_user` (`group_id`,`user_id`) VALUES (@group_id,@user_id);");
+			$con->query("UPDATE `contagotas_app`.`group_invite` SET `verified` = true WHERE `id_invite` = @invite_id;");
+			$con->commit();
+		} catch (Exception $e) {
+			$con->rollback();
+			die('Error: ' . mysqli_error($con));
+		}
+	 
+		return 'success';	
+	}
+	
+	public function denyInvite($invite_id){
+				
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");
+		 	 
+		$sql="	UPDATE `contagotas_app`.`group_invite` SET `verified` = true WHERE `id_invite` = " . $invite_id . ";";
+		$result = $con->query($sql);
+		
+		if (!$result)
+		{
+			die('Error: ' . mysqli_error($con));
+		}
+		 
+		return 'success';	
 	}
 }
 ?>

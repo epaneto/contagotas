@@ -354,5 +354,4 @@ public class GroupManager : MonoBehaviour {
 		groupInfo.Name = groupName;
 		groupInfo.Id = groupID;
 	}
-
 }

@@ -1,6 +1,7 @@
 <?php
 require_once("SimpleRest.php");
 require_once("Group.php");
+require_once("Response.php");
 		
 class GroupRestHandler extends SimpleRest {
 
@@ -9,59 +10,17 @@ class GroupRestHandler extends SimpleRest {
 		$group = new Group();
 		$rawData = $group->getAllGroup();
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No groups found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-				
-		echo $rawData;
+		$response = new Response();
+		$response->send($rawData);
 	}
-	
-	public function encodeHtml($responseData) {
-		$htmlResponse = $responseData;
-		/*$htmlResponse = "<table border='1'>";
-		foreach($responseData as $key=>$value) {
-    			$htmlResponse .= "<tr><td>". $key. "</td><td>". $value. "</td></tr>";
-		}
-		$htmlResponse .= "</table>";*/
-		return $htmlResponse;		
-	}
-	
-	public function encodeJson($responseData) {
-		$jsonResponse = json_encode($responseData);
-		return $jsonResponse;		
-	}
-	
-	public function encodeXml($responseData) {
-		// creating object of SimpleXMLElement
-		$xml = new SimpleXMLElement('<?xml version="1.0"?><mobile></mobile>');
-		foreach($responseData as $key=>$value) {
-			$xml->addChild($key, $value);
-		}
-		return $xml->asXML();
-	}
-	
+		
 	public function getGroup($id) {
 
 		$group = new Group();
 		$rawData = $group->getGroup($id);
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No groups found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-			
-		echo $rawData;
+		$response = new Response();
+		$response->send($rawData);
 	}
 	
 	public function getGroupByName($groupName) {
@@ -69,17 +28,8 @@ class GroupRestHandler extends SimpleRest {
 		$group = new Group();
 		$rawData = $group->getGroupByName($groupName);
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No groups found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-			
-		echo $rawData;
+		$response = new Response();
+		$response->send($rawData);
 	}
 	
 	public function getGroupByUserId($id) {
@@ -87,17 +37,8 @@ class GroupRestHandler extends SimpleRest {
 		$group = new Group();
 		$rawData = $group->getGroupByUserId($id);
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No groups found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-			
-		echo $rawData;
+		$response = new Response();
+		$response->send($rawData);
 	}
 	
 	
@@ -106,28 +47,8 @@ class GroupRestHandler extends SimpleRest {
 		$group = new Group();
 		$rawData = $group->createGroup($group_name);
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No group name found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-		
-		echo $rawData;		
-		/*if(strpos($requestContentType,'application/json') !== false){
-			echo "result === ".$rawData;
-			$response = $this->encodeJson($rawData);
-			echo $response;
-		} else if(strpos($requestContentType,'text/html') !== false){
-			$response = $this->encodeHtml();
-			echo $response;
-		} else if(strpos($requestContentType,'application/xml') !== false){
-			$response = $this->encodeXml($rawData);
-			echo $response;
-		}*/
+		$response = new Response();
+		$response->send($rawData);
 	}
 	
 	
@@ -136,17 +57,8 @@ class GroupRestHandler extends SimpleRest {
 		$group = new Group();
 		$rawData = $group->leaveGroup($user);
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No group name found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-		
-		echo $rawData;		
+		$response = new Response();	
+		$response->send($rawData);
 	}
 	
 	public function hasGroup($group_name) {
@@ -161,28 +73,17 @@ class GroupRestHandler extends SimpleRest {
 		else
 			$rawData = "false";
 		
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-				
-		echo $rawData;
+		$response = new Response();
+		$response->send($rawData);
 	}
 	
 	public function joinGroup($group_id,$user_id) {
 
 		$group = new Group();
 		$rawData = $group->joinGroup($group_id,$user_id);
-
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No group name found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
 		
-		echo $rawData;
+		$response = new Response();
+		$response->send($rawData);
 	
 	}
 	
@@ -191,16 +92,8 @@ class GroupRestHandler extends SimpleRest {
 		$group = new Group();
 		$rawData = $group->insertGroupScore($group_id,$score);
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No group name found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-		echo $rawData;	
+		$response = new Response();
+		$response->send($rawData);
 	}
 	
 	public function getGroupScore($group_id) {
@@ -208,16 +101,8 @@ class GroupRestHandler extends SimpleRest {
 		$group = new Group();
 		$rawData = $group->getGroupScore($group_id);
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No group name found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-		echo $rawData;	
+		$response = new Response();
+		$response->send($rawData);
 	}
 	
 	public function getTopGroupScore() {
@@ -225,16 +110,45 @@ class GroupRestHandler extends SimpleRest {
 		$group = new Group();
 		$rawData = $group->getTopGroupScore();
 
-		if(empty($rawData)) {
-			$statusCode = 404;
-			$rawData = array('error' => 'No group name found!');		
-		} else {
-			$statusCode = 200;
-		}
-
-		$requestContentType = $_SERVER['HTTP_ACCEPT'];
-		$this ->setHttpHeaders($requestContentType, $statusCode);
-		echo $rawData;	
+		$response = new Response();
+		$response->send($rawData);
 	}
+	
+	public function createInvite($user_id, $invitedName) {
+
+		$group = new Group();
+		$rawData = $group->createInvite($user_id, $invitedName);
+
+		$response = new Response();
+		$response->send($rawData);
+	}
+	
+	public function checkInvite($user_id) {
+
+		$group = new Group();
+		$rawData = $group->checkInvite($user_id);
+
+		$response = new Response();
+		$response->send($rawData);
+	}
+	
+	public function acceptInvite($invite_id) {
+
+		$group = new Group();
+		$rawData = $group->acceptInvite($invite_id);
+
+		$response = new Response();
+		$response->send($rawData);
+	}
+	
+	public function denyInvite($invite_id) {
+
+		$group = new Group();
+		$rawData = $group->denyInvite($invite_id);
+
+		$response = new Response();
+		$response->send($rawData);
+	}
+	
 }
 ?>

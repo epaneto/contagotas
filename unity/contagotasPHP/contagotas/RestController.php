@@ -88,6 +88,26 @@ switch($view){
 		
 		$userRestHandler->createUser($name,$email);
 		break;
+	case "invite_create":
+		// to handle REST Url /group/invite/create/<user inviter id>/<user invite name>/
+		$groupRestHandler = new GroupRestHandler();
+		$groupRestHandler->createInvite($_GET["inviter_id"],$_GET["name"]);
+		break;
+	case "invite_check":
+		// to handle REST Url /group/invite/check/<user_id>/
+		$groupRestHandler = new GroupRestHandler();
+		$groupRestHandler->checkInvite($_GET["user"]);
+		break;
+	case "invite_accept":
+		// to handle REST Url /group/invite/accept/<invite_id>/
+		$groupRestHandler = new GroupRestHandler();
+		$groupRestHandler->acceptInvite($_GET["invite"]);
+		break;
+	case "invite_deny":
+		// to handle REST Url /group/invite/check/<invite_id>/
+		$groupRestHandler = new GroupRestHandler();
+		$groupRestHandler->denyInvite($_GET["invite"]);
+		break;
 	
 	case "" :
 		echo "view not found! Error!";
