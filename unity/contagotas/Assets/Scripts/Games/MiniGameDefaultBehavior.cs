@@ -28,7 +28,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		graphic.AnimationState.SetAnimation(0,"enter_game",false);
 		graphic.AnimationState.Complete += EndedIntro;
 
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(6.0f);
 
 		EndedGame ();
 
@@ -38,7 +38,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 	{
 		graphic.AnimationState.Complete -= EndedIntro;
 
-		//Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
+		Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 
 		gameAnimation.SetActive (false);
 		gameMechanic.SetActive (true);
