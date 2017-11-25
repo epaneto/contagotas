@@ -112,7 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &262215397
+--- !u!4 &262215398 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4211400191727250, guid: e942e2704f1f7da40babdae4b24ac03f,
+    type: 2}
+  m_PrefabInternal: {fileID: 341221604}
+--- !u!1001 &341221604
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -162,11 +167,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &262215398 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4211400191727250, guid: e942e2704f1f7da40babdae4b24ac03f,
-    type: 2}
-  m_PrefabInternal: {fileID: 262215397}
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ Prefab:
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -457
+      value: -680
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
@@ -379,7 +379,7 @@ Prefab:
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -457
+      value: -680
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
@@ -421,29 +421,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1248582562743902, guid: da2d4d00969a5fe4388156816874aa1e, type: 2}
-      propertyPath: m_Name
-      value: game_animation
-      objectReference: {fileID: 0}
-    - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
-        type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
-        type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114229569583554788, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: startingAnimation
-      value: enter
+      value: enter_game2
       objectReference: {fileID: 0}
     - target: {fileID: 1248582562743902, guid: da2d4d00969a5fe4388156816874aa1e, type: 2}
       propertyPath: m_IsActive
