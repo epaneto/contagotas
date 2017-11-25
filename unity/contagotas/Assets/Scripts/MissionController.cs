@@ -5,7 +5,21 @@ using System;
 
 public class MissionController : MonoBehaviour {
 
-	int maxDays = 21;
+	public int maxDays = 21;
+	public int activeMission;
+	public static MissionController missionController;
+
+	// Use this for initialization
+	void Awake () 
+	{
+		if (missionController == null) {
+			DontDestroyOnLoad (gameObject);
+			missionController = this;
+		} else if (missionController != this) {
+			missionController.UpdateMap ();
+			Destroy (gameObject);
+		}
+	}
 
 	void Start () {
 
@@ -21,7 +35,7 @@ public class MissionController : MonoBehaviour {
 			lastDate = user.playerData.lastAccess;
 		
 		DateTime today = DateTime.Now;
-		int activeMission = UserData.userData.playerData.activeMission;
+		activeMission = UserData.userData.playerData.activeMission;
 
 		if (lastDate.Year != 1)  {
 			
@@ -37,7 +51,9 @@ public class MissionController : MonoBehaviour {
 				user.Save ();
 
 			} else {
+				
 				Debug.Log ("Not passing or cheating time.");
+
 			}
 		} else {
 			Debug.Log ("Its a new player, declare his first values.");
@@ -50,9 +66,21 @@ public class MissionController : MonoBehaviour {
 			UserData.userData.Save ();
 		}
 
+		UpdateMap ();
+
+	}
+
+	public void UpdateMap()
+	{
 		MapController mapController = GameObject.FindObjectOfType<MapController> ();
 		mapController.UpdateMapBasedInPlayerProgress (activeMission, maxDays);
+	}
 
+	public void OpenMiniGame()
+	{
+		Debug.Log ("Mission Controller: Open Minigame " + activeMission);
+
+		SceneController.sceneController.FadeAndLoadScene ("Minigames", true);
 	}
 
 }

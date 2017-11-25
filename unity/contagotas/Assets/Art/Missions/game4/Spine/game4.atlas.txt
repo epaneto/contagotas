@@ -1,0 +1,118 @@
+
+game4.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 1306, 160
+  size: 94, 238
+  orig: 94, 238
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: true
+  xy: 924, 132
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: true
+  xy: 1739, 205
+  size: 49, 163
+  orig: 74, 163
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 2, 2
+  size: 528, 37
+  orig: 528, 37
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 2, 41
+  size: 528, 213
+  orig: 528, 213
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: true
+  xy: 1904, 191
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: false
+  xy: 532, 65
+  size: 312, 36
+  orig: 312, 36
+  offset: 0, 0
+  index: -1
+game1_mouth1
+  rotate: false
+  xy: 846, 70
+  size: 43, 31
+  orig: 43, 31
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: false
+  xy: 1739, 157
+  size: 113, 46
+  orig: 113, 46
+  offset: 0, 0
+  index: -1
+game4_plate_small
+  rotate: false
+  xy: 1052, 128
+  size: 252, 126
+  orig: 256, 128
+  offset: 1, 0
+  index: -1
+game4_platesmall_dirt
+  rotate: false
+  xy: 1546, 153
+  size: 191, 101
+  orig: 256, 128
+  offset: 42, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 532, 3
+  size: 60, 207
+  orig: 60, 207
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 532, 103
+  size: 390, 114
+  orig: 390, 114
+  offset: 0, 0
+  index: -1
+water
+  rotate: true
+  xy: 1306, 129
+  size: 29, 202
+  orig: 29, 202
+  offset: 0, 0
+  index: -1
+water_effect
+  rotate: false
+  xy: 532, 219
+  size: 518, 35
+  orig: 518, 35
+  offset: 0, 0
+  index: -1
+water_fall_fx
+  rotate: false
+  xy: 741, 27
+  size: 4, 36
+  orig: 4, 36
+  offset: 0, 0
+  index: -1

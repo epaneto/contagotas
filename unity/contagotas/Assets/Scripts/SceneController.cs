@@ -7,7 +7,7 @@ public class SceneController : MonoBehaviour {
 
 	public CanvasGroup transitionCanvas;
 	public float fadeDuration = 0.1f;
-	string startingSceneName = "Home";
+	string startingSceneName = "Map";
 
 	public event Action BeforeSceneUnload;
 	public event Action AfterSceneLoad;
