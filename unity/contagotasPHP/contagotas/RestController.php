@@ -80,11 +80,6 @@ switch($view){
 		$name = $_GET["name"];
 		$email = $_GET["email"];
 		
-		echo "receiving";
-		echo "name = ".$name;
-		echo "email = ".$email;
-		
-		
 		$userRestHandler->createUser($name,$email);
 		break;
 	

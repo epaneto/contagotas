@@ -4,10 +4,6 @@ Class User {
 	
 	public function createUser($name, $email){
 		
-		echo "receiving";
-		echo "name = ".$name;
-		echo "email = ".$email;
-		
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
 		
 		if (!$con)
