@@ -69,18 +69,28 @@ class GroupRestHandler extends SimpleRest {
 
 		$requestContentType = $_SERVER['HTTP_ACCEPT'];
 		$this ->setHttpHeaders($requestContentType, $statusCode);
-				
-		if(strpos($requestContentType,'application/json') !== false){
-			$response = $this->encodeJson($rawData);
-			echo $response;
-		} else if(strpos($requestContentType,'text/html') !== false){
-			$response = $this->encodeHtml($rawData);
-			echo $response;
-		} else if(strpos($requestContentType,'application/xml') !== false){
-			$response = $this->encodeXml($rawData);
-			echo $response;
-		}
+			
+		echo $rawData;
 	}
+	
+	public function getGroupByUserId($id) {
+
+		$group = new Group();
+		$rawData = $group->getGroupByUserId($id);
+
+		if(empty($rawData)) {
+			$statusCode = 404;
+			$rawData = array('error' => 'No groups found!');		
+		} else {
+			$statusCode = 200;
+		}
+
+		$requestContentType = $_SERVER['HTTP_ACCEPT'];
+		$this ->setHttpHeaders($requestContentType, $statusCode);
+			
+		echo $rawData;
+	}
+	
 	
 	public function createGroup($group_name) {
 
@@ -145,17 +155,7 @@ class GroupRestHandler extends SimpleRest {
 		$requestContentType = $_SERVER['HTTP_ACCEPT'];
 		$this ->setHttpHeaders($requestContentType, $statusCode);
 				
-		if(strpos($requestContentType,'application/json') !== false){
-			echo "result === ".$rawData;
-			$response = $this->encodeJson($rawData);
-			echo $response;
-		} else if(strpos($requestContentType,'text/html') !== false){
-			$response = $this->encodeHtml($rawData);
-			echo $response;
-		} else if(strpos($requestContentType,'application/xml') !== false){
-			$response = $this->encodeXml($rawData);
-			echo $response;
-		}
+		echo $rawData;
 	}
 	
 	public function joinGroup($group_id,$user_id) {
@@ -184,6 +184,57 @@ class GroupRestHandler extends SimpleRest {
 			$response = $this->encodeXml($rawData);
 			echo $response;
 		}*/
+	}
+	
+	public function InsertGroupScore($group_id,$score) {
+
+		$group = new Group();
+		$rawData = $group->insertGroupScore($group_id,$score);
+
+		if(empty($rawData)) {
+			$statusCode = 404;
+			$rawData = array('error' => 'No group name found!');		
+		} else {
+			$statusCode = 200;
+		}
+
+		$requestContentType = $_SERVER['HTTP_ACCEPT'];
+		$this ->setHttpHeaders($requestContentType, $statusCode);
+		echo $rawData;	
+	}
+	
+	public function getGroupScore($group_id) {
+
+		$group = new Group();
+		$rawData = $group->getGroupScore($group_id);
+
+		if(empty($rawData)) {
+			$statusCode = 404;
+			$rawData = array('error' => 'No group name found!');		
+		} else {
+			$statusCode = 200;
+		}
+
+		$requestContentType = $_SERVER['HTTP_ACCEPT'];
+		$this ->setHttpHeaders($requestContentType, $statusCode);
+		echo $rawData;	
+	}
+	
+	public function getTopGroupScore() {
+
+		$group = new Group();
+		$rawData = $group->getTopGroupScore();
+
+		if(empty($rawData)) {
+			$statusCode = 404;
+			$rawData = array('error' => 'No group name found!');		
+		} else {
+			$statusCode = 200;
+		}
+
+		$requestContentType = $_SERVER['HTTP_ACCEPT'];
+		$this ->setHttpHeaders($requestContentType, $statusCode);
+		echo $rawData;	
 	}
 }
 ?>

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
-struct MyGroupInfo
+public class GroupData
 {
-	public string groupName;
-	public int groupID;
+	public string Name;
+	public int Id;
+	public int Score;
 }
 
 public class GroupManager : MonoBehaviour {
@@ -15,7 +18,7 @@ public class GroupManager : MonoBehaviour {
 
 	//My User Info
 	int UserId = 1;
-	MyGroupInfo groupInfo;
+	GroupData groupInfo;
 	string urlBase = "http://localhost/contagotas/group/";
 
 	public enum ObjectsGroup 
@@ -25,6 +28,7 @@ public class GroupManager : MonoBehaviour {
 		NEW_GROUP,
 		CREATE_GROUP,
 		JOIN_GROUP,
+		RANKING_GROUP,
 		ERROR,
 	}
 
@@ -63,14 +67,17 @@ public class GroupManager : MonoBehaviour {
 	[SerializeField]
 	GameObject JoinGroupGameObjects;
 
+	[Header("Ranking Group References")]
+	[SerializeField]
+	GameObject RankingGroupGameObjects;
+	[SerializeField]
+	Transform RankingGroupParent;
+	[SerializeField]
+	GameObject GroupObjectPrefabs;
+
 	// Use this for initialization
 	void Start () {
-		if (hasGroup) {
-			ShowGroup(ObjectsGroup.EXISTING_GROUP);
-			groupTitle.text = "Group Name goes here";
-		} else {
-			ShowGroup(ObjectsGroup.NEW_GROUP);
-		}
+		StartCoroutine (HasGroup (UserId));
 	}
 
 	public void ShowGroup(ObjectsGroup groupToShow)
@@ -81,6 +88,7 @@ public class GroupManager : MonoBehaviour {
 		CreateGroupGameObjects.SetActive(groupToShow == ObjectsGroup.CREATE_GROUP);
 		JoinGroupGameObjects.SetActive(groupToShow == ObjectsGroup.JOIN_GROUP);
 		ErrorGroupGameObjects.SetActive(groupToShow == ObjectsGroup.ERROR);
+		RankingGroupGameObjects.SetActive (groupToShow == ObjectsGroup.RANKING_GROUP);
 	}
 
 	public void ShowJoinObjects()
@@ -91,6 +99,12 @@ public class GroupManager : MonoBehaviour {
 	public void ShowCreateObjects()
 	{
 		ShowGroup(ObjectsGroup.CREATE_GROUP);
+	}
+
+	public void ShowRankingScreen()
+	{
+		ShowGroup (ObjectsGroup.LOADING);
+		StartCoroutine (LoadRanking ());
 	}
 
 	public void ShowErrorScreen(string error_message)
@@ -114,6 +128,30 @@ public class GroupManager : MonoBehaviour {
 		UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
 	}
 
+	IEnumerator LoadRanking()
+	{
+		string url = urlBase + "score/top/";
+		WWW www = new WWW(url);
+		ShowGroup (ObjectsGroup.LOADING);
+
+		yield return www;
+		Debug.Log ("url result = " + www.text);
+
+		if (www.text.ToUpper ().Contains ("ERROR")) {
+			ShowErrorScreen ("error leaving group:" + www.text);
+			yield break;
+		} else {
+			List<GroupData> rankedGroups = JsonConvert.DeserializeObject<List<GroupData>>(www.text);
+
+			foreach (var group in rankedGroups) {
+				GameObject item = Instantiate (GroupObjectPrefabs, RankingGroupParent);
+				item.GetComponent<GroupInfo> ().SetupGroupInfo (group.Name, group.Score);
+			}
+
+			ShowGroup (ObjectsGroup.RANKING_GROUP);	
+		}
+	}
+
 	IEnumerator HasGroup(int userID)
 	{
 		string url = urlBase + "hasGroup/" + userID + "/";
@@ -123,10 +161,26 @@ public class GroupManager : MonoBehaviour {
 		yield return www;
 		Debug.Log ("url result = " + www.text);
 
-		if (string.IsNullOrEmpty(www.text))
-			ShowGroup (ObjectsGroup.EXISTING_GROUP);
+		if (www.text == "true") {
+			url = urlBase + "list_by_user_id/" + userID + "/";
+			www = new WWW (url);
+			
+			yield return www;
+			Debug.Log ("url result = " + www.text);
+
+			if (www.text.ToUpper ().Contains ("ERROR")) {
+				ShowErrorScreen ("error leaving group:" + www.text);
+				yield break;
+			} else {
+				List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(www.text);
+				groupInfo = account[0];
+				groupTitle.text = groupInfo.Name;
+				ShowGroup (ObjectsGroup.EXISTING_GROUP);	
+			}
+
+		}
 		else {
-			ShowGroup (ObjectsGroup.CREATE_GROUP);	
+			ShowGroup (ObjectsGroup.NEW_GROUP);	
 			createFeedback.text = www.text;
 		}
 	}
@@ -158,7 +212,7 @@ public class GroupManager : MonoBehaviour {
 		yield return www;
 
 		if (www.text.Contains ("sucess")) {
-			SetGroupInfo (groupName, groupID);
+			SetGroupData (groupName, groupID);
 			groupTitle.text = groupName;
 			ShowGroup (ObjectsGroup.EXISTING_GROUP);
 		} else {
@@ -185,11 +239,11 @@ public class GroupManager : MonoBehaviour {
 		}
 	}
 
-	public void SetGroupInfo(string groupName, int groupID)
+	public void SetGroupData(string groupName, int groupID)
 	{
-		groupInfo = new MyGroupInfo ();
-		groupInfo.groupName = groupName;
-		groupInfo.groupID = groupID;
+		groupInfo = new GroupData ();
+		groupInfo.Name = groupName;
+		groupInfo.Id = groupID;
 	}
 
 

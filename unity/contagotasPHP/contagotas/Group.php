@@ -16,18 +16,17 @@ Class Group {
 		$sql = 'SELECT * FROM contagotas_app.group ORDER BY id_group DESC LIMIT 20';
 		$result = $con->query($sql);
 
+		$json = "[";
 		if ($result->num_rows > 0) {
 			// output data of each row
-			$json = "[";
+			
 			while($row = $result->fetch_assoc()) {
 				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'},";
 			}
-			$json .= "]";
+			
 		} 
-		else {
-			echo "0 results";
-		}
-
+		$json .= "]";
+		
 		if (!mysqli_query($con,$sql))
 		  {
 		  die('Error: ' . mysqli_error($con));
@@ -37,7 +36,7 @@ Class Group {
 		return $json;
 	}
 	
-	public function getGroup($group_name_query){
+	public function getGroup($group_id){
 		
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
 		
@@ -48,7 +47,7 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");
 		 	 
-		$sql = "SELECT * FROM contagotas_app.group where group_name = '" . $group_name_query . "'";
+		$sql = "SELECT * FROM contagotas_app.group where id_group = '" . $group_id . "'";
 		$result = $con->query($sql);
 		
 		$json = "[";
@@ -56,7 +55,44 @@ Class Group {
 			// output data of each row
 		
 			while($row = $result->fetch_assoc()) {
-				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'},";
+				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'}";
+			}
+		} 
+		$json .= "]";		
+
+		if (!mysqli_query($con,$sql))
+		  {
+		  die('Error: ' . mysqli_error($con));
+		  }
+		 
+		mysqli_close($con);
+		return $json;
+	}	
+	
+	public function getGroupByUserId($user_id){
+		
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");
+		
+		$sql = "SELECT contagotas_app.group.group_name, contagotas_app.group.id_group
+				FROM contagotas_app.group
+				INNER JOIN contagotas_app.group_user ON contagotas_app.group.id_group=contagotas_app.group_user.group_id
+				WHERE contagotas_app.group_user.user_id = '" . $user_id . "'";
+
+		$result = $con->query($sql);
+		
+		$json = "[";
+		if ($result->num_rows > 0) {
+			// output data of each row
+		
+			while($row = $result->fetch_assoc()) {
+				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'}";
 			}
 		} 
 		$json .= "]";		
@@ -125,7 +161,7 @@ Class Group {
 		mysqli_select_db($con,"contagotas_app");		 
 		
 		
-		$sql= "SELECT * FROM contagotas_app.group_users where user_id = " . $user . ";";
+		$sql= "SELECT * FROM contagotas_app.group_user where user_id = " . $user . ";";
 		
 		$result = mysqli_query($con,$sql);
 		
@@ -195,6 +231,104 @@ Class Group {
 		
 		return $return;
 	}
+	
+	public function InsertGroupScore($group,$score){
 
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");		 
+		
+		$sql = " UPDATE `contagotas_app`.`group_score` 
+			SET score = score + " . $score . "
+			WHERE group_id = '".$group."'";
+		
+		if (!mysqli_query($con,$sql))
+		  {
+		  die('Error: ' . mysqli_error($con));
+		  }
+		
+		if(mysqli_affected_rows($con) > 0)
+			$return = "sucess";
+		else
+			$return = "ERROR - 0 rows affected_rows";
+		
+		mysqli_close($con);
+		return $return;
+	}
+	
+	public function getGroupScore($group_id){
+		
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");
+		 	 
+		$sql = "SELECT score FROM contagotas_app.group_score where group_id = '" . $group_id . "'";
+		
+		$result = $con->query($sql);
+		
+		if (!mysqli_query($con,$sql))
+		  {
+		  die('Error: ' . mysqli_error($con));
+		  }
+		 
+		$return = "";
+
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				$return = $row["score"];
+			}
+		} 
+		
+		mysqli_close($con);
+		
+		return $return;
+	}	
+
+	public function getTopGroupScore(){
+		
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");
+		 	 
+		$sql = 'SELECT contagotas_app.group.group_name, contagotas_app.group_score.score
+		FROM contagotas_app.group
+		INNER JOIN contagotas_app.group_score ON contagotas_app.group.id_group=contagotas_app.group_score.group_id
+		order by score DESC limit 10;';
+
+		$result = $con->query($sql);
+
+		$json = "[";
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				$json .= "{'Name':'" . $row["group_name"]."','score':'" . $row["score"] . "'},";
+			}
+		} 
+		$json .= "]";
+		
+		if (!mysqli_query($con,$sql))
+		  {
+		  die('Error: ' . mysqli_error($con));
+		  }
+		 
+		mysqli_close($con);
+		return $json;
+	}
 }
 ?>
