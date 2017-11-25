@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class MinigamesController : MonoBehaviour {
 
 	List<string> minigames;
-	int minigameIndex;
+	public int minigameIndex;
+
 	// Use this for initialization
 	void Start () {
 
@@ -23,11 +24,17 @@ public class MinigamesController : MonoBehaviour {
 
 	public void PlayNextMinigame()
 	{
-		if (minigameIndex < minigames.Count) {
+		Debug.Log ("play next minigame! active is " + minigameIndex);
+
+		if (minigameIndex + 1  < minigames.Count) {
 			SceneManager.UnloadSceneAsync (minigames [minigameIndex]);
+			Debug.Log ("increase mini game index!");
 
 			minigameIndex++;
 			SceneManager.LoadScene (minigames [minigameIndex], LoadSceneMode.Additive);
+		} else {
+			Debug.Log ("last minigame, unload everything!");
+			SceneManager.UnloadSceneAsync (minigames [minigameIndex]);
 		}
 	}
 }

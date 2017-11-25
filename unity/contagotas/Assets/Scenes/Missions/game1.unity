@@ -174,9 +174,66 @@ Prefab:
       propertyPath: startingAnimation
       value: stop
       objectReference: {fileID: 0}
+    - target: {fileID: 114231703054132796, guid: e942e2704f1f7da40babdae4b24ac03f,
+        type: 2}
+      propertyPath: startingLoop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1247561711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1247561712}
+  - component: {fileID: 1247561713}
+  - component: {fileID: 1247561714}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1247561712
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247561711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7764618, y: 0.24250533, z: 50.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1247561713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247561711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65904782fdde94b60a44e7146067d2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1247561714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247561711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +491,7 @@ Prefab:
     - target: {fileID: 114229569583554788, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: startingAnimation
-      value: enter_game2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1248582562743902, guid: da2d4d00969a5fe4388156816874aa1e, type: 2}
       propertyPath: m_IsActive
