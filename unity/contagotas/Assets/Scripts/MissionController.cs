@@ -16,6 +16,7 @@ public class MissionController : MonoBehaviour {
 			DontDestroyOnLoad (gameObject);
 			missionController = this;
 		} else if (missionController != this) {
+			missionController.UpdateMap ();
 			Destroy (gameObject);
 		}
 	}
@@ -65,9 +66,14 @@ public class MissionController : MonoBehaviour {
 			UserData.userData.Save ();
 		}
 
+		UpdateMap ();
+
+	}
+
+	public void UpdateMap()
+	{
 		MapController mapController = GameObject.FindObjectOfType<MapController> ();
 		mapController.UpdateMapBasedInPlayerProgress (activeMission, maxDays);
-
 	}
 
 	public void OpenMiniGame()

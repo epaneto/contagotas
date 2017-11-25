@@ -11,6 +11,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 	GameObject gameAnimation;
 	SkeletonGraphic graphic;
 	MinigamesController controller;
+	public int gameScore;
 
 	// Use this for initialization
 	IEnumerator Start () {
@@ -22,7 +23,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		gameMechanic = GameObject.Find ("game_mechanic");
 		gameMechanic.SetActive (false);
 
-		Debug.Log ("play the intro animation of " + "enter_game" + (controller.minigameIndex + 1));
+		//Debug.Log ("play the intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 
 		graphic.AnimationState.SetAnimation(0,"enter_game" + (controller.minigameIndex + 1),false);
 		graphic.AnimationState.Complete += EndedIntro;
@@ -37,7 +38,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 	{
 		graphic.AnimationState.Complete -= EndedIntro;
 
-		Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
+		//Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 
 		gameAnimation.SetActive (false);
 		gameMechanic.SetActive (true);
@@ -55,7 +56,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 	void PlayNextGame(Spine.TrackEntry entry)
 	{
 		graphic.AnimationState.Complete -= PlayNextGame;
-		controller.PlayNextMinigame ();
+		controller.ShowResults (gameScore);
 	}
 
 	// Update is called once per frame

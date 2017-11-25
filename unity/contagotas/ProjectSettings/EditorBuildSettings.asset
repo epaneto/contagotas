@@ -59,3 +59,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Missions/game2.unity
     guid: 887b98681d7e94e029e40bb93212f156
+  - enabled: 0
+    path: Assets/Scenes/Endgame.unity
+    guid: d5ad71628a95b0f448f242551e8ae182

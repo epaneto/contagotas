@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MinigamesController : MonoBehaviour {
 
 	List<string> minigames;
 	public int minigameIndex;
+	GameObject endGame;
+	GameObject scoreTxt;
+	GameObject continueButton;
 
 	// Use this for initialization
 	void Start () {
+		endGame = GameObject.Find ("EndGame");
+		scoreTxt = GameObject.Find ("score_txt");
+		continueButton = GameObject.Find ("bt_continuar");
+
+		endGame.SetActive (false);
 
 		minigames = new List<string> ();
 
@@ -22,19 +31,28 @@ public class MinigamesController : MonoBehaviour {
 		SceneManager.LoadScene(minigames[minigameIndex], LoadSceneMode.Additive);
 	}
 
-	public void PlayNextMinigame()
+	public void ShowResults(int score)
 	{
-		Debug.Log ("play next minigame! active is " + minigameIndex);
+		///REMOVE ACTIVE MINIGAME FROM SCREEN
+		SceneManager.UnloadSceneAsync (minigames [minigameIndex]);
 
+		///SHOW END GAME
+		Text txt = scoreTxt.GetComponent<Text> ();
+		txt.text = score.ToString ();
+		endGame.SetActive(true);
+		continueButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
+	}
+
+	public void PlayNextMiniGame()
+	{
 		if (minigameIndex + 1  < minigames.Count) {
-			SceneManager.UnloadSceneAsync (minigames [minigameIndex]);
-			Debug.Log ("increase mini game index!");
 
 			minigameIndex++;
 			SceneManager.LoadScene (minigames [minigameIndex], LoadSceneMode.Additive);
+
+			endGame.SetActive (false);
 		} else {
-			Debug.Log ("last minigame, unload everything!");
-			SceneManager.UnloadSceneAsync (minigames [minigameIndex]);
+			SceneController.sceneController.FadeAndLoadScene ("Map", true);
 		}
 	}
 }
