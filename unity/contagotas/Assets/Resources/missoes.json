@@ -2,15 +2,15 @@
   "missoes": [
     {
         "sceneid": "game1",
-        "hint": "Texto do game 1"
+        "hint": "Você ganhou! O desafio em casa é não se barbear no chuveiro e poupar cerca de 10 litros. Tire as barbas de molho e entre em ação."
     },
     {
         "sceneid": "game2",
-        "hint": "Texto do game 2"
+        "hint": "Pode sorrir! Agora os dentistas e todos recomendam o desafio na sua escovação. Feche a torneira, use um copo e poupe até 11 litros."
     },
     {
         "sceneid": "game3",
-        "hint": "Texto do game 3"
+        "hint": "Vilão derrotado! Um minuto a menos no chuveiro pode economizar até 23 litros. Acabe com o banho demorado também na sua casa."
     }
       
     ]
