@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Facebook.Unity;
+using Facebook.MiniJSON;
+using System.Linq;
 
 public enum ScreenType 
 {
@@ -14,10 +17,14 @@ public enum ScreenType
 	JOIN_GROUP,
 	RANKING_GROUP,
 	ERROR,
-	INVITES
+	RECEIVE_INVITES,
+	SEND_INVITES
 }
 
 public class GroupManager : MonoBehaviour {
+
+	[SerializeField]
+	FacebookInviteManager facebookAPI;
 
 	bool hasGroup = false;
 
@@ -72,7 +79,7 @@ public class GroupManager : MonoBehaviour {
 	Transform RankingGroupParent;
 	[SerializeField]
 	GameObject GroupObjectPrefabs;
-	private List<GameObject> TemporaryObjsList = new List<GameObject> ();
+	private List<GameObject> temporaryObjsList = new List<GameObject> ();
 
 	[Header("Invite Screen References")]
 	[SerializeField]
@@ -81,6 +88,14 @@ public class GroupManager : MonoBehaviour {
 	Transform InviteGroupParent;
 	[SerializeField]
 	GameObject InvitePrefab;
+
+	[Header("Send Invite Screen References")]
+	[SerializeField]
+	GameObject SendInviteGroupGameObjects;
+	[SerializeField]
+	Transform SendInviteGroupParent;
+	[SerializeField]
+	GameObject SendInvitePrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -113,7 +128,8 @@ public class GroupManager : MonoBehaviour {
 		JoinGroupGameObjects.SetActive(groupToShow == ScreenType.JOIN_GROUP);
 		ErrorGroupGameObjects.SetActive(groupToShow == ScreenType.ERROR);
 		RankingGroupGameObjects.SetActive (groupToShow == ScreenType.RANKING_GROUP);
-		InviteGroupGameObjects.SetActive (groupToShow == ScreenType.INVITES);
+		InviteGroupGameObjects.SetActive (groupToShow == ScreenType.RECEIVE_INVITES);
+		SendInviteGroupGameObjects.SetActive (groupToShow == ScreenType.SEND_INVITES);
 	}
 
 	public void ShowCreateScreen()
@@ -145,6 +161,57 @@ public class GroupManager : MonoBehaviour {
 		StartCoroutine(StartSearchGroup());
 	}
 
+	public void ShowSendInviteScreen()
+	{
+		ShowGroup (ScreenType.LOADING);
+		LoadFriendsToInvite();
+	}
+
+	public void LoadFriendsToInvite()
+	{
+		facebookAPI.GetFriends (ReceivedFriendList);
+	}
+
+	public void ReceivedFriendList(IResult result)
+	{
+		var dict = Json.Deserialize(result.RawResult)
+			as Dictionary<string,object>;
+
+		var friendList = new List<object>();
+		friendList = (List<object>)(dict["data"]);
+
+		foreach (var item in temporaryObjsList) {
+			Destroy (item);
+		}
+
+		temporaryObjsList.Clear ();
+
+		//TODO:APAGAR ESSE CODIGO
+		GameObject apagarIsso = Instantiate (SendInvitePrefab, SendInviteGroupParent);
+		temporaryObjsList.Add (apagarIsso);
+		FacebookInvite apagarisso2 = apagarIsso.GetComponent<FacebookInvite> (); 
+		apagarisso2.SetupInviteInfo ("Joao Bergamo", "10155760819433186");
+		//APAGAR O CODIGO ACIMA
+
+
+		foreach (var friend in friendList) {
+
+			var info = ((IEnumerable)friend).Cast<object> ()
+				.Select (x => x.ToString ())
+				.ToArray ();
+
+			string name = info [1].Replace ('[', ' ').Replace (']', ' ').Trim ().Split (',') [1];
+			string facebook_id = info [3].Replace ('[', ' ').Replace (']', ' ').Trim ().Split (',') [1];
+
+			GameObject item = Instantiate (SendInvitePrefab, SendInviteGroupParent);
+			temporaryObjsList.Add (item);
+			FacebookInvite inviteObj = item.GetComponent<FacebookInvite> (); 
+			inviteObj.SetupInviteInfo (name, facebook_id);
+		}
+
+		ShowGroup (ScreenType.SEND_INVITES);
+	}
+
 	IEnumerator SearchForInvites()
 	{
 		WWW result;
@@ -158,22 +225,23 @@ public class GroupManager : MonoBehaviour {
 
 		List<InviteData> invites = JsonConvert.DeserializeObject<List<InviteData>>(result.text);
 
-		foreach (var obj in TemporaryObjsList) {
+		foreach (var obj in temporaryObjsList) {
 			Destroy (obj);
 		}
+		temporaryObjsList.Clear ();
 
 		if (invites.Count > 0) {
 			
 			foreach (var invite in invites) {
 				GameObject item = Instantiate (InvitePrefab, InviteGroupParent);
-				TemporaryObjsList.Add (item);
+				temporaryObjsList.Add (item);
 				InviteObject inviteObj = item.GetComponent<InviteObject> (); 
 				inviteObj.acceptButtonClicked += HandleAcceptInvite;
 				inviteObj.declineButtonClicked += HandleDeclineInvite;
 				inviteObj.SetupInviteInfo (invite.sender_name, invite.group_name, invite.id_invite);
 			}
 
-			ShowGroup (ScreenType.INVITES);
+			ShowGroup (ScreenType.RECEIVE_INVITES);
 
 		} else {
 			ShowGroup (ScreenType.NEW_GROUP);
@@ -230,15 +298,16 @@ public class GroupManager : MonoBehaviour {
 			yield break;
 		} else {
 
-			foreach (var item in TemporaryObjsList) {
+			foreach (var item in temporaryObjsList) {
 				Destroy (item);
 			}
+			temporaryObjsList.Clear ();
 
 			List<GroupData> suggestedGroups = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
 
 			foreach (var group in suggestedGroups) {
 				GameObject item = Instantiate (GroupObjectPrefabs, suggestedParent);
-				TemporaryObjsList.Add (item);
+				temporaryObjsList.Add (item);
 				GroupInfo groupInfoScript = item.GetComponent<GroupInfo>(); 
 				groupInfoScript.joinGroupClicked += HandleJoinClick;
 				groupInfoScript.SetupGroupInfo (group.Name, group.Score, group.Id, false);
@@ -311,15 +380,16 @@ public class GroupManager : MonoBehaviour {
 			yield break;
 		} else {
 
-			foreach (var item in TemporaryObjsList) {
+			foreach (var item in temporaryObjsList) {
 				Destroy (item);
 			}
+			temporaryObjsList.Clear ();
 
 			List<GroupData> rankedGroups = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
 
 			foreach (var group in rankedGroups) {
 				GameObject item = Instantiate (GroupObjectPrefabs, RankingGroupParent);
-				TemporaryObjsList.Add (item);
+				temporaryObjsList.Add (item);
 				item.GetComponent<GroupInfo> ().SetupGroupInfo (group.Name, group.Score, group.Id);
 			}
 

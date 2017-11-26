@@ -114,10 +114,10 @@ class GroupRestHandler extends SimpleRest {
 		$response->send($rawData);
 	}
 	
-	public function createInvite($user_id, $invitedName) {
+	public function createInvite($user_id, $facebook_id) {
 
 		$group = new Group();
-		$rawData = $group->createInvite($user_id, $invitedName);
+		$rawData = $group->createInvite($user_id, $facebook_id);
 
 		$response = new Response();
 		$response->send($rawData);

@@ -6,7 +6,7 @@ RewriteEngine on
 RewriteRule ^group/list/$   RestController.php?view=all [nc,qsa]
 RewriteRule ^group/list/([0-9]+)/$   RestController.php?view=single&id=$1 [nc,qsa]
 RewriteRule ^group/list_by_name/([A-Za-z0-9]+)/$   RestController.php?view=single_by_name&group_name=$1 [nc,qsa]
-RewriteRule ^group/invite/create/([0-9]+)/([\+a-zA-Z0-9-_.]+)/$   RestController.php?view=invite_create&inviter_id=$1&name=$2 [nc,qsa]
+RewriteRule ^group/invite/create/([0-9]+)/([0-9]+)/$   RestController.php?view=invite_create&inviter_id=$1&facebook_id=$2 [nc,qsa]
 RewriteRule ^group/invite/check/([A-Za-z0-9]+)/$   RestController.php?view=invite_check&user=$1 [nc,qsa]
 RewriteRule ^group/invite/accept/([0-9]+)/$   RestController.php?view=invite_accept&invite=$1 [nc,qsa]
 RewriteRule ^group/invite/deny/([0-9]+)/$   RestController.php?view=invite_deny&invite=$1 [nc,qsa]

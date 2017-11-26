@@ -94,7 +94,7 @@ switch($view){
 	case "invite_create":
 		// to handle REST Url /group/invite/create/<user inviter id>/<user invite name>/
 		$groupRestHandler = new GroupRestHandler();
-		$groupRestHandler->createInvite($_GET["inviter_id"],$_GET["name"]);
+		$groupRestHandler->createInvite($_GET["inviter_id"],$_GET["facebook_id"]);
 		break;
 	case "invite_check":
 		// to handle REST Url /group/invite/check/<user_id>/

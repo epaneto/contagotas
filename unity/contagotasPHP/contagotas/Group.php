@@ -362,7 +362,7 @@ Class Group {
 		return $json;
 	}
 	
-	public function createInvite($inviter_id , $user_name){
+	public function createInvite($inviter_id , $facebook_id){
 
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
 		
@@ -372,14 +372,14 @@ Class Group {
 		}
 		 
 		mysqli_select_db($con,"contagotas_app");		 
-		 
+		
 		$sql="INSERT INTO `contagotas_app`.`group_invite`
 			(`group_id`,
 			`user_id`,
 			`inviter_id`)
 			VALUES
-			( (SELECT group_id FROM contagotas_app.group_user where user_id = '" . $inviter_id. "') ,
-			  (SELECT userid FROM contagotas_app.users where name = '" . $user_name. "'),
+			( (SELECT group_id FROM contagotas_app.group_user where user_id = '" . $inviter_id. "' LIMIT 1) ,
+			  (SELECT userid FROM contagotas_app.users where facebook_id = '" . $facebook_id. "' LIMIT 1),
 			'" . $inviter_id . "');";
 
 		$result = $con->query($sql);
