@@ -69,11 +69,8 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		gameStarted = false;
 
 		Debug.Log ("LOST GAME!");
-		gameAnimation.SetActive (true);
 		gameMechanic.SetActive (false);
-
-		graphic.AnimationState.SetAnimation(0,"exit_game",false);
-		graphic.AnimationState.Complete += PlayNextGame;
+		controller.ShowLose ();
 	}
 
 	void PlayNextGame(Spine.TrackEntry entry)
