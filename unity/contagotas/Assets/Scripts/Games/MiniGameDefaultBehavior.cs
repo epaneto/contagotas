@@ -25,7 +25,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 		//Debug.Log ("play the intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 
-		graphic.AnimationState.SetAnimation(0,"enter_game" + (controller.minigameIndex + 1),false);
+		graphic.AnimationState.SetAnimation(0,"enter_game",false);
 		graphic.AnimationState.Complete += EndedIntro;
 
 		yield return new WaitForSeconds(2.0f);
@@ -49,7 +49,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		gameAnimation.SetActive (true);
 		gameMechanic.SetActive (false);
 
-		graphic.AnimationState.SetAnimation(0,"exit_game" + (controller.minigameIndex + 1),false);
+		graphic.AnimationState.SetAnimation(0,"exit_game",false);
 		graphic.AnimationState.Complete += PlayNextGame;
 	}
 
