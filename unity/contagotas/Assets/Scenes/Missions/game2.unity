@@ -372,6 +372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameScore: 0
+  gameStarted: 0
+  maxTime: 15
+  totalTime: 0
 --- !u!114 &1683097458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +383,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1683097456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65904782fdde94b60a44e7146067d2b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 95f8f7a5aae3b4d7a9bd2034aa0b50f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1683097459

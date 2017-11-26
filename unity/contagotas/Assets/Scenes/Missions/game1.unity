@@ -190,8 +190,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1247561712}
-  - component: {fileID: 1247561713}
   - component: {fileID: 1247561714}
+  - component: {fileID: 1247561713}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247561711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65904782fdde94b60a44e7146067d2b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 95f8f7a5aae3b4d7a9bd2034aa0b50f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1247561714
@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScore: 0
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
