@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Facebook.Unity;
 using UnityEngine.UI;
+using Newtonsoft.Json;
+using Facebook.MiniJSON;
+using Facebook;
+using System.Linq;
 
 public class FacebookManager : MonoBehaviour {
 
@@ -95,9 +99,10 @@ public class FacebookManager : MonoBehaviour {
 			inviteButton.SetActive (true);
 			retryButton.SetActive (false);
 			// Print current access token's granted permissions
-			foreach (string perm in aToken.Permissions) {
+			/*foreach (string perm in aToken.Permissions) {
 				Debug.Log(perm);
 			}
+			*/
 
 			if (FB.IsLoggedIn) {
 				LoadProfile ();
@@ -154,5 +159,38 @@ public class FacebookManager : MonoBehaviour {
 		retryButton.SetActive (false);
 		FB.LogOut ();
 	}
+
+	public void GetFriends()
+	{
+		FB.API("me/friends?fields=installed,name,picture", HttpMethod.GET, FriendListReceived);    
+	}
+
+	public void FriendListReceived(IResult result)
+	{
+		var dict = Json.Deserialize(result.RawResult)
+			as Dictionary<string,object>;
+
+		var friendList = new List<object>();
+		friendList = (List<object>)(dict["data"]);
+
+		//Dictionary<string,object> friends = friendList as Dictionary<string,object>;
+
+		foreach (var friend in friendList) {
+
+			var info = ((IEnumerable)friend).Cast<object> ()
+				.Select (x => x.ToString ())
+				.ToArray ();
+
+			string name = info [1].Replace ('[', ' ').Replace (']', ' ').Trim ().Split (',') [1];
+			string facebook_id = info [3].Replace ('[', ' ').Replace (']', ' ').Trim ().Split (',') [1];
+
+			//Debug.Log (info [0] + "" + info [1] + "" + info [2]);
+			//Debug.Log (info [4] );
+			//Debug.Log(name + "facebook = " + facebook_id);
+		}
+		//var friends = JsonConvert.DeserializeObject<List<data>>(result.ResultDictionary["data"].ToString());
+
+	}
+		
 
 }
