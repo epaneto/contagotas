@@ -8,6 +8,11 @@ using UnityEngine.UI;
 
 public class SignUpController : MonoBehaviour {
 
+	[SerializeField]
+	Dropdown cityDropDown;
+	[SerializeField]
+	Dropdown stateDropDown;
+
 	private string destinySceneName;
 	private string stateJSONFile = "geo.json";
 	private JArray States;
@@ -25,8 +30,7 @@ public class SignUpController : MonoBehaviour {
 			JObject o = JObject.Parse(DataAsJSON);
 			States = (JArray) o["estados"];
 
-			Dropdown statesDrop = GameObject.Find ("drop_state").GetComponent<Dropdown> ();
-			statesDrop.ClearOptions ();
+			stateDropDown.ClearOptions ();
 
 			List <string> statesNames = new List<string>();
 
@@ -36,21 +40,33 @@ public class SignUpController : MonoBehaviour {
 				statesNames.Add (name.ToString());
 			}
 
-			statesDrop.AddOptions (statesNames);
+			stateDropDown.AddOptions (statesNames);
 //		}
 
 		LoadCities (0);
 
+		LoadFacebookData ();
+
 		Show ();
 
+
+	}
+
+	public void LoadFacebookData()
+	{
+		if(PlayerPrefs.HasKey("user_name"))
+			GameObject.Find ("input_name").GetComponent<InputField> ().text = PlayerPrefs.GetString("user_name");
+
+		if(PlayerPrefs.HasKey("user_email"))
+			GameObject.Find ("input_email").GetComponent<InputField> ().text = PlayerPrefs.GetString("user_email");
+		
 	}
 
 	public void LoadCities(int stateIndex)
 	{
 		JArray cities = (JArray) States[stateIndex]["cidades"];
 
-		Dropdown cityDrop = GameObject.Find ("drop_city").GetComponent<Dropdown> ();
-		cityDrop.ClearOptions ();
+		cityDropDown.ClearOptions ();
 
 		List <string> cityNames = new List<string>();
 
@@ -60,7 +76,7 @@ public class SignUpController : MonoBehaviour {
 			cityNames.Add (name.ToString());
 		}
 
-		cityDrop.AddOptions (cityNames);
+		cityDropDown.AddOptions (cityNames);
 
 	}
 
@@ -69,8 +85,6 @@ public class SignUpController : MonoBehaviour {
 		GameObject title = GameObject.Find ("title");
 		GameObject inputname = GameObject.Find ("input_name");
 		GameObject inputmail = GameObject.Find ("input_email");
-		GameObject dropstate = GameObject.Find ("drop_state");
-		GameObject dropcity = GameObject.Find ("drop_city");
 		GameObject requiredfield = GameObject.Find ("required");
 		GameObject btConfirm = GameObject.Find ("bt_confirmar");
 		GameObject btBack = GameObject.Find ("bt_voltar");
@@ -79,8 +93,8 @@ public class SignUpController : MonoBehaviour {
 		title.transform.DOMoveY(1500, 1.2f).SetEase(Ease.OutQuad).From();
 		inputname.transform.DOMoveY(1500, 1.1f).SetEase(Ease.OutQuad).From();
 		inputmail.transform.DOMoveY(1500, 1.0f).SetEase(Ease.OutQuad).From();
-		dropstate.transform.DOMoveY(1500, 0.9f).SetEase(Ease.OutQuad).From();
-		dropcity.transform.DOMoveY(1500, 0.8f).SetEase(Ease.OutQuad).From();
+		stateDropDown.transform.DOMoveY(1500, 0.9f).SetEase(Ease.OutQuad).From();
+		cityDropDown.transform.DOMoveY(1500, 0.8f).SetEase(Ease.OutQuad).From();
 		requiredfield.transform.DOMoveY(1500, 0.7f).SetEase(Ease.OutQuad).From();
 		btConfirm.transform.DOMoveY(1500, 0.6f).SetEase(Ease.OutQuad).From();
 		btBack.transform.DOMoveY(1500, 0.6f).SetEase(Ease.OutQuad).From();
@@ -94,7 +108,12 @@ public class SignUpController : MonoBehaviour {
 		if (username == "Nome" || email == "E-mail")
 			return;
 		
-		CallForScene ("Avatar");
+		string state = stateDropDown.options [stateDropDown.value].text;
+		string city = cityDropDown.options [cityDropDown.value].text;
+
+		string facebook_id = PlayerPrefs.HasKey("user_facebookid") ? PlayerPrefs.GetString("user_facebookid") : "0";
+
+		StartCoroutine(DoRegister(username,email,city,state,facebook_id));
 	}
 
 	public void GoBack()
@@ -117,4 +136,32 @@ public class SignUpController : MonoBehaviour {
 	{
 		SceneController.sceneController.FadeAndLoadScene (destinySceneName, true);
 	}
+
+	IEnumerator DoRegister (string playerName, string email, string city, string state, string facebookId)
+	{
+		
+		string encodedName = StringUtils.RemoverAcentuacao(playerName).Replace (" ", "+");
+		string encodedState = StringUtils.RemoverAcentuacao(state).Replace(" ","+");
+		string encodedCity = StringUtils.RemoverAcentuacao(city).Replace(" ","+");
+
+		string finalURL = "http://localhost/contagotas/user/create/" + encodedName + "/" + email + "/" + encodedCity + "/" + encodedState + "/" + facebookId + "/";
+		WWW result = new WWW(finalURL);
+		yield return result;
+
+		if (result.text.ToUpper().Contains("ERROR") || result.text.ToUpper().Contains("TIMEOUT")) {
+			Debug.Log ("Error accepting invite ->" + result.text);
+		} else {
+			int userId;
+			int.TryParse (result.text, out userId);
+
+			PlayerPrefs.SetInt ("user_id", userId);
+
+			Debug.Log ("Criado player com sucesso, com a id = " + userId + " deveria ir para outra cena");
+
+			//TODO: Esse funcao nao ta funcionando O_o, aparentemente dessa cena, ele ta usando uma variavel estatica que não foi inicializada.
+			//CallForScene ("Avatar");
+			UnityEngine.SceneManagement.SceneManager.LoadScene("Avatar");
+		}
+	}
+
 }

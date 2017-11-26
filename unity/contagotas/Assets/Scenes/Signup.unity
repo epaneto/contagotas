@@ -207,6 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe8247528e0e4d7abdc29c0ddbd5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cityDropDown: {fileID: 649775506}
+  stateDropDown: {fileID: 450736375}
 --- !u!4 &27423024
 Transform:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 
 Class User {
 	
-	public function createUser($name, $email){
+	public function createUser($name, $email, $city, $state, $facebookId){
 		
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
 		
@@ -15,10 +15,17 @@ Class User {
 		 
 		$sql="INSERT INTO `contagotas_app`.`users`
 		(`name`,
-		`email`)
+		`email`,
+		`city`,
+		`state`,
+		`facebook_id`)
 		VALUES 
 		('" . $name . "',
-		'" . $email . "')";
+		'" . $email . "',
+		'" . $city . "',
+		'" . $state . "',
+		'" . $facebookId .
+		"')";
 		
 		$result = mysqli_query($con,$sql);
 		

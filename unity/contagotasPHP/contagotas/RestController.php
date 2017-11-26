@@ -80,13 +80,16 @@ switch($view){
 		break;
 		
 	case "create_user":
-		// to handle REST Url /user/create/<user name>/<email>
+		// to handle REST Url /user/create/<user name>/<email>/<city>/<state>/<facebook_id>/
 		$userRestHandler = new UserRestHandler();
 		
 		$name = $_GET["name"];
 		$email = $_GET["email"];
+		$city = $_GET["city"];
+		$state = $_GET["state"];
+		$facebookId = $_GET["facebook_id"];
 		
-		$userRestHandler->createUser($name,$email);
+		$userRestHandler->createUser($name,$email,$city, $state, $facebookId);
 		break;
 	case "invite_create":
 		// to handle REST Url /group/invite/create/<user inviter id>/<user invite name>/

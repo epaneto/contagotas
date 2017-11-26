@@ -84,6 +84,7 @@ public class GroupManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		UserId = PlayerPrefs.GetInt ("user_id");
 		StartCoroutine (HasGroup (UserId));
 	}
 

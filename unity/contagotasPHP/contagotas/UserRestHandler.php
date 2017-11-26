@@ -4,10 +4,10 @@ require_once("User.php");
 		
 class UserRestHandler extends SimpleRest {
 
-	function createUser($name, $email) {	
+	function createUser($name, $email, $city, $state, $facebookId) {	
 		
 		$group = new User();
-		$rawData = $group->createUser($name, $email);
+		$rawData = $group->createUser($name, $email, $city, $state, $facebookId);
 
 		if(empty($rawData)) {
 			$statusCode = 404;
