@@ -45,13 +45,16 @@ public class MinigamesController : MonoBehaviour {
 
 	public void PlayNextMiniGame()
 	{
-		if (minigameIndex + 1  < minigames.Count) {
+		continueButton.GetComponent<Button> ().onClick.RemoveAllListeners ();
 
+		if (minigameIndex + 1  < minigames.Count) {
+			//Debug.Log ("play next minigame " + minigameIndex);
 			minigameIndex++;
 			SceneManager.LoadScene (minigames [minigameIndex], LoadSceneMode.Additive);
 
 			endGame.SetActive (false);
 		} else {
+			//Debug.Log ("that was the last minigame, show map");
 			SceneController.sceneController.FadeAndLoadScene ("Map", true);
 		}
 	}
