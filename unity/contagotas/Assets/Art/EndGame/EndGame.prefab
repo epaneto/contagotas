@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 222526325932093170}
   - component: {fileID: 114139938930405192}
   m_Layer: 5
-  m_Name: Text
+  m_Name: hint_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 114006505124179318}
   - component: {fileID: 114407579067984262}
   m_Layer: 5
-  m_Name: bt_continuar
+  m_Name: bt_continuar_score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

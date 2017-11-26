@@ -14,16 +14,20 @@ public class MinigamesController : MonoBehaviour {
 
 	JArray Missions;
 	GameObject endGame;
+	GameObject loseGame;
 	GameObject scoreTxt;
 	GameObject continueButton;
+	GameObject continueLoseButton;
 	GameObject hintTxt;
 
 	// Use this for initialization
 	void Start () {
 		endGame = GameObject.Find ("EndGame");
 		scoreTxt = GameObject.Find ("score_txt");
-		continueButton = GameObject.Find ("bt_continuar");
+		continueButton = GameObject.Find ("bt_continuar_score");
+		continueLoseButton = GameObject.Find ("bt_continuar_lose");
 		hintTxt = GameObject.Find ("hint_txt");
+		loseGame = GameObject.Find ("GameLose");
 
 		///load mission json
 		TextAsset t = (TextAsset) Resources.Load("missoes", typeof(TextAsset));
@@ -34,11 +38,18 @@ public class MinigamesController : MonoBehaviour {
 
 
 		endGame.SetActive (false);
+		loseGame.SetActive (false);
 
 		minigameIndex = 0;
 
 		JToken sceneName = Missions[minigameIndex]["sceneid"];
 		SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
+	}
+
+	public void ShowLose()
+	{
+		loseGame.SetActive (true);
+		continueLoseButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
 	}
 
 	public void ShowResults(int score)
@@ -63,6 +74,10 @@ public class MinigamesController : MonoBehaviour {
 	public void PlayNextMiniGame()
 	{
 		continueButton.GetComponent<Button> ().onClick.RemoveAllListeners ();
+		continueLoseButton.GetComponent<Button> ().onClick.RemoveAllListeners ();
+
+		endGame.SetActive (false);
+		loseGame.SetActive (false);
 
 		if (minigameIndex + 1  < Missions.Count) {
 			//Debug.Log ("play next minigame " + minigameIndex);

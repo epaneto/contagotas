@@ -12,9 +12,13 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 	SkeletonGraphic graphic;
 	MinigamesController controller;
 	public int gameScore;
+	public bool gameStarted = false;
+
+	public float maxTime = 10.0f;
+	public float totalTime = 0.0f;
 
 	// Use this for initialization
-	IEnumerator Start () {
+	void Start () {
 		controller = GameObject.FindObjectOfType<MinigamesController> ();
 
 		gameAnimation = GameObject.Find ("game_animation");
@@ -28,29 +32,45 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		graphic.AnimationState.SetAnimation(0,"enter_game",false);
 		graphic.AnimationState.Complete += EndedIntro;
 
-		yield return new WaitForSeconds(2.0f);
-
-		EndedGame ();
+//		yield return new WaitForSeconds(6.0f);
+//
+//		EndedGame ();
 
 	}
 
 	void EndedIntro(Spine.TrackEntry entry)
 	{
+		gameStarted = true;
+
 		graphic.AnimationState.Complete -= EndedIntro;
 
-		//Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
+		Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 
 		gameAnimation.SetActive (false);
 		gameMechanic.SetActive (true);
 	}
 
-	public void EndedGame()
+	public void EndedGameWin(float score)
 	{
+		gameStarted = false;
+
+		gameScore = (int)score;
+		Debug.Log ("WIN GAME WITH SCORE: " + gameScore);
+
 		gameAnimation.SetActive (true);
 		gameMechanic.SetActive (false);
 
 		graphic.AnimationState.SetAnimation(0,"exit_game",false);
 		graphic.AnimationState.Complete += PlayNextGame;
+	}
+
+	public void EndedGameLose()
+	{
+		gameStarted = false;
+
+		Debug.Log ("LOST GAME!");
+		gameMechanic.SetActive (false);
+		controller.ShowLose ();
 	}
 
 	void PlayNextGame(Spine.TrackEntry entry)
@@ -61,6 +81,21 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (!gameStarted)
+			return;
 		
+		totalTime += Time.deltaTime;
+
+		//Debug.Log (totalTime + " " + maxTime);
+	}
+
+	public bool hasTimeLeft()
+	{
+		return totalTime < maxTime;
+	}
+
+	public float getTimeProgress()
+	{
+		return totalTime / maxTime;
 	}
 }
