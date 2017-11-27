@@ -1,0 +1,188 @@
+
+game8.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 462, 167
+  size: 64, 162
+  orig: 64, 162
+  offset: 0, 0
+  index: -1
+arm_L_orange
+  rotate: false
+  xy: 1666, 192
+  size: 64, 162
+  orig: 64, 162
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: true
+  xy: 1921, 339
+  size: 58, 78
+  orig: 58, 78
+  offset: 0, 0
+  index: -1
+arm_R1_orange
+  rotate: true
+  xy: 1666, 132
+  size: 58, 78
+  orig: 58, 78
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: false
+  xy: 1732, 243
+  size: 34, 111
+  orig: 50, 111
+  offset: 0, 0
+  index: -1
+arm_R2_orange
+  rotate: true
+  xy: 626, 155
+  size: 34, 111
+  orig: 50, 111
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 462, 260
+  size: 359, 25
+  orig: 359, 25
+  offset: 0, 0
+  index: -1
+body_middle_orange
+  rotate: false
+  xy: 462, 233
+  size: 359, 25
+  orig: 359, 25
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 1420, 356
+  size: 359, 145
+  orig: 359, 145
+  offset: 0, 0
+  index: -1
+body_round_orange
+  rotate: false
+  xy: 2, 11
+  size: 359, 145
+  orig: 359, 145
+  offset: 0, 0
+  index: -1
+broom
+  rotate: true
+  xy: 2, 158
+  size: 127, 458
+  orig: 127, 458
+  offset: 0, 0
+  index: -1
+drop
+  rotate: false
+  xy: 739, 161
+  size: 13, 28
+  orig: 13, 28
+  offset: 0, 0
+  index: -1
+eye_closed
+  rotate: false
+  xy: 1781, 399
+  size: 218, 22
+  orig: 218, 22
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: true
+  xy: 1640, 142
+  size: 212, 24
+  orig: 212, 24
+  offset: 0, 0
+  index: -1
+game1_mouth1
+  rotate: false
+  xy: 766, 200
+  size: 43, 31
+  orig: 43, 31
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: true
+  xy: 2001, 344
+  size: 77, 31
+  orig: 77, 31
+  offset: 0, 0
+  index: -1
+hand
+  rotate: false
+  xy: 1732, 213
+  size: 33, 28
+  orig: 33, 28
+  offset: 0, 0
+  index: -1
+hose
+  rotate: false
+  xy: 2, 287
+  size: 889, 214
+  orig: 889, 214
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 1781, 357
+  size: 40, 138
+  orig: 40, 138
+  offset: 0, 0
+  index: -1
+leg_L_orange
+  rotate: true
+  xy: 626, 191
+  size: 40, 138
+  orig: 40, 138
+  offset: 0, 0
+  index: -1
+mouth_open
+  rotate: false
+  xy: 823, 239
+  size: 66, 46
+  orig: 66, 46
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1781, 423
+  size: 265, 78
+  orig: 265, 78
+  offset: 0, 0
+  index: -1
+song1
+  rotate: true
+  xy: 363, 2
+  size: 53, 90
+  orig: 53, 90
+  offset: 0, 0
+  index: -1
+song2
+  rotate: false
+  xy: 363, 57
+  size: 89, 99
+  orig: 89, 99
+  offset: 0, 0
+  index: -1
+water_hose
+  rotate: false
+  xy: 1420, 138
+  size: 218, 216
+  orig: 218, 216
+  offset: 0, 0
+  index: -1
+water_street
+  rotate: false
+  xy: 893, 187
+  size: 525, 314
+  orig: 525, 314
+  offset: 0, 0
+  index: -1
