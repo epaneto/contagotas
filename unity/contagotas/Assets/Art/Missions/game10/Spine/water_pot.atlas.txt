@@ -1,0 +1,20 @@
+
+water_pot.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+water
+  rotate: true
+  xy: 2, 2
+  size: 104, 678
+  orig: 104, 678
+  offset: 0, 0
+  index: -1
+water_pot
+  rotate: false
+  xy: 2, 108
+  size: 595, 510
+  orig: 595, 510
+  offset: 0, 0
+  index: -1
