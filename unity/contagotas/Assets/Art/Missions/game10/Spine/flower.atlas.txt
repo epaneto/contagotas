@@ -1,0 +1,27 @@
+
+flower.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+flower__down
+  rotate: false
+  xy: 618, 260
+  size: 614, 554
+  orig: 614, 554
+  offset: 0, 0
+  index: -1
+flower_beauty
+  rotate: false
+  xy: 2, 77
+  size: 614, 737
+  orig: 614, 737
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 2, 2
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
