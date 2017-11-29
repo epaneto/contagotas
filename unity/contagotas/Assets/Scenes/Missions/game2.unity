@@ -186,6 +186,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &341221605 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1545703550475392, guid: e942e2704f1f7da40babdae4b24ac03f,
+    type: 2}
+  m_PrefabInternal: {fileID: 341221604}
+--- !u!1 &341221606 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1392330566525026, guid: e942e2704f1f7da40babdae4b24ac03f,
+    type: 2}
+  m_PrefabInternal: {fileID: 341221604}
+--- !u!1 &341221607 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1224545937894534, guid: e942e2704f1f7da40babdae4b24ac03f,
+    type: 2}
+  m_PrefabInternal: {fileID: 341221604}
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,8 +366,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1683097459}
-  - component: {fileID: 1683097458}
   - component: {fileID: 1683097457}
+  - component: {fileID: 1683097458}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -371,9 +386,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMechanic: {fileID: 341221607}
+  gameAnimation: {fileID: 1767866925}
   gameScore: 0
   gameStarted: 0
-  maxTime: 15
+  maxTime: 10
   totalTime: 0
 --- !u!114 &1683097458
 MonoBehaviour:
@@ -386,6 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60220f8ca9954e1187a94edb7f1885c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faucetObject: {fileID: 341221606}
+  handlerObject: {fileID: 341221605}
 --- !u!4 &1683097459
 Transform:
   m_ObjectHideFlags: 0
@@ -519,6 +538,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da2d4d00969a5fe4388156816874aa1e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1767866925 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1248582562743902, guid: da2d4d00969a5fe4388156816874aa1e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767866924}
 --- !u!1 &1839344389
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,7 +120,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 411183921}
-  - component: {fileID: 411183920}
   - component: {fileID: 411183919}
   m_Layer: 0
   m_Name: GameController
@@ -140,18 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMechanic: {fileID: 1593842785}
+  gameAnimation: {fileID: 882847217}
   gameScore: 0
---- !u!114 &411183920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 411183918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65904782fdde94b60a44e7146067d2b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  gameStarted: 0
+  maxTime: 10
+  totalTime: 0
 --- !u!4 &411183921
 Transform:
   m_ObjectHideFlags: 0
@@ -270,6 +263,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224921685399401002, guid: 49604a7d06a308548ae5973c7847018a,
     type: 2}
   m_PrefabInternal: {fileID: 882847215}
+--- !u!1 &882847217 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1142329422072774, guid: 49604a7d06a308548ae5973c7847018a,
+    type: 2}
+  m_PrefabInternal: {fileID: 882847215}
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +351,7 @@ RectTransform:
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0024363834, y: 0.0024363834, z: 0.0024363834}
+  m_LocalScale: {x: 0.004635866, y: 0.004635866, z: 0.004635866}
   m_Children:
   - {fileID: 1701577747}
   - {fileID: 1593842784}
@@ -469,6 +467,11 @@ Prefab:
 --- !u!224 &1593842784 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224645727589436894, guid: 85c1cea18d3552e438dbd6558d02743f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593842783}
+--- !u!1 &1593842785 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1319483588760694, guid: 85c1cea18d3552e438dbd6558d02743f,
     type: 2}
   m_PrefabInternal: {fileID: 1593842783}
 --- !u!1001 &1701577746

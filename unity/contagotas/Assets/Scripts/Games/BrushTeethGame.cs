@@ -9,6 +9,10 @@ public class BrushTeethGame : MonoBehaviour {
 
 	SkeletonGraphic faucet;
 	SkeletonGraphic handler;
+
+	public GameObject faucetObject;
+	public GameObject handlerObject;
+
 	bool isPlaying = true;
 	int maxTurns = 10;
 	int numTurns = 0;
@@ -19,10 +23,7 @@ public class BrushTeethGame : MonoBehaviour {
 	void Start () {
 		mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior> ();
 
-		GameObject faucetObject = GameObject.Find ("faucet");
 		faucet = faucetObject.GetComponent<SkeletonGraphic> ();
-
-		GameObject handlerObject = GameObject.Find ("handler");
 		handler = handlerObject.GetComponent<SkeletonGraphic> ();
 	}
 	
