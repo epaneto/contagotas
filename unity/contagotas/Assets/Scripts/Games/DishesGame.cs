@@ -6,21 +6,18 @@ using Spine;
 using Spine.Unity;
 using Spine.Unity.Modules.AttachmentTools;
 
-public class BathGame : MonoBehaviour {
+public class DishesGame : MonoBehaviour {
 
-	public GameObject sponge;
-	Vector3 spongeInitialPos;
+	public List<GameObject> dishes;
 
 	MiniGameDefaultBehavior mdb;
 	Vector3 lastMouseCoordinate = Vector3.zero;
 	bool isPlaying = true;
-	float dirtAlpha = 0;
+	bool allDishesClean = false;
 
 	// Use this for initialization
 	void Start () {
 		mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior> ();
-
-		spongeInitialPos = sponge.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -31,7 +28,7 @@ public class BathGame : MonoBehaviour {
 		if (!isPlaying)
 			return;
 
-		if (!mdb.hasTimeLeft() && dirtAlpha > 0) {
+		if (!mdb.hasTimeLeft() && !allDishesClean) {
 			isPlaying = false;
 			mdb.EndedGameLose ();
 			return;
@@ -40,10 +37,6 @@ public class BathGame : MonoBehaviour {
 		RaycastHit2D hitInfo = Physics2D.Raycast (new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y), Vector2.zero, 0);
 
 		if (Input.GetMouseButton (0)) {
-
-			Transform newSpongeTransform = sponge.transform;
-			newSpongeTransform.position = hitInfo.point;
-
 
 			Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
 			lastMouseCoordinate = Input.mousePosition;
@@ -57,20 +50,25 @@ public class BathGame : MonoBehaviour {
 					Debug.Log (c.a);
 					if (c.a > 0) {
 						Debug.Log ("lower alpha");
-						c.a -= 0.01f;
-						dirtAlpha = c.a;
+						c.a -= 0.03f;
 						colliderImage.color = c;
 
-						if (dirtAlpha <= 0) {
+						float totalAlpha = 0;
+						for (int i = 0; i < dishes.Count; i++) {
+							GameObject dish = dishes [i];
+							Image dishImage = dish.transform.GetComponent<Image> ();
+							totalAlpha += dishImage.color.a;
+						}
+
+						if (totalAlpha <= 0) {
 							isPlaying = false;
+							allDishesClean = true;
 							EndGame ();
 						}
 					}
 				}
 
 
-			} else {
-				sponge.transform.position = spongeInitialPos;
 			}
 		} 
 	}
