@@ -16,7 +16,6 @@ public class BrushTeethGame : MonoBehaviour {
 	bool isPlaying = true;
 	int maxTurns = 10;
 	int numTurns = 0;
-	float maxScore = 100.0f;
 	MiniGameDefaultBehavior mdb;
 
 	// Use this for initialization
@@ -87,6 +86,6 @@ public class BrushTeethGame : MonoBehaviour {
 	{
 		faucet.AnimationState.Complete -= EndGame;
 
-		mdb.EndedGameWin (maxScore - (maxScore * mdb.getTimeProgress()));
+		mdb.EndedGameWin (mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
 	}
 }

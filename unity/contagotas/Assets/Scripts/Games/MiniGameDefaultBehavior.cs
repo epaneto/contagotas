@@ -16,6 +16,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	public float maxTime = 10.0f;
 	public float totalTime = 0.0f;
+	public float maxScore = 100.0f;
 
 	// Use this for initialization
 	void Start () {
