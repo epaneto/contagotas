@@ -144,7 +144,7 @@ public class SignUpController : MonoBehaviour {
 		string encodedState = StringUtils.RemoverAcentuacao(state).Replace(" ","+");
 		string encodedCity = StringUtils.RemoverAcentuacao(city).Replace(" ","+");
 
-		string finalURL = "http://localhost/contagotas/user/create/" + encodedName + "/" + email + "/" + encodedCity + "/" + encodedState + "/" + facebookId + "/";
+		string finalURL = "http://contagotas.online/services/user/create/" + encodedName + "/" + email + "/" + encodedCity + "/" + encodedState + "/" + facebookId + "/";
 		WWW result = new WWW(finalURL);
 		yield return result;
 
