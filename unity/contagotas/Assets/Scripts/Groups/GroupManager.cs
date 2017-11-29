@@ -31,7 +31,7 @@ public class GroupManager : MonoBehaviour {
 	//My User Info
 	int UserId = 1;
 	GroupData groupInfo;
-	string urlBase = "http://localhost/contagotas/group/";
+	string urlBase = "http://contagotas.online/services/group/";
 
 	[Header("Loading Screen References")]
 	[SerializeField]
@@ -187,10 +187,11 @@ public class GroupManager : MonoBehaviour {
 		temporaryObjsList.Clear ();
 
 		//TODO:APAGAR ESSE CODIGO
+		/*
 		GameObject apagarIsso = Instantiate (SendInvitePrefab, SendInviteGroupParent);
 		temporaryObjsList.Add (apagarIsso);
 		FacebookInvite apagarisso2 = apagarIsso.GetComponent<FacebookInvite> (); 
-		apagarisso2.SetupInviteInfo ("Joao Bergamo", "10155760819433186");
+		apagarisso2.SetupInviteInfo ("Joao Bergamo", "10155760819433186");*/
 		//APAGAR O CODIGO ACIMA
 
 
@@ -335,6 +336,7 @@ public class GroupManager : MonoBehaviour {
 
 	public WWW DoWebRequest(string url)
 	{
+		
 		string finalUrl = urlBase + url;
 		ShowGroup (ScreenType.LOADING);
 		return new WWW(finalUrl);
@@ -413,7 +415,7 @@ public class GroupManager : MonoBehaviour {
 			} else {
 				List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
 				groupInfo = account[0];
-				groupTitle.text = groupInfo.Name;
+				groupTitle.text = groupInfo.Name + " Score = " + groupInfo.Score;
 				ShowGroup (ScreenType.EXISTING_GROUP);	
 			}
 

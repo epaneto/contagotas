@@ -114,6 +114,7 @@ Class Group {
 		$sql = "SELECT contagotas_app.group.group_name, contagotas_app.group.id_group
 				FROM contagotas_app.group
 				INNER JOIN contagotas_app.group_user ON contagotas_app.group.id_group=contagotas_app.group_user.group_id
+				INNER JOIN contagotas_app.group_score ON contagotas_app.group_score.group_id=contagotas_app.group.id_group
 				WHERE contagotas_app.group_user.user_id = '" . $user_id . "'";
 
 		$result = $con->query($sql);
@@ -123,7 +124,7 @@ Class Group {
 			// output data of each row
 		
 			while($row = $result->fetch_assoc()) {
-				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'}";
+				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "','Score':'" . $row["score"] . "'}";
 			}
 		} 
 		$json .= "]";		

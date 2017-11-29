@@ -31,7 +31,7 @@ public class FacebookInvite : MonoBehaviour {
 
 	IEnumerator SendInvite ()
 	{
-		string finalURL = "http://localhost/contagotas/group/invite/create/" + PlayerPrefs.GetInt("user_id") + "/" + userFacebookId + "/";
+		string finalURL = "http://contagotas.online/services/group/invite/create/" + PlayerPrefs.GetInt("user_id") + "/" + userFacebookId + "/";
 		WWW result = new WWW(finalURL);
 		yield return result;
 
