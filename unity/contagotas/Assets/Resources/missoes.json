@@ -1,5 +1,10 @@
 {
   "missoes": [
+  {
+        "title":"Máquina de Lavar",
+        "sceneid": "game5",
+        "hint": "Vitória limpa! Uma máquina usa cerca de 135 litros por lavagem. Use sempre com a capacidade máxima de roupas. Desafie-se em casa."
+    },
     {
         "title":"Louça limpinha, sem desperdício",
         "sceneid": "game4",
