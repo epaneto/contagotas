@@ -235,6 +235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameScore: 0
+  gameStarted: 0
+  maxTime: 10
+  totalTime: 0
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +415,7 @@ Prefab:
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: -17722.338
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}

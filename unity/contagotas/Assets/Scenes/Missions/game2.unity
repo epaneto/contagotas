@@ -126,15 +126,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4211400191727250, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.25002104
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4211400191727250, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 324.80197
+      value: -116
       objectReference: {fileID: 0}
     - target: {fileID: 4211400191727250, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 90.00017
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4211400191727250, guid: e942e2704f1f7da40babdae4b24ac03f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1683097456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95f8f7a5aae3b4d7a9bd2034aa0b50f2, type: 3}
+  m_Script: {fileID: 11500000, guid: d60220f8ca9954e1187a94edb7f1885c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1683097459
@@ -409,17 +409,17 @@ Prefab:
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.078636
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -290
+      value: -680
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: -17722.338
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
@@ -449,12 +449,12 @@ Prefab:
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -8.078637
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -290
+      value: -680
       objectReference: {fileID: 0}
     - target: {fileID: 224336382889306316, guid: da2d4d00969a5fe4388156816874aa1e,
         type: 2}
