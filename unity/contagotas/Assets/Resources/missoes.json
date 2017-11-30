@@ -1,6 +1,11 @@
 {
   "missoes": [
   {
+        "title":"Lavar alimentos",
+        "sceneid": "game6",
+        "hint": "Lavou, ganhou! Coloque de molho alimentos com cloro ou água sanitária de uso geral e poupe cerca de 70 litros de água na sua casa."
+    },
+  {
         "title":"Hora da barba",
         "sceneid": "game1",
         "hint": "Você ganhou! O desafio em casa é não se barbear no chuveiro e poupar cerca de 10 litros. Tire as barbas de molho e entre em ação."
@@ -29,3 +34,6 @@
       
     ]
 }
+
+
+
