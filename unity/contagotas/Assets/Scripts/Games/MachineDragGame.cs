@@ -36,17 +36,17 @@ public class MachineDragGame : MonoBehaviour {
 
 
 		allClothClean = true;
-		for (int i = 0; i < dishes.Count; i++) {
-			
-			DragableObject obj = dishes [i].GetComponent<DragableObject> ();
-			if (obj.isTouchingDestiantion == false) {
-				allClothClean = false;
-				break;
-			}
-		}
+//		for (int i = 0; i < dishes.Count; i++) {
+//			
+//			DragableObject obj = dishes [i].GetComponent<DragableObject> ();
+//			if (obj.isTouchingDestiantion == false) {
+//				allClothClean = false;
+//				break;
+//			}
+//		}
 
-		if (allClothClean)
-			EndGame ();
+//		if (allClothClean)
+//			EndGame ();
 	}
 
 	void EndGame()
