@@ -38,9 +38,14 @@ switch($view){
 		break;
 		
 	case "create":
-		// to handle REST Url /group/create/<group name>/
+		// to handle REST Url /group/create/
 		$groupRestHandler = new GroupRestHandler();
-		$groupRestHandler->createGroup($_GET["group_name"]);
+		
+		$data = $_POST;
+		$json = $data["data"];
+		$json_decoded = json_decode($json);
+
+		$groupRestHandler->createGroup(utf8_decode ($json_decoded->name));
 		break;
 		
 	case "join":
@@ -83,13 +88,11 @@ switch($view){
 		// to handle REST Url /user/create/<user name>/<email>/<city>/<state>/<facebook_id>/
 		$userRestHandler = new UserRestHandler();
 		
-		$name = $_GET["name"];
-		$email = $_GET["email"];
-		$city = $_GET["city"];
-		$state = $_GET["state"];
-		$facebookId = $_GET["facebook_id"];
-		
-		$userRestHandler->createUser($name,$email,$city, $state, $facebookId);
+		$data = $_POST;
+		$json = $data["data"];
+		$json_decoded = json_decode($json);
+
+		$userRestHandler->createUser(utf8_decode ($json_decoded->name),utf8_decode ($json_decoded->email),utf8_decode ($json_decoded->city), utf8_decode ($json_decoded->state), utf8_decode ($json_decoded->facebookId));
 		break;
 	case "invite_create":
 		// to handle REST Url /group/invite/create/<user inviter id>/<user invite name>/

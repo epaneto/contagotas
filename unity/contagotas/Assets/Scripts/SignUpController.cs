@@ -5,6 +5,7 @@ using UnityEngine;
 using DG.Tweening;
 using Newtonsoft.Json.Linq;
 using UnityEngine.UI;
+using System.Text;
 
 public class SignUpController : MonoBehaviour {
 
@@ -139,13 +140,41 @@ public class SignUpController : MonoBehaviour {
 
 	IEnumerator DoRegister (string playerName, string email, string city, string state, string facebookId)
 	{
-		
-		string encodedName = StringUtils.RemoverAcentuacao(playerName).Replace (" ", "+");
-		string encodedState = StringUtils.RemoverAcentuacao(state).Replace(" ","+");
-		string encodedCity = StringUtils.RemoverAcentuacao(city).Replace(" ","+");
 
-		string finalURL = "http://contagotas.online/services/user/create/" + encodedName + "/" + email + "/" + encodedCity + "/" + encodedState + "/" + facebookId + "/";
-		WWW result = new WWW(finalURL);
+		Hashtable headers = new Hashtable ();
+		headers.Add ("User-Agent", "app-contagotas");
+
+		StringBuilder sb = new StringBuilder ();
+		sb.Append ("data={");
+		sb.Append ("\"name\"");
+		sb.Append (":\"");
+		sb.Append (playerName);
+		sb.Append ("\"");
+		sb.Append (",");
+		sb.Append ("\"email\"");
+		sb.Append (":\"");
+		sb.Append (email);
+		sb.Append ("\"");
+		sb.Append (",");
+		sb.Append ("\"city\"");
+		sb.Append (":\"");
+		sb.Append (city);
+		sb.Append ("\"");
+		sb.Append (",");
+		sb.Append ("\"state\"");
+		sb.Append (":\"");
+		sb.Append (state);
+		sb.Append ("\"");
+		sb.Append (",");
+		sb.Append ("\"facebookId\"");
+		sb.Append (":\"");
+		sb.Append (facebookId);
+		sb.Append ("\"");
+		sb.Append ("}");
+
+		string finalURL = "http://contagotas.online/services/user/create/";
+
+		WWW result = new UnityEngine.WWW(finalURL, Encoding.UTF8.GetBytes(sb.ToString()), headers);
 		yield return result;
 
 		if (result.text.ToUpper().Contains("ERROR") || result.text.ToUpper().Contains("TIMEOUT")) {

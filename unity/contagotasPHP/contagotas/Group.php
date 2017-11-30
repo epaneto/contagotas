@@ -111,7 +111,7 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");
 		
-		$sql = "SELECT contagotas_app.group.group_name, contagotas_app.group.id_group
+		$sql = "SELECT contagotas_app.group.group_name, contagotas_app.group.id_group, contagotas_app.group_score.score
 				FROM contagotas_app.group
 				INNER JOIN contagotas_app.group_user ON contagotas_app.group.id_group=contagotas_app.group_user.group_id
 				INNER JOIN contagotas_app.group_score ON contagotas_app.group_score.group_id=contagotas_app.group.id_group
@@ -172,8 +172,6 @@ Class Group {
 		  die('Error selecting group ID: ' . mysqli_error($con));
 		  }
 		
-		
-
 		while($row = $result->fetch_assoc()) {
 			$group_id = $row["id_group"];
 		}
