@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
+using Spine;
+using Spine.Unity;
+using Spine.Unity.Modules.AttachmentTools;
 
 public class MinigamesController : MonoBehaviour {
 
@@ -15,6 +18,7 @@ public class MinigamesController : MonoBehaviour {
 	JArray Missions;
 	GameObject endGame;
 	GameObject loseGame;
+	GameObject loseGameSadChar;
 	GameObject scoreTxt;
 	GameObject continueButton;
 	GameObject continueLoseButton;
@@ -28,6 +32,7 @@ public class MinigamesController : MonoBehaviour {
 		continueLoseButton = GameObject.Find ("bt_continuar_lose");
 		hintTxt = GameObject.Find ("hint_txt");
 		loseGame = GameObject.Find ("GameLose");
+		loseGameSadChar = GameObject.Find ("character_sad");
 
 		///load mission json
 		TextAsset t = (TextAsset) Resources.Load("missoes", typeof(TextAsset));
@@ -48,7 +53,15 @@ public class MinigamesController : MonoBehaviour {
 
 	public void ShowLose()
 	{
+		///REMOVE ACTIVE MINIGAME FROM SCREEN
+		JToken sceneName = Missions[minigameIndex]["sceneid"];
+		SceneManager.UnloadSceneAsync (sceneName.ToString());
+
 		loseGame.SetActive (true);
+
+		SkeletonGraphic graphic = loseGameSadChar.GetComponent<SkeletonGraphic> ();
+		graphic.AnimationState.SetAnimation(0,"sad",false);
+
 		continueLoseButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
 	}
 
@@ -81,12 +94,13 @@ public class MinigamesController : MonoBehaviour {
 
 		if (minigameIndex + 1  < Missions.Count) {
 			//Debug.Log ("play next minigame " + minigameIndex);
+
 			minigameIndex++;
+
 
 			JToken sceneName = Missions[minigameIndex]["sceneid"];
 			SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
 
-			endGame.SetActive (false);
 		} else {
 			//Debug.Log ("that was the last minigame, show map");
 			SceneController.sceneController.FadeAndLoadScene ("Map", true);

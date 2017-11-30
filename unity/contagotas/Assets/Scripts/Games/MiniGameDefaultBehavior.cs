@@ -27,7 +27,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		gameMechanic.SetActive (false);
 
 		//Debug.Log ("play the intro animation of " + "enter_game" + (controller.minigameIndex + 1));
-
+		gameAnimation.SetActive (true);
 		graphic.AnimationState.SetAnimation(0,"enter_game",false);
 		graphic.AnimationState.Complete += EndedIntro;
 

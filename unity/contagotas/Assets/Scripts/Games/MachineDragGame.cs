@@ -11,7 +11,6 @@ public class MachineDragGame : MonoBehaviour {
 	public List<GameObject> dishes;
 
 	MiniGameDefaultBehavior mdb;
-	Vector3 lastMouseCoordinate = Vector3.zero;
 	bool isPlaying = true;
 	bool allClothClean = false;
 
@@ -36,17 +35,17 @@ public class MachineDragGame : MonoBehaviour {
 
 
 		allClothClean = true;
-//		for (int i = 0; i < dishes.Count; i++) {
-//			
-//			DragableObject obj = dishes [i].GetComponent<DragableObject> ();
-//			if (obj.isTouchingDestiantion == false) {
-//				allClothClean = false;
-//				break;
-//			}
-//		}
+		for (int i = 0; i < dishes.Count; i++) {
+			
+			DragableObject obj = dishes [i].GetComponent<DragableObject> ();
+			if (obj.isAtDestination == false) {
+				allClothClean = false;
+				break;
+			}
+		}
 
-//		if (allClothClean)
-//			EndGame ();
+		if (allClothClean)
+			EndGame ();
 	}
 
 	void EndGame()

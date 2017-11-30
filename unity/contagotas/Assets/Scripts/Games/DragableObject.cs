@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class DragableObject : MonoBehaviour {
 
 	public GameObject destinationObject;
-	//public bool isTouchingDestination = false;
+	public bool isAtDestination = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +28,17 @@ public class DragableObject : MonoBehaviour {
 		transform.position = Vector2.Lerp(transform.position, mousePosition, 1.0f);
 	}
 
-	public void checkCollision()
-	{
-		if (destinationObject.GetComponent<Image> ().sprite.bounds.Intersects (GetComponent<Image> ().sprite.bounds)) {
-			Debug.Log ("ta colando em mim mano");
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("DragDestination")) {
+			Debug.Log ("Entrando na maquina");
+			isAtDestination = true;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.CompareTag ("DragDestination")) {
+			isAtDestination = false;
+			Debug.Log ("Saindo de dentro da maquina");
 		}
 	}
 		
