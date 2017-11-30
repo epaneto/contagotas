@@ -34,5 +34,15 @@ public class DragableObject : MonoBehaviour {
 			Debug.Log ("ta colando em mim mano");
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if(other.CompareTag("Finish"))
+			Debug.Log ("Entrando na maquina");
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		if(other.CompareTag("Finish"))
+			Debug.Log ("Saindo de dentro da maquina");
+	}
 		
 }
