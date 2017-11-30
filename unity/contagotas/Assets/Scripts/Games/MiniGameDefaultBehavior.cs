@@ -7,8 +7,8 @@ using Spine.Unity.Modules.AttachmentTools;
 
 public class MiniGameDefaultBehavior : MonoBehaviour {
 
-	GameObject gameMechanic;
-	GameObject gameAnimation;
+	public GameObject gameMechanic;
+	public GameObject gameAnimation;
 	SkeletonGraphic graphic;
 	MinigamesController controller;
 	public int gameScore;
@@ -16,19 +16,18 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	public float maxTime = 10.0f;
 	public float totalTime = 0.0f;
+	public float maxScore = 100.0f;
 
 	// Use this for initialization
 	void Start () {
 		controller = GameObject.FindObjectOfType<MinigamesController> ();
 
-		gameAnimation = GameObject.Find ("game_animation");
 		graphic = gameAnimation.GetComponent<SkeletonGraphic> ();
 
-		gameMechanic = GameObject.Find ("game_mechanic");
 		gameMechanic.SetActive (false);
 
 		//Debug.Log ("play the intro animation of " + "enter_game" + (controller.minigameIndex + 1));
-
+		gameAnimation.SetActive (true);
 		graphic.AnimationState.SetAnimation(0,"enter_game",false);
 		graphic.AnimationState.Complete += EndedIntro;
 

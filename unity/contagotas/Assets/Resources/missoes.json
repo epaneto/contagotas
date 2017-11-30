@@ -1,24 +1,40 @@
 {
   "missoes": [
-    {
+  {
+        "title":"Sem óleo pelo ralo",
+        "sceneid": "game7",
+        "hint": "Você ganhou! 1 litro de óleo pode contaminar até 1 milhão de litros de água. Na sua casa, armazene em garrafas PET e descarte corretamente."
+    },
+  {
+        "title":"Lavar alimentos",
+        "sceneid": "game6",
+        "hint": "Lavou, ganhou! Coloque de molho alimentos com cloro ou água sanitária de uso geral e poupe cerca de 70 litros de água na sua casa."
+    },
+  {
         "title":"Hora da barba",
         "sceneid": "game1",
         "hint": "Você ganhou! O desafio em casa é não se barbear no chuveiro e poupar cerca de 10 litros. Tire as barbas de molho e entre em ação."
     },
+  {
+        "title":"Máquina de Lavar",
+        "sceneid": "game5",
+        "hint": "Vitória limpa! Uma máquina usa cerca de 135 litros por lavagem. Use sempre com a capacidade máxima de roupas. Desafie-se em casa."
+    },
     {
-        "title":"Escova, escova! Escovação sem desperdício",
-        "sceneid": "game2",
-        "hint": "Pode sorrir! Agora os dentistas e todos recomendam o desafio na sua escovação. Feche a torneira, use um copo e poupe até 11 litros."
+        "title":"Louça limpinha, sem desperdício",
+        "sceneid": "game4",
+        "hint": "Yeah! Agora enfrente a pilha de louça de casa evitando o desperdício. Enxágue tudo na pia cheia e poupe até 15 litros por minuto."
     },
     {
         "title":"Banho, o vilão",
         "sceneid": "game3",
         "hint": "Vilão derrotado! Um minuto a menos no chuveiro pode economizar até 23 litros. Acabe com o banho demorado também na sua casa."
     },
+    
     {
-        "title":"Louça limpinha, sem desperdício",
-        "sceneid": "game4",
-        "hint": "Yeah! Agora enfrente a pilha de louça de casa evitando o desperdício. Enxágue tudo na pia cheia e poupe até 15 litros por minuto."
+        "title":"Escova, escova! Escovação sem desperdício",
+        "sceneid": "game2",
+        "hint": "Pode sorrir! Agora os dentistas e todos recomendam o desafio na sua escovação. Feche a torneira, use um copo e poupe até 11 litros."
     }
       
     ]

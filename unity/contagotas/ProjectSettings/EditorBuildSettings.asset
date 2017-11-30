@@ -65,3 +65,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Missions/game4.unity
     guid: df118e8d71dd2c241b863d7523ad917c
+  - enabled: 1
+    path: Assets/Scenes/Missions/game5.unity
+    guid: 81d6c25f16454f941830bed1246c7ffa
+  - enabled: 1
+    path: Assets/Scenes/Missions/game6.unity
+    guid: 8a22b5cb02e0a0542b86c20d53c72ded
+  - enabled: 1
+    path: Assets/Scenes/Missions/game7.unity
+    guid: 5a530a26be9c7ec4eaa319481c94b1dd
