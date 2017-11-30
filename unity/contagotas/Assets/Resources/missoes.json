@@ -1,6 +1,11 @@
 {
   "missoes": [
   {
+        "title":"Sem óleo pelo ralo",
+        "sceneid": "game7",
+        "hint": "Você ganhou! 1 litro de óleo pode contaminar até 1 milhão de litros de água. Na sua casa, armazene em garrafas PET e descarte corretamente."
+    },
+  {
         "title":"Lavar alimentos",
         "sceneid": "game6",
         "hint": "Lavou, ganhou! Coloque de molho alimentos com cloro ou água sanitária de uso geral e poupe cerca de 70 litros de água na sua casa."
@@ -34,6 +39,3 @@
       
     ]
 }
-
-
-
