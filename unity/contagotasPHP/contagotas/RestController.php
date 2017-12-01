@@ -91,7 +91,7 @@ switch($view){
 		$data = $_POST;
 		$json = $data["data"];
 		$json_decoded = json_decode($json);
-
+		 
 		$userRestHandler->createUser(utf8_decode ($json_decoded->name),utf8_decode ($json_decoded->email),utf8_decode ($json_decoded->city), utf8_decode ($json_decoded->state), utf8_decode ($json_decoded->facebookId));
 		break;
 	case "invite_create":

@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Facebook.Unity;
 using Facebook.MiniJSON;
 using System.Linq;
+using System.Text;
 
 public enum ScreenType 
 {
@@ -31,7 +32,8 @@ public class GroupManager : MonoBehaviour {
 	//My User Info
 	int UserId = 1;
 	GroupData groupInfo;
-	string urlBase = "http://contagotas.online/services/group/";
+	string urlBase = "http://www.contagotas.online/services/group/";
+	//string urlBase = "http://localhost/contagotas/group/";
 
 	[Header("Loading Screen References")]
 	[SerializeField]
@@ -334,12 +336,15 @@ public class GroupManager : MonoBehaviour {
 		StartCoroutine(DeclineInvite (inviteID));
 	}
 
-	public WWW DoWebRequest(string url)
+	public WWW DoWebRequest(string url, string data = "data=")
 	{
-		
+		Hashtable headers = new Hashtable ();
+		headers.Add ("User-Agent", "app-contagotas");
+		headers.Add ("charset", "utf-8");
+
 		string finalUrl = urlBase + url;
 		ShowGroup (ScreenType.LOADING);
-		return new WWW(finalUrl);
+		return new WWW(finalUrl, Encoding.UTF8.GetBytes(data), headers);
 	}
 
 	IEnumerator AcceptInvite (int inviteId)
@@ -410,7 +415,7 @@ public class GroupManager : MonoBehaviour {
 			Debug.Log ("url result = " + result.text);
 
 			if (result.text.ToUpper ().Contains ("ERROR")) {
-				ShowErrorScreen ("error leaving group:" + result.text);
+				ShowErrorScreen ("error checking group:" + result.text);
 				yield break;
 			} else {
 				List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
@@ -427,8 +432,16 @@ public class GroupManager : MonoBehaviour {
 
 	IEnumerator CreateGroup(string groupName)
 	{
+		StringBuilder sb = new StringBuilder ();
+		sb.Append ("data={");
+		sb.Append ("\"name\"");
+		sb.Append (":\"");
+		sb.Append (groupName);
+		sb.Append ("\"");
+		sb.Append ("}");
+
 		WWW result;
-		yield return result = DoWebRequest("create/" + groupName + "/");
+		yield return result = DoWebRequest("create/",sb.ToString());
 		Debug.Log ("url result = " + result.text);
 
 		if (result.text.ToUpper().Contains ("ERROR")) 

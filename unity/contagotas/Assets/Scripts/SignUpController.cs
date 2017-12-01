@@ -143,6 +143,7 @@ public class SignUpController : MonoBehaviour {
 
 		Hashtable headers = new Hashtable ();
 		headers.Add ("User-Agent", "app-contagotas");
+		headers.Add ("charset", "utf-8");
 
 		StringBuilder sb = new StringBuilder ();
 		sb.Append ("data={");
@@ -172,7 +173,7 @@ public class SignUpController : MonoBehaviour {
 		sb.Append ("\"");
 		sb.Append ("}");
 
-		string finalURL = "http://contagotas.online/services/user/create/";
+		string finalURL = "http://www.contagotas.online/services/user/create/";
 
 		WWW result = new UnityEngine.WWW(finalURL, Encoding.UTF8.GetBytes(sb.ToString()), headers);
 		yield return result;

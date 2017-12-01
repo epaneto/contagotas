@@ -139,7 +139,7 @@ Class Group {
 	}	
 	
 	public function createGroup($name){
-
+	
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
 		
 		if (!$con)
