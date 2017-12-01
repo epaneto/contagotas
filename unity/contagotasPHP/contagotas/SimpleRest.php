@@ -13,6 +13,7 @@ class SimpleRest {
 		
 		header($this->httpVersion. " ". $statusCode ." ". $statusMessage);		
 		header("Content-Type:". $contentType);
+		header('Content-Type: charset=utf-8');
 	}
 	
 	public function getHttpStatusMessage($statusCode){
