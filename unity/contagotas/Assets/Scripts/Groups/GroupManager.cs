@@ -363,7 +363,6 @@ public class GroupManager : MonoBehaviour {
 	{
 		Hashtable headers = new Hashtable ();
 		headers.Add ("User-Agent", "app-contagotas");
-		//headers.Add ("charset", "utf-8");
 
 		string finalUrl = urlBase + url;
 		ShowGroup (ScreenType.LOADING);

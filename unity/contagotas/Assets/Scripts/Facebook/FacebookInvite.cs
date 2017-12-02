@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text;
 
 public class FacebookInvite : MonoBehaviour {
 
@@ -31,8 +32,11 @@ public class FacebookInvite : MonoBehaviour {
 
 	IEnumerator SendInvite ()
 	{
+		Hashtable headers = new Hashtable ();
+		headers.Add ("User-Agent", "app-contagotas");
+
 		string finalURL = "http://contagotas.online/services/group/invite/create/" + PlayerPrefs.GetInt("user_id") + "/" + userFacebookId + "/";
-		WWW result = new WWW(finalURL);
+		WWW result = new WWW(finalURL, Encoding.UTF8.GetBytes("data="), headers);
 		yield return result;
 
 		if (result.text.ToUpper().Contains("ERROR") || result.text.ToUpper().Contains("TIMEOUT")) {
