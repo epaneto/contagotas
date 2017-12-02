@@ -140,10 +140,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMechanic: {fileID: 0}
+  gameAnimation: {fileID: 0}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
   totalTime: 0
+  maxScore: 100
 --- !u!114 &411183920
 MonoBehaviour:
   m_ObjectHideFlags: 0
