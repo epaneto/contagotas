@@ -1,0 +1,188 @@
+
+game11.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+alcool_bottle
+  rotate: false
+  xy: 1392, 641
+  size: 90, 196
+  orig: 90, 196
+  offset: 0, 0
+  index: -1
+arm_L
+  rotate: true
+  xy: 1860, 793
+  size: 64, 162
+  orig: 64, 162
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: false
+  xy: 388, 398
+  size: 58, 78
+  orig: 58, 78
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: true
+  xy: 485, 513
+  size: 34, 111
+  orig: 50, 111
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 384, 593
+  size: 359, 25
+  orig: 359, 25
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 2, 2
+  size: 359, 145
+  orig: 359, 145
+  offset: 0, 0
+  index: -1
+eye_closed
+  rotate: true
+  xy: 364, 369
+  size: 218, 22
+  orig: 218, 22
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 1484, 699
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: true
+  xy: 364, 155
+  size: 212, 24
+  orig: 212, 24
+  offset: 0, 0
+  index: -1
+game1_mouth1
+  rotate: false
+  xy: 632, 560
+  size: 43, 31
+  orig: 43, 31
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: true
+  xy: 1323, 343
+  size: 77, 31
+  orig: 77, 31
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 485, 549
+  size: 42, 145
+  orig: 42, 145
+  offset: 0, 0
+  index: -1
+mouth_open
+  rotate: false
+  xy: 1549, 726
+  size: 66, 46
+  orig: 66, 46
+  offset: 0, 0
+  index: -1
+mouth_open_round
+  rotate: true
+  xy: 485, 481
+  size: 30, 34
+  orig: 30, 34
+  offset: 0, 0
+  index: -1
+portrait_1
+  rotate: false
+  xy: 2, 149
+  size: 360, 438
+  orig: 360, 438
+  offset: 0, 0
+  index: -1
+portrait_2
+  rotate: false
+  xy: 2, 589
+  size: 380, 419
+  orig: 380, 419
+  offset: 0, 0
+  index: -1
+portrait_3
+  rotate: false
+  xy: 384, 620
+  size: 360, 388
+  orig: 360, 388
+  offset: 0, 0
+  index: -1
+portrait_dust1
+  rotate: false
+  xy: 746, 669
+  size: 308, 339
+  orig: 308, 339
+  offset: 0, 0
+  index: -1
+portrait_dust2
+  rotate: false
+  xy: 1056, 613
+  size: 334, 224
+  orig: 334, 224
+  offset: 0, 0
+  index: -1
+portrait_dust3
+  rotate: false
+  xy: 746, 379
+  size: 308, 288
+  orig: 308, 288
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1056, 342
+  size: 265, 78
+  orig: 265, 78
+  offset: 0, 0
+  index: -1
+spiderweb
+  rotate: false
+  xy: 1860, 859
+  size: 177, 149
+  orig: 177, 149
+  offset: 0, 0
+  index: -1
+tissue
+  rotate: false
+  xy: 388, 478
+  size: 95, 113
+  orig: 95, 113
+  offset: 0, 0
+  index: -1
+wall_dust1
+  rotate: true
+  xy: 1056, 422
+  size: 189, 311
+  orig: 189, 311
+  offset: 0, 0
+  index: -1
+wall_dust2
+  rotate: false
+  xy: 1056, 839
+  size: 444, 169
+  orig: 444, 169
+  offset: 0, 0
+  index: -1
+wall_dust3
+  rotate: true
+  xy: 1502, 774
+  size: 234, 356
+  orig: 234, 356
+  offset: 0, 0
+  index: -1
