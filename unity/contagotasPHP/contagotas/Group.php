@@ -138,7 +138,7 @@ Class Group {
 		return $json;
 	}	
 	
-	public function createGroup($name){
+	public function createGroup($name, $password){
 	
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
 		
@@ -150,9 +150,9 @@ Class Group {
 		mysqli_select_db($con,"contagotas_app");		 
 		 
 		$sql="INSERT INTO `contagotas_app`.`group`
-			(`group_name`)
+			(`group_name`,`password`)
 			VALUES
-			('" . $name . "');";
+			('" . $name . "', ENCRYPT('" . $password . "', 'contagotas-app-secure-key'));";
 		
 		$result = mysqli_query($con,$sql);
 		
@@ -231,6 +231,49 @@ Class Group {
 		$GroupClass = new Group();
 		return $GroupClass->getGroup($group);		
 	}
+	
+	public function joinGroupWithPassword($group,$user,$password){
+
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");		 
+		
+		
+		$sql= "SELECT * FROM contagotas_app.group where contagotas_app.group.id_group = '" . $group ."' AND password = ENCRYPT('" . $password . "', 'contagotas-app-secure-key');";
+
+		$result = mysqli_query($con,$sql);
+		
+		if (!$result)
+		{
+		  die('Error: ' . mysqli_error($con));
+		}
+			
+		if( $result->num_rows == 0 )
+		{
+			return "wrong password";
+		}
+		
+		$sql="INSERT INTO `contagotas_app`.`group_user`
+		(`user_id`,`group_id`)	
+		VALUES 	('" . $user . "','" . $group . "');";
+		 
+		$result = $con->query($sql);
+
+		if (!$result)
+		{
+			die('Error: ' . mysqli_error($con));
+		}
+		 
+		mysqli_close($con);
+		$GroupClass = new Group();
+		return $GroupClass->getGroup($group);		
+	}
+	
 	
 	public function LeaveGroup($user){
 

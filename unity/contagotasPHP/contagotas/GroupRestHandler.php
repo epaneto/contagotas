@@ -42,10 +42,10 @@ class GroupRestHandler extends SimpleRest {
 	}
 	
 	
-	public function createGroup($group_name) {
+	public function createGroup($group_name, $password) {
 
 		$group = new Group();
-		$rawData = $group->createGroup($group_name);
+		$rawData = $group->createGroup($group_name, $password);
 
 		$response = new Response();
 		$response->send($rawData);
@@ -82,6 +82,16 @@ class GroupRestHandler extends SimpleRest {
 
 		$group = new Group();
 		$rawData = $group->joinGroup($group_id,$user_id);
+		
+		$response = new Response();
+		$response->send($rawData);
+	
+	}
+	
+	public function joinGroupWithPassword($group_id,$user_id, $password) {
+
+		$group = new Group();
+		$rawData = $group->joinGroupWithPassword($group_id,$user_id,$password);
 		
 		$response = new Response();
 		$response->send($rawData);

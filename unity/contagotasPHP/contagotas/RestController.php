@@ -45,13 +45,24 @@ switch($view){
 		$json = $data["data"];
 		$json_decoded = json_decode($json);
 
-		$groupRestHandler->createGroup(utf8_decode ($json_decoded->name));
+		$groupRestHandler->createGroup(utf8_decode ($json_decoded->name), utf8_decode($json_decoded->password));
 		break;
 		
 	case "join":
 		// to handle REST Url /group/join/<group name>/<user_id>/
 		$groupRestHandler = new GroupRestHandler();
 		$groupRestHandler->joinGroup($_GET["group"],$_GET["user"]);
+		break;
+		
+	case "join_with_password":
+		// to handle REST Url /group/join/
+		$groupRestHandler = new GroupRestHandler();
+		
+		$data = $_POST;
+		$json = $data["data"];
+		$json_decoded = json_decode($json);
+		
+		$groupRestHandler->joinGroupWithPassword(utf8_decode ($json_decoded->groupid), utf8_decode($json_decoded->userid), utf8_decode($json_decoded->password));
 		break;
 		
 	case "hasGroup":

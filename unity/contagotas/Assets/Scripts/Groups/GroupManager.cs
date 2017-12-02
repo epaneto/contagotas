@@ -16,6 +16,7 @@ public enum ScreenType
 	NEW_GROUP,
 	CREATE_GROUP,
 	JOIN_GROUP,
+	CONFIRM_JOIN_GROUP,
 	RANKING_GROUP,
 	ERROR,
 	RECEIVE_INVITES,
@@ -63,6 +64,9 @@ public class GroupManager : MonoBehaviour {
 	[SerializeField]
 	InputField createInput;
 
+	[SerializeField]
+	InputField createPasswordInput;
+
 	[Header("Join Screen References")]
 	[SerializeField]
 	GameObject JoinGroupGameObjects;
@@ -73,6 +77,16 @@ public class GroupManager : MonoBehaviour {
 	[SerializeField]
 	Transform suggestedParent;
 	private GameObject suggestedResultObj;
+
+	[Header("Confirm Join Screen References")]
+	[SerializeField]
+	GameObject ConfirmJoinGroupGameObjects;
+	[SerializeField]
+	InputField ConfirmJoinPasswordInput;
+	[SerializeField]
+	Text tryingToJoinGroupName;
+	[SerializeField]
+	Text joinConfirmFeedback;
 
 	[Header("Ranking Screen References")]
 	[SerializeField]
@@ -107,7 +121,10 @@ public class GroupManager : MonoBehaviour {
 
 	public void CreateAndJoinGroup()
 	{
-		StartCoroutine (CreateGroup(createInput.text));
+		if (string.IsNullOrEmpty (createInput.text) || string.IsNullOrEmpty (createPasswordInput.text))
+			return;
+		
+		StartCoroutine (CreateGroup(createInput.text,createPasswordInput.text));
 	}
 
 	public void LeaveGroup()
@@ -128,6 +145,7 @@ public class GroupManager : MonoBehaviour {
 		NewGroupGameObjects.SetActive (groupToShow == ScreenType.NEW_GROUP);
 		CreateGroupGameObjects.SetActive(groupToShow == ScreenType.CREATE_GROUP);
 		JoinGroupGameObjects.SetActive(groupToShow == ScreenType.JOIN_GROUP);
+		ConfirmJoinGroupGameObjects.SetActive(groupToShow == ScreenType.CONFIRM_JOIN_GROUP);
 		ErrorGroupGameObjects.SetActive(groupToShow == ScreenType.ERROR);
 		RankingGroupGameObjects.SetActive (groupToShow == ScreenType.RANKING_GROUP);
 		InviteGroupGameObjects.SetActive (groupToShow == ScreenType.RECEIVE_INVITES);
@@ -167,6 +185,14 @@ public class GroupManager : MonoBehaviour {
 	{
 		ShowGroup (ScreenType.LOADING);
 		LoadFriendsToInvite();
+	}
+
+
+	int temporaryGroupId;
+	public void ShowConfirmJoinGroupInviteScreen(int groupId)
+	{
+		ShowGroup (ScreenType.CONFIRM_JOIN_GROUP);
+		temporaryGroupId = groupId;
 	}
 
 	public void LoadFriendsToInvite()
@@ -274,7 +300,7 @@ public class GroupManager : MonoBehaviour {
 
 		suggestedResultObj = Instantiate (GroupObjectPrefabs, searchResultParent);
 		GroupInfo groupInfoScript = suggestedResultObj.GetComponent<GroupInfo>(); 
-		groupInfoScript.joinGroupClicked += HandleJoinClick;
+		groupInfoScript.joinGroupClicked += HandleJoinClickWithPassword;
 		groupInfoScript.SetupGroupInfo (foundGroups[0].Name, foundGroups[0].Score, foundGroups[0].Id, false);
 
 	}
@@ -309,7 +335,7 @@ public class GroupManager : MonoBehaviour {
 				GameObject item = Instantiate (GroupObjectPrefabs, suggestedParent);
 				temporaryObjsList.Add (item);
 				GroupInfo groupInfoScript = item.GetComponent<GroupInfo>(); 
-				groupInfoScript.joinGroupClicked += HandleJoinClick;
+				groupInfoScript.joinGroupClicked += HandleJoinClickWithPassword;
 				groupInfoScript.SetupGroupInfo (group.Name, group.Score, group.Id, false);
 			}
 
@@ -317,10 +343,10 @@ public class GroupManager : MonoBehaviour {
 		}
 	}
 
-	void HandleJoinClick(int groupId)
+	void HandleJoinClickWithPassword(int groupId, string groupName)
 	{
-		ShowGroup (ScreenType.LOADING);
-		StartCoroutine(Join (groupId));
+		tryingToJoinGroupName.text = groupName;
+		ShowConfirmJoinGroupInviteScreen (groupId);
 	}
 
 	void HandleAcceptInvite(int inviteID)
@@ -433,13 +459,18 @@ public class GroupManager : MonoBehaviour {
 		}
 	}
 
-	IEnumerator CreateGroup(string groupName)
+	IEnumerator CreateGroup(string groupName, string password)
 	{
 		StringBuilder sb = new StringBuilder ();
 		sb.Append ("data={");
 		sb.Append ("\"name\"");
 		sb.Append (":\"");
 		sb.Append (groupName);
+		sb.Append ("\"");
+		sb.Append (",");
+		sb.Append ("\"password\"");
+		sb.Append (":\"");
+		sb.Append (password);
 		sb.Append ("\"");
 		sb.Append ("}");
 
@@ -478,6 +509,58 @@ public class GroupManager : MonoBehaviour {
 			groupInfo = account[0];
 			groupTitle.text = groupInfo.Name;
 			ShowGroup (ScreenType.EXISTING_GROUP);	
+		}
+	}
+
+	public void ClickedJoinWithPassword()
+	{
+		joinConfirmFeedback.text = "";
+		StartCoroutine(JoinWithPassword (temporaryGroupId, ConfirmJoinPasswordInput.text));
+	}
+
+	IEnumerator JoinWithPassword(int groupID, string password)
+	{
+		StringBuilder sb = new StringBuilder ();
+		sb.Append ("data={");
+		sb.Append ("\"groupid\"");
+		sb.Append (":\"");
+		sb.Append (groupID);
+		sb.Append ("\"");
+		sb.Append (",");
+		sb.Append ("\"userid\"");
+		sb.Append (":\"");
+		sb.Append (UserId);
+		sb.Append ("\"");
+		sb.Append (",");
+		sb.Append ("\"password\"");
+		sb.Append (":\"");
+		sb.Append (password);
+		sb.Append ("\"");
+		sb.Append ("}");
+
+		WWW result;
+		yield return result = DoWebRequest("join/",sb.ToString());
+
+		Debug.Log ("url result = " + result.text);
+
+		if (result.text.ToUpper().Contains("ERROR") || result.text.ToUpper().Contains("TIMEOUT")) {
+			ShowErrorScreen ("Error joining group ->" + result.text);
+		} else {
+			string data = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+			if (data == "wrong password") {
+				ConfirmJoinPasswordInput.text = "";
+				joinConfirmFeedback.text = "WRONG PASSWORD";
+				ShowGroup (ScreenType.CONFIRM_JOIN_GROUP);
+				Debug.Log ("Wrong Password");
+			}
+			else
+			{
+				List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(data);
+				groupInfo = account[0];
+				groupTitle.text = groupInfo.Name;
+				ShowGroup (ScreenType.EXISTING_GROUP);	
+			}
 		}
 	}
 

@@ -13,6 +13,7 @@ RewriteRule ^group/invite/deny/([0-9]+)/$   RestController.php?view=invite_deny&
 RewriteRule ^group/create/$  RestController.php?view=create [nc,qsa]
 RewriteRule ^group/hasGroup/([0-9]+)/$  RestController.php?view=hasGroup&user=$1 [nc,qsa]
 RewriteRule ^group/join/([0-9]+)/([0-9]+)/$  RestController.php?view=join&group=$1&user=$2 [nc,qsa]
+RewriteRule ^group/join/$  RestController.php?view=join_with_password [nc,qsa]
 RewriteRule ^group/leave/([A-Za-z0-9]+)/$  RestController.php?view=leave&user=$1 [nc,qsa]
 RewriteRule ^group/score/get/([0-9]+)/$  RestController.php?view=score_get&group_id=$1 [nc,qsa]
 RewriteRule ^group/score/top/$  RestController.php?view=score_top [nc,qsa]

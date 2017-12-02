@@ -16,7 +16,7 @@ public class GroupInfo : MonoBehaviour {
 
 	private int groupID;
 
-	public System.Action<int> joinGroupClicked = new System.Action<int>(delegate(int id) {});
+	public System.Action<int,string> joinGroupClicked = new System.Action<int,string>(delegate(int id, string groupName) {});
 
 	public void SetupGroupInfo(string groupName, int score, int groupID, bool hideJoinButton = true)
 	{
@@ -33,6 +33,6 @@ public class GroupInfo : MonoBehaviour {
 
 	private void HandleClick()
 	{
-		joinGroupClicked (groupID);
+		joinGroupClicked (groupID, groupName.text);
 	}
 }
