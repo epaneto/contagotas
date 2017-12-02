@@ -5,14 +5,16 @@ require_once("UserRestHandler.php");
 $view = "";
 if(isset($_GET["view"]))
 	$view = $_GET["view"];
-/*
-controls the RESTful services
-URL mapping
-*/
 
+
+if($_SERVER['HTTP_USER_AGENT'] != "app-contagotas")
+{
+	die("ERROR!");
+}
 
 switch($view){
 
+	
 	case "all":
 		// to handle REST Url /group/list/
 		$groupRestHandler = new GroupRestHandler();
