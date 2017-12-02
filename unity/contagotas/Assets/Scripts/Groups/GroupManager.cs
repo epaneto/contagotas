@@ -188,15 +188,6 @@ public class GroupManager : MonoBehaviour {
 
 		temporaryObjsList.Clear ();
 
-		//TODO:APAGAR ESSE CODIGO
-		/*
-		GameObject apagarIsso = Instantiate (SendInvitePrefab, SendInviteGroupParent);
-		temporaryObjsList.Add (apagarIsso);
-		FacebookInvite apagarisso2 = apagarIsso.GetComponent<FacebookInvite> (); 
-		apagarisso2.SetupInviteInfo ("Joao Bergamo", "10155760819433186");*/
-		//APAGAR O CODIGO ACIMA
-
-
 		foreach (var friend in friendList) {
 
 			var info = ((IEnumerable)friend).Cast<object> ()
@@ -226,7 +217,9 @@ public class GroupManager : MonoBehaviour {
 			yield break;
 		} 
 
-		List<InviteData> invites = JsonConvert.DeserializeObject<List<InviteData>>(result.text);
+		string jsonDecoded  = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+		List<InviteData> invites = JsonConvert.DeserializeObject<List<InviteData>>(jsonDecoded);
 
 		foreach (var obj in temporaryObjsList) {
 			Destroy (obj);
@@ -275,7 +268,9 @@ public class GroupManager : MonoBehaviour {
 
 		ShowGroup (ScreenType.JOIN_GROUP);
 
-		List<GroupData> foundGroups = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+		string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+		List<GroupData> foundGroups = JsonConvert.DeserializeObject<List<GroupData>>(json);
 
 		suggestedResultObj = Instantiate (GroupObjectPrefabs, searchResultParent);
 		GroupInfo groupInfoScript = suggestedResultObj.GetComponent<GroupInfo>(); 
@@ -306,7 +301,9 @@ public class GroupManager : MonoBehaviour {
 			}
 			temporaryObjsList.Clear ();
 
-			List<GroupData> suggestedGroups = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+			string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+			List<GroupData> suggestedGroups = JsonConvert.DeserializeObject<List<GroupData>>(json);
 
 			foreach (var group in suggestedGroups) {
 				GameObject item = Instantiate (GroupObjectPrefabs, suggestedParent);
@@ -340,7 +337,7 @@ public class GroupManager : MonoBehaviour {
 	{
 		Hashtable headers = new Hashtable ();
 		headers.Add ("User-Agent", "app-contagotas");
-		headers.Add ("charset", "utf-8");
+		//headers.Add ("charset", "utf-8");
 
 		string finalUrl = urlBase + url;
 		ShowGroup (ScreenType.LOADING);
@@ -356,7 +353,8 @@ public class GroupManager : MonoBehaviour {
 		if (result.text.ToUpper().Contains("ERROR") || result.text.ToUpper().Contains("TIMEOUT")) {
 			ShowErrorScreen ("Error accepting invite ->" + result.text);
 		} else {
-			List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+			string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
+			List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(json);
 			groupInfo = account[0];
 			groupTitle.text = groupInfo.Name;
 			ShowGroup (ScreenType.EXISTING_GROUP);	
@@ -392,7 +390,9 @@ public class GroupManager : MonoBehaviour {
 			}
 			temporaryObjsList.Clear ();
 
-			List<GroupData> rankedGroups = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+			string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+			List<GroupData> rankedGroups = JsonConvert.DeserializeObject<List<GroupData>>(json);
 
 			foreach (var group in rankedGroups) {
 				GameObject item = Instantiate (GroupObjectPrefabs, RankingGroupParent);
@@ -418,7 +418,10 @@ public class GroupManager : MonoBehaviour {
 				ShowErrorScreen ("error checking group:" + result.text);
 				yield break;
 			} else {
-				List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+
+				string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+				List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(json);
 				groupInfo = account[0];
 				groupTitle.text = groupInfo.Name + " Score = " + groupInfo.Score;
 				ShowGroup (ScreenType.EXISTING_GROUP);	
@@ -469,7 +472,9 @@ public class GroupManager : MonoBehaviour {
 		if (result.text.ToUpper().Contains("ERROR") || result.text.ToUpper().Contains("TIMEOUT")) {
 			ShowErrorScreen ("Error joining group ->" + result.text);
 		} else {
-			List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(result.text);
+			string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+			List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(json);
 			groupInfo = account[0];
 			groupTitle.text = groupInfo.Name;
 			ShowGroup (ScreenType.EXISTING_GROUP);	

@@ -14,4 +14,16 @@ public static class StringUtils {
 			.Where(ch => char.GetUnicodeCategory(ch) != UnicodeCategory.NonSpacingMark)
 			.ToArray());
 	}
+
+	public static string DecodeBytesForUTF8(byte[] stream)
+	{
+		byte[] bytes=new byte[]{116, 101, 120, 116, 105, 110, 101, 115, 115};
+
+		string customDecoded=""; 
+		foreach(var b in stream)
+			customDecoded+=(char)b; 
+		
+		return customDecoded;
+	}
+
 }

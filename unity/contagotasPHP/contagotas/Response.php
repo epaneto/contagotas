@@ -14,6 +14,7 @@ class Response extends SimpleRest {
 
 		$requestContentType = $_SERVER['HTTP_ACCEPT'];
 		$this ->setHttpHeaders($requestContentType, $statusCode);
+		
 		echo $rawData;	
 	}
 	

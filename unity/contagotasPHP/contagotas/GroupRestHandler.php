@@ -36,7 +36,7 @@ class GroupRestHandler extends SimpleRest {
 
 		$group = new Group();
 		$rawData = $group->getGroupByUserId($id);
-
+		
 		$response = new Response();
 		$response->send($rawData);
 	}
@@ -72,6 +72,7 @@ class GroupRestHandler extends SimpleRest {
 			$rawData = "true";
 		else
 			$rawData = "false";
+		
 		
 		$response = new Response();
 		$response->send($rawData);
