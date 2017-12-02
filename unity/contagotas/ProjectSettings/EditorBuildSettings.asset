@@ -60,7 +60,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Missions/game2.unity
     guid: 887b98681d7e94e029e40bb93212f156
   - enabled: 1
-    path: Assets/Scenes/Missions/game3.unity
+    path: Assets/Scenes/Missions/game16.unity
     guid: f7066373842cbc14bacfc139f74a5a67
   - enabled: 1
     path: Assets/Scenes/Missions/game4.unity
@@ -74,3 +74,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Missions/game7.unity
     guid: 5a530a26be9c7ec4eaa319481c94b1dd
+  - enabled: 1
+    path: Assets/Scenes/Missions/game8.unity
+    guid: 27fa9a64dc57e014aad9ab5cbf59a0a6
+  - enabled: 1
+    path: Assets/Scenes/Missions/game9.unity
+    guid: 197587723a7263e489f892790cdddbdb

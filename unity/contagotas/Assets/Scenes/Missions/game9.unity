@@ -120,8 +120,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 411183921}
-  - component: {fileID: 411183920}
   - component: {fileID: 411183919}
+  - component: {fileID: 411183920}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMechanic: {fileID: 0}
-  gameAnimation: {fileID: 0}
+  gameMechanic: {fileID: 1537327191}
+  gameAnimation: {fileID: 595282231}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -155,9 +155,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 411183918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65904782fdde94b60a44e7146067d2b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 75a3a634da51dae498ac5571806b37f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holes:
+  - {fileID: 1537327195}
+  - {fileID: 1537327194}
+  - {fileID: 1537327193}
+  - {fileID: 1537327192}
 --- !u!4 &411183921
 Transform:
   m_ObjectHideFlags: 0
@@ -276,6 +281,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224586325299550578, guid: de396a284cdfb5b4b98e26990b7a954e,
     type: 2}
   m_PrefabInternal: {fileID: 595282229}
+--- !u!1 &595282231 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1628300519953742, guid: de396a284cdfb5b4b98e26990b7a954e,
+    type: 2}
+  m_PrefabInternal: {fileID: 595282229}
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +369,7 @@ RectTransform:
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0043968693, y: 0.0043968693, z: 0.0043968693}
+  m_LocalScale: {x: 0.006768274, y: 0.006768274, z: 0.006768274}
   m_Children:
   - {fileID: 2094242285}
   - {fileID: 595282230}
@@ -513,6 +523,58 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1237087317140994, guid: 8ecc0b85460ff5e45b736e063a6dd983, type: 2}
+      propertyPath: m_Name
+      value: hole2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738679478482194, guid: 8ecc0b85460ff5e45b736e063a6dd983, type: 2}
+      propertyPath: m_Name
+      value: hole3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774963643080190, guid: 8ecc0b85460ff5e45b736e063a6dd983, type: 2}
+      propertyPath: m_Name
+      value: hole4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524294513398906, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+        type: 2}
+      propertyPath: startingAnimation
+      value: on
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885465500796818, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+        type: 2}
+      propertyPath: startingAnimation
+      value: on
+      objectReference: {fileID: 0}
+    - target: {fileID: 114393340836027414, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+        type: 2}
+      propertyPath: startingAnimation
+      value: on
+      objectReference: {fileID: 0}
+    - target: {fileID: 114459191909502198, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+        type: 2}
+      propertyPath: startingAnimation
+      value: on
+      objectReference: {fileID: 0}
+    - target: {fileID: 114459191909502198, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+        type: 2}
+      propertyPath: startingLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885465500796818, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+        type: 2}
+      propertyPath: startingLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114393340836027414, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+        type: 2}
+      propertyPath: startingLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524294513398906, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+        type: 2}
+      propertyPath: startingLoop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ecc0b85460ff5e45b736e063a6dd983, type: 2}
   m_IsPrefabParent: 0
@@ -521,6 +583,295 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224897145185376274, guid: 8ecc0b85460ff5e45b736e063a6dd983,
     type: 2}
   m_PrefabInternal: {fileID: 1537327189}
+--- !u!1 &1537327191 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1533877932842042, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+    type: 2}
+  m_PrefabInternal: {fileID: 1537327189}
+--- !u!1 &1537327192 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1774963643080190, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+    type: 2}
+  m_PrefabInternal: {fileID: 1537327189}
+--- !u!1 &1537327193 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1738679478482194, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+    type: 2}
+  m_PrefabInternal: {fileID: 1537327189}
+--- !u!1 &1537327194 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1237087317140994, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+    type: 2}
+  m_PrefabInternal: {fileID: 1537327189}
+--- !u!1 &1537327195 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1534486376341472, guid: 8ecc0b85460ff5e45b736e063a6dd983,
+    type: 2}
+  m_PrefabInternal: {fileID: 1537327189}
+--- !u!61 &1537327196
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537327195}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 250, y: 250}
+  m_EdgeRadius: 0
+--- !u!114 &1537327197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537327192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1537327192}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 411183920}
+          m_MethodName: updateHoles
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!61 &1537327198
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537327192}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 250, y: 250}
+  m_EdgeRadius: 0
+--- !u!114 &1537327199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537327193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1537327193}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 411183920}
+          m_MethodName: updateHoles
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!61 &1537327200
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537327193}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 250, y: 250}
+  m_EdgeRadius: 0
+--- !u!114 &1537327201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537327194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1537327194}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 411183920}
+          m_MethodName: updateHoles
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!61 &1537327202
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537327194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 250, y: 250}
+  m_EdgeRadius: 0
+--- !u!114 &1537327203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537327195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1537327195}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 411183920}
+          m_MethodName: updateHoles
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1839344389
 GameObject:
   m_ObjectHideFlags: 0
