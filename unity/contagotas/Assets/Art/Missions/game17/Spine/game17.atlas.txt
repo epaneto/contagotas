@@ -1,0 +1,48 @@
+
+game17.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bucket
+  rotate: false
+  xy: 687, 312
+  size: 413, 326
+  orig: 413, 326
+  offset: 0, 0
+  index: -1
+face1
+  rotate: false
+  xy: 2, 2
+  size: 220, 50
+  orig: 220, 50
+  offset: 0, 0
+  index: -1
+face2
+  rotate: false
+  xy: 1205, 941
+  size: 208, 46
+  orig: 208, 46
+  offset: 0, 0
+  index: -1
+hose
+  rotate: false
+  xy: 687, 640
+  size: 516, 347
+  orig: 516, 347
+  offset: 0, 0
+  index: -1
+laundry_machine
+  rotate: false
+  xy: 2, 54
+  size: 683, 933
+  orig: 683, 933
+  offset: 0, 0
+  index: -1
+water
+  rotate: false
+  xy: 687, 180
+  size: 98, 130
+  orig: 98, 130
+  offset: 0, 0
+  index: -1
