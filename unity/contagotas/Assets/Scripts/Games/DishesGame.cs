@@ -49,8 +49,8 @@ public class DishesGame : MonoBehaviour {
 					Color c = colliderImage.color;
 					Debug.Log (c.a);
 					if (c.a > 0) {
-						Debug.Log ("lower alpha");
-						c.a -= 0.03f;
+						//Debug.Log ("lower alpha");
+						c.a -= 0.04f;
 						colliderImage.color = c;
 
 						float totalAlpha = 0;

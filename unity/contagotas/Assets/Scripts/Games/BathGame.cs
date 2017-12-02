@@ -57,7 +57,7 @@ public class BathGame : MonoBehaviour {
 					Debug.Log (c.a);
 					if (c.a > 0) {
 						Debug.Log ("lower alpha");
-						c.a -= 0.01f;
+						c.a -= 0.02f;
 						dirtAlpha = c.a;
 						colliderImage.color = c;
 
