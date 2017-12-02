@@ -1,0 +1,27 @@
+
+cup.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cup_glass
+  rotate: false
+  xy: 2, 77
+  size: 272, 423
+  orig: 272, 423
+  offset: 0, 0
+  index: -1
+cup_pastic
+  rotate: false
+  xy: 276, 222
+  size: 300, 278
+  orig: 300, 278
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 2, 2
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
