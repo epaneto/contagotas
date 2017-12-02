@@ -1,0 +1,27 @@
+
+shower.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+drop_little
+  rotate: false
+  xy: 2, 2
+  size: 31, 52
+  orig: 31, 52
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 453, 171
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+shower_little
+  rotate: false
+  xy: 2, 56
+  size: 449, 188
+  orig: 449, 188
+  offset: 0, 0
+  index: -1
