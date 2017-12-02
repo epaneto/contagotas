@@ -223,10 +223,14 @@ public class GroupManager : MonoBehaviour {
 			string name = info [1].Replace ('[', ' ').Replace (']', ' ').Trim ().Split (',') [1];
 			string facebook_id = info [3].Replace ('[', ' ').Replace (']', ' ').Trim ().Split (',') [1];
 
+			var pictureRawData = (friend as Dictionary<string,object>) ["picture"];
+			var data = (pictureRawData as Dictionary<string,object>) ["data"];
+			string facebook_image_url = (data as Dictionary<string,object>) ["url"].ToString();
+
 			GameObject item = Instantiate (SendInvitePrefab, SendInviteGroupParent);
 			temporaryObjsList.Add (item);
 			FacebookInvite inviteObj = item.GetComponent<FacebookInvite> (); 
-			inviteObj.SetupInviteInfo (name, facebook_id);
+			inviteObj.SetupInviteInfo (name, facebook_id, facebook_image_url);
 		}
 
 		ShowGroup (ScreenType.SEND_INVITES);

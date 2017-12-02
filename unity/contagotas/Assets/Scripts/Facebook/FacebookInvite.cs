@@ -12,16 +12,33 @@ public class FacebookInvite : MonoBehaviour {
 	[SerializeField]
 	Button inviteButton;
 
+	[SerializeField]
+	Image personImage;
+
+	private string facebookCoverURL;
+
 	private string userFacebookId;
 
 	public System.Action<int> inviteButtonClicked = new System.Action<int>(delegate(int id) {});
 
-	public void SetupInviteInfo(string facebookUserName, string facebookId)
+	public void SetupInviteInfo(string facebookUserName, string facebookId, string facebookCoverURL)
 	{
 		this.facebookUserName.text = facebookUserName;
 		this.userFacebookId = facebookId;
-
+		this.facebookCoverURL = facebookCoverURL;
+	
 		inviteButton.onClick.AddListener(HandleAcceptClick);
+	}
+
+	public void Start()
+	{
+		StartCoroutine (LoadImage ());
+	}
+
+	IEnumerator LoadImage() {
+		WWW www = new WWW(facebookCoverURL);
+		yield return www;
+		personImage.sprite = Sprite.Create(www.texture, new Rect(0, 0, www.texture.width, www.texture.height), new Vector2(0, 0));
 	}
 
 	private void HandleAcceptClick()

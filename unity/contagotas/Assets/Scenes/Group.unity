@@ -3538,7 +3538,6 @@ MonoBehaviour:
   subject: Venha jogar esse jogo!
   ShareMessage: "\xE9 demais!!!!"
   url: www.uol.com.br
-  ScreenshotName: screenshot.png
 --- !u!114 &1002455057
 MonoBehaviour:
   m_ObjectHideFlags: 0
