@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class GroupInfo : MonoBehaviour {
 
+	public string Name {
+		get { return groupName.text; }
+	}
+
+	public string Score {
+		get { return score.text; }
+	}
+
 	[SerializeField]
 	Text groupName;
 
