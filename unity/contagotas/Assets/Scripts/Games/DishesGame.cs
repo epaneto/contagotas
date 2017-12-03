@@ -50,7 +50,7 @@ public class DishesGame : MonoBehaviour {
 					Debug.Log (c.a);
 					if (c.a > 0) {
 						//Debug.Log ("lower alpha");
-						c.a -= 0.04f;
+						c.a -= 0.05f;
 						colliderImage.color = c;
 
 						float totalAlpha = 0;

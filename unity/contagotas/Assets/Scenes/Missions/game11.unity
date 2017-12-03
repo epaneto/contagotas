@@ -213,6 +213,31 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114528590037130656, guid: d458a2d254ded4042a44c2592b92bfe5,
+        type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224968189242176922, guid: d458a2d254ded4042a44c2592b92bfe5,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224215010430632788, guid: d458a2d254ded4042a44c2592b92bfe5,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224431023405322646, guid: d458a2d254ded4042a44c2592b92bfe5,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224923303609229046, guid: d458a2d254ded4042a44c2592b92bfe5,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d458a2d254ded4042a44c2592b92bfe5, type: 2}
   m_IsPrefabParent: 0
@@ -221,6 +246,443 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224269950043660792, guid: d458a2d254ded4042a44c2592b92bfe5,
     type: 2}
   m_PrefabInternal: {fileID: 261260170}
+--- !u!1 &261260172 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1390998951548306, guid: d458a2d254ded4042a44c2592b92bfe5,
+    type: 2}
+  m_PrefabInternal: {fileID: 261260170}
+--- !u!1 &261260173 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1823321453220656, guid: d458a2d254ded4042a44c2592b92bfe5,
+    type: 2}
+  m_PrefabInternal: {fileID: 261260170}
+--- !u!1 &261260174 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1189628139456356, guid: d458a2d254ded4042a44c2592b92bfe5,
+    type: 2}
+  m_PrefabInternal: {fileID: 261260170}
+--- !u!1 &261260175 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1390046680134346, guid: d458a2d254ded4042a44c2592b92bfe5,
+    type: 2}
+  m_PrefabInternal: {fileID: 261260170}
+--- !u!1 &261260176 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1530109700437864, guid: d458a2d254ded4042a44c2592b92bfe5,
+    type: 2}
+  m_PrefabInternal: {fileID: 261260170}
+--- !u!1 &261260177 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1940593264690332, guid: d458a2d254ded4042a44c2592b92bfe5,
+    type: 2}
+  m_PrefabInternal: {fileID: 261260170}
+--- !u!1 &261260178 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1415833745020656, guid: d458a2d254ded4042a44c2592b92bfe5,
+    type: 2}
+  m_PrefabInternal: {fileID: 261260170}
+--- !u!1 &261260179 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1167836495114660, guid: d458a2d254ded4042a44c2592b92bfe5,
+    type: 2}
+  m_PrefabInternal: {fileID: 261260170}
+--- !u!114 &261260180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261260174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260174}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 11
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260174}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260174}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &261260181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261260175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260175}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 11
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260175}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260175}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &261260182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261260176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260176}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 11
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260176}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260176}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &261260183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261260177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260177}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 11
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260177}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260177}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &261260184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261260178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260178}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 11
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260178}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260178}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &261260185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261260179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260179}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 11
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260179}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ChangeDustAlpha
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 261260179}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &261260186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261260173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e09d9f29dd574eda886ba56f56fa5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationObject: {fileID: 0}
+  isAtDestination: 0
 --- !u!1 &411183918
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,8 +691,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 411183921}
-  - component: {fileID: 411183920}
   - component: {fileID: 411183919}
+  - component: {fileID: 411183920}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -249,8 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMechanic: {fileID: 0}
-  gameAnimation: {fileID: 0}
+  gameMechanic: {fileID: 261260172}
+  gameAnimation: {fileID: 454729780}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -264,9 +726,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 411183918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65904782fdde94b60a44e7146067d2b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8beb3d80f551b8c42bfb9f195c2098d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dishes:
+  - {fileID: 261260179}
+  - {fileID: 261260178}
+  - {fileID: 261260177}
+  - {fileID: 261260176}
+  - {fileID: 261260175}
+  - {fileID: 261260174}
+  sponge: {fileID: 261260173}
 --- !u!4 &411183921
 Transform:
   m_ObjectHideFlags: 0
@@ -389,6 +859,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224745497312296692, guid: 31055f4253e18924a9e82e5c2df35c0d,
     type: 2}
   m_PrefabInternal: {fileID: 454729778}
+--- !u!1 &454729780 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1780840109636608, guid: 31055f4253e18924a9e82e5c2df35c0d,
+    type: 2}
+  m_PrefabInternal: {fileID: 454729778}
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +927,7 @@ Canvas:
   m_GameObject: {fileID: 1368282329}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1961954342}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -471,8 +946,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0043968693, y: 0.0043968693, z: 0.0043968693}
+  m_LocalPosition: {x: 375, y: 667, z: 0}
+  m_LocalScale: {x: 0.58654237, y: 0.58654237, z: 0.58654237}
   m_Children:
   - {fileID: 1369174462}
   - {fileID: 454729779}
