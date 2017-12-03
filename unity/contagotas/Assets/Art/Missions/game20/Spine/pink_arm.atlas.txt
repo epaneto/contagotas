@@ -1,0 +1,20 @@
+
+pink_arm.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+big_arm_pink
+  rotate: false
+  xy: 2, 10
+  size: 853, 205
+  orig: 853, 205
+  offset: 0, 0
+  index: -1
+tap
+  rotate: false
+  xy: 857, 2
+  size: 524, 213
+  orig: 524, 213
+  offset: 0, 0
+  index: -1
