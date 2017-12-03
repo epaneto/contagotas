@@ -1,0 +1,104 @@
+
+game19.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_R1
+  rotate: false
+  xy: 1215, 279
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: true
+  xy: 2, 2
+  size: 74, 163
+  orig: 74, 163
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 504, 258
+  size: 528, 37
+  orig: 528, 37
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 504, 297
+  size: 528, 213
+  orig: 528, 213
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 653, 145
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: false
+  xy: 504, 220
+  size: 312, 36
+  orig: 312, 36
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: false
+  xy: 167, 30
+  size: 113, 46
+  orig: 113, 46
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 1426, 450
+  size: 60, 207
+  orig: 60, 207
+  offset: 0, 0
+  index: -1
+mouth_despair
+  rotate: false
+  xy: 1034, 276
+  size: 179, 118
+  orig: 179, 118
+  offset: 0, 0
+  index: -1
+redutor_little
+  rotate: false
+  xy: 818, 235
+  size: 45, 21
+  orig: 45, 21
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1034, 396
+  size: 390, 114
+  orig: 390, 114
+  offset: 0, 0
+  index: -1
+sink_big
+  rotate: false
+  xy: 2, 78
+  size: 500, 432
+  orig: 500, 432
+  offset: 0, 0
+  index: -1
+water
+  rotate: false
+  xy: 504, 83
+  size: 147, 135
+  orig: 147, 135
+  offset: 0, 0
+  index: -1
+water_light
+  rotate: true
+  xy: 1034, 269
+  size: 5, 38
+  orig: 5, 38
+  offset: 0, 0
+  index: -1
