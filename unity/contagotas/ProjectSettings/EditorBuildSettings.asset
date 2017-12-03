@@ -95,3 +95,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Missions/game13.unity
     guid: d3a977b4dab23bf43bce66604debfe94
+  - enabled: 1
+    path: Assets/Scenes/Missions/game14.unity
+    guid: 016146e433e549d4ebc41369a2c879e1

@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "box swipe 14",
+      "sceneid": "game14",
+      "hint": "text swipe box"
+    },
+    {
       "title": "change cups 13",
       "sceneid": "game13",
       "hint": "texto change cups"
