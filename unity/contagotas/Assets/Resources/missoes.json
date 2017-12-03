@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "change cups 13",
+      "sceneid": "game13",
+      "hint": "texto change cups"
+    },
+    {
       "title": "coletar chuva 12",
       "sceneid": "game12",
       "hint": "texto coletar chuva"

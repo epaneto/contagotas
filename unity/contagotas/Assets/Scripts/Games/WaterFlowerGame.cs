@@ -73,9 +73,9 @@ public class WaterFlowerGame : MonoBehaviour {
 
         if (!mdb.hasTimeLeft() && !allFlowersWatered)
         {
-            //isPlaying = false;
-            //mdb.EndedGameLose();
-            //return;
+            isPlaying = false;
+            mdb.EndedGameLose();
+            return;
         }else if(allFlowersWatered)
         {
             EndGame();
