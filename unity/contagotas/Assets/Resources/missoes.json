@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "coletar chuva 12",
+      "sceneid": "game12",
+      "hint": "texto coletar chuva"
+    },
+    {
         "title":"limar parede 11",
         "sceneid": "game11",
         "hint": "texto limar parede"
