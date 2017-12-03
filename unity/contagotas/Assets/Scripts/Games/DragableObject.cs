@@ -30,7 +30,6 @@ public class DragableObject : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("DragDestination")) {
-			Debug.Log ("Entrando na maquina");
 			isAtDestination = true;
 		}
 	}
@@ -38,7 +37,6 @@ public class DragableObject : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.CompareTag ("DragDestination")) {
 			isAtDestination = false;
-			Debug.Log ("Saindo de dentro da maquina");
 		}
 	}
 		

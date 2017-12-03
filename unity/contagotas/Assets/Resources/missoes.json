@@ -1,5 +1,10 @@
 {
   "missoes": [
+  {
+        "title":"regar flor game 10",
+        "sceneid": "game10",
+        "hint": "texto regar flor"
+	},
 	{
         "title":"balde furado game9",
         "sceneid": "game9",

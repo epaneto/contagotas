@@ -8,6 +8,9 @@ unity/contagotas/Assets/Libs/Spine/spine-unity/Assets/Examples
 *.user
 *.userprefs
 *.DS_store
+*.suo
+*.ide
+*.ide-wal
 unity/contagotas/Assets/Libs/Spine/spine-csharp/spine-csharp.csproj.meta
 unity/contagotas/Assets/Libs/Spine/spine-csharp/spine-csharp.sln.meta
 unity/contagotas/Assets/Libs/Spine/spine-unity/Assets/Examples.meta
