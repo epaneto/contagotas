@@ -1,0 +1,125 @@
+
+dogs.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bark
+  rotate: true
+  xy: 1002, 422
+  size: 88, 20
+  orig: 88, 20
+  offset: 0, 0
+  index: -1
+dog1
+  rotate: false
+  xy: 2, 181
+  size: 285, 329
+  orig: 285, 329
+  offset: 0, 0
+  index: -1
+dog1_tail
+  rotate: true
+  xy: 269, 108
+  size: 71, 100
+  orig: 71, 100
+  offset: 0, 0
+  index: -1
+dog2
+  rotate: false
+  xy: 289, 181
+  size: 285, 329
+  orig: 285, 329
+  offset: 0, 0
+  index: -1
+dog2_tail
+  rotate: false
+  xy: 863, 409
+  size: 72, 101
+  orig: 72, 101
+  offset: 0, 0
+  index: -1
+dog3
+  rotate: false
+  xy: 576, 181
+  size: 285, 329
+  orig: 285, 329
+  offset: 0, 0
+  index: -1
+dog3_tail
+  rotate: true
+  xy: 2, 27
+  size: 72, 101
+  orig: 72, 101
+  offset: 0, 0
+  index: -1
+dog_eye
+  rotate: false
+  xy: 105, 70
+  size: 125, 29
+  orig: 125, 29
+  offset: 0, 0
+  index: -1
+dog_mouth1
+  rotate: false
+  xy: 476, 132
+  size: 103, 47
+  orig: 103, 47
+  offset: 0, 0
+  index: -1
+dog_mouth2
+  rotate: false
+  xy: 581, 132
+  size: 103, 47
+  orig: 103, 47
+  offset: 0, 0
+  index: -1
+dog_mouth3
+  rotate: false
+  xy: 371, 132
+  size: 103, 47
+  orig: 103, 47
+  offset: 0, 0
+  index: -1
+dog_thongue
+  rotate: false
+  xy: 863, 233
+  size: 38, 43
+  orig: 38, 43
+  offset: 0, 0
+  index: -1
+fly
+  rotate: false
+  xy: 2, 2
+  size: 57, 23
+  orig: 57, 23
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 937, 437
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+mouth_open
+  rotate: true
+  xy: 105, 2
+  size: 66, 46
+  orig: 66, 46
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 101
+  size: 265, 78
+  orig: 265, 78
+  offset: 0, 0
+  index: -1
+smoke
+  rotate: false
+  xy: 863, 278
+  size: 38, 129
+  orig: 38, 129
+  offset: 0, 0
+  index: -1
