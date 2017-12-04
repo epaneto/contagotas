@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "pet shop 18",
+      "sceneid": "game18",
+      "hint": "text petshop"
+    },
+    {
       "title": "rotate pipes 17",
       "sceneid": "game17",
       "hint": "text rotatepipes"
