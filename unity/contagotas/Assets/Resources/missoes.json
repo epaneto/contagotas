@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "hair 21",
+      "sceneid": "game21",
+      "hint": "text hair sallon"
+    },
+    {
       "title": "pet shop 18",
       "sceneid": "game18",
       "hint": "text petshop"
