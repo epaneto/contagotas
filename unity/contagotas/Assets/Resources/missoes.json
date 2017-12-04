@@ -1,6 +1,16 @@
 {
   "missoes": [
     {
+      "title": "chose chuveiro 16",
+      "sceneid": "game16",
+      "hint": "text chose chuveiro"
+    },
+    {
+      "title": "hole drop 15",
+      "sceneid": "game15",
+      "hint": "text hole drop"
+    },
+    {
       "title": "box swipe 14",
       "sceneid": "game14",
       "hint": "text swipe box"

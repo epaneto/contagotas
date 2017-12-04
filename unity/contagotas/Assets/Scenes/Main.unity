@@ -471,7 +471,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionCanvas: {fileID: 226876101}
   fadeDuration: 1
-  startingSceneName: Home
 --- !u!4 &1419115698
 Transform:
   m_ObjectHideFlags: 0

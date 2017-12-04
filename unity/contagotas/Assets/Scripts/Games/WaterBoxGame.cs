@@ -58,19 +58,20 @@ public class WaterBoxGame : MonoBehaviour {
             if(currentSwipe.y > 0  && currentSwipe.x > -0.5f  && currentSwipe.x < 0.5f)
             {
                 Debug.Log("swipe up");
-                Vector3 activePosition = new Vector3(0, 20.0f, 0);
+                Vector3 activePosition = new Vector3(0, 30.0f, 0);
 
                 StartCoroutine(smooth_move(activePosition, 10.0f));
                 //cover.transform.Translate(Vector3.up * 30.0f);
             }
 
-            if(cover.transform.position.y >= 539)
-            {
-                isPlaying = false;
-                EndGame();
-            }
         }
 
+        Debug.Log(cover.transform.localPosition.y);
+        if (cover.transform.localPosition.y >= -20)
+        {
+            isPlaying = false;
+            EndGame();
+        }
     }
 
     IEnumerator smooth_move(Vector3 direction, float speed)
@@ -78,7 +79,7 @@ public class WaterBoxGame : MonoBehaviour {
         float startime = Time.time;
         Vector3 start_pos = cover.transform.position; //Starting position.
         Vector3 end_pos = cover.transform.position + direction; //Ending position.
-        Debug.Log(start_pos + " " + end_pos);
+        //Debug.Log(start_pos + " " + end_pos);
         while (start_pos != end_pos && ((Time.time - startime) * speed) < 1f)
         {
             float move = Mathf.Lerp(0, 1, (Time.time - startime) * speed);

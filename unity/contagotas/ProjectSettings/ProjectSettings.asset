@@ -229,7 +229,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/notebook/Documents/contagotas/unity/contagotas/user.keystore
+  AndroidKeystoreName: user.keystore
   AndroidKeyaliasName: contagotas-app
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
