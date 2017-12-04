@@ -38,6 +38,8 @@ GameObject:
   - component: {fileID: 224768419169888452}
   - component: {fileID: 222599153049211222}
   - component: {fileID: 114951525463043024}
+  - component: {fileID: 114326238557729938}
+  - component: {fileID: 114154717101378120}
   m_Layer: 0
   m_Name: shower1 (5)
   m_TagString: Untagged
@@ -55,6 +57,8 @@ GameObject:
   - component: {fileID: 224783150020634268}
   - component: {fileID: 222210790327170774}
   - component: {fileID: 114300035184306018}
+  - component: {fileID: 114397163381145302}
+  - component: {fileID: 114409561003710822}
   m_Layer: 0
   m_Name: shower1 (4)
   m_TagString: Untagged
@@ -72,6 +76,8 @@ GameObject:
   - component: {fileID: 224927840092265548}
   - component: {fileID: 222116937222311924}
   - component: {fileID: 114291433978436684}
+  - component: {fileID: 114446632224502904}
+  - component: {fileID: 114044939905660580}
   m_Layer: 0
   m_Name: shower1
   m_TagString: Untagged
@@ -89,6 +95,8 @@ GameObject:
   - component: {fileID: 224620950741986144}
   - component: {fileID: 222948184486648194}
   - component: {fileID: 114509897847725178}
+  - component: {fileID: 114958984940343528}
+  - component: {fileID: 114274222531671748}
   m_Layer: 0
   m_Name: shower1 (3)
   m_TagString: Untagged
@@ -106,6 +114,8 @@ GameObject:
   - component: {fileID: 224568112627045958}
   - component: {fileID: 222402474666318716}
   - component: {fileID: 114234154292651406}
+  - component: {fileID: 114053446204507384}
+  - component: {fileID: 114332458728439916}
   m_Layer: 0
   m_Name: shower1 (1)
   m_TagString: Untagged
@@ -138,6 +148,8 @@ GameObject:
   - component: {fileID: 224241475179835444}
   - component: {fileID: 222388411978406202}
   - component: {fileID: 114334056403572236}
+  - component: {fileID: 114134192589175954}
+  - component: {fileID: 114786050183424808}
   m_Layer: 0
   m_Name: shower1 (2)
   m_TagString: Untagged
@@ -196,6 +208,94 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114044939905660580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336202663351512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe62e0ae76daa4444a78c8d10ffdf7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGood: 1
+  badAnimation: idle
+  goodAnimation: off
+--- !u!114 &114053446204507384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1648378897134398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114332458728439916}
+          m_MethodName: setGoodState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &114134192589175954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1689946745521382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114786050183424808}
+          m_MethodName: setGoodState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &114154717101378120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136731347380804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe62e0ae76daa4444a78c8d10ffdf7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGood: 1
+  badAnimation: idle
+  goodAnimation: off
 --- !u!114 &114226386810121912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +360,20 @@ MonoBehaviour:
       calculateTangents: 0
       addNormals: 0
       immutableTriangles: 0
+--- !u!114 &114274222531671748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571261814385536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe62e0ae76daa4444a78c8d10ffdf7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGood: 1
+  badAnimation: idle
+  goodAnimation: off
 --- !u!114 &114291433978436684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,6 +448,50 @@ MonoBehaviour:
       calculateTangents: 0
       addNormals: 0
       immutableTriangles: 0
+--- !u!114 &114326238557729938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136731347380804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114154717101378120}
+          m_MethodName: setGoodState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &114332458728439916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1648378897134398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe62e0ae76daa4444a78c8d10ffdf7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGood: 1
+  badAnimation: idle
+  goodAnimation: off
 --- !u!114 &114334056403572236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +529,80 @@ MonoBehaviour:
       calculateTangents: 0
       addNormals: 0
       immutableTriangles: 0
+--- !u!114 &114397163381145302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330993580372126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114409561003710822}
+          m_MethodName: setGoodState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &114409561003710822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330993580372126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe62e0ae76daa4444a78c8d10ffdf7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGood: 1
+  badAnimation: idle
+  goodAnimation: off
+--- !u!114 &114446632224502904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336202663351512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114044939905660580}
+          m_MethodName: setGoodState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114509897847725178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -489,6 +721,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114786050183424808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1689946745521382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe62e0ae76daa4444a78c8d10ffdf7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGood: 1
+  badAnimation: idle
+  goodAnimation: off
 --- !u!114 &114951525463043024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -526,6 +772,36 @@ MonoBehaviour:
       calculateTangents: 0
       addNormals: 0
       immutableTriangles: 0
+--- !u!114 &114958984940343528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571261814385536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114274222531671748}
+          m_MethodName: setGoodState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!222 &222116937222311924
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -719,7 +995,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336202663351512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -308, y: 748, z: 0}
+  m_LocalPosition: {x: -349.89996, y: 748, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224965162330368272}
@@ -727,8 +1003,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -308, y: 748}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -349.9, y: 748}
+  m_SizeDelta: {x: 642.4, y: 602.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224965162330368272
 RectTransform:

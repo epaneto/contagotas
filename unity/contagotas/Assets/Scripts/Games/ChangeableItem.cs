@@ -30,7 +30,7 @@ public class ChangeableItem : MonoBehaviour {
         isGood = false;
         if(!itemSkeleton)
             itemSkeleton = this.gameObject.GetComponent<SkeletonGraphic>();
-        itemSkeleton.AnimationState.SetAnimation(0, badAnimation, false);
+        itemSkeleton.AnimationState.SetAnimation(0, badAnimation, true);
     }
 
     public void setGoodState()

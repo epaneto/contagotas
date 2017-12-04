@@ -216,6 +216,152 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40f2a303938c42a46aedea36d9c1e561, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &96664602 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1958387176433564, guid: 40f2a303938c42a46aedea36d9c1e561,
+    type: 2}
+  m_PrefabInternal: {fileID: 96664601}
+--- !u!1 &96664603 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1842719362887884, guid: 40f2a303938c42a46aedea36d9c1e561,
+    type: 2}
+  m_PrefabInternal: {fileID: 96664601}
+--- !u!1 &96664604 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1736422509538638, guid: 40f2a303938c42a46aedea36d9c1e561,
+    type: 2}
+  m_PrefabInternal: {fileID: 96664601}
+--- !u!1 &96664605 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1812741512376466, guid: 40f2a303938c42a46aedea36d9c1e561,
+    type: 2}
+  m_PrefabInternal: {fileID: 96664601}
+--- !u!114 &96664606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96664603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 96664607}
+          m_MethodName: RotateMe
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &96664607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96664603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1901868091cba4d7caaa695daad6b544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 0
+--- !u!114 &96664608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96664604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 96664609}
+          m_MethodName: RotateMe
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &96664609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96664604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1901868091cba4d7caaa695daad6b544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 0
+--- !u!114 &96664610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96664605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1901868091cba4d7caaa695daad6b544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 0
+--- !u!114 &96664611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96664605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 96664610}
+          m_MethodName: RotateMe
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1247561711
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,15 +400,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247561711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa44136a89c1c4a6e8521b1c9742d041, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c392bc927b13428a9be0ff7aab846c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  pipes:
+  - {fileID: 96664605}
+  - {fileID: 96664604}
+  - {fileID: 96664603}
 --- !u!114 &1247561714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,8 +418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMechanic: {fileID: 0}
-  gameAnimation: {fileID: 0}
+  gameMechanic: {fileID: 96664602}
+  gameAnimation: {fileID: 1455647756}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -363,8 +507,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 375, y: 667, z: 0}
-  m_LocalScale: {x: 0.58654237, y: 0.58654237, z: 0.58654237}
+  m_LocalPosition: {x: 400, y: 640, z: 0}
+  m_LocalScale: {x: 0.5933908, y: 0.5933908, z: 0.5933908}
   m_Children:
   - {fileID: 1535295258}
   - {fileID: 1537077572}
@@ -487,6 +631,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f71fd372ff4afbc49a28214bcc314418, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1455647756 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1333989549979360, guid: f71fd372ff4afbc49a28214bcc314418,
+    type: 2}
+  m_PrefabInternal: {fileID: 1455647755}
 --- !u!1001 &1535295257
 Prefab:
   m_ObjectHideFlags: 0

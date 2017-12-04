@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "rotate pipes 17",
+      "sceneid": "game17",
+      "hint": "text rotatepipes"
+    },
+    {
       "title": "chose chuveiro 16",
       "sceneid": "game16",
       "hint": "text chose chuveiro"

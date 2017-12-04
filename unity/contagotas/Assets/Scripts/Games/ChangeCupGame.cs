@@ -7,6 +7,7 @@ public class ChangeCupGame : MonoBehaviour {
     MiniGameDefaultBehavior mdb;
     bool isPlaying = true;
     public List<GameObject> CupList;
+    public int numBadCups = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class ChangeCupGame : MonoBehaviour {
             CupList[randomIndex] = temp;
         }
 
-        for (int a = 0; a < 3; a++)
+        for (int a = 0; a < numBadCups; a++)
         {
             ChangeableItem temp = CupList[a].GetComponent<ChangeableItem>();
             temp.setBadState();
