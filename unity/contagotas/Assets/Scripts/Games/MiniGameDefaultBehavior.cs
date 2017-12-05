@@ -9,6 +9,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	public GameObject gameMechanic;
 	public GameObject gameAnimation;
+    public GameObject textIntro;
 	SkeletonGraphic graphic;
 	MinigamesController controller;
 	public int gameScore;
@@ -45,6 +46,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 		Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 
+        textIntro.SetActive(false);
 		gameAnimation.SetActive (false);
 		gameMechanic.SetActive (true);
 	}

@@ -216,7 +216,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1404408368247094, guid: e3e24faf8a9238f49b7afa1e476e309a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224669711127154486, guid: e3e24faf8a9238f49b7afa1e476e309a,
         type: 2}
@@ -388,6 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMechanic: {fileID: 278844373}
   gameAnimation: {fileID: 432184272}
+  textIntro: {fileID: 855948503}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -405,6 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valveObject: {fileID: 278844374}
+  isLocal: 0
 --- !u!4 &411183921
 Transform:
   m_ObjectHideFlags: 0
@@ -533,6 +535,80 @@ GameObject:
   m_PrefabParentObject: {fileID: 1748799225550056, guid: cb712599be599ff4185ff79aa5cd1593,
     type: 2}
   m_PrefabInternal: {fileID: 432184270}
+--- !u!1 &855948503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 855948504}
+  - component: {fileID: 855948506}
+  - component: {fileID: 855948505}
+  m_Layer: 5
+  m_Name: action_txt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &855948504
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855948503}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.006591797, y: 551, z: 0}
+  m_LocalScale: {x: 1.0008918, y: 1.0008918, z: 1.0008918}
+  m_Children: []
+  m_Father: {fileID: 1368282333}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0065829707, y: 551}
+  m_SizeDelta: {x: 1000, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &855948505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855948503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.36078432, b: 0.6627451, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 856814c2301cd9a40b6c139528319cd3, type: 3}
+    m_FontSize: 90
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 90
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Feche a v\xE1lvula para cortar o fluxo de \xE1gua!"
+--- !u!222 &855948506
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855948503}
 --- !u!1 &1368282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,11 +692,12 @@ RectTransform:
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.006771115, y: 0.006771115, z: 0.006771115}
+  m_LocalScale: {x: 0.004635866, y: 0.004635866, z: 0.004635866}
   m_Children:
   - {fileID: 370183125}
   - {fileID: 432184271}
   - {fileID: 85854359}
+  - {fileID: 855948504}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

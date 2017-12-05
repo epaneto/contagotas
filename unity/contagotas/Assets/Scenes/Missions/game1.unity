@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMechanic: {fileID: 341221607}
   gameAnimation: {fileID: 1767866925}
+  textIntro: {fileID: 1996714844}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -341,7 +342,7 @@ RectTransform:
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0043968693, y: 0.0043968693, z: 0.0043968693}
+  m_LocalScale: {x: 0.004635866, y: 0.004635866, z: 0.004635866}
   m_Children:
   - {fileID: 1548700848}
   - {fileID: 262215398}
@@ -693,7 +694,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996714844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 717, z: 0}
+  m_LocalPosition: {x: 0, y: 684, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1368282333}
@@ -701,8 +702,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 717}
-  m_SizeDelta: {x: 900, y: 300}
+  m_AnchoredPosition: {x: 0, y: 684}
+  m_SizeDelta: {x: 1100, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1996714846
 MonoBehaviour:
@@ -725,18 +726,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 856814c2301cd9a40b6c139528319cd3, type: 3}
-    m_FontSize: 70
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 7
-    m_MaxSize: 70
+    m_MaxSize: 90
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Feche a torneira \renquanto faz a barba.\n"
+  m_Text: "Feche a torneira \renquanto faz a barba!\n"
 --- !u!222 &1996714847
 CanvasRenderer:
   m_ObjectHideFlags: 0

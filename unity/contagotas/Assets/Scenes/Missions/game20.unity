@@ -256,6 +256,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -670
       objectReference: {fileID: 0}
+    - target: {fileID: 1566848536927964, guid: cf876eb8ea91bc34b87b8e10bc90b63a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf876eb8ea91bc34b87b8e10bc90b63a, type: 2}
   m_IsPrefabParent: 0
@@ -264,11 +268,90 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224660514198216056, guid: cf876eb8ea91bc34b87b8e10bc90b63a,
     type: 2}
   m_PrefabInternal: {fileID: 809099825}
+--- !u!1 &809099827 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1566848536927964, guid: cf876eb8ea91bc34b87b8e10bc90b63a,
+    type: 2}
+  m_PrefabInternal: {fileID: 809099825}
 --- !u!224 &879825761 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224250978906376734, guid: 2a3a3cf2785822943a1b54252052670f,
     type: 2}
   m_PrefabInternal: {fileID: 1156156587}
+--- !u!1 &1096622788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1096622791}
+  - component: {fileID: 1096622790}
+  - component: {fileID: 1096622789}
+  m_Layer: 5
+  m_Name: action_txt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1096622789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1096622788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.36078432, b: 0.6627451, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 856814c2301cd9a40b6c139528319cd3, type: 3}
+    m_FontSize: 90
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 90
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "N\xE3o deixe o amiguinho desperdi\xE7ar \xE1gua da privada!"
+--- !u!222 &1096622790
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1096622788}
+--- !u!224 &1096622791
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1096622788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 463, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1368282333}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 463}
+  m_SizeDelta: {x: 1100, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1156156587
 Prefab:
   m_ObjectHideFlags: 0
@@ -374,6 +457,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a3a3cf2785822943a1b54252052670f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1156156588 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1730287418537070, guid: 2a3a3cf2785822943a1b54252052670f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1156156587}
 --- !u!1 &1247561711
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,8 +516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16661516f65684b079823b14e3afde97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMechanic: {fileID: 0}
-  gameAnimation: {fileID: 0}
+  gameMechanic: {fileID: 809099827}
+  gameAnimation: {fileID: 1156156588}
+  textIntro: {fileID: 1096622788}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -523,6 +612,7 @@ RectTransform:
   - {fileID: 1474604929}
   - {fileID: 879825761}
   - {fileID: 809099826}
+  - {fileID: 1096622791}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -166,6 +166,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -104
       objectReference: {fileID: 0}
+    - target: {fileID: 114763905459305312, guid: e1b5a47e61bc21d4b9e86e7ff3a81d32,
+        type: 2}
+      propertyPath: startingAnimation
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1b5a47e61bc21d4b9e86e7ff3a81d32, type: 2}
   m_IsPrefabParent: 0
@@ -179,6 +184,80 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224770701455810924, guid: 456fea88f983f3346b6f408f83cbade4,
     type: 2}
   m_PrefabInternal: {fileID: 1560617440}
+--- !u!1 &1184425028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1184425031}
+  - component: {fileID: 1184425030}
+  - component: {fileID: 1184425029}
+  m_Layer: 5
+  m_Name: action_txt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1184425029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1184425028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.36078432, b: 0.6627451, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 856814c2301cd9a40b6c139528319cd3, type: 3}
+    m_FontSize: 90
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 90
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Instale o redutor tocando rapidamente!
+--- !u!222 &1184425030
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1184425028}
+--- !u!224 &1184425031
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1184425028}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 520, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1368282333}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 520}
+  m_SizeDelta: {x: 1100, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1247561711
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMechanic: {fileID: 341221607}
-  gameAnimation: {fileID: 0}
+  gameAnimation: {fileID: 1560617441}
+  textIntro: {fileID: 1184425028}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -328,6 +408,7 @@ RectTransform:
   - {fileID: 1548700848}
   - {fileID: 1122501565}
   - {fileID: 262215398}
+  - {fileID: 1184425031}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -497,6 +578,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 456fea88f983f3346b6f408f83cbade4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1560617441 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1276714560536026, guid: 456fea88f983f3346b6f408f83cbade4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1560617440}
 --- !u!1 &1839344389
 GameObject:
   m_ObjectHideFlags: 0
