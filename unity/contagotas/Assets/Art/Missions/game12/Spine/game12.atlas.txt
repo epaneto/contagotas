@@ -21,13 +21,13 @@ arm_R1
 arm_R2
   rotate: false
   xy: 1486, 258
-  size: 34, 111
+  size: 50, 111
   orig: 50, 111
   offset: 0, 0
   index: -1
 body_middle
   rotate: false
-  xy: 2, 42
+  xy: 2, 30
   size: 359, 25
   orig: 359, 25
   offset: 0, 0
@@ -62,7 +62,7 @@ eye_closed
   index: -1
 game1_eye1
   rotate: false
-  xy: 2, 16
+  xy: 2, 4
   size: 212, 24
   orig: 212, 24
   offset: 0, 0
@@ -90,10 +90,10 @@ grass
   index: -1
 house
   rotate: false
-  xy: 2, 69
-  size: 909, 950
+  xy: 2, 57
+  size: 909, 962
   orig: 909, 962
-  offset: 0, 12
+  offset: 0, 0
   index: -1
 leg_L
   rotate: true

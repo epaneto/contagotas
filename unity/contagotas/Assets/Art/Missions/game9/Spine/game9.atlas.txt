@@ -21,7 +21,7 @@ arm_R1
 arm_R2
   rotate: false
   xy: 1980, 19
-  size: 34, 111
+  size: 50, 111
   orig: 50, 111
   offset: 0, 0
   index: -1
