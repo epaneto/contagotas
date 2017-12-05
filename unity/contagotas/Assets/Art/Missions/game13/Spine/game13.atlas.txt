@@ -21,7 +21,7 @@ arm_R1
 arm_R2
   rotate: false
   xy: 934, 76
-  size: 34, 111
+  size: 50, 111
   orig: 50, 111
   offset: 0, 0
   index: -1
@@ -97,7 +97,7 @@ mouth_open
   index: -1
 mouth_open_round
   rotate: false
-  xy: 970, 153
+  xy: 986, 153
   size: 30, 34
   orig: 30, 34
   offset: 0, 0

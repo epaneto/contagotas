@@ -20,8 +20,8 @@ arm_R1
   index: -1
 arm_R2
   rotate: true
-  xy: 1768, 303
-  size: 49, 163
+  xy: 954, 65
+  size: 74, 163
   orig: 74, 163
   offset: 0, 0
   index: -1
@@ -69,7 +69,7 @@ game1_mouth1
   index: -1
 game1_mouth2
   rotate: false
-  xy: 954, 93
+  xy: 1768, 306
   size: 113, 46
   orig: 113, 46
   offset: 0, 0

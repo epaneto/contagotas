@@ -20,8 +20,8 @@ arm_R1
   index: -1
 arm_R2
   rotate: true
-  xy: 1126, 52
-  size: 49, 163
+  xy: 1687, 347
+  size: 74, 163
   orig: 74, 163
   offset: 0, 0
   index: -1
@@ -41,7 +41,7 @@ body_round
   index: -1
 bubble
   rotate: false
-  xy: 1366, 80
+  xy: 316, 8
   size: 62, 30
   orig: 62, 30
   offset: 0, 0
@@ -61,8 +61,8 @@ fire
   offset: 0, 0
   index: -1
 game1_bright
-  rotate: true
-  xy: 1291, 38
+  rotate: false
+  xy: 1686, 272
   size: 63, 73
   orig: 63, 73
   offset: 0, 0
@@ -76,7 +76,7 @@ game1_eye1
   index: -1
 game1_mouth2
   rotate: false
-  xy: 1687, 375
+  xy: 1126, 55
   size: 113, 46
   orig: 113, 46
   offset: 0, 0
