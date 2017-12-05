@@ -6,147 +6,147 @@ filter: Linear,Linear
 repeat: none
 arm_L
   rotate: true
-  xy: 142, 45
+  xy: 142, 42
   size: 64, 162
   orig: 64, 162
   offset: 0, 0
   index: -1
 arm_L_orange
   rotate: true
-  xy: 776, 151
+  xy: 776, 148
   size: 64, 162
   orig: 64, 162
   offset: 0, 0
   index: -1
 arm_R1
   rotate: true
-  xy: 942, 184
+  xy: 942, 181
   size: 58, 78
   orig: 58, 78
   offset: 0, 0
   index: -1
 arm_R1_orange
   rotate: true
-  xy: 940, 124
+  xy: 940, 121
   size: 58, 78
   orig: 58, 78
   offset: 0, 0
   index: -1
 arm_R2
   rotate: true
-  xy: 776, 73
-  size: 34, 111
+  xy: 776, 54
+  size: 50, 111
   orig: 50, 111
   offset: 0, 0
   index: -1
 arm_R2_orange
   rotate: true
-  xy: 142, 9
-  size: 34, 111
+  xy: 762, 2
+  size: 50, 111
   orig: 50, 111
   offset: 0, 0
   index: -1
 body_middle
   rotate: false
-  xy: 2, 164
+  xy: 2, 161
   size: 359, 25
   orig: 359, 25
   offset: 0, 0
   index: -1
 body_middle_orange
   rotate: false
-  xy: 2, 137
+  xy: 2, 134
   size: 359, 25
   orig: 359, 25
   offset: 0, 0
   index: -1
 body_round
   rotate: false
-  xy: 581, 364
+  xy: 581, 361
   size: 359, 145
   orig: 359, 145
   offset: 0, 0
   index: -1
 body_round_orange
   rotate: false
-  xy: 581, 217
+  xy: 581, 214
   size: 359, 145
   orig: 359, 145
   offset: 0, 0
   index: -1
 eye_closed
   rotate: false
-  xy: 322, 209
+  xy: 322, 206
   size: 218, 22
   orig: 218, 22
   offset: 0, 0
   index: -1
 flower_bed1
   rotate: false
-  xy: 622, 77
+  xy: 622, 74
   size: 152, 138
   orig: 152, 138
   offset: 0, 0
   index: -1
 flower_bed2
   rotate: true
-  xy: 2, 17
+  xy: 2, 14
   size: 118, 138
   orig: 118, 138
   offset: 0, 0
   index: -1
 flower_down_littler
   rotate: false
-  xy: 363, 7
+  xy: 363, 4
   size: 257, 200
   orig: 257, 200
   offset: 0, 0
   index: -1
 flower_little
   rotate: false
-  xy: 322, 233
+  xy: 322, 230
   size: 257, 276
   orig: 257, 276
   offset: 0, 0
   index: -1
 game1_eye1
   rotate: false
-  xy: 142, 111
+  xy: 142, 108
   size: 212, 24
   orig: 212, 24
   offset: 0, 0
   index: -1
 game1_mouth2
   rotate: false
-  xy: 622, 2
+  xy: 142, 9
   size: 77, 31
   orig: 77, 31
   offset: 0, 0
   index: -1
 leg_L
   rotate: true
-  xy: 622, 35
+  xy: 622, 32
   size: 40, 138
   orig: 40, 138
   offset: 0, 0
   index: -1
 leg_L_orange
   rotate: true
-  xy: 776, 109
+  xy: 776, 106
   size: 40, 138
   orig: 40, 138
   offset: 0, 0
   index: -1
 shadow
   rotate: true
-  xy: 942, 244
+  xy: 942, 241
   size: 265, 78
   orig: 265, 78
   offset: 0, 0
   index: -1
 sun
   rotate: false
-  xy: 2, 191
+  xy: 2, 188
   size: 318, 318
   orig: 318, 318
   offset: 0, 0

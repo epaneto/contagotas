@@ -6,7 +6,7 @@ filter: Linear,Linear
 repeat: none
 arm_L
   rotate: true
-  xy: 1306, 160
+  xy: 1568, 160
   size: 94, 238
   orig: 94, 238
   offset: 0, 0
@@ -20,8 +20,8 @@ arm_R1
   index: -1
 arm_R2
   rotate: true
-  xy: 1739, 205
-  size: 49, 163
+  xy: 1808, 180
+  size: 74, 163
   orig: 74, 163
   offset: 0, 0
   index: -1
@@ -41,7 +41,7 @@ body_round
   index: -1
 game1_bright
   rotate: true
-  xy: 1904, 191
+  xy: 1973, 191
   size: 63, 73
   orig: 63, 73
   offset: 0, 0
@@ -62,24 +62,24 @@ game1_mouth1
   index: -1
 game1_mouth2
   rotate: false
-  xy: 1739, 157
+  xy: 741, 17
   size: 113, 46
   orig: 113, 46
   offset: 0, 0
   index: -1
 game4_plate_small
   rotate: false
-  xy: 1052, 128
-  size: 252, 126
+  xy: 1052, 126
+  size: 256, 128
   orig: 256, 128
-  offset: 1, 0
+  offset: 0, 0
   index: -1
 game4_platesmall_dirt
   rotate: false
-  xy: 1546, 153
-  size: 191, 101
+  xy: 1310, 126
+  size: 256, 128
   orig: 256, 128
-  offset: 42, 0
+  offset: 0, 0
   index: -1
 leg_L
   rotate: true
@@ -97,7 +97,7 @@ shadow
   index: -1
 water
   rotate: true
-  xy: 1306, 129
+  xy: 1568, 129
   size: 29, 202
   orig: 29, 202
   offset: 0, 0
@@ -110,8 +110,8 @@ water_effect
   offset: 0, 0
   index: -1
 water_fall_fx
-  rotate: false
-  xy: 741, 27
+  rotate: true
+  xy: 1808, 174
   size: 4, 36
   orig: 4, 36
   offset: 0, 0

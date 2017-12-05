@@ -6,22 +6,22 @@ filter: Linear,Linear
 repeat: none
 arm_L
   rotate: false
-  xy: 869, 784
+  xy: 869, 526
   size: 94, 238
   orig: 94, 238
   offset: 0, 0
   index: -1
 arm_R1
-  rotate: false
-  xy: 869, 667
+  rotate: true
+  xy: 417, 6
   size: 85, 115
   orig: 85, 115
   offset: 0, 0
   index: -1
 arm_R2
   rotate: false
-  xy: 965, 859
-  size: 49, 163
+  xy: 869, 361
+  size: 74, 163
   orig: 74, 163
   offset: 0, 0
   index: -1
@@ -40,8 +40,8 @@ body_round
   offset: 0, 0
   index: -1
 game1_bright
-  rotate: false
-  xy: 417, 18
+  rotate: true
+  xy: 533, 318
   size: 63, 73
   orig: 63, 73
   offset: 0, 0
@@ -55,14 +55,14 @@ game1_eye1
   index: -1
 game1_mouth1
   rotate: false
-  xy: 2, 22
+  xy: 117, 22
   size: 43, 31
   orig: 43, 31
   offset: 0, 0
   index: -1
 game1_mouth2
   rotate: false
-  xy: 753, 584
+  xy: 2, 7
   size: 113, 46
   orig: 113, 46
   offset: 0, 0
@@ -76,28 +76,28 @@ game3_dirt
   index: -1
 leg_L
   rotate: true
-  xy: 532, 181
+  xy: 533, 383
   size: 60, 207
   orig: 60, 207
   offset: 0, 0
   index: -1
 shadow
   rotate: true
-  xy: 753, 632
+  xy: 753, 374
   size: 390, 114
   orig: 390, 114
   offset: 0, 0
   index: -1
 smoke
   rotate: false
-  xy: 533, 325
-  size: 221, 200
+  xy: 753, 766
+  size: 256, 256
   orig: 256, 256
-  offset: 18, 28
+  offset: 0, 0
   index: -1
 song1
-  rotate: true
-  xy: 532, 126
+  rotate: false
+  xy: 965, 674
   size: 53, 90
   orig: 53, 90
   offset: 0, 0
@@ -118,7 +118,7 @@ towel
   index: -1
 water_falling
   rotate: false
-  xy: 532, 243
+  xy: 533, 445
   size: 206, 80
   orig: 206, 80
   offset: 0, 0
