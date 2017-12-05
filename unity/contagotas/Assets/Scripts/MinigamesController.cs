@@ -15,6 +15,9 @@ public class MinigamesController : MonoBehaviour {
 	List<string> minigames;
 	public int minigameIndex;
 
+    public GameObject timeBar;
+    public GameObject timeBarFill;
+
 	JArray Missions;
 	GameObject endGame;
 	GameObject loseGame;
@@ -34,6 +37,8 @@ public class MinigamesController : MonoBehaviour {
 		loseGame = GameObject.Find ("GameLose");
 		loseGameSadChar = GameObject.Find ("character_sad");
 
+        timeBar.SetActive(false);
+
 		///load mission json
 		TextAsset t = (TextAsset) Resources.Load("missoes", typeof(TextAsset));
 		string DataAsJSON = t.text;
@@ -48,7 +53,7 @@ public class MinigamesController : MonoBehaviour {
 		minigameIndex = 0;
 
 		JToken sceneName = Missions[minigameIndex]["sceneid"];
-		SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
+        SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
 	}
 
 	public void ShowLose()
@@ -84,26 +89,45 @@ public class MinigamesController : MonoBehaviour {
 		continueButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
 	}
 
-	public void PlayNextMiniGame()
-	{
-		continueButton.GetComponent<Button> ().onClick.RemoveAllListeners ();
-		continueLoseButton.GetComponent<Button> ().onClick.RemoveAllListeners ();
+    public void PlayNextMiniGame()
+    {
+        continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        continueLoseButton.GetComponent<Button>().onClick.RemoveAllListeners();
 
-		endGame.SetActive (false);
-		loseGame.SetActive (false);
+        endGame.SetActive(false);
+        loseGame.SetActive(false);
 
-		if (minigameIndex + 1  < Missions.Count) {
-			//Debug.Log ("play next minigame " + minigameIndex);
+        if (minigameIndex + 1 < Missions.Count)
+        {
+            //Debug.Log ("play next minigame " + minigameIndex);
 
-			minigameIndex++;
+            minigameIndex++;
 
 
-			JToken sceneName = Missions[minigameIndex]["sceneid"];
-			SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
+            JToken sceneName = Missions[minigameIndex]["sceneid"];
+            SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
 
-		} else {
-			//Debug.Log ("that was the last minigame, show map");
-			SceneController.sceneController.FadeAndLoadScene ("Map", true);
-		}
-	}
+        }
+        else
+        {
+            //Debug.Log ("that was the last minigame, show map");
+            SceneController.sceneController.FadeAndLoadScene("Map", true);
+        }
+    }
+
+    public void showTime()
+    {
+        timeBar.SetActive(true);
+    }
+
+    public void hideTime()
+    {
+        timeBar.SetActive(false);
+    }
+
+    public void updateTime(float barScale)
+    {
+        timeBarFill.transform.localScale = new Vector3(barScale, 1, 1);
+    }
+
 }

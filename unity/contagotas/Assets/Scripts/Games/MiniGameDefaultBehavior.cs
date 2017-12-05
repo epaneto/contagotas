@@ -10,6 +10,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 	public GameObject gameMechanic;
 	public GameObject gameAnimation;
     public GameObject textIntro;
+
 	SkeletonGraphic graphic;
 	MinigamesController controller;
 	public int gameScore;
@@ -18,6 +19,8 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 	public float maxTime = 10.0f;
 	public float totalTime = 0.0f;
 	public float maxScore = 100.0f;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -46,6 +49,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 		Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 
+        controller.showTime();
         textIntro.SetActive(false);
 		gameAnimation.SetActive (false);
 		gameMechanic.SetActive (true);
@@ -61,6 +65,8 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		gameAnimation.SetActive (true);
 		gameMechanic.SetActive (false);
 
+        controller.hideTime();
+
 		graphic.AnimationState.SetAnimation(0,"exit_game",false);
 		graphic.AnimationState.Complete += PlayNextGame;
 	}
@@ -70,6 +76,9 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		gameStarted = false;
 
 		Debug.Log ("LOST GAME!");
+       
+        controller.hideTime();
+
 		gameMechanic.SetActive (false);
 		controller.ShowLose ();
 	}
@@ -85,6 +94,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		if (!gameStarted)
 			return;
 		
+        controller.updateTime(1.0f - totalTime / maxTime);
 		totalTime += Time.deltaTime;
 
 		//Debug.Log (totalTime + " " + maxTime);
@@ -95,8 +105,8 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		return totalTime < maxTime;
 	}
 
-	public float getTimeProgress()
-	{
-		return totalTime / maxTime;
-	}
+    public float getTimeProgress()
+    {
+        return totalTime / maxTime;
+    }
 }

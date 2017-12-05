@@ -157,7 +157,7 @@ Prefab:
     - target: {fileID: 224725903661702006, guid: a85820ba7f253a3469c84942d45deff4,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224725903661702006, guid: a85820ba7f253a3469c84942d45deff4,
         type: 2}
@@ -208,6 +208,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946340711383928, guid: a85820ba7f253a3469c84942d45deff4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a85820ba7f253a3469c84942d45deff4, type: 2}
@@ -406,6 +410,8 @@ MonoBehaviour:
   gameMechanic: {fileID: 1738147871}
   gameAnimation: {fileID: 13512285}
   textIntro: {fileID: 1135059507}
+  timeBar: {fileID: 0}
+  timeBarFill: {fileID: 0}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -497,8 +503,8 @@ RectTransform:
   m_LocalScale: {x: 0.5933908, y: 0.5933908, z: 0.5933908}
   m_Children:
   - {fileID: 471278376}
-  - {fileID: 13512284}
   - {fileID: 1738147870}
+  - {fileID: 13512284}
   - {fileID: 1135059508}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -553,7 +559,7 @@ Prefab:
     - target: {fileID: 224487844979185180, guid: 210bfb229ecd27745997f05661433987,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224487844979185180, guid: 210bfb229ecd27745997f05661433987,
         type: 2}

@@ -254,6 +254,8 @@ MonoBehaviour:
   gameMechanic: {fileID: 341221607}
   gameAnimation: {fileID: 1767866925}
   textIntro: {fileID: 1996714844}
+  timeBar: {fileID: 0}
+  timeBarFill: {fileID: 0}
   gameScore: 0
   gameStarted: 0
   maxTime: 10
