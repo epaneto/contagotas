@@ -9,14 +9,14 @@ public class PipeHolesGame : MonoBehaviour {
     public GameObject dropParent;
     MiniGameDefaultBehavior mdb;
     bool isPlaying = true;
-    int neededDrops = 8;
+    int neededDrops = 6;
     int collectedDrops = 0;
     int createdDrops = 0;
 
 	// Use this for initialization
 	void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
-        InvokeRepeating("launchDrop", 3.0f, dropInterval);
+        InvokeRepeating("launchDrop", 4.0f, dropInterval);
 	}
 	
     // Update is called once per frame
@@ -31,6 +31,7 @@ public class PipeHolesGame : MonoBehaviour {
 
         if (!mdb.hasTimeLeft())
         {
+            CancelInvoke();
             isPlaying = false;
             mdb.EndedGameLose();
             return;
@@ -67,6 +68,7 @@ public class PipeHolesGame : MonoBehaviour {
 
     void EndGame()
     {
+        CancelInvoke();
         isPlaying = false;
         mdb.EndedGameWin(mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
     }
