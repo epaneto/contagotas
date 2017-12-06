@@ -15,7 +15,7 @@ public class CollectRainGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
-        InvokeRepeating("launchDrop", 3.0f, dropInterval);
+        InvokeRepeating("launchDrop", 4.5f, dropInterval);
 	}
 	
 	// Update is called once per frame
@@ -29,6 +29,7 @@ public class CollectRainGame : MonoBehaviour {
         
         if (!mdb.hasTimeLeft() && collectedDrops < neededDrops)
         {
+            CancelInvoke();
             isPlaying = false;
             mdb.EndedGameLose();
             return;
@@ -54,6 +55,7 @@ public class CollectRainGame : MonoBehaviour {
 
     void EndGame()
     {
+        CancelInvoke();
         isPlaying = false;
         mdb.EndedGameWin(mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
     }
