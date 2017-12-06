@@ -95,7 +95,7 @@ public class MinigamesController : MonoBehaviour {
         hintField.text = hintString.ToString();
 
         Text challengeField = challengeTxt.GetComponent<Text>();
-        challengeField.text = "#Desafio Real " + (minigameIndex + 1).ToString();
+        challengeField.text = "Desafio Real #" + (minigameIndex + 1).ToString();
 
 		endGame.SetActive(true);
 		continueButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
