@@ -1,100 +1,103 @@
 {
   "missoes": [
     {
-      "title": "hair 21",
+      "title": "Que beleza!",
       "sceneid": "game21",
-      "hint": "text hair sallon"
+      "hint": "Faça bonito no desafio da vida real.  Evite lavar o cabelo mais do que o necessário."
     },
     {
-      "title": "pet shop 18",
-      "sceneid": "game18",
-      "hint": "text petshop"
-    },
-    {
-      "title": "rotate pipes 17",
+      "title": "Jogada de mestre!",
       "sceneid": "game17",
-      "hint": "text rotatepipes"
+      "hint": "É hora de levar esse truque para a sua rotina. Reúse a água do enxágue da máquina e aproveite até 100 litros de água. "
     },
     {
-      "title": "chose chuveiro 16",
-      "sceneid": "game16",
-      "hint": "text chose chuveiro"
-    },
-    {
-      "title": "hole drop 15",
+      "title": "Você agora é um caça-vazamentos!",
       "sceneid": "game15",
-      "hint": "text hole drop"
+      "hint": "Um buraquinho no cano da sua casa desperdiça quase 100 mil litros por mês. Investigue. "
     },
     {
-      "title": "box swipe 14",
-      "sceneid": "game14",
-      "hint": "text swipe box"
-    },
-    {
-      "title": "change cups 13",
-      "sceneid": "game13",
-      "hint": "texto change cups"
-    },
-    {
-      "title": "coletar chuva 12",
+      "title": "Está na chuva, é para economizar!",
       "sceneid": "game12",
-      "hint": "texto coletar chuva"
+      "hint": "Use baldes, calhas, sistema de captação e aproveite em casa a economia que cai do céu."
     },
     {
-        "title":"limar parede 11",
+      "title": "Foi o bicho!",
+      "sceneid": "game18",
+      "hint": "Leve o jogo para casa ou pet shop: siga a frequência de banhos indicada para seu bichinho. Exagerar é uma fria! "
+    },
+    {
+      "title": "Desafio vencido!",
+      "sceneid": "game14",
+      "hint": "A missão agora é na sua casa. Mantenha a caixa tampada e fique de olho nos vazamentos com manutenção."
+    },
+    {
+      "title": "Ufa, você ganhou!",
+      "sceneid": "game13",
+      "hint": "Troque o copo descartável pelo reutilizável, economize água e dindim. Leve o desafio para sua rotina."
+    },
+
+    {
+      "title": "Adeus, pinga-pinga!",
+      "sceneid": "game16",
+      "hint": "Ele desperdiça até 750 litros por dia. Deixe os olhos abertos, mas as torneiras e chuveiros bem fechados em casa."
+    },
+
+    {
+        "title": "Barra limpa!",
         "sceneid": "game11",
-        "hint": "texto limar parede"
+        "hint": "Agora vença o desperdício em casa. Troque lavagens por pano úmido + álcool. Economize cerca de 25 litros por faxina."
     },
   {
-        "title":"regar flor game 10",
+        "title": "Yeah!",
         "sceneid": "game10",
-        "hint": "texto regar flor"
+        "hint": "Use sempre o regador no lugar da mangueira e colha os frutos dessa economia. Leve esse desafio para casa."
 	},
 	{
-        "title":"balde furado game9",
+        "title": "Vitória brilhante!",
         "sceneid": "game9",
-        "hint": "texto balde furado game 9"
+        "hint": "Aposente a mangueira para lavar seu carro e dê um balde de água fria no desperdício de quase 500 litros. "
 	},
    {
-        "title":"valvula",
+        "title": "Sem noção derrotado!",
         "sceneid": "game8",
-        "hint": "texto valvula"
+        "hint": "Uma lavagem de calçada gasta até 280 litros. O desafio está lançado: troque a água pela vassoura em casa."
     },
     {
-        "title":"Sem óleo pelo ralo",
+        "title": "Você ganhou!",
         "sceneid": "game7",
-        "hint": "Você ganhou! 1 litro de óleo pode contaminar até 1 milhão de litros de água. Na sua casa, armazene em garrafas PET e descarte corretamente."
+        "hint": "1 litro de óleo pode contaminar até 1 milhão de litros de água. Na sua casa, armazene em garrafas PET e descarte corretamente."
+    },
+    {
+      "title": "Você ganhou!",
+      "sceneid": "game1",
+      "hint": "O desafio em casa é não se barbear no chuveiro e poupar cerca de 10 litros. Tire as barbas de molho e entre em ação."
     },
   {
-        "title":"Lavar alimentos",
+        "title": "Lavou, ganhou!",
         "sceneid": "game6",
-        "hint": "Lavou, ganhou! Coloque de molho alimentos com cloro ou água sanitária de uso geral e poupe cerca de 70 litros de água na sua casa."
+        "hint": "Coloque de molho alimentos com cloro ou água sanitária de uso geral e poupe cerca de 70 litros de água na sua casa."
     },
+  
   {
-        "title":"Hora da barba",
-        "sceneid": "game1",
-        "hint": "Você ganhou! O desafio em casa é não se barbear no chuveiro e poupar cerca de 10 litros. Tire as barbas de molho e entre em ação."
-    },
-  {
-        "title":"Máquina de Lavar",
+        "title": "Vitória limpa!",
         "sceneid": "game5",
-        "hint": "Vitória limpa! Uma máquina usa cerca de 135 litros por lavagem. Use sempre com a capacidade máxima de roupas. Desafie-se em casa."
+        "hint": "Uma máquina usa cerca de 135 litros por lavagem. Use sempre com a capacidade máxima de roupas. Desafie-se em casa."
     },
     {
-        "title":"Louça limpinha, sem desperdício",
+        "title": "Yeah!",
         "sceneid": "game4",
-        "hint": "Yeah! Agora enfrente a pilha de louça de casa evitando o desperdício. Enxágue tudo na pia cheia e poupe até 15 litros por minuto."
+        "hint": "Agora enfrente a pilha de louça de casa evitando o desperdício. Enxágue tudo na pia cheia e poupe até 15 litros por minuto."
     },
     {
-        "title":"Banho, o vilão",
+        "title": "Vilão derrotado!",
         "sceneid": "game3",
-        "hint": "Vilão derrotado! Um minuto a menos no chuveiro pode economizar até 23 litros. Acabe com o banho demorado também na sua casa."
+        "hint": "Um minuto a menos no chuveiro pode economizar até 23 litros. Acabe com o banho demorado também na sua casa."
     },
     
     {
-        "title":"Escova, escova! Escovação sem desperdício",
+        "title": "Pode sorrir!",
         "sceneid": "game2",
-        "hint": "Pode sorrir! Agora os dentistas e todos recomendam o desafio na sua escovação. Feche a torneira, use um copo e poupe até 11 litros."
+        "hint": "Agora os dentistas e todos recomendam o desafio na sua escovação. Feche a torneira, use um copo e poupe até 11 litros."
     }
       
     ]

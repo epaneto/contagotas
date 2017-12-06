@@ -17,7 +17,7 @@ public class WaterFlowerGame : MonoBehaviour {
     float flower1WaterLevel = 0;
     float flower2WaterLevel = 0;
     float flower3WaterLevel = 0;
-    float waterDesired = 5.0f;
+    float waterDesired = 3.0f;
 
     bool flower1Done = false;
     bool flower2Done = false;
@@ -85,7 +85,7 @@ public class WaterFlowerGame : MonoBehaviour {
             return;
 
         //check flowers
-        if (Mathf.Abs((waterPot.transform.position.x + 150) - flower1.transform.position.x) < 50 && !flower1Done)
+        if (Mathf.Abs((waterPot.transform.position.x + 150) - flower1.transform.position.x) < 80 && !flower1Done)
         {
             Debug.Log("flower 1 has " + flower1WaterLevel);
             flower1WaterLevel += 0.1f;
@@ -95,7 +95,7 @@ public class WaterFlowerGame : MonoBehaviour {
                 flower1Done = true;
             }
         }
-        else if (Mathf.Abs((waterPot.transform.position.x + 150) - flower2.transform.position.x) < 50 && !flower2Done)
+        else if (Mathf.Abs((waterPot.transform.position.x + 150) - flower2.transform.position.x) < 80 && !flower2Done)
         {
             Debug.Log("flower 2 has " + flower2WaterLevel);
             flower2WaterLevel += 0.1f;
@@ -105,7 +105,7 @@ public class WaterFlowerGame : MonoBehaviour {
                 flower2Done = true;
             }
         }
-        else if (Mathf.Abs((waterPot.transform.position.x + 150) - flower3.transform.position.x) < 50 && !flower3Done)
+        else if (Mathf.Abs((waterPot.transform.position.x + 150) - flower3.transform.position.x) < 80 && !flower3Done)
         {
             Debug.Log("flower 3 has " + flower3WaterLevel);
             flower3WaterLevel += 0.1f;

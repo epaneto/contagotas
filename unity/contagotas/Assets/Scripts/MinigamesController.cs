@@ -25,7 +25,9 @@ public class MinigamesController : MonoBehaviour {
 	GameObject scoreTxt;
 	GameObject continueButton;
 	GameObject continueLoseButton;
-	GameObject hintTxt;
+	GameObject titleTxt;
+    GameObject hintTxt;
+    GameObject challengeTxt;
 
 	// Use this for initialization
 	void Start () {
@@ -33,9 +35,12 @@ public class MinigamesController : MonoBehaviour {
 		scoreTxt = GameObject.Find ("score_txt");
 		continueButton = GameObject.Find ("bt_continuar_score");
 		continueLoseButton = GameObject.Find ("bt_continuar_lose");
-		hintTxt = GameObject.Find ("hint_txt");
 		loseGame = GameObject.Find ("GameLose");
 		loseGameSadChar = GameObject.Find ("character_sad");
+
+        titleTxt = GameObject.Find("titulo_txt");
+        hintTxt = GameObject.Find("hint_txt");
+        challengeTxt = GameObject.Find("desafio_txt");
 
         timeBar.SetActive(false);
 
@@ -81,9 +86,16 @@ public class MinigamesController : MonoBehaviour {
 		Text txt = scoreTxt.GetComponent<Text> ();
 		txt.text = score.ToString ();
 
-		JToken hintString = Missions[minigameIndex]["hint"];
-		Text hintField = hintTxt.GetComponent<Text> ();
-		hintField.text = hintString.ToString ();
+		JToken titleString = Missions[minigameIndex]["title"];
+        Text titleField = titleTxt.GetComponent<Text> ();
+        titleField.text = titleString.ToString ();
+
+        JToken hintString = Missions[minigameIndex]["hint"];
+        Text hintField = hintTxt.GetComponent<Text>();
+        hintField.text = hintString.ToString();
+
+        Text challengeField = challengeTxt.GetComponent<Text>();
+        challengeField.text = "#Desafio Real " + (minigameIndex + 1).ToString();
 
 		endGame.SetActive(true);
 		continueButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
