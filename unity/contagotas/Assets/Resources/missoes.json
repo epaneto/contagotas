@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "Ganhou no jogo!",
+      "sceneid": "game20",
+      "hint": "Troque a descarga de parede pela acoplada na sua casa. Economize até 50% e dê adeus ao desperdício."
+    },
+    {
       "title": "Ihul!",
       "sceneid": "game19",
       "hint": "Você deu um banho no encanador. Instale o redutor de vazão na sua casa e poupe até 6 litros de água por minuto."
