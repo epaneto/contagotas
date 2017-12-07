@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "Ihul!",
+      "sceneid": "game19",
+      "hint": "Você deu um banho no encanador. Instale o redutor de vazão na sua casa e poupe até 6 litros de água por minuto."
+    },
+    {
       "title": "Que beleza!",
       "sceneid": "game21",
       "hint": "Faça bonito no desafio da vida real.  Evite lavar o cabelo mais do que o necessário."

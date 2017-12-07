@@ -27,17 +27,16 @@ public class MissionController : MonoBehaviour {
 		user.Load ();
 
 		//First, check if the player has made any progress based on returning days.
-		DateTime lastDate;
+        DateTime today = DateTime.Now;
+        DateTime lastDate = today;
 
 		Debug.Log ("Player Last access: " + user.playerData.lastAccess);
 
 		if(user.playerData.lastAccess != null)
 			lastDate = user.playerData.lastAccess;
-		
-		DateTime today = DateTime.Now;
 
 		bool isNextDay = false;
-
+        
 		if (today.Year > lastDate.Year) {
 			isNextDay = true;
 		} else if (today.Year < lastDate.Year) {
