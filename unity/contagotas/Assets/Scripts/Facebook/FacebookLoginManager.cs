@@ -117,9 +117,17 @@ public class FacebookLoginManager : MonoBehaviour {
 		}
 		else
 		{
-			string playerName = result.ResultDictionary ["name"].ToString();
-			string email = result.ResultDictionary ["email"].ToString();
-			string facebookid = result.ResultDictionary ["id"].ToString();
+			string playerName = "";
+			if(result.ResultDictionary.ContainsKey("name"))
+				playerName = result.ResultDictionary ["name"].ToString();
+
+			string email = "";
+			if(result.ResultDictionary.ContainsKey("email"))
+				email = result.ResultDictionary ["email"].ToString();
+			
+			string facebookid = "";
+			if(result.ResultDictionary.ContainsKey("id"))
+				facebookid = result.ResultDictionary ["id"].ToString();
 
 			PlayerPrefs.SetInt ("signed", 1);
 			PlayerPrefs.SetString ("user_name", playerName);
