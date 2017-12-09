@@ -213,6 +213,51 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224048793501599228, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224048793501599228, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224048793501599228, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224692742598631478, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224692742598631478, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224692742598631478, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343594830898372, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343594830898372, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343594830898372, guid: 40f2a303938c42a46aedea36d9c1e561,
+        type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40f2a303938c42a46aedea36d9c1e561, type: 2}
   m_IsPrefabParent: 0
@@ -421,6 +466,7 @@ MonoBehaviour:
   gameMechanic: {fileID: 96664602}
   gameAnimation: {fileID: 1455647756}
   textIntro: {fileID: 1962050769}
+  isTimeGame: 1
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -508,8 +554,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: 640, z: 0}
-  m_LocalScale: {x: 0.5933908, y: 0.5933908, z: 0.5933908}
+  m_LocalPosition: {x: 320, y: 568, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1535295258}
   - {fileID: 1380690216}

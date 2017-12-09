@@ -6,7 +6,10 @@ public class TouchRotate : MonoBehaviour {
     public bool isRight;
 	// Use this for initialization
 	void Start () {
-		
+       
+        int randomizeAngle = (int)Random.Range(1, 3);
+        this.gameObject.transform.Rotate(new Vector3(0, 0, randomizeAngle * 90));
+
 	}
 	
 	// Update is called once per frame
