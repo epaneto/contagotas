@@ -1,6 +1,11 @@
 {
   "missoes": [
     {
+      "title": "Você ganhou!",
+      "sceneid": "game7",
+      "hint": "1 litro de óleo pode contaminar até 1 milhão de litros de água. Na sua casa, armazene em garrafas PET e descarte corretamente."
+    },
+    {
       "title": "Ganhou no jogo!",
       "sceneid": "game20",
       "hint": "Troque a descarga de parede pela acoplada na sua casa. Economize até 50% e dê adeus ao desperdício."

@@ -38,7 +38,7 @@ public class FillBottleGame : MonoBehaviour {
 
 		if (isFilling) {
 			
-			fillObject.transform.localScale += new Vector3(0, 0.2f, 0);
+			fillObject.transform.localScale += new Vector3(0, 0.4f, 0);
 
 			if (fillObject.transform.localScale.y > maxOilFill) {
 				isPlaying = false;
