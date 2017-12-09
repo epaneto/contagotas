@@ -65,7 +65,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		gameAnimation.SetActive (true);
 		gameMechanic.SetActive (false);
 
-        controller.hideTime();
+        //controller.hideTime();
 
 		graphic.AnimationState.SetAnimation(0,"exit_game",false);
 		graphic.AnimationState.Complete += PlayNextGame;

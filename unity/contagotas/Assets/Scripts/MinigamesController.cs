@@ -108,9 +108,14 @@ public class MinigamesController : MonoBehaviour {
     IEnumerator CountTo(int target)
     {
         int start = playerScore;
+        float timeBarScale = timeBarFill.transform.localScale.x;
+
         for (float timer = 0; timer < scoreAnimationDuration; timer += Time.deltaTime)
         {
             float progress = timer / scoreAnimationDuration;
+            float barProgress = timeBarScale - (timeBarScale * progress);
+            timeBarFill.transform.localScale = new Vector3(barProgress, 1, 1);
+
             playerScore = (int)Mathf.Lerp(start, target, progress);
             yield return null;
         }
@@ -126,6 +131,9 @@ public class MinigamesController : MonoBehaviour {
 
     public void PlayNextMiniGame()
     {
+        ///if user came from win window, we need to hide
+        hideTime();
+
         continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
         continueLoseButton.GetComponent<Button>().onClick.RemoveAllListeners();
 
