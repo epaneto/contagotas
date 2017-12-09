@@ -5,11 +5,12 @@ using UnityEngine;
 public class PipeHolesGame : MonoBehaviour {
 
 
-    float dropInterval = 1.0f;
+    float dropInterval = 0.8f;
     public GameObject dropParent;
     MiniGameDefaultBehavior mdb;
     bool isPlaying = true;
-    int neededDrops = 6;
+    int maxDrops = 8;
+    int neededDrops = 5;
     int collectedDrops = 0;
     int createdDrops = 0;
 
@@ -40,7 +41,7 @@ public class PipeHolesGame : MonoBehaviour {
 
     void launchDrop()
     {
-        if (createdDrops >= neededDrops)
+        if (createdDrops >= maxDrops)
             return;
         
         createdDrops++;
@@ -62,8 +63,8 @@ public class PipeHolesGame : MonoBehaviour {
 
     public void missedHole()
     {
-        isPlaying = false;
-        mdb.EndedGameLose();
+        mdb.loseTime(1.0f);
+        //mdb.EndedGameLose();
     }
 
     void EndGame()

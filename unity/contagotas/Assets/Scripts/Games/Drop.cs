@@ -5,19 +5,22 @@ using UnityEngine;
 public class Drop : MonoBehaviour {
 
     CollectRainGame controller;
+    float speed = 0;
+
 	// Use this for initialization
 	void Start () {
         controller = FindObjectOfType<CollectRainGame>();
+        speed = Screen.height * 0.02f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        this.gameObject.transform.Translate(Vector3.down * speed);
 
-        this.gameObject.transform.Translate(Vector3.down * 23.0f);
-
-        if (this.gameObject.transform.position.y < -1500)
+        if (this.gameObject.transform.position.y < 0)
         {
             Debug.Log("gota saiu fora");
+            controller.missedDrop();
             Destroy(this.gameObject);
         }
 	}

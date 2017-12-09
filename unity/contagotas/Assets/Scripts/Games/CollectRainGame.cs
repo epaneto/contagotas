@@ -42,6 +42,12 @@ public class CollectRainGame : MonoBehaviour {
         drop.transform.SetParent(dropParent.transform, false);
     }
 
+    public void missedDrop()
+    {
+        mdb.loseTime(1.0f);
+        //mdb.EndedGameLose();
+    }
+
     public void CollectedDrop()
     {
         collectedDrops++;
