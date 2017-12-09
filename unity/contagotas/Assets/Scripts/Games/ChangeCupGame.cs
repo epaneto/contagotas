@@ -21,10 +21,13 @@ public class ChangeCupGame : MonoBehaviour {
             CupList[randomIndex] = temp;
         }
 
-        for (int a = 0; a < numBadCups; a++)
+        for (int a = 0; a < CupList.Count; a++)
         {
             ChangeableItem temp = CupList[a].GetComponent<ChangeableItem>();
-            temp.setBadState();
+            temp.SendMDB(mdb);
+            if (a < numBadCups) { 
+                temp.setBadState();
+            }
         }
 	}
 	
