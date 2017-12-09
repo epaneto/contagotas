@@ -97,18 +97,19 @@ public class WaterFlowerGame : MonoBehaviour {
         if (Mathf.Abs((waterPot.transform.position.x + 150) - flower1.transform.position.x) < 80 && !flower1Done)
         {
            
-            Debug.Log("flower 1 has " + flower1WaterLevel);
+            if (flower1WaterLevel >= waterDesired)
+            {
+                flower1Skeleton.AnimationState.SetAnimation(0, "beauty", false);
+                flower1Done = true;
+                return;
+            }
 
             if(!watering1)
                 flower1Skeleton.AnimationState.SetAnimation(0, "idle", true);
             watering1 = true;
 
             flower1WaterLevel += 0.1f;
-            if (flower1WaterLevel >= waterDesired)
-            {
-                flower1Skeleton.AnimationState.SetAnimation(0, "beauty", false);
-                flower1Done = true;
-            }
+
         }else{
             if(watering1)
                 flower1Skeleton.AnimationState.SetAnimation(0, "down", true);
@@ -118,18 +119,19 @@ public class WaterFlowerGame : MonoBehaviour {
 
         if (Mathf.Abs((waterPot.transform.position.x + 150) - flower2.transform.position.x) < 80 && !flower2Done)
         {
-            Debug.Log("flower 2 has " + flower2WaterLevel);
+            if (flower2WaterLevel >= waterDesired)
+            {
+                flower2Skeleton.AnimationState.SetAnimation(0, "beauty", false);
+                flower2Done = true;
+            }
+
             flower2WaterLevel += 0.1f;
 
             if (!watering2)
                 flower2Skeleton.AnimationState.SetAnimation(0, "idle", true);
             watering2 = true;
 
-            if (flower2WaterLevel >= waterDesired)
-            {
-                flower2Skeleton.AnimationState.SetAnimation(0, "beauty", false);
-                flower2Done = true;
-            }
+
         }else
         {
             if (watering2)
@@ -139,18 +141,18 @@ public class WaterFlowerGame : MonoBehaviour {
 
         if (Mathf.Abs((waterPot.transform.position.x + 150) - flower3.transform.position.x) < 80 && !flower3Done)
         {
-            Debug.Log("flower 3 has " + flower3WaterLevel);
+            if (flower3WaterLevel >= waterDesired)
+            {
+                flower3Skeleton.AnimationState.SetAnimation(0, "beauty", false);
+                flower3Done = true;
+            }
+
             flower3WaterLevel += 0.1f;
 
             if (!watering3)
                 flower3Skeleton.AnimationState.SetAnimation(0, "idle", true);
             watering3 = true;
 
-            if (flower3WaterLevel >= waterDesired)
-            {
-                flower3Skeleton.AnimationState.SetAnimation(0, "beauty", false);
-                flower3Done = true;
-            }
         }else{
             if (watering3)
                 flower3Skeleton.AnimationState.SetAnimation(0, "down", true);

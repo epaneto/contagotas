@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Signup.unity
     guid: e7b80bbe806ca4d768da1e53af5445a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/NativeShareTestScene.unity
     guid: 2aa9099dba839bc459f5270808e83add
   - enabled: 1

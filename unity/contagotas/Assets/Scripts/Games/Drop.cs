@@ -5,17 +5,16 @@ using UnityEngine;
 public class Drop : MonoBehaviour {
 
     CollectRainGame controller;
-    float speed = 0;
+    float speed = -900.0f;
 
 	// Use this for initialization
 	void Start () {
         controller = FindObjectOfType<CollectRainGame>();
-        speed = Screen.height * 0.02f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        this.gameObject.transform.Translate(Vector3.down * speed);
+        this.gameObject.transform.Translate(0, speed * Time.deltaTime, 0);
 
         if (this.gameObject.transform.position.y < 0)
         {
