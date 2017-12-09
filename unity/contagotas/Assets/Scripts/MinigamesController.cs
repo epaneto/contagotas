@@ -28,6 +28,10 @@ public class MinigamesController : MonoBehaviour {
 	GameObject titleTxt;
     GameObject hintTxt;
     GameObject challengeTxt;
+    Text endGametxt;
+
+    int playerScore;
+    float scoreAnimationDuration = 0.6f;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +41,7 @@ public class MinigamesController : MonoBehaviour {
 		continueLoseButton = GameObject.Find ("bt_continuar_lose");
 		loseGame = GameObject.Find ("GameLose");
 		loseGameSadChar = GameObject.Find ("character_sad");
+        endGametxt = scoreTxt.GetComponent<Text>();
 
         titleTxt = GameObject.Find("titulo_txt");
         hintTxt = GameObject.Find("hint_txt");
@@ -79,12 +84,7 @@ public class MinigamesController : MonoBehaviour {
 	{
 		///REMOVE ACTIVE MINIGAME FROM SCREEN
 		JToken sceneName = Missions[minigameIndex]["sceneid"];
-		SceneManager.UnloadSceneAsync (sceneName.ToString());
-
-
-		///SHOW END GAME
-		Text txt = scoreTxt.GetComponent<Text> ();
-		txt.text = score.ToString ();
+        SceneManager.UnloadSceneAsync(sceneName.ToString());
 
 		JToken titleString = Missions[minigameIndex]["title"];
         Text titleField = titleTxt.GetComponent<Text> ();
@@ -98,8 +98,31 @@ public class MinigamesController : MonoBehaviour {
         challengeField.text = "Desafio Real #" + (minigameIndex + 1).ToString();
 
 		endGame.SetActive(true);
+
+        playerScore = 0;
+        StartCoroutine("CountTo", score);
+
 		continueButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
 	}
+
+    IEnumerator CountTo(int target)
+    {
+        int start = playerScore;
+        for (float timer = 0; timer < scoreAnimationDuration; timer += Time.deltaTime)
+        {
+            float progress = timer / scoreAnimationDuration;
+            playerScore = (int)Mathf.Lerp(start, target, progress);
+            yield return null;
+        }
+        playerScore = target;
+    }
+
+    void OnGUI()
+    {
+        ///SHOW END GAME
+        endGametxt.text = playerScore.ToString();
+    }
+
 
     public void PlayNextMiniGame()
     {
