@@ -1,16 +1,6 @@
 {
   "missoes": [
     {
-      "title": "Está na chuva, é para economizar!",
-      "sceneid": "game12",
-      "hint": "Use baldes, calhas, sistema de captação e aproveite em casa a economia que cai do céu."
-    },
-    {
-      "title": "Você agora é um caça-vazamentos!",
-      "sceneid": "game15",
-      "hint": "Um buraquinho no cano da sua casa desperdiça quase 100 mil litros por mês. Investigue."
-    },
-    {
       "title": "Ganhou no jogo!",
       "sceneid": "game20",
       "hint": "Troque a descarga de parede pela acoplada na sua casa. Economize até 50% e dê adeus ao desperdício."
@@ -28,14 +18,22 @@
     {
       "title": "Jogada de mestre!",
       "sceneid": "game17",
-      "hint": "É hora de levar esse truque para a sua rotina. Reúse a água do enxágue da máquina e aproveite até 100 litros de água."
+      "hint": "É hora de levar esse truque para a sua rotina. Reúse a água do enxágue da máquina e aproveite até 100 litros de água. "
     },
-
-
+    {
+      "title": "Você agora é um caça-vazamentos!",
+      "sceneid": "game15",
+      "hint": "Um buraquinho no cano da sua casa desperdiça quase 100 mil litros por mês. Investigue. "
+    },
+    {
+      "title": "Está na chuva, é para economizar!",
+      "sceneid": "game12",
+      "hint": "Use baldes, calhas, sistema de captação e aproveite em casa a economia que cai do céu."
+    },
     {
       "title": "Foi o bicho!",
       "sceneid": "game18",
-      "hint": "Leve o jogo para casa ou pet shop: siga a frequência de banhos indicada para seu bichinho. Exagerar é uma fria!"
+      "hint": "Leve o jogo para casa ou pet shop: siga a frequência de banhos indicada para seu bichinho. Exagerar é uma fria! "
     },
     {
       "title": "Desafio vencido!",
@@ -84,13 +82,13 @@
       "sceneid": "game1",
       "hint": "O desafio em casa é não se barbear no chuveiro e poupar cerca de 10 litros. Tire as barbas de molho e entre em ação."
     },
-    {
+  {
         "title": "Lavou, ganhou!",
         "sceneid": "game6",
         "hint": "Coloque de molho alimentos com cloro ou água sanitária de uso geral e poupe cerca de 70 litros de água na sua casa."
     },
   
-    {
+  {
         "title": "Vitória limpa!",
         "sceneid": "game5",
         "hint": "Uma máquina usa cerca de 135 litros por lavagem. Use sempre com a capacidade máxima de roupas. Desafie-se em casa."
