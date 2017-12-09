@@ -8,6 +8,7 @@ using Newtonsoft.Json.Linq;
 using Spine;
 using Spine.Unity;
 using Spine.Unity.Modules.AttachmentTools;
+using DG.Tweening;
 
 public class MinigamesController : MonoBehaviour {
 
@@ -156,6 +157,16 @@ public class MinigamesController : MonoBehaviour {
             //Debug.Log ("that was the last minigame, show map");
             SceneController.sceneController.FadeAndLoadScene("Map", true);
         }
+    }
+
+    public void blinkTimeBar()
+    {
+        Image timeBarFillMaterial = timeBarFill.GetComponent<Image>();
+
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(timeBarFillMaterial.DOColor(Color.red, 0.2f));
+        mySequence.AppendInterval(0.2f);
+        mySequence.Append(timeBarFillMaterial.DOColor(Color.white, 0.2f));
     }
 
     public void showTime()

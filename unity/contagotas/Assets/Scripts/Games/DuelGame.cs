@@ -27,6 +27,8 @@ public class DuelGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
+        mdb.isTimeGame = false;
+
         enemySkeleton = enemyObject.GetComponent<SkeletonGraphic>();
         playerSkeleton = playerObject.GetComponent<SkeletonGraphic>();
 
@@ -44,8 +46,10 @@ public class DuelGame : MonoBehaviour {
 
         if (!isPlaying)
             return;
-        
 
+        if (isEnemyActive)
+            mdb.loseTime(0.05f);
+        
         if (!mdb.hasTimeLeft() && numPoints < 3)
         {
             isPlaying = false;
@@ -64,7 +68,11 @@ public class DuelGame : MonoBehaviour {
     public void playerAttack()
     {
         if (!isEnemyActive)
+        {
+            playerSkeleton.AnimationState.SetAnimation(0, "tap", false);
+            mdb.loseTime(1.0f);
             return;
+        }
         
         numPoints ++;
 

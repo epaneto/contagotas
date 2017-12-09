@@ -13,6 +13,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	SkeletonGraphic graphic;
 	MinigamesController controller;
+    public bool isTimeGame = true;
 	public int gameScore;
 	public bool gameStarted = false;
 
@@ -40,6 +41,13 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 //		EndedGame ();
 
 	}
+
+    public void loseTime(float timeLost)
+    {
+        totalTime += timeLost;
+        controller.updateTime(1.0f - totalTime / maxTime);
+        controller.blinkTimeBar();
+    }
 
 	void EndedIntro(Spine.TrackEntry entry)
 	{
@@ -91,7 +99,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (!gameStarted)
+        if (!gameStarted || !isTimeGame)
 			return;
 		
         controller.updateTime(1.0f - totalTime / maxTime);
