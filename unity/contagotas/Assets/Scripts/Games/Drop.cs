@@ -5,11 +5,12 @@ using UnityEngine;
 public class Drop : MonoBehaviour {
 
     CollectRainGame controller;
-    float speed = -900.0f;
+    float speed;
 
 	// Use this for initialization
 	void Start () {
         controller = FindObjectOfType<CollectRainGame>();
+        speed = -(Screen.height * 0.7f);
 	}
 	
 	// Update is called once per frame

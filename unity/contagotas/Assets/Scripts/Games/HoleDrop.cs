@@ -10,10 +10,11 @@ public class HoleDrop : MonoBehaviour {
     SkeletonGraphic dropSkeleton;
     PipeHolesGame controller;
     bool isClosed = false;
-    float speed = -600.0f;
+    float speed;
 
 	// Use this for initialization
 	void Start () {
+        speed = -(Screen.height * 0.5f);
         controller = FindObjectOfType<PipeHolesGame>();
         dropSkeleton = this.gameObject.GetComponent<SkeletonGraphic>();
 	}
