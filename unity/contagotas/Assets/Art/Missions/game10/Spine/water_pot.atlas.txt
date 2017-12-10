@@ -4,16 +4,16 @@ size: 1024,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-water
-  rotate: true
+drop
+  rotate: false
   xy: 2, 2
-  size: 104, 678
-  orig: 104, 678
+  size: 49, 83
+  orig: 49, 83
   offset: 0, 0
   index: -1
 water_pot
   rotate: false
-  xy: 2, 108
+  xy: 2, 87
   size: 595, 510
   orig: 595, 510
   offset: 0, 0

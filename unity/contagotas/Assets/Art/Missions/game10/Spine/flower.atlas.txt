@@ -1,27 +1,55 @@
 
 flower.png
-size: 2048,1024
+size: 2048,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-flower__down
-  rotate: false
-  xy: 618, 260
-  size: 614, 554
-  orig: 614, 554
+caule_beauty
+  rotate: true
+  xy: 544, 123
+  size: 125, 494
+  orig: 125, 494
+  offset: 0, 0
+  index: -1
+caule_down
+  rotate: true
+  xy: 2, 53
+  size: 195, 540
+  orig: 195, 540
+  offset: 0, 0
+  index: -1
+drop
+  rotate: true
+  xy: 2, 2
+  size: 49, 83
+  orig: 49, 83
   offset: 0, 0
   index: -1
 flower_beauty
+  rotate: true
+  xy: 1341, 3
+  size: 245, 255
+  orig: 245, 255
+  offset: 0, 0
+  index: -1
+flower_down
   rotate: false
-  xy: 2, 77
-  size: 614, 737
-  orig: 614, 737
+  xy: 1598, 96
+  size: 87, 152
+  orig: 87, 152
   offset: 0, 0
   index: -1
 game1_bright
-  rotate: false
-  xy: 2, 2
+  rotate: true
+  xy: 544, 58
   size: 63, 73
   orig: 63, 73
+  offset: 0, 0
+  index: -1
+leaf
+  rotate: false
+  xy: 1040, 59
+  size: 299, 189
+  orig: 299, 189
   offset: 0, 0
   index: -1
