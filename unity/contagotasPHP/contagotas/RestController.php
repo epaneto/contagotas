@@ -6,7 +6,6 @@ $view = "";
 if(isset($_GET["view"]))
 	$view = $_GET["view"];
 
-
 if($_SERVER['HTTP_USER_AGENT'] != "app-contagotas")
 {
 	die("ERROR!");
@@ -82,7 +81,7 @@ switch($view){
 	case "score_insert":
 		// to handle REST Url /group/join/score/<score>/
 		$groupRestHandler = new GroupRestHandler();
-		$groupRestHandler->InsertGroupScore($_GET["group_id"],$_GET["score"]);
+		$groupRestHandler->InsertGroupScore($_GET["group_id"],$_GET["score"],$_GET["user_id"]);
 		break;
 	
 	case "score_get":
@@ -90,7 +89,11 @@ switch($view){
 		$groupRestHandler = new GroupRestHandler();
 		$groupRestHandler->getGroupScore($_GET["group_id"]);
 		break;
-		
+	case "score_get_detailed":
+		// to handle REST Url /group/score/get_detailed/<group_id>/
+		$groupRestHandler = new GroupRestHandler();
+		$groupRestHandler->getGroupScoreDetailed($_GET["group_id"]);
+		break;
 	case "score_top":
 		// to handle REST Url /group/score/top/
 		$groupRestHandler = new GroupRestHandler();

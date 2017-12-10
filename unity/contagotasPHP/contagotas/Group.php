@@ -112,11 +112,12 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");
 		
-		$sql = "SELECT contagotas_app.group.group_name, contagotas_app.group.id_group, contagotas_app.group_score.score
+		$sql = "SELECT contagotas_app.group.group_name, contagotas_app.group.id_group, IFNULL(SUM(contagotas_app.group_score.score), 0) as score
 				FROM contagotas_app.group
 				INNER JOIN contagotas_app.group_user ON contagotas_app.group.id_group=contagotas_app.group_user.group_id
 				INNER JOIN contagotas_app.group_score ON contagotas_app.group_score.group_id=contagotas_app.group.id_group
 				WHERE contagotas_app.group_user.user_id = '" . $user_id . "'";
+				
 
 		$result = $con->query($sql);
 		
@@ -306,7 +307,7 @@ Class Group {
 		return $return;
 	}
 	
-	public function InsertGroupScore($group,$score){
+	public function InsertGroupScore($group,$score, $user_id){
 
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
 
@@ -317,9 +318,12 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");		 
 		
-		$sql = " UPDATE `contagotas_app`.`group_score` 
-			SET score = score + " . $score . "
-			WHERE group_id = '".$group."'";
+		
+		$sql = "INSERT INTO `contagotas_app`.`group_score` 
+		(`group_id`,`score`,`user_id`) VALUES
+			(".$group.",
+			".$score.",
+			".$user_id.")";
 		
 		if (!mysqli_query($con,$sql))
 		  {
@@ -346,7 +350,7 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");
 		 	 
-		$sql = "SELECT score FROM contagotas_app.group_score where group_id = '" . $group_id . "'";
+		$sql = "SELECT IFNULL(SUM(score), 0) as score FROM contagotas_app.group_score where group_id = '" . $group_id . "'";
 		
 		$result = $con->query($sql);
 		
@@ -367,7 +371,7 @@ Class Group {
 		mysqli_close($con);
 		
 		return $return;
-	}	
+	}
 
 	public function getTopGroupScore(){
 		
@@ -380,10 +384,11 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");
 		 	 
-		$sql = 'SELECT contagotas_app.group.group_name, contagotas_app.group_score.score
+		$sql = 'SELECT contagotas_app.group.group_name, IFNULL(SUM(contagotas_app.group_score.score), 0) as score 
 		FROM contagotas_app.group
-		INNER JOIN contagotas_app.group_score ON contagotas_app.group.id_group=contagotas_app.group_score.group_id
-		order by score DESC limit 10;';
+		LEFT OUTER  JOIN contagotas_app.group_score ON contagotas_app.group.id_group=contagotas_app.group_score.group_id
+        group by contagotas_app.group.group_name
+		order by score DESC limit 8;';
 
 		$result = $con->query($sql);
 
@@ -392,6 +397,44 @@ Class Group {
 			// output data of each row
 			while($row = $result->fetch_assoc()) {
 				$json .= "{'Name':'" . $row["group_name"]."','score':'" . $row["score"] . "'},";
+			}
+		} 
+		$json .= "]";
+		
+		if (!mysqli_query($con,$sql))
+		  {
+		  die('Error: ' . mysqli_error($con));
+		  }
+		 
+		mysqli_close($con);
+		return $json;
+	}
+	
+	public function getGroupScoreDetailed($group_id){
+		
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");
+		
+		$sql = "SELECT contagotas_app.users.name as name , IFNULL(SUM(contagotas_app.group_score.score), 0) as score 
+		FROM contagotas_app.group_user
+		inner JOIN contagotas_app.users ON contagotas_app.group_user.user_id = contagotas_app.users.userid 
+		LEFT OUTER JOIN contagotas_app.group_score ON contagotas_app.group_score.group_id = contagotas_app.group_user.group_id
+		where group_user.group_id = " . $group_id ."
+		GROUP BY contagotas_app.users.name";
+
+		$result = $con->query($sql);
+
+		$json = "[";
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				$json .= "{'Name':'" . $row["name"]."','score':'" . $row["score"] . "'},";
 			}
 		} 
 		$json .= "]";

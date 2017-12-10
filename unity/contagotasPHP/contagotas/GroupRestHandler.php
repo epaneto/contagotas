@@ -98,10 +98,10 @@ class GroupRestHandler extends SimpleRest {
 	
 	}
 	
-	public function InsertGroupScore($group_id,$score) {
+	public function InsertGroupScore($group_id,$score, $user_id) {
 
 		$group = new Group();
-		$rawData = $group->insertGroupScore($group_id,$score);
+		$rawData = $group->insertGroupScore($group_id,$score,$user_id);
 
 		$response = new Response();
 		$response->send($rawData);
@@ -115,6 +115,16 @@ class GroupRestHandler extends SimpleRest {
 		$response = new Response();
 		$response->send($rawData);
 	}
+	
+	public function getGroupScoreDetailed($group_id) {
+
+		$group = new Group();
+		$rawData = $group->getGroupScoreDetailed($group_id);
+
+		$response = new Response();
+		$response->send($rawData);
+	}
+	
 	
 	public function getTopGroupScore() {
 

@@ -16,8 +16,9 @@ RewriteRule ^group/join/([0-9]+)/([0-9]+)/$  RestController.php?view=join&group=
 RewriteRule ^group/join/$  RestController.php?view=join_with_password [nc,qsa]
 RewriteRule ^group/leave/([A-Za-z0-9]+)/$  RestController.php?view=leave&user=$1 [nc,qsa]
 RewriteRule ^group/score/get/([0-9]+)/$  RestController.php?view=score_get&group_id=$1 [nc,qsa]
+RewriteRule ^group/score/get_detailed/([0-9]+)/$  RestController.php?view=score_get_detailed&group_id=$1 [nc,qsa]
 RewriteRule ^group/score/top/$  RestController.php?view=score_top [nc,qsa]
-RewriteRule ^group/score/([0-9]+)/([0-9]+)/$  RestController.php?view=score_insert&group_id=$1&score=$2 [nc,qsa]
+RewriteRule ^group/score/([0-9]+)/([0-9]+)/([0-9]+)/$  RestController.php?view=score_insert&group_id=$1&score=$2&user_id=$3 [nc,qsa]
 RewriteRule ^group/list_by_user_id/([0-9]+)/$   RestController.php?view=single_by_user_id&id=$1 [nc,qsa]
 RewriteRule ^user/create/$   RestController.php?view=create_user [nc,qsa]
 

@@ -17,7 +17,6 @@ public enum ScreenType
 	CREATE_GROUP,
 	JOIN_GROUP,
 	CONFIRM_JOIN_GROUP,
-	RANKING_GROUP,
 	ERROR,
 	RECEIVE_INVITES,
 	SEND_INVITES
@@ -62,10 +61,6 @@ public class GroupManager : MonoBehaviour {
 	[SerializeField]
 	ConfirmJoinScreenManager confirmJoinScreenManager;
 
-	[Header("Ranking Screen References")]
-	[SerializeField]
-	RankingScreenManager rankingGroupScreenManager;
-
 	[Header("Invite Screen References")]
 	[SerializeField]
 	InvitesReceivedScreenManager inviteReceivedScreenManager;
@@ -90,7 +85,6 @@ public class GroupManager : MonoBehaviour {
 		createNewGroupScreenManager.Initialize(this);
 		joinGroupScreenManager.Initialize(this);
 		confirmJoinScreenManager.Initialize(this);
-		rankingGroupScreenManager.Initialize(this);
 		inviteReceivedScreenManager.Initialize(this);
 		sendInviteGroupScreenManager.Initialize(this);
 	}
@@ -109,7 +103,6 @@ public class GroupManager : MonoBehaviour {
 		createNewGroupScreenManager.SetScreen(groupToShow == ScreenType.CREATE_GROUP);
 		joinGroupScreenManager.SetScreen(groupToShow == ScreenType.JOIN_GROUP);
 		confirmJoinScreenManager.SetScreen(groupToShow == ScreenType.CONFIRM_JOIN_GROUP);
-		rankingGroupScreenManager.SetScreen (groupToShow == ScreenType.RANKING_GROUP);
 		inviteReceivedScreenManager.SetScreen (groupToShow == ScreenType.RECEIVE_INVITES);
 		sendInviteGroupScreenManager.SetScreen (groupToShow == ScreenType.SEND_INVITES);
 	}
@@ -128,12 +121,6 @@ public class GroupManager : MonoBehaviour {
 	{
 		errorScreenManager.SetErrorMessage (error_message);
 		ShowGroup (ScreenType.ERROR);
-	}
-
-	public void ShowRankingScreen()
-	{
-		ShowGroup (ScreenType.LOADING);
-		rankingGroupScreenManager.StartLoadRanking ();
 	}
 
 	public void ShowJoinScreen()
@@ -187,13 +174,5 @@ public class GroupManager : MonoBehaviour {
 			inviteReceivedScreenManager.StartSearchForInvites();
 		}
 	}
-
-
-
-
-
-
-
-
 
 }
