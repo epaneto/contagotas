@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 
 	[SerializeField]
-	Text groupTitle;
+	Text groupName;
 
-	public void LeaveGroup()
+	[SerializeField]
+	Text groupScore;
+
+	public void StartLeaveGroup()
 	{
 		StartCoroutine (LeaveGroup (PlayerPrefs.GetInt ("user_id")));
 	}
@@ -32,7 +35,8 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 
 	public void ShowExistingGroup(GroupData info)
 	{
-		groupTitle.text = info.Name + " Score = " + info.Score;
+		groupName.text = info.Name;
+		groupScore.text = info.Score.ToString();
 		screenManager.ShowGroup (ScreenType.EXISTING_GROUP);
 	}
 
@@ -44,6 +48,11 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 	public void ShowSendInviteScreen()
 	{
 		screenManager.ShowSendInviteScreen ();
+	}
+
+	public void GoToHomeScreen()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Home");
 	}
 
 }

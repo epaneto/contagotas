@@ -138,8 +138,8 @@ public class GroupManager : MonoBehaviour {
 
 	public void ShowJoinScreen()
 	{
-		ShowGroup (ScreenType.LOADING);
-		joinGroupScreenManager.StartLoadSuggestedGroups ();
+		ShowGroup (ScreenType.JOIN_GROUP);
+		//joinGroupScreenManager.StartLoadSuggestedGroups ();
 	}
 
 	public void ShowSendInviteScreen()

@@ -11,7 +11,7 @@ using System.Linq;
 public class FacebookInviteManager : MonoBehaviour {
 
 	[SerializeField]
-	GameObject inviteButton;
+	GameObject facebookInviteContainer;
 
 	List<string> perms = new List<string>(){"public_profile", "email", "user_friends"};
 
@@ -28,7 +28,7 @@ public class FacebookInviteManager : MonoBehaviour {
 
 	public void InitiliazeFacebook()
 	{
-		inviteButton.SetActive(false);
+		facebookInviteContainer.SetActive(false);
 		// Initialize the Facebook SDK
 		FB.Init(InitCallback, OnHideUnity);
 	}
@@ -70,7 +70,7 @@ public class FacebookInviteManager : MonoBehaviour {
 			var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
 			// Print current access token's User ID
 			Debug.Log(aToken.UserId);
-			inviteButton.SetActive (true);
+			facebookInviteContainer.SetActive (true);
 		}
 		else {
 			Debug.Log("User cancelled login");

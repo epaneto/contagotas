@@ -79,14 +79,15 @@ Class Group {
 		}
 		 
 		mysqli_select_db($con,"contagotas_app");
-		 	 
-		$sql = "SELECT * FROM contagotas_app.group where group_name = '" . $group_name . "'";
+		
+		
+		$sql = "SELECT * FROM contagotas_app.group where group_name like '%" . $group_name . "%'";
 		$result = $con->query($sql);
 		
 		$json = "[";
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'}";
+				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'},";
 			}
 		} 
 		$json .= "]";		

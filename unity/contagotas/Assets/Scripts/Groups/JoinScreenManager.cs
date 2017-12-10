@@ -11,9 +11,6 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 	Transform searchResultParent;
 	[SerializeField]
 	InputField groupToSearchInput;
-	[SerializeField]
-	Transform suggestedParent;
-	private GameObject suggestedResultObj;
 
 	public void SearchGroup()
 	{
@@ -24,9 +21,6 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 	{
 		if (groupToSearchInput.text == "")
 			yield break;
-
-		if (suggestedResultObj != null)
-			Destroy (suggestedResultObj);
 
 		screenManager.ShowLoadingScreen ();
 		WWW result;
@@ -49,56 +43,63 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 
 		List<GroupData> foundGroups = JsonConvert.DeserializeObject<List<GroupData>>(json);
 
-		suggestedResultObj = Instantiate (screenManager.GroupObjectPrefabs, searchResultParent);
-		GroupInfo groupInfoScript = suggestedResultObj.GetComponent<GroupInfo>(); 
-		groupInfoScript.joinGroupClicked += HandleJoinClickWithPassword;
-		groupInfoScript.SetupGroupInfo (foundGroups[0].Name, foundGroups[0].Score, foundGroups[0].Id, false);
-
-	}
-
-	public void StartLoadSuggestedGroups()
-	{
-		StartCoroutine (LoadSuggestedGroups ());
-	}
-
-	IEnumerator LoadSuggestedGroups()
-	{
-		screenManager.ShowLoadingScreen ();
-		WWW result;
-		yield return result = WWWUtils.DoWebRequest("list/");
-		Debug.Log ("url result = " + result.text);
-
-
-		if (result.text == "") {
-			screenManager.ShowErrorScreen ("error acessing group service, try again later");
-			yield break;
+		foreach (var item in screenManager.temporaryObjsList) {
+			Destroy (item);
 		}
+		screenManager.temporaryObjsList.Clear ();
 
-		if (result.text.ToUpper ().Contains ("ERROR")) {
-			screenManager.ShowErrorScreen ("error leaving group:" + result.text);
-			yield break;
-		} else {
-
-			foreach (var item in screenManager.temporaryObjsList) {
-				Destroy (item);
-			}
-			screenManager.temporaryObjsList.Clear ();
-
-			string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
-
-			List<GroupData> suggestedGroups = JsonConvert.DeserializeObject<List<GroupData>>(json);
-
-			foreach (var group in suggestedGroups) {
-				GameObject item = Instantiate (screenManager.GroupObjectPrefabs, suggestedParent);
-				screenManager.temporaryObjsList.Add (item);
-				GroupInfo groupInfoScript = item.GetComponent<GroupInfo>(); 
-				groupInfoScript.joinGroupClicked += HandleJoinClickWithPassword;
-				groupInfoScript.SetupGroupInfo (group.Name, group.Score, group.Id, false);
-			}
-
-			screenManager.ShowGroup (ScreenType.JOIN_GROUP);	
+		foreach (var group in foundGroups) {
+			GameObject item = Instantiate (screenManager.GroupObjectPrefabs, searchResultParent);
+			screenManager.temporaryObjsList.Add (item);
+			GroupInfo groupInfoScript = item.GetComponent<GroupInfo>(); 
+			groupInfoScript.joinGroupClicked += HandleJoinClickWithPassword;
+			groupInfoScript.SetupGroupInfo (group.Name, group.Score, group.Id, false);
 		}
 	}
+
+	//public void StartLoadSuggestedGroups()
+	//{
+	//	StartCoroutine (LoadSuggestedGroups ());
+	//}
+
+	//IEnumerator LoadSuggestedGroups()
+	//{
+	//	screenManager.ShowLoadingScreen ();
+	//	WWW result;
+	//	yield return result = WWWUtils.DoWebRequest("list/");
+	//	Debug.Log ("url result = " + result.text);
+
+
+	//	if (result.text == "") {
+	//		screenManager.ShowErrorScreen ("error acessing group service, try again later");
+	//		yield break;
+	//	}
+
+	//	if (result.text.ToUpper ().Contains ("ERROR")) {
+	//		screenManager.ShowErrorScreen ("error leaving group:" + result.text);
+	//		yield break;
+	//	} else {
+
+	//		foreach (var item in screenManager.temporaryObjsList) {
+	//			Destroy (item);
+	//		}
+	//		screenManager.temporaryObjsList.Clear ();
+
+	//		string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+	//		List<GroupData> suggestedGroups = JsonConvert.DeserializeObject<List<GroupData>>(json);
+
+	//		foreach (var group in suggestedGroups) {
+	//			GameObject item = Instantiate (screenManager.GroupObjectPrefabs, suggestedParent);
+	//			screenManager.temporaryObjsList.Add (item);
+	//			GroupInfo groupInfoScript = item.GetComponent<GroupInfo>(); 
+	//			groupInfoScript.joinGroupClicked += HandleJoinClickWithPassword;
+	//			groupInfoScript.SetupGroupInfo (group.Name, group.Score, group.Id, false);
+	//		}
+
+	//		screenManager.ShowGroup (ScreenType.JOIN_GROUP);	
+	//	}
+	//}
 
 
 	void HandleJoinClickWithPassword(int groupId, string groupName)
@@ -123,6 +124,4 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 			screenManager.ShowExistingGroup (groupData);
 		}
 	}
-
-
 }
