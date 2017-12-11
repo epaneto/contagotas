@@ -10,17 +10,14 @@ public class HasInviteBehaviour : MonoBehaviour {
 	Text notificationNumber;
 	[SerializeField]
 	GameObject notificationAssets;
-	[SerializeField]
-	GameObject internetIssuesAssets;
+
 
 	// Use this for initialization
 	void Start () {
 
 		if (Application.internetReachability == NetworkReachability.NotReachable) {
 			Debug.Log ("Error. Check internet connection!");
-			internetIssuesAssets.SetActive (true);
 		} else {
-			internetIssuesAssets.SetActive (false);
 			StartCoroutine (HasGroup());
 		}
 
