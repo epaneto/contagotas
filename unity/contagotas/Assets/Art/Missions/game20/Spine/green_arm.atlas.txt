@@ -1,27 +1,41 @@
 
 green_arm.png
-size: 2048,256
+size: 2048,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 big_green_arm
   rotate: false
-  xy: 2, 2
+  xy: 740, 799
   size: 853, 205
   orig: 853, 205
   offset: 0, 0
   index: -1
-button_not_pressed
+wall_button_base
   rotate: false
-  xy: 857, 19
-  size: 292, 188
-  orig: 292, 188
+  xy: 2, 328
+  size: 736, 676
+  orig: 736, 676
   offset: 0, 0
   index: -1
-button_pressed
+wall_button_bottom
   rotate: false
-  xy: 1151, 79
-  size: 292, 128
-  orig: 292, 128
+  xy: 740, 383
+  size: 482, 136
+  orig: 482, 136
+  offset: 0, 0
+  index: -1
+wall_button_middle
+  rotate: false
+  xy: 740, 521
+  size: 482, 276
+  orig: 482, 276
+  offset: 0, 0
+  index: -1
+wall_button_top
+  rotate: false
+  xy: 2, 2
+  size: 482, 324
+  orig: 482, 324
   offset: 0, 0
   index: -1
