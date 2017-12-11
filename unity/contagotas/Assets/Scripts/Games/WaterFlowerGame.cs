@@ -99,20 +99,27 @@ public class WaterFlowerGame : MonoBehaviour {
            
             if (flower1WaterLevel >= waterDesired)
             {
+                Debug.Log("flower 1 beauty!");
                 flower1Skeleton.AnimationState.SetAnimation(0, "beauty", false);
                 flower1Done = true;
                 return;
             }
 
-            if(!watering1)
+            if (!watering1)
+            {
+                Debug.Log("flower 1 idle");
                 flower1Skeleton.AnimationState.SetAnimation(0, "idle", true);
+            }
             watering1 = true;
 
             flower1WaterLevel += 0.1f;
 
         }else{
-            if(watering1)
+            if (watering1 && !flower1Done)
+            {
+                Debug.Log("flower 1 down");
                 flower1Skeleton.AnimationState.SetAnimation(0, "down", true);
+            }
             watering1 = false;
 
         }
@@ -134,7 +141,7 @@ public class WaterFlowerGame : MonoBehaviour {
 
         }else
         {
-            if (watering2)
+            if (watering2 && !flower2Done)
                 flower2Skeleton.AnimationState.SetAnimation(0, "down", true);
             watering2 = false;
         }
@@ -154,7 +161,7 @@ public class WaterFlowerGame : MonoBehaviour {
             watering3 = true;
 
         }else{
-            if (watering3)
+            if (watering3 && !flower3Done)
                 flower3Skeleton.AnimationState.SetAnimation(0, "down", true);
             watering3 = false;
         }
