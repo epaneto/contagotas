@@ -120,6 +120,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 6728918}
+  - component: {fileID: 6728919}
   m_Layer: 0
   m_Name: Groups
   m_TagString: Untagged
@@ -141,6 +142,19 @@ Transform:
   m_Father: {fileID: 78882293}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6728919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 6728917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098906df0bdcc0e4ca36c4cf8b904e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  internetIssuesAssets: {fileID: 27382752}
+  groupButton: {fileID: 1733183617}
 --- !u!1 &15628282
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class HasInviteBehaviour : MonoBehaviour {
 			internetIssuesAssets.SetActive (true);
 		} else {
 			internetIssuesAssets.SetActive (false);
-			StartCoroutine (CheckInvite());
+			StartCoroutine (HasGroup());
 		}
 
 	}
@@ -45,6 +45,17 @@ public class HasInviteBehaviour : MonoBehaviour {
 			notificationAssets.SetActive (true);
 			notificationNumber.text = invites.Count.ToString ();
 		} 
+	}
+
+	IEnumerator HasGroup()
+	{
+		WWW result;
+		yield return result = WWWUtils.DoWebRequest( "hasGroup/" + PlayerPrefs.GetInt ("user_id") + "/");
+		Debug.Log ("url result = " + result.text);
+
+		if (result.text == "false") {
+			StartCoroutine (CheckInvite());
+		}
 	}
 
 }
