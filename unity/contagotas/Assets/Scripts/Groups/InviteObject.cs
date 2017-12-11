@@ -14,11 +14,16 @@ public class InviteObject : MonoBehaviour {
 	[SerializeField]
 	Button declineButton;
 
+	[SerializeField]
+	Button closeButton;
+
 	private int inviteID;
 
 	public System.Action<int> acceptButtonClicked = new System.Action<int>(delegate(int id) {});
 
 	public System.Action<int> declineButtonClicked = new System.Action<int>(delegate(int id) {});
+
+	public System.Action<InviteObject> closeButtonClicked = new System.Action<InviteObject>(delegate(InviteObject inviteObject) {});
 
 	public void SetupInviteInfo(string senderName, string groupName, int inviteId)
 	{
@@ -27,6 +32,7 @@ public class InviteObject : MonoBehaviour {
 
 		acceptButton.onClick.AddListener(HandleAcceptClick);
 		declineButton.onClick.AddListener(HandleDeclineClick);
+		closeButton.onClick.AddListener (HandleCloseClick);
 	}
 
 	private void HandleAcceptClick()
@@ -38,5 +44,11 @@ public class InviteObject : MonoBehaviour {
 	{
 		declineButtonClicked (inviteID);
 	}
+
+	private void HandleCloseClick()
+	{
+		closeButtonClicked (this);
+	}
+
 
 }

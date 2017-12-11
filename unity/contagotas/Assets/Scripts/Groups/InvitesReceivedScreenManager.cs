@@ -44,6 +44,7 @@ public class InvitesReceivedScreenManager : BaseAssetsGroupManager {
 				InviteObject inviteObj = item.GetComponent<InviteObject> (); 
 				inviteObj.acceptButtonClicked += HandleAcceptInvite;
 				inviteObj.declineButtonClicked += HandleDeclineInvite;
+				inviteObj.closeButtonClicked += HandleCloseButtonClicked;
 				inviteObj.SetupInviteInfo (invite.sender_name, invite.group_name, invite.id_invite);
 			}
 
@@ -65,6 +66,15 @@ public class InvitesReceivedScreenManager : BaseAssetsGroupManager {
 	{
 		StartCoroutine(DeclineInvite (inviteID));
 	}
+
+	void HandleCloseButtonClicked(InviteObject obj)
+	{
+		screenManager.temporaryObjsList.Remove (obj.gameObject);
+		Destroy (obj.gameObject);
+		if (screenManager.temporaryObjsList.Count == 0)
+			screenManager.ShowNewGroupScene();
+	}
+
 
 	IEnumerator AcceptInvite (int inviteId)
 	{

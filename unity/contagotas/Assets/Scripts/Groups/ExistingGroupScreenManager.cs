@@ -116,14 +116,10 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 		screenManager.ShowSendInviteScreen ();
 	}
 
-	public void GoToHomeScreen()
+	public void GoToMapScreen()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene ("Home");
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Map");
 	}
-
-
-
-
 	#region RANKING
 
 	[SerializeField]

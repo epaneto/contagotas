@@ -11,4 +11,8 @@ public class NewGroupScreenManager : BaseAssetsGroupManager {
 	public void ShowJoinScreen(){
 		screenManager.ShowJoinScreen ();
 	}
+
+	public void ShowMapScreen(){
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Map");
+	}
 }

@@ -124,4 +124,9 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 			screenManager.ShowExistingGroup (groupData);
 		}
 	}
+
+	public void GoBack()
+	{
+		screenManager.ShowNewGroupScene ();
+	}
 }

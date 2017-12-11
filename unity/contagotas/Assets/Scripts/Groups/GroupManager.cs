@@ -146,6 +146,11 @@ public class GroupManager : MonoBehaviour {
 		ShowGroup (ScreenType.CONFIRM_JOIN_GROUP);
 	}
 
+	public void ShowNewGroupScene()
+	{
+		ShowGroup (ScreenType.NEW_GROUP);
+	}
+
 	IEnumerator HasGroup(int userID)
 	{
 		ShowLoadingScreen ();

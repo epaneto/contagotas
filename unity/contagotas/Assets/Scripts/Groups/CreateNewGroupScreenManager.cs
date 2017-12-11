@@ -60,4 +60,9 @@ public class CreateNewGroupScreenManager : BaseAssetsGroupManager {
 		StartCoroutine (joinManager.Join (groupID));
 	}
 
+	public void GoBack()
+	{
+		screenManager.ShowNewGroupScene();
+	}
+
 }

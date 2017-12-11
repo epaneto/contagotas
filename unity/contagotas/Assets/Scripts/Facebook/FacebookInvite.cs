@@ -23,7 +23,7 @@ public class FacebookInvite : MonoBehaviour {
 
 	public void SetupInviteInfo(string facebookUserName, string facebookId, string facebookCoverURL)
 	{
-		this.facebookUserName.text = facebookUserName;
+		this.facebookUserName.text = facebookUserName.Trim();
 		this.userFacebookId = facebookId;
 		this.facebookCoverURL = facebookCoverURL;
 	
@@ -52,7 +52,7 @@ public class FacebookInvite : MonoBehaviour {
 		Hashtable headers = new Hashtable ();
 		headers.Add ("User-Agent", "app-contagotas");
 
-		string finalURL = "http://contagotas.online/services/group/invite/create/" + PlayerPrefs.GetInt("user_id") + "/" + userFacebookId + "/";
+		string finalURL = "http://contagotas.online/services/group/invite/create/" + PlayerPrefs.GetInt("user_id") + "/" + userFacebookId.Trim() + "/";
 		WWW result = new WWW(finalURL, Encoding.UTF8.GetBytes("data="), headers);
 		yield return result;
 
@@ -60,6 +60,5 @@ public class FacebookInvite : MonoBehaviour {
 			Debug.Log ("Error accepting invite ->" + result.text);
 		} 
 	}
-
 
 }

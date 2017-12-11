@@ -81,7 +81,7 @@ Class Group {
 		mysqli_select_db($con,"contagotas_app");
 		
 		
-		$sql = "SELECT * FROM contagotas_app.group where group_name like '%" . $group_name . "%'";
+		$sql = "SELECT * FROM contagotas_app.group where group_name like '%" . $group_name . "%' LIMIT 7";
 		$result = $con->query($sql);
 		
 		$json = "[";

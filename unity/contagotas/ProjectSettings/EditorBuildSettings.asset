@@ -89,3 +89,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Missions/game19.unity
     guid: e3db100cee3067c48bc4e985d733f35c
+  - enabled: 1
+    path: Assets/Scenes/Group.unity
+    guid: 629a6ebfb956b6b4c875ba63f7ef26ea
