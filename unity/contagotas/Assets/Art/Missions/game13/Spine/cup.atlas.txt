@@ -25,3 +25,10 @@ game1_bright
   orig: 63, 73
   offset: 0, 0
   index: -1
+game1_glow
+  rotate: false
+  xy: 578, 244
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
