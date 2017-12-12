@@ -24,6 +24,11 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 
 	public void ClickedJoinWithPassword()
 	{
+		if (ConfirmJoinPasswordInput.text == "") {
+			joinConfirmFeedback.text = "Digite a senha";
+			return;
+		}
+
 		joinConfirmFeedback.text = "";
 		StartCoroutine(JoinWithPassword (temporaryGroupId, ConfirmJoinPasswordInput.text));
 	}
@@ -61,7 +66,7 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 
 			if (data == "wrong password") {
 				ConfirmJoinPasswordInput.text = "";
-				joinConfirmFeedback.text = "WRONG PASSWORD";
+				joinConfirmFeedback.text = "Senha errada";
 				screenManager.ShowGroup (ScreenType.CONFIRM_JOIN_GROUP);
 				Debug.Log ("Wrong Password");
 			}
