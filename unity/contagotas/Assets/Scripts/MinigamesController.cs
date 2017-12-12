@@ -21,14 +21,20 @@ public class MinigamesController : MonoBehaviour {
 
 	JArray Missions;
 	GameObject endGame;
-	GameObject loseGame;
-	GameObject loseGameSadChar;
-	GameObject scoreTxt;
-	GameObject continueButton;
-	GameObject continueLoseButton;
-	GameObject titleTxt;
+    GameObject successTitle;
+    GameObject scoreGroup;
+    GameObject scoreTxt;
+    GameObject continueButton;
+    GameObject titleTxt;
     GameObject hintTxt;
     GameObject challengeTxt;
+    GameObject endBackground;
+
+
+    GameObject loseGame;
+	GameObject loseGameSadChar;
+    GameObject continueLoseButton;
+
     Text endGametxt;
 
     int playerScore;
@@ -37,16 +43,21 @@ public class MinigamesController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		endGame = GameObject.Find ("EndGame");
-		scoreTxt = GameObject.Find ("score_txt");
-		continueButton = GameObject.Find ("bt_continuar_score");
-		continueLoseButton = GameObject.Find ("bt_continuar_lose");
-		loseGame = GameObject.Find ("GameLose");
-		loseGameSadChar = GameObject.Find ("character_sad");
-        endGametxt = scoreTxt.GetComponent<Text>();
 
+        successTitle = GameObject.Find("success_title");
+        scoreGroup = GameObject.Find("score_group");
         titleTxt = GameObject.Find("titulo_txt");
-        hintTxt = GameObject.Find("hint_txt");
         challengeTxt = GameObject.Find("desafio_txt");
+        hintTxt = GameObject.Find("hint_txt");
+        continueButton = GameObject.Find("bt_continuar_score");
+        endBackground = GameObject.Find("endgamebackground");
+
+		scoreTxt = GameObject.Find ("score_txt");
+        endGametxt = scoreTxt.GetComponent<Text>();
+		
+        loseGame = GameObject.Find("GameLose");
+        continueLoseButton = GameObject.Find("bt_continuar_lose");
+        loseGameSadChar = GameObject.Find("character_sad");
 
         timeBar.SetActive(false);
 
@@ -83,6 +94,14 @@ public class MinigamesController : MonoBehaviour {
 
 	public void ShowResults(int score)
 	{
+        successTitle.transform.DOScale(new Vector3(0,0,1),0.7f).SetEase(Ease.OutBack).From();
+        scoreGroup.transform.DOScale(new Vector3(0, 0, 1), 0.8f).SetEase(Ease.OutBack).From();
+        titleTxt.transform.DOScale(new Vector3(0, 0, 1), 0.9f).SetEase(Ease.OutBack).From();
+        challengeTxt.transform.DOScale(new Vector3(0, 0, 1), 1.0f).SetEase(Ease.OutBack).From();
+        hintTxt.transform.DOScale(new Vector3(0, 0, 1), 1.1f).SetEase(Ease.OutBack).From();
+        continueButton.transform.DOScale(new Vector3(0, 0, 1.2f), 1.0f).SetEase(Ease.OutBack).From();
+        endBackground.transform.DOMoveY(-1400,0.6f).SetEase(Ease.OutQuad).From();
+
 		///REMOVE ACTIVE MINIGAME FROM SCREEN
 		JToken sceneName = Missions[minigameIndex]["sceneid"];
         SceneManager.UnloadSceneAsync(sceneName.ToString());
