@@ -33,7 +33,7 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 		}
 
 		if (result.text.ToUpper ().Contains ("ERROR") || result.text.ToUpper ().Contains ("TIMEOUT")) {
-			screenManager.ShowErrorScreen ("error leaving group:" + result.text);
+			screenManager.ShowErrorScreen ("error searching group:" + result.text);
 			yield break;
 		} 
 
@@ -121,6 +121,7 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 
 			List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(json);
 			GroupData groupData = account[0];
+			PlayerPrefs.SetInt ("group_id", groupID);
 			screenManager.ShowExistingGroup (groupData);
 		}
 	}

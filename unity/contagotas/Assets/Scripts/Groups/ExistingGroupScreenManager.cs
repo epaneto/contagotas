@@ -43,6 +43,7 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 
 		if (result.text.ToUpper().Contains("SUCCESS")) 
 		{
+			PlayerPrefs.DeleteKey ("group_id");
 			screenManager.ShowGroup (ScreenType.NEW_GROUP);	
 		}
 		else {
