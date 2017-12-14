@@ -1,0 +1,20 @@
+
+float.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+float
+  rotate: false
+  xy: 2, 2
+  size: 462, 407
+  orig: 462, 407
+  offset: 0, 0
+  index: -1
+float_wave
+  rotate: false
+  xy: 466, 218
+  size: 284, 191
+  orig: 284, 191
+  offset: 0, 0
+  index: -1
