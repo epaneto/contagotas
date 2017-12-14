@@ -188,9 +188,7 @@ public class SignUpController : MonoBehaviour {
 
 			Debug.Log ("Criado player com sucesso, com a id = " + userId + " deveria ir para outra cena");
 
-			//TODO: Esse funcao nao ta funcionando O_o, aparentemente dessa cena, ele ta usando uma variavel estatica que não foi inicializada.
-			//CallForScene ("Avatar");
-			UnityEngine.SceneManagement.SceneManager.LoadScene("Avatar");
+			CallForScene ("Avatar");
 		}
 	}
 

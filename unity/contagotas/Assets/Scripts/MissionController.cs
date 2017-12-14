@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DG.Tweening;
 
 public class MissionController : MonoBehaviour {
 
-	public int maxDays = 21;
+	public int maxDays = 17;
 	public int activeMission;
+
 	public static MissionController missionController;
 
 	// Use this for initialization
@@ -21,7 +23,7 @@ public class MissionController : MonoBehaviour {
 		}
 	}
 
-	void Start () {
+    void Start () {
 
 		UserData user = UserData.userData;
 		user.Load ();
@@ -92,5 +94,6 @@ public class MissionController : MonoBehaviour {
 
 		SceneController.sceneController.FadeAndLoadScene ("Minigames", true);
 	}
+
 
 }

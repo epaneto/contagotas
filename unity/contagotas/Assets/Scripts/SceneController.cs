@@ -7,7 +7,7 @@ public class SceneController : MonoBehaviour {
 
 	public CanvasGroup transitionCanvas;
 	public float fadeDuration = 0.1f;
-	string startingSceneName = "Map";
+	string startingSceneName = "Home";
 
 	public event Action BeforeSceneUnload;
 	public event Action AfterSceneLoad;
@@ -30,6 +30,12 @@ public class SceneController : MonoBehaviour {
 	private IEnumerator Start () {
 		anim = GameObject.Find("transition").GetComponent<Animator> ();
 		anim.Play ("transition_empty");
+
+        if (PlayerPrefs.HasKey("signed") && PlayerPrefs.GetInt("signed") == 1)
+        {
+            Debug.Log("Ja Logado... deveria ir para outra cena");
+            startingSceneName = "Map";
+        }
 
 		transitionCanvas.alpha = 1f;
 		yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));

@@ -93,7 +93,7 @@ public class MinigamesController : MonoBehaviour {
 	}
 
 	public void ShowResults(int score)
-	{
+    {
         successTitle.transform.DOScale(new Vector3(0,0,1),0.7f).SetEase(Ease.OutBack).From();
         scoreGroup.transform.DOScale(new Vector3(0, 0, 1), 0.8f).SetEase(Ease.OutBack).From();
         titleTxt.transform.DOScale(new Vector3(0, 0, 1), 0.9f).SetEase(Ease.OutBack).From();
@@ -123,7 +123,41 @@ public class MinigamesController : MonoBehaviour {
         StartCoroutine("CountTo", score);
 
 		continueButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
+
+
+        ////SEND POINTS TO SERVER
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("Error. Check internet connection!");
+        }
+        else
+        {
+            if (!PlayerPrefs.HasKey("user_id"))
+            {
+                Debug.Log("ERROR: Player não contem user id");
+                return;
+            }
+            if (!PlayerPrefs.HasKey("group_id"))
+            {
+                //player não tem grupo, nao precisa registrar score de grupo
+                return;
+            }
+
+            StartCoroutine(AddScore(PlayerPrefs.GetInt("group_id"), score));
+        }
 	}
+
+    IEnumerator AddScore(int groupid, int score)
+    {
+        WWW result;
+        yield return result = WWWUtils.DoWebRequest("score/" + groupid.ToString() + "/" + score.ToString() + "/" + PlayerPrefs.GetInt("user_id") + "/");
+        Debug.Log("url result = " + result.text);
+
+        if (result.text == "success")
+            Debug.Log("Inserido score");
+        else
+            Debug.Log("ERROR:" + result.text);
+    }
 
     IEnumerator CountTo(int target)
     {

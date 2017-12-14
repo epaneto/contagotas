@@ -11,8 +11,7 @@ public class HomeController : MonoBehaviour {
 	private string destinySceneName;
 
 	void Start () {
-		if (PlayerPrefs.HasKey ("signed") && PlayerPrefs.GetInt ("signed") == 1)
-			Debug.Log ("Ja Logado... deveria ir para outra cena");
+		
 	}
 	
 	// Update is called once per frame
