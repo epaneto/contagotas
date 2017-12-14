@@ -9,18 +9,18 @@ public class MissionController : MonoBehaviour {
 	public int maxDays = 17;
 	public int activeMission;
 
-	public static MissionController missionController;
+	//public static MissionController missionController;
 
 	// Use this for initialization
 	void Awake () 
 	{
-		if (missionController == null) {
-			DontDestroyOnLoad (gameObject);
-			missionController = this;
-		} else if (missionController != this) {
-			missionController.UpdateMap ();
-			Destroy (gameObject);
-		}
+		//if (missionController == null) {
+		//	DontDestroyOnLoad (gameObject);
+		//	missionController = this;
+		//} else if (missionController != this) {
+		//	missionController.UpdateMap ();
+		//	Destroy (gameObject);
+		//}
 	}
 
     void Start () {

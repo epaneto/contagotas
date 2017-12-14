@@ -36,6 +36,7 @@ public class MapController : MonoBehaviour {
 
     void loadHints()
     {
+        Debug.Log("LOAD HINTS");
         ///load mission json
         TextAsset t = (TextAsset)Resources.Load("missoes", typeof(TextAsset));
         string DataAsJSON = t.text;

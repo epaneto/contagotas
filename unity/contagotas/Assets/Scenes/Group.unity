@@ -560,7 +560,6 @@ GameObject:
   - component: {fileID: 114390930}
   - component: {fileID: 114390929}
   - component: {fileID: 114390928}
-  - component: {fileID: 114390927}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -568,13 +567,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &114390927
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 114390926}
-  m_Enabled: 1
 --- !u!124 &114390928
 Behaviour:
   m_ObjectHideFlags: 0
@@ -5513,8 +5505,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 907453015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: 640, z: 0}
-  m_LocalScale: {x: 0.5933908, y: 0.5933908, z: 0.5933908}
+  m_LocalPosition: {x: 199.5, y: 354.5, z: 0}
+  m_LocalScale: {x: 0.3118893, y: 0.3118893, z: 0.3118893}
   m_Children:
   - {fileID: 1739051382}
   - {fileID: 114659146}
@@ -8262,7 +8254,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2027827161}
-        m_MethodName: GoToHomeScreen
+        m_MethodName: GoToMapScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

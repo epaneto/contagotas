@@ -119,7 +119,8 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 
 	public void GoToMapScreen()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene ("Map");
+        SceneController.sceneController.FadeAndLoadScene("Map", true);
+		//UnityEngine.SceneManagement.SceneManager.LoadScene ("Map");
 	}
 	#region RANKING
 
