@@ -83,6 +83,7 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 
 	public void Retry()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
+		SceneController.sceneController.FadeAndLoadScene("Group", true);
+		//UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
 	}
 }

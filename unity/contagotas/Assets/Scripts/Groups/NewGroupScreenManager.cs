@@ -13,6 +13,7 @@ public class NewGroupScreenManager : BaseAssetsGroupManager {
 	}
 
 	public void ShowMapScreen(){
-		UnityEngine.SceneManagement.SceneManager.LoadScene ("Map");
+		SceneController.sceneController.FadeAndLoadScene("Map", true);
+		//UnityEngine.SceneManagement.SceneManager.LoadScene ("Map");
 	}
 }
