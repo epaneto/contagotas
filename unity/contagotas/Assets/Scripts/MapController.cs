@@ -65,17 +65,20 @@ public class MapController : MonoBehaviour {
 
     public void openHints()
     {
+        GameSound.gameSound.PlaySFX("button");
         InfoObject.SetActive(true);
         InfoObject.transform.DOMoveY(-1400, 0.6f).SetEase(Ease.OutQuad).From();
     }
 
     public void hideHints()
     {
+        GameSound.gameSound.PlaySFX("button");
         InfoObject.SetActive(false);
     }
 
     public void OpenGroups()
     {
+        GameSound.gameSound.PlaySFX("button");
         SceneController.sceneController.FadeAndLoadScene("Group", true);
     }
 }

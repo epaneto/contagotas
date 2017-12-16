@@ -20,6 +20,7 @@ public class TouchRotate : MonoBehaviour {
     public void RotateMe()
     {
         //this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+        GameSound.gameSound.PlaySFX("tap");
         this.gameObject.transform.Rotate(new Vector3(0,0,90));
 
         int angle = (int)Mathf.Round(this.gameObject.transform.rotation.eulerAngles.z);

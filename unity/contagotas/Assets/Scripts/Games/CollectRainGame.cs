@@ -51,7 +51,7 @@ public class CollectRainGame : MonoBehaviour {
     public void CollectedDrop()
     {
         collectedDrops++;
-
+        GameSound.gameSound.PlaySFX("rain_drop");
         if(collectedDrops >= neededDrops)
         {
             EndGame();

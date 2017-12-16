@@ -62,7 +62,7 @@ public class GameSound : MonoBehaviour {
         if (!SFXON)
             return;
         
-        AudioClip newclip = Resources.Load("music/" + id) as AudioClip;
+        AudioClip newclip = Resources.Load("sfx/" + id) as AudioClip;
         SFXSource.PlayOneShot(newclip);
     }
 

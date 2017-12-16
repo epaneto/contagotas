@@ -41,6 +41,7 @@ public class HomeController : MonoBehaviour {
 
 	public void CallForScene(string sceneName)
 	{
+        GameSound.gameSound.PlaySFX("button");
 		destinySceneName = sceneName;
 		HideScene ();
 	}

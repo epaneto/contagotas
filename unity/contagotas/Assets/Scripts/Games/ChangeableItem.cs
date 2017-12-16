@@ -51,6 +51,7 @@ public class ChangeableItem : MonoBehaviour {
     {
         if (!originalStateBad)
         {
+            GameSound.gameSound.PlaySFX("error");
             mdb.loseTime(1.0f);
             if (changeableColor)
                 changeableColor.changeColor(false);
@@ -59,7 +60,7 @@ public class ChangeableItem : MonoBehaviour {
         if (isGood)
             return;
             
-
+        GameSound.gameSound.PlaySFX("tap");
         isGood = true;
         if (changeableColor)
             changeableColor.changeColor(true);

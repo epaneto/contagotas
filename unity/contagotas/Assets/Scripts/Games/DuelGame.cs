@@ -60,6 +60,7 @@ public class DuelGame : MonoBehaviour {
 
     void enemyAttack()
     {
+        GameSound.gameSound.PlayLoopMusic("toilet_flush");
         CancelInvoke();
         isEnemyActive = true;
         enemySkeleton.AnimationState.SetAnimation(0, "down", false);
@@ -69,11 +70,15 @@ public class DuelGame : MonoBehaviour {
     {
         if (!isEnemyActive)
         {
+            GameSound.gameSound.PlaySFX("error");
             playerSkeleton.AnimationState.SetAnimation(0, "tap", false);
             mdb.loseTime(1.0f);
             return;
         }
-        
+
+        GameSound.gameSound.StopMusic();
+        GameSound.gameSound.PlaySFX("toilet_slap");
+
         numPoints ++;
 
         enemySkeleton.AnimationState.SetAnimation(0, "up", false);

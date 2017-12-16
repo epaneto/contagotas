@@ -49,7 +49,8 @@ public class ReducerGame : MonoBehaviour {
         if (!isPlaying)
             return;
         
-        Debug.Log("redutor " + reducerObject.transform.position.y + " faucet " + faucetObject.transform.position.y);
+        //Debug.Log("redutor " + reducerObject.transform.position.y + " faucet " + faucetObject.transform.position.y);
+        GameSound.gameSound.PlaySFX("tap");
         reducerObject.transform.position += new Vector3(0, tapSizeY, 0);
         if (reducerObject.transform.position.y >= (faucetObject.transform.position.y + 20))
         {

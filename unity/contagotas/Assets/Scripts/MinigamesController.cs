@@ -202,6 +202,8 @@ public class MinigamesController : MonoBehaviour {
 
     public void PlayNextMiniGame()
     {
+        GameSound.gameSound.PlaySFX("button");
+
         ///if user came from win window, we need to hide
         hideTime();
 

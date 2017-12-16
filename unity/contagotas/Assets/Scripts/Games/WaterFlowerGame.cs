@@ -45,11 +45,13 @@ public class WaterFlowerGame : MonoBehaviour {
 
         if(isPotOn)
         {
+            GameSound.gameSound.PlayLoopMusic("regador");
             potSkeleton.AnimationState.SetAnimation(0, "on", false);
             potSkeleton.AnimationState.Complete += GoIdlePot;
         }
         else
         {
+            GameSound.gameSound.StopMusic();
             potSkeleton.AnimationState.Complete -= GoIdlePot;
             potSkeleton.AnimationState.SetAnimation(0, "off", false);
 

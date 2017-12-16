@@ -43,7 +43,7 @@ public class HoleDrop : MonoBehaviour {
             return;
         
         Debug.Log("HOLE TOCOU");
-
+        GameSound.gameSound.PlaySFX("tap");
         isClosed = true;
         dropSkeleton.AnimationState.SetAnimation(0, "off", false);
         controller.fixedPipe();
