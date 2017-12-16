@@ -283,15 +283,6 @@ Class Group {
 	
 	public function LeaveGroup($user){
 
-		$mysqli = new mysqli("mysql.contagotas.online", "contagotas", "c0nt4g0t4s", "contagotas_app");
-
-		/* check connection */
-		if (mysqli_connect_errno()) {
-			printf("Connect failed: %s\n", mysqli_connect_error());
-			exit();
-		}
-		 
-		$mysqli->query("DELETE FROM Language WHERE Percentage < 50");
 		 
 		$con=mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s","contagotas_app");
 		if (mysqli_connect_errno())
@@ -305,6 +296,8 @@ Class Group {
 			$return = "success";
 		else
 			$return = "ERROR - 0 rows affected_rows";
+		
+		mysqli_query($con,"DELETE FROM `contagotas_app`.`group_score` WHERE user_id = " . $user .";");
 		
 		mysqli_close($con);
 		
@@ -425,22 +418,35 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");
 		
-		$sql = "SELECT contagotas_app.users.name as name , IFNULL(SUM(contagotas_app.group_score.score), 0) as score 
-		FROM contagotas_app.group_user
-		inner JOIN contagotas_app.users ON contagotas_app.group_user.user_id = contagotas_app.users.userid 
-		LEFT OUTER JOIN contagotas_app.group_score ON contagotas_app.group_score.group_id = contagotas_app.group_user.group_id
-		where group_user.group_id = " . $group_id ."
-		GROUP BY contagotas_app.users.name";
+		$sql = "select contagotas_app.group_user.user_id from contagotas_app.group_user where contagotas_app.group_user.group_id = " . $group_id;
 
 		$result = $con->query($sql);
 
-		$json = "[";
+		$ids_array = array();
+		
 		if ($result->num_rows > 0) {
-			// output data of each row
+			
+			$indice = 0;
+			while($row = $result->fetch_assoc()) {
+				$ids_array[$indice] = $row["user_id"];
+				$indice = $indice + 1;
+			}
+		}
+		
+		$json = "[";
+		foreach ($ids_array as &$value) {
+			$sql = "select contagotas_app.users.name,IFNULL(SUM(contagotas_app.group_score.score), 0) as score 
+					FROM contagotas_app.users
+					INNER JOIN contagotas_app.group_score ON contagotas_app.users.userid  = contagotas_app.group_score.user_id
+					where contagotas_app.group_score.user_id = " . $value;
+
+			$result = $con->query($sql);
+
 			while($row = $result->fetch_assoc()) {
 				$json .= "{'Name':'" . $row["name"]."','score':'" . $row["score"] . "'},";
 			}
 		} 
+
 		$json .= "]";
 		
 		if (!mysqli_query($con,$sql))
