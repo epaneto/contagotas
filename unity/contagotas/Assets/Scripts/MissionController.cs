@@ -91,7 +91,7 @@ public class MissionController : MonoBehaviour {
 	public void OpenMiniGame()
 	{
 		Debug.Log ("Mission Controller: Open Minigame " + activeMission);
-
+        GameSound.gameSound.StopMusic();
 		SceneController.sceneController.FadeAndLoadScene ("Minigames", true);
 	}
 

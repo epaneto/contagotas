@@ -25,6 +25,8 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        GameSound.gameSound.PlayOneShotMusic("game_intro");
+
 		controller = GameObject.FindObjectOfType<MinigamesController> ();
 
 		graphic = gameAnimation.GetComponent<SkeletonGraphic> ();
@@ -65,6 +67,8 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	public void EndedGameWin(float score)
 	{
+        GameSound.gameSound.PlayOneShotMusic("game_victory");
+
 		gameStarted = false;
 
 		gameScore = (int)score;
@@ -81,6 +85,8 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	public void EndedGameLose()
 	{
+        GameSound.gameSound.PlayOneShotMusic("game_defeat");
+
 		gameStarted = false;
 
 		Debug.Log ("LOST GAME!");
@@ -93,6 +99,8 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	void PlayNextGame(Spine.TrackEntry entry)
 	{
+        GameSound.gameSound.PlayOneShotMusic("score_count");
+
 		graphic.AnimationState.Complete -= PlayNextGame;
 		controller.ShowResults (gameScore);
 	}

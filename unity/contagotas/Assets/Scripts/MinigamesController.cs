@@ -237,6 +237,7 @@ public class MinigamesController : MonoBehaviour {
         else
         {
             //Debug.Log ("that was the last minigame, show map");
+            GameSound.gameSound.PlayLoopMusic("main_bgm");
             SceneController.sceneController.FadeAndLoadScene("Map", true);
         }
     }
