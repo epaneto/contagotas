@@ -80,14 +80,18 @@ Class Group {
 		 
 		mysqli_select_db($con,"contagotas_app");
 		
+		$sql = "SELECT contagotas_app.group.id_group,contagotas_app.group.group_name, IFNULL(SUM(contagotas_app.group_score.score), 0) as score 
+		FROM contagotas_app.group
+		LEFT OUTER  JOIN contagotas_app.group_score ON contagotas_app.group.id_group=contagotas_app.group_score.group_id
+		WHERE contagotas_app.group.group_name like '%" . $group_name . "%'
+        group by contagotas_app.group.group_name  limit 7";
 		
-		$sql = "SELECT * FROM contagotas_app.group where group_name like '%" . $group_name . "%' LIMIT 7";
 		$result = $con->query($sql);
 		
 		$json = "[";
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "'},";
+				$json .= "{'id':'" . $row["id_group"]."','Name':'" . $row["group_name"] . "','Score':'" . $row["score"] . "'},";
 			}
 		} 
 		$json .= "]";		
