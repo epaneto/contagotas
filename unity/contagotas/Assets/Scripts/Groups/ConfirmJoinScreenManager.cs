@@ -57,6 +57,8 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 		screenManager.ShowLoadingScreen ();
 		yield return result = WWWUtils.DoWebRequest("join/",sb.ToString());
 
+		ConfirmJoinPasswordInput.text = "";
+
 		Debug.Log ("url result = " + result.text);
 
 		if (result.text.ToUpper().Contains("ERROR") || result.text.ToUpper().Contains("TIMEOUT")) {
