@@ -137,7 +137,9 @@ public class MinigamesController : MonoBehaviour {
                 Debug.Log("ERROR: Player não contem user id");
                 return;
             }
-            if (!PlayerPrefs.HasKey("group_id"))
+
+			var hasGroup = PlayerPrefs.HasKey ("group_id");
+			if (!hasGroup)
             {
                 //player não tem grupo, nao precisa registrar score de grupo
                 return;

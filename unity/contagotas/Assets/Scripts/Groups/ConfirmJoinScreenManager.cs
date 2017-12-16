@@ -76,6 +76,7 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 			{
 				List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(data);
 				GroupData groupData = account[0];
+				PlayerPrefs.SetInt ("group_id", groupData.Id);
 				screenManager.ShowExistingGroup (groupData);
 			}
 		}

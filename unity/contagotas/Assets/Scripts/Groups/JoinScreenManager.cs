@@ -121,7 +121,7 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 
 			List<GroupData> account = JsonConvert.DeserializeObject<List<GroupData>>(json);
 			GroupData groupData = account[0];
-			PlayerPrefs.SetInt ("group_id", groupID);
+			PlayerPrefs.SetInt ("group_id", groupData.Id);
 			screenManager.ShowExistingGroup (groupData);
 		}
 	}
