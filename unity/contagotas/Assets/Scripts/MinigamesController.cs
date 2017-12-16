@@ -30,6 +30,9 @@ public class MinigamesController : MonoBehaviour {
     GameObject challengeTxt;
     GameObject endBackground;
 
+    GameObject toogleButton;
+    Toggle toogleComponent;
+
 
     GameObject loseGame;
 	GameObject loseGameSadChar;
@@ -51,6 +54,8 @@ public class MinigamesController : MonoBehaviour {
         hintTxt = GameObject.Find("hint_txt");
         continueButton = GameObject.Find("bt_continuar_score");
         endBackground = GameObject.Find("endgamebackground");
+        toogleButton = GameObject.Find("routine_toogle");
+        toogleComponent = toogleButton.GetComponent<Toggle>();
 
 		scoreTxt = GameObject.Find ("score_txt");
         endGametxt = scoreTxt.GetComponent<Text>();
@@ -100,8 +105,18 @@ public class MinigamesController : MonoBehaviour {
         challengeTxt.transform.DOScale(new Vector3(0, 0, 1), 1.0f).SetEase(Ease.OutBack).From();
         hintTxt.transform.DOScale(new Vector3(0, 0, 1), 1.1f).SetEase(Ease.OutBack).From();
         continueButton.transform.DOScale(new Vector3(0, 0, 1.2f), 1.0f).SetEase(Ease.OutBack).From();
+        toogleButton.transform.DOScale(new Vector3(0, 0, 1.2f), 1.1f).SetEase(Ease.OutBack).From();
         endBackground.transform.DOMoveY(-1400,0.6f).SetEase(Ease.OutQuad).From();
 
+        ///CHECK ACTIVITY STATUS
+        //Debug.Log("prefs is for mission" + minigameIndex + " : " + PlayerPrefs.HasKey("mission" + minigameIndex));
+        toogleComponent.isOn = false;
+        if (PlayerPrefs.HasKey("mission" + minigameIndex))
+        {
+            toogleComponent.isOn = true;
+        }
+        
+            
 		///REMOVE ACTIVE MINIGAME FROM SCREEN
 		JToken sceneName = Missions[minigameIndex]["sceneid"];
         SceneManager.UnloadSceneAsync(sceneName.ToString());
@@ -196,6 +211,20 @@ public class MinigamesController : MonoBehaviour {
         endGame.SetActive(false);
         loseGame.SetActive(false);
 
+        ///save activity status
+        if (toogleComponent.isOn)
+        {
+            Debug.Log("is on");
+            PlayerPrefs.SetString("mission" + minigameIndex, "true");
+        }
+        else
+        {
+            Debug.Log("is off");
+            PlayerPrefs.DeleteKey("mission" + minigameIndex);
+        }
+
+        PlayerPrefs.Save();
+        
         if (minigameIndex + 1 < Missions.Count)
         {
             //Debug.Log ("play next minigame " + minigameIndex);
@@ -210,6 +239,7 @@ public class MinigamesController : MonoBehaviour {
         else
         {
             //Debug.Log ("that was the last minigame, show map");
+            GameSound.gameSound.PlayLoopMusic("main_bgm");
             SceneController.sceneController.FadeAndLoadScene("Map", true);
         }
     }

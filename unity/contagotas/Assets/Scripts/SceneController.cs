@@ -28,6 +28,7 @@ public class SceneController : MonoBehaviour {
 	}
 
 	private IEnumerator Start () {
+        
 		anim = GameObject.Find("transition").GetComponent<Animator> ();
 		anim.Play ("transition_empty");
 
@@ -39,6 +40,9 @@ public class SceneController : MonoBehaviour {
 
 		transitionCanvas.alpha = 1f;
 		yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));
+
+        GameSound.gameSound.PlayLoopMusic("main_bgm");
+
 		StartCoroutine (Fade (0f));
 	}
 
