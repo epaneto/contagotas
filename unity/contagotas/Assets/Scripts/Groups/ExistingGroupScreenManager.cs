@@ -29,8 +29,12 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 	[SerializeField]
 	GameObject LoadingContent;
 
+	[SerializeField]
+	GameObject ConfirmLeaveGroup;
+
 	public void StartLeaveGroup()
 	{
+		ConfirmLeaveGroup.SetActive (false);
 		StartCoroutine (LeaveGroup (PlayerPrefs.GetInt ("user_id")));
 	}
 
@@ -50,6 +54,17 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 			screenManager.ShowErrorScreen ("error leaving group:" + result.text);
 			yield break;
 		}
+	}
+
+	public void ShowLeaveButton()
+	{
+		ConfirmLeaveGroup.SetActive (true);
+	}
+
+
+	public void HideLeaveButton()
+	{
+		ConfirmLeaveGroup.SetActive (false);
 	}
 
 	IEnumerator GetGroupInfo()
@@ -103,6 +118,7 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 		LoadingContent.SetActive (false);
 		MyGroupContent.SetActive (true);
 		RankingContent.SetActive (false);
+		ConfirmLeaveGroup.SetActive (false);
 		SetButtonOn (groupButton);
 		SetButtonOff (rankingButton);
 	}

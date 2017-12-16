@@ -9,6 +9,7 @@ public class GoToScene : MonoBehaviour {
 
 	public void ChangeScene()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+		SceneController.sceneController.FadeAndLoadScene(sceneName, true);
+		//UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
 	}
 }
