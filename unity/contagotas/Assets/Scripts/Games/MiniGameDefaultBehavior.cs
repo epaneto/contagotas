@@ -25,7 +25,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GameSound.gameSound.PlayOneShotMusic("game_intro");
+        GameSound.gameSound.PlayOneShotMusic("game_intro",1.0f);
 
 		controller = GameObject.FindObjectOfType<MinigamesController> ();
 
@@ -54,7 +54,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 	void EndedIntro(Spine.TrackEntry entry)
 	{
 		gameStarted = true;
-
+        GameSound.gameSound.PlayLoopMusic("game_music",0.2f);
 		graphic.AnimationState.Complete -= EndedIntro;
 
 		Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
@@ -65,9 +65,11 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		gameMechanic.SetActive (true);
 	}
 
-	public void EndedGameWin(float score)
+    public void EndedGameWin(float score)
 	{
-        GameSound.gameSound.PlayOneShotMusic("game_victory");
+        GameSound.gameSound.StopMusic(0.5f);
+
+        GameSound.gameSound.PlayOneShotMusic("game_victory",1.0f);
 
 		gameStarted = false;
 
@@ -83,9 +85,11 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		graphic.AnimationState.Complete += PlayNextGame;
 	}
 
-	public void EndedGameLose()
+    public void EndedGameLose()
 	{
-        GameSound.gameSound.PlayOneShotMusic("game_defeat");
+        GameSound.gameSound.StopMusic(0.5f);
+
+        GameSound.gameSound.PlayOneShotMusic("game_defeat",1.0f);
 
 		gameStarted = false;
 
@@ -99,7 +103,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
 	void PlayNextGame(Spine.TrackEntry entry)
 	{
-        GameSound.gameSound.PlayOneShotMusic("score_count");
+        GameSound.gameSound.PlaySFX("score_count");
 
 		graphic.AnimationState.Complete -= PlayNextGame;
 		controller.ShowResults (gameScore);

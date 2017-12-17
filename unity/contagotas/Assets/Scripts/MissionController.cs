@@ -92,7 +92,7 @@ public class MissionController : MonoBehaviour {
 	{
         GameSound.gameSound.PlaySFX("button");
 		Debug.Log ("Mission Controller: Open Minigame " + activeMission);
-        GameSound.gameSound.StopMusic();
+        GameSound.gameSound.StopMusic(0.5f);
 		SceneController.sceneController.FadeAndLoadScene ("Minigames", true);
 	}
 

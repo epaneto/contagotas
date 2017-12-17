@@ -45,13 +45,13 @@ public class WaterFlowerGame : MonoBehaviour {
 
         if(isPotOn)
         {
-            GameSound.gameSound.PlayLoopMusic("regador");
+            GameSound.gameSound.PlaySFX("regador");
             potSkeleton.AnimationState.SetAnimation(0, "on", false);
             potSkeleton.AnimationState.Complete += GoIdlePot;
         }
         else
         {
-            GameSound.gameSound.StopMusic();
+            GameSound.gameSound.StopSFX();
             potSkeleton.AnimationState.Complete -= GoIdlePot;
             potSkeleton.AnimationState.SetAnimation(0, "off", false);
 
@@ -84,6 +84,8 @@ public class WaterFlowerGame : MonoBehaviour {
 
         if (!mdb.hasTimeLeft() && !allFlowersWatered)
         {
+            isPotOn = false;
+            GameSound.gameSound.StopSFX();
             isPlaying = false;
             mdb.EndedGameLose();
             return;
@@ -172,6 +174,8 @@ public class WaterFlowerGame : MonoBehaviour {
 
     void EndGame()
     {
+        isPotOn = false;
+        GameSound.gameSound.StopSFX();
         mdb.EndedGameWin(mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
     }
 }

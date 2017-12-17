@@ -32,29 +32,35 @@ public class GameSound : MonoBehaviour {
         MusicSource = MusicObject.GetComponent<AudioSource>();
 	}
 
-    public void PlayOneShotMusic(string id)
+    public void PlayOneShotMusic(string id, float songVolume = 1.0f)
     {
         if (!MusicON)
             return;
-        
+
+        MusicSource.Stop();
         AudioClip newclip = Resources.Load("music/" + id) as AudioClip;
+        MusicSource.volume = songVolume;
         MusicSource.PlayOneShot(newclip);
     }
 
-    public void PlayLoopMusic(string id)
+    public void PlayLoopMusic(string id, float songVolume = 1.0f)
     {
         if (!MusicON)
             return;
 
+        MusicSource.Stop();
         AudioClip newclip = Resources.Load("music/" + id) as AudioClip;
         MusicSource.clip = newclip;
         MusicSource.loop = true;
+
+        MusicSource.volume = songVolume;
+        
         MusicSource.Play();
     }
 
-    public void StopMusic()
+    public void StopMusic(float time = 1.0f)
     {
-        StartCoroutine(FadeOut(MusicSource, 1.0f));
+        StartCoroutine(FadeOut(MusicSource, time));
     }
 
     public void PlaySFX(string id)
@@ -64,6 +70,11 @@ public class GameSound : MonoBehaviour {
         
         AudioClip newclip = Resources.Load("sfx/" + id) as AudioClip;
         SFXSource.PlayOneShot(newclip);
+    }
+
+    public void StopSFX()
+    {
+        SFXSource.Stop();
     }
 
 
