@@ -134,7 +134,8 @@ public class FacebookLoginManager : MonoBehaviour {
 			PlayerPrefs.SetString ("user_email", email);
 			PlayerPrefs.SetString ("user_facebookid", facebookid);
 
-			UnityEngine.SceneManagement.SceneManager.LoadScene ("SignUp");
+            SceneController.sceneController.FadeAndLoadScene("SignUp");
+			//UnityEngine.SceneManagement.SceneManager.LoadScene ("SignUp");
 			//StartCoroutine (DoRegister(playerName,email, city,facebookid));
 		}
 	}
