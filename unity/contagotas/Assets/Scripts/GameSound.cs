@@ -77,6 +77,22 @@ public class GameSound : MonoBehaviour {
         SFXSource.Stop();
     }
 
+    public void MuteUnmuteSound()
+    {
+        MusicON = !MusicON;
+        if(!MusicON)
+        {
+            PlayerPrefs.SetString("sound","off");
+            MusicSource.volume = 0;
+            SFXSource.volume = 0;
+        }else{
+            PlayerPrefs.SetString("sound", "on");
+            MusicSource.volume = 1.0f;
+            SFXSource.volume = 1.0f;
+        }
+
+        PlayerPrefs.Save();
+    }
 
 
     public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)

@@ -10,11 +10,19 @@ public class MapController : MonoBehaviour {
 
     public GameObject InfoObject;
     public GameObject hintContainer;
+    public GameObject SettingsObject;
+    public GameObject VolumeButtonOn;
+    public GameObject VolumeButtonOff;
 
     JArray Missions;
 
     private void Start()
     {
+        if (PlayerPrefs.GetString("sound") == "off"){
+            VolumeButtonOn.SetActive(false);
+            VolumeButtonOff.SetActive(true);
+        }
+
         InfoObject.SetActive(false);
     }
 
@@ -76,9 +84,41 @@ public class MapController : MonoBehaviour {
         InfoObject.SetActive(false);
     }
 
+    public void openSettings()
+    {
+        GameSound.gameSound.PlaySFX("button");
+        SettingsObject.SetActive(true);
+    }
+
+    public void hideSettings()
+    {
+        GameSound.gameSound.PlaySFX("button");
+        SettingsObject.SetActive(false);
+    }
+
+    public void MuteUnmuteSound()
+    {
+        GameSound.gameSound.MuteUnmuteSound();
+
+        if(GameSound.gameSound.MusicON)
+        {
+            VolumeButtonOn.SetActive(true);   
+            VolumeButtonOff.SetActive(false);
+        }else{
+            VolumeButtonOn.SetActive(false);
+            VolumeButtonOff.SetActive(true);
+        }
+    }
+
     public void OpenGroups()
     {
         GameSound.gameSound.PlaySFX("button");
         SceneController.sceneController.FadeAndLoadScene("Group", true);
+    }
+
+    public void OpenAvatar()
+    {
+        GameSound.gameSound.PlaySFX("button");
+        SceneController.sceneController.FadeAndLoadScene("Avatar", true);
     }
 }

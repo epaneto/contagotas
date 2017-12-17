@@ -42,6 +42,11 @@ public class SceneController : MonoBehaviour {
 		yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));
 
         GameSound.gameSound.PlayLoopMusic("main_bgm");
+        if (PlayerPrefs.GetString("sound","on") == "off")
+        {
+            GameSound.gameSound.MuteUnmuteSound();
+        }
+
 
 		StartCoroutine (Fade (0f));
 	}
