@@ -184,7 +184,9 @@ public class SignUpController : MonoBehaviour {
 			int userId;
 			int.TryParse (result.text, out userId);
 
+            PlayerPrefs.SetInt("signed", 1);
 			PlayerPrefs.SetInt ("user_id", userId);
+            PlayerPrefs.Save();
 
 			Debug.Log ("Criado player com sucesso, com a id = " + userId + " deveria ir para outra cena");
 
