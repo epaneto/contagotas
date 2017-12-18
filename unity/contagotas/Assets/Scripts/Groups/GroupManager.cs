@@ -131,7 +131,6 @@ public class GroupManager : MonoBehaviour {
 
 	public void ShowSendInviteScreen()
 	{
-		ShowGroup (ScreenType.LOADING);
 		sendInviteGroupScreenManager.LoadFriendsToInvite();
 	}
 

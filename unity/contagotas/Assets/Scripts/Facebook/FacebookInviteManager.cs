@@ -79,7 +79,17 @@ public class FacebookInviteManager : MonoBehaviour {
 
 	public void GetFriends(FacebookDelegate<IGraphResult> callBackDelegate)
 	{
-		FB.API("me/friends?fields=installed,name,picture", HttpMethod.GET, callBackDelegate);    
+		if (!FB.IsInitialized ) {
+			FB.Init(InitCallback, OnHideUnity);
+		} 
+		else if (!FB.IsLoggedIn)
+		{
+			DoLogin ();		
+		}
+		else
+		{
+			FB.API ("me/friends?fields=installed,name,picture", HttpMethod.GET, callBackDelegate);    
+		}
 	}
 
 	public List<object> FriendListReceived(IResult result)
