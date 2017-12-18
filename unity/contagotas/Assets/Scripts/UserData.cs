@@ -70,6 +70,7 @@ public class PlayerData
 	public string playerShirt;
 	public string playerPants;
 	public string playerShoe;
+    public int playerPoints;
 
 	public DateTime lastAccess;
 	public int activeMission;

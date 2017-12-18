@@ -99,6 +99,11 @@ public class MinigamesController : MonoBehaviour {
 
 	public void ShowResults(int score)
     {
+        ///save player points
+        UserData.userData.playerData.playerPoints += score;
+        UserData.userData.Save();
+
+        //animate screen
         successTitle.transform.DOScale(new Vector3(0,0,1),0.7f).SetEase(Ease.OutBack).From();
         scoreGroup.transform.DOScale(new Vector3(0, 0, 1), 0.8f).SetEase(Ease.OutBack).From();
         titleTxt.transform.DOScale(new Vector3(0, 0, 1), 0.9f).SetEase(Ease.OutBack).From();

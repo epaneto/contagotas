@@ -13,6 +13,8 @@ public class MapController : MonoBehaviour {
     public GameObject SettingsObject;
     public GameObject VolumeButtonOn;
     public GameObject VolumeButtonOff;
+    public GameObject TutorialObject;
+    public List<GameObject> TutorialSteps;
 
     JArray Missions;
 
@@ -21,6 +23,11 @@ public class MapController : MonoBehaviour {
         if (PlayerPrefs.GetString("sound") == "off"){
             VolumeButtonOn.SetActive(false);
             VolumeButtonOff.SetActive(true);
+        }
+
+        if(!PlayerPrefs.HasKey("tutorialDone"))
+        {
+            StartTutorial();
         }
 
         InfoObject.SetActive(false);
@@ -120,5 +127,41 @@ public class MapController : MonoBehaviour {
     {
         GameSound.gameSound.PlaySFX("button");
         SceneController.sceneController.FadeAndLoadScene("Avatar", true);
+    }
+
+
+
+
+    /////TUTORIAL METHODS
+
+    int tutorialIndex = 0;
+    GameObject step;
+    void StartTutorial()
+    {
+        TutorialObject.SetActive(true);
+        step = TutorialSteps[tutorialIndex];
+        step.SetActive(true);
+    }
+
+    public void AdvanceTutorial()
+    {
+        if(tutorialIndex +1 < TutorialSteps.Count)
+        {
+            step.SetActive(false);
+            tutorialIndex++;
+
+            step = TutorialSteps[tutorialIndex];
+            step.SetActive(true);
+
+        }else{
+            HideTutorial();
+        }
+    }
+
+    void HideTutorial(){
+        PlayerPrefs.SetString("tutorialDone","done");
+        PlayerPrefs.Save();
+
+        TutorialObject.SetActive(false);
     }
 }

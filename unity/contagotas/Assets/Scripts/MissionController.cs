@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using DG.Tweening;
 
@@ -8,6 +9,7 @@ public class MissionController : MonoBehaviour {
 
 	public int maxDays = 17;
 	public int activeMission;
+    public GameObject PointsField;
 
 	//public static MissionController missionController;
 
@@ -27,6 +29,10 @@ public class MissionController : MonoBehaviour {
 
 		UserData user = UserData.userData;
 		user.Load ();
+
+        ///Show player points
+        Text scoreField = PointsField.GetComponent<Text>();
+        scoreField.text = user.playerData.playerPoints.ToString();
 
 		//First, check if the player has made any progress based on returning days.
         DateTime today = DateTime.Now;
