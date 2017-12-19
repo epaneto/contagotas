@@ -63,6 +63,6 @@ public class SendInviteScreenManager : BaseAssetsGroupManager {
 
 	public void Share()
 	{
-		NativeSharePhoto.Share("Olá! Jogue esse jogo que é demais!", null, "contagotas.online/services/DeviceRedirect.php", "", "text/html", true, "");
+		NativeSharePhoto.Share("Olá! Jogue esse jogo que é demais! clique aqui: http://contagotas.online/services/redirect/", null, "contagotas.online/services/redirect/", "", "text/html", true, "");
 	}
 }
