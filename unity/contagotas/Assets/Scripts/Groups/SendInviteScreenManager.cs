@@ -60,4 +60,9 @@ public class SendInviteScreenManager : BaseAssetsGroupManager {
 		SceneController.sceneController.FadeAndLoadScene("Group", true);
 		//UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
 	}
+
+	public void Share()
+	{
+		NativeSharePhoto.Share("Olá! Jogue esse jogo que é demais!", null, "contagotas.online/services/DeviceRedirect.php", "", "text/html", true, "");
+	}
 }

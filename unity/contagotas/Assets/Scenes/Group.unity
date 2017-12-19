@@ -4102,6 +4102,7 @@ GameObject:
   - component: {fileID: 605800558}
   - component: {fileID: 605800560}
   - component: {fileID: 605800559}
+  - component: {fileID: 605800561}
   m_Layer: 5
   m_Name: spinner
   m_TagString: Untagged
@@ -4163,6 +4164,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 605800557}
+--- !u!114 &605800561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 605800557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcbdcf35f026744497704e9904c1795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToRotate: {fileID: 605800557}
 --- !u!1 &634373983
 GameObject:
   m_ObjectHideFlags: 0
@@ -6810,7 +6823,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067879685}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459535925}
+        m_MethodName: Share
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1067879685
@@ -7516,6 +7540,10 @@ Prefab:
     - target: {fileID: 1735957471345664, guid: 318c4e245d8f0214baceee1c7643ea6d, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435705635967508, guid: 318c4e245d8f0214baceee1c7643ea6d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 318c4e245d8f0214baceee1c7643ea6d, type: 2}
@@ -9927,6 +9955,23 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1584685863}
+--- !u!1 &1587486542 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1544750793017244, guid: 318c4e245d8f0214baceee1c7643ea6d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1171658310}
+--- !u!114 &1587486546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1587486542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcbdcf35f026744497704e9904c1795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToRotate: {fileID: 1587486542}
 --- !u!1 &1606559870
 GameObject:
   m_ObjectHideFlags: 0
