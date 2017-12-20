@@ -22,7 +22,7 @@ namespace Assets.SimpleAndroidNotifications
 
         public void ScheduleNormal()
         {
-            NotificationManager.SendWithAppIcon(TimeSpan.FromSeconds(5), "Notification", "Notification with app icon", new Color(0, 0.6f, 1), NotificationIcon.Message);
+            NotificationManager.SendWithAppIcon(TimeSpan.FromSeconds(5), "Conta Gotas", "Novos minigames estão à sua espera! Vem jogar!", new Color(0, 0.6f, 1), NotificationIcon.Message);
         }
 
         public void ScheduleCustom()

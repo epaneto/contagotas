@@ -1,8 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.SimpleAndroidNotifications
-{
+
     public class NotificationParams
     {
         /// <summary>
@@ -23,4 +22,3 @@ namespace Assets.SimpleAndroidNotifications
         /// </summary>
         public string LargeIcon;
     }
-}

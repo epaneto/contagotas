@@ -30,11 +30,13 @@ public class MapController : MonoBehaviour {
             StartTutorial();
         }
 
-        if(PlayerPrefs.HasKey("show_next_day_tutorial"))
+        if(PlayerPrefs.HasKey("show_next_day_tutorial") && PlayerPrefs.HasKey("after_minigames"))
         {
             PlayerPrefs.DeleteKey("show_next_day_tutorial");
             ShowNextDayTutorial();
         }
+
+        PlayerPrefs.DeleteKey("after_minigames");
 
         InfoObject.SetActive(false);
     }

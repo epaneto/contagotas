@@ -7,8 +7,7 @@ using System.Linq;
 
 #endif
 
-namespace Assets.SimpleAndroidNotifications
-{
+
     public static class NotificationManager
     {
         #if UNITY_ANDROID && !UNITY_EDITOR
@@ -120,4 +119,3 @@ namespace Assets.SimpleAndroidNotifications
             return "anp_" + icon.ToString().ToLower();
         }
     }
-}

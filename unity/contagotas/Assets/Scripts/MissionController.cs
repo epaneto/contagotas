@@ -55,11 +55,17 @@ public class MissionController : MonoBehaviour {
 
 		activeMission = UserData.userData.playerData.activeMission;
 
+        DateTime now = System.DateTime.Now;
+        int hours = now.Hour;
+        int hoursToNotify = 24 - hours + 8;
+
 		if (lastDate.Year != 1)  {
 
             if (isNextDay)
             {
-
+                NotificationManager.CancelAll();
+                NotificationManager.SendWithAppIcon(TimeSpan.FromHours(hoursToNotify), "Conta Gotas", "Novos minigames estão à sua espera! Vem jogar!", new Color(0, 0.6f, 1), NotificationIcon.Bell);
+        
                 Debug.Log("One day has passed.");
                 lastDate = today;
 
@@ -79,6 +85,9 @@ public class MissionController : MonoBehaviour {
 		} else {
 			Debug.Log ("Its a new player, declare his first values.");
 			//player never done any progress, place initial values
+
+            NotificationManager.SendWithAppIcon(TimeSpan.FromHours(hoursToNotify), "Conta Gotas", "Novos minigames estão à sua espera! Vem jogar!", new Color(0, 0.6f, 1), NotificationIcon.Bell);
+            
 			lastDate = today;
 			activeMission = 1;
 

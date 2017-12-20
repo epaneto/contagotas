@@ -1,5 +1,4 @@
-﻿namespace Assets.SimpleAndroidNotifications
-{
+﻿
     public enum NotificationIcon
     {
         Bell,
@@ -9,4 +8,3 @@
         Message,
         Star
     }
-}

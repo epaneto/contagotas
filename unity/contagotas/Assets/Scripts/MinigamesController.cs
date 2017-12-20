@@ -120,7 +120,7 @@ public class MinigamesController : MonoBehaviour {
 		loseGame.SetActive (false);
 
 		minigameIndex = 0;
-
+                   
         JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
         SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
 	}
@@ -292,8 +292,7 @@ public class MinigamesController : MonoBehaviour {
         else
         {
             //Debug.Log ("that was the last minigame, show map");
-            GameSound.gameSound.PlayLoopMusic("main_bgm");
-            SceneController.sceneController.FadeAndLoadScene("Map", true);
+            GoToMap();
         }
     }
 
@@ -324,6 +323,8 @@ public class MinigamesController : MonoBehaviour {
 
     public void GoToMap()
     {
+        PlayerPrefs.SetString("after_minigames", "true");
+
         giveupButton.GetComponent<Button>().onClick.RemoveAllListeners();
         continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
         continueLoseButton.GetComponent<Button>().onClick.RemoveAllListeners();
