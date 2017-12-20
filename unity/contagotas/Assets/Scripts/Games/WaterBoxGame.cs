@@ -58,6 +58,7 @@ public class WaterBoxGame : MonoBehaviour {
             if(currentSwipe.y > 0  && currentSwipe.x > -0.5f  && currentSwipe.x < 0.5f)
             {
                 Debug.Log("swipe up");
+                GameSound.gameSound.PlaySFX("swipe");
                 Vector3 activePosition = new Vector3(0, 30.0f, 0);
 
                 StartCoroutine(smooth_move(activePosition, 10.0f));

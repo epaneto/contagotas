@@ -383,6 +383,36 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114697951404335998, guid: 706a0928c4c92344295c9d7bdd3eab07,
+        type: 2}
+      propertyPath: GoodSound
+      value: petshop_dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 114229553087400736, guid: 706a0928c4c92344295c9d7bdd3eab07,
+        type: 2}
+      propertyPath: GoodSound
+      value: petshop_dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 114058257485018954, guid: 706a0928c4c92344295c9d7bdd3eab07,
+        type: 2}
+      propertyPath: GoodSound
+      value: petshop_dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793334899567014, guid: 706a0928c4c92344295c9d7bdd3eab07,
+        type: 2}
+      propertyPath: GoodSound
+      value: petshop_dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252279299691590, guid: 706a0928c4c92344295c9d7bdd3eab07,
+        type: 2}
+      propertyPath: GoodSound
+      value: petshop_dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725537565348080, guid: 706a0928c4c92344295c9d7bdd3eab07,
+        type: 2}
+      propertyPath: GoodSound
+      value: petshop_dog
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 706a0928c4c92344295c9d7bdd3eab07, type: 2}
   m_IsPrefabParent: 0
@@ -633,8 +663,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190, y: 338, z: 0}
-  m_LocalScale: {x: 0.29720494, y: 0.29720494, z: 0.29720494}
+  m_LocalPosition: {x: 300, y: 512, z: 0}
+  m_LocalScale: {x: 0.45963857, y: 0.45963857, z: 0.45963857}
   m_Children:
   - {fileID: 917654286}
   - {fileID: 1323138917}

@@ -11,12 +11,12 @@ public class HomeController : MonoBehaviour {
 	private string destinySceneName;
 
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        
 	}
 
 	private void HideScene()
@@ -40,8 +40,7 @@ public class HomeController : MonoBehaviour {
 	}
 
 	public void CallForScene(string sceneName)
-	{
-        GameSound.gameSound.PlaySFX("button");
+    {
 		destinySceneName = sceneName;
 		HideScene ();
 	}
@@ -50,4 +49,9 @@ public class HomeController : MonoBehaviour {
 	{
 		SceneController.sceneController.FadeAndLoadScene (destinySceneName);
 	}
+
+    public void PlayButtonSound()
+    {
+        GameSound.gameSound.PlaySFX("button");
+    }
 }

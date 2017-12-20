@@ -67,23 +67,35 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
     public void EndedGameWin(float score)
 	{
-        GameSound.gameSound.StopMusic(0.5f);
-
-        GameSound.gameSound.PlayOneShotMusic("game_victory",1.0f);
+        StartCoroutine(ExitSounds());
 
 		gameStarted = false;
 
 		gameScore = (int)score;
 		Debug.Log ("WIN GAME WITH SCORE: " + gameScore);
-
-		gameAnimation.SetActive (true);
-		gameMechanic.SetActive (false);
-
         //controller.hideTime();
-
-		graphic.AnimationState.SetAnimation(0,"exit_game",false);
-		graphic.AnimationState.Complete += PlayNextGame;
+        StartCoroutine(ShowExitAnimation());
 	}
+
+    IEnumerator ShowExitAnimation()
+    {
+        graphic.AnimationState.SetAnimation(0, "exit_game", false);
+
+        ///This delay is to prevent the user to see the spine transition
+        yield return new WaitForSeconds(0.2f);
+
+        gameAnimation.SetActive(true);
+        gameMechanic.SetActive(false);
+
+        graphic.AnimationState.Complete += PlayNextGame;
+    }
+
+    IEnumerator ExitSounds()
+    {
+        GameSound.gameSound.StopMusic(0.3f);
+        yield return new WaitForSeconds(0.4f);
+        GameSound.gameSound.PlayOneShotMusic("game_victory", 1.0f);
+    }
 
     public void EndedGameLose()
 	{

@@ -52,13 +52,14 @@ public class FillBottleGame : MonoBehaviour {
 	public void pressPan()
 	{
 		isFilling = true;
-
+        GameSound.gameSound.PlayLoopSFX("oil_bottle");
 		panGraph.AnimationState.SetAnimation(0,"on",false);
 	}
 
 	public void leavePan()
 	{
 		isFilling = false;
+        GameSound.gameSound.StopSFX();
 		panGraph.AnimationState.SetAnimation(0,"off",false);
 
 		if (fillObject.transform.localScale.y > minOilFill && fillObject.transform.localScale.y < maxOilFill) {

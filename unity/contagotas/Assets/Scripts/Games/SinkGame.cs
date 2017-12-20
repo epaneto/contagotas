@@ -87,6 +87,7 @@ public class SinkGame : MonoBehaviour {
 			if(currentSwipe.x > 0  && currentSwipe.y > -0.8f  && currentSwipe.y < 0.8f)
 			{
 				//Debug.Log("right swipe");
+                GameSound.gameSound.PlaySFX("swipe");
 				handler.AnimationState.SetAnimation(0,"loop",false);
 				numTurns++;
 				if (numTurns >= maxTurns) {

@@ -72,6 +72,17 @@ public class GameSound : MonoBehaviour {
         SFXSource.PlayOneShot(newclip);
     }
 
+    public void PlayLoopSFX(string id)
+    {
+        if (!SFXON)
+            return;
+
+        AudioClip newclip = Resources.Load("sfx/" + id) as AudioClip;
+        SFXSource.clip = newclip;
+        SFXSource.loop = true;
+        SFXSource.Play();
+    }
+
     public void StopSFX()
     {
         SFXSource.Stop();

@@ -20,6 +20,8 @@ public class MinigamesController : MonoBehaviour {
     public GameObject timeBarFill;
 
 	JArray Missions;
+    JArray SelectedMissions;
+
 	GameObject endGame;
     GameObject successTitle;
     GameObject scoreGroup;
@@ -73,20 +75,58 @@ public class MinigamesController : MonoBehaviour {
 		JObject o = JObject.Parse(DataAsJSON);
 		Missions = (JArray) o["missoes"];
 
+        /////select missions based on the day player clicked
+
+        int SelectedDay = PlayerPrefs.GetInt("ClickedDay",0);
+        Debug.Log("SELECTED DAY " + SelectedDay);
+             
+        SelectedMissions = new JArray();
+        JToken FirstMission;
+        int FirstMissionIndex;
+
+        if (SelectedDay == 0)
+        {
+            FirstMission = Missions[SelectedDay];
+            FirstMissionIndex = SelectedDay;
+        }
+        else
+        {
+            FirstMission = Missions[SelectedDay + 4];
+            FirstMissionIndex = SelectedDay + 4;
+        }
+
+        for (int i = 0; i <= SelectedDay + 4; i++)
+        {
+            if (i != FirstMissionIndex && SelectedMissions.Count < 10)
+                SelectedMissions.Add(Missions[i]);
+        }
+
+        ///shuffle selected missions
+        for (int i = 0; i < SelectedMissions.Count; i++)
+        {
+            JToken temp = SelectedMissions[i];
+            int randomIndex = Random.Range(i, SelectedMissions.Count);
+            SelectedMissions[i] = SelectedMissions[randomIndex];
+            SelectedMissions[randomIndex] = temp;
+        }
+
+        //add first mission
+        SelectedMissions.AddFirst(FirstMission);
+
 
 		endGame.SetActive (false);
 		loseGame.SetActive (false);
 
 		minigameIndex = 0;
 
-		JToken sceneName = Missions[minigameIndex]["sceneid"];
+        JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
         SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
 	}
 
 	public void ShowLose()
 	{
 		///REMOVE ACTIVE MINIGAME FROM SCREEN
-		JToken sceneName = Missions[minigameIndex]["sceneid"];
+        JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
 		SceneManager.UnloadSceneAsync (sceneName.ToString());
 
 		loseGame.SetActive (true);
@@ -123,14 +163,14 @@ public class MinigamesController : MonoBehaviour {
         
             
 		///REMOVE ACTIVE MINIGAME FROM SCREEN
-		JToken sceneName = Missions[minigameIndex]["sceneid"];
+        JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
         SceneManager.UnloadSceneAsync(sceneName.ToString());
 
-		JToken titleString = Missions[minigameIndex]["title"];
+        JToken titleString = SelectedMissions[minigameIndex]["title"];
         Text titleField = titleTxt.GetComponent<Text> ();
         titleField.text = titleString.ToString ();
 
-        JToken hintString = Missions[minigameIndex]["hint"];
+        JToken hintString = SelectedMissions[minigameIndex]["hint"];
         Text hintField = hintTxt.GetComponent<Text>();
         hintField.text = hintString.ToString();
 
@@ -232,14 +272,14 @@ public class MinigamesController : MonoBehaviour {
 
         PlayerPrefs.Save();
         
-        if (minigameIndex + 1 < Missions.Count)
+        if (minigameIndex + 1 < SelectedMissions.Count)
         {
             //Debug.Log ("play next minigame " + minigameIndex);
 
             minigameIndex++;
 
 
-            JToken sceneName = Missions[minigameIndex]["sceneid"];
+            JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
             SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
 
         }

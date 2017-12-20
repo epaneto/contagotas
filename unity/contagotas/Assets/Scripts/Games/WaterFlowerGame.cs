@@ -45,7 +45,7 @@ public class WaterFlowerGame : MonoBehaviour {
 
         if(isPotOn)
         {
-            GameSound.gameSound.PlaySFX("regador");
+            GameSound.gameSound.PlayLoopSFX("regador");
             potSkeleton.AnimationState.SetAnimation(0, "on", false);
             potSkeleton.AnimationState.Complete += GoIdlePot;
         }

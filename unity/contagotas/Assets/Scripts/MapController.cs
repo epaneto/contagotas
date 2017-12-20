@@ -37,7 +37,6 @@ public class MapController : MonoBehaviour {
 	{
 		Debug.Log("Hello player! Today its your " + day + "th day. let's update the map.");
 
-
 		for (int i = 1; i <= maxDays; i++) {
 			if (i < day) {
 				GameObject.Find ("bt_level_" + i).GetComponent<MapButton> ().SetOldSPrite ();

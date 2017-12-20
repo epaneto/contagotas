@@ -94,12 +94,17 @@ public class MissionController : MonoBehaviour {
 		mapController.UpdateMapBasedInPlayerProgress (activeMission, maxDays);
 	}
 
-	public void OpenMiniGame()
+	public void OpenMiniGame(int ClickedDayIndex)
 	{
         GameSound.gameSound.PlaySFX("button");
-		Debug.Log ("Mission Controller: Open Minigame " + activeMission);
+
+        PlayerPrefs.SetInt("ClickedDay", ClickedDayIndex);
+        PlayerPrefs.Save();
+
         GameSound.gameSound.StopMusic(0.5f);
 		SceneController.sceneController.FadeAndLoadScene ("Minigames", true);
+
+       
 	}
 
 

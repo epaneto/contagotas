@@ -10,6 +10,7 @@ public class ChangeableItem : MonoBehaviour {
     bool originalStateBad = false; 
     public string badAnimation;
     public string goodAnimation;
+    public string GoodSound;
     public GameObject colorFeedback;
     ChangeableColor changeableColor;
 
@@ -59,7 +60,10 @@ public class ChangeableItem : MonoBehaviour {
 
         if (isGood)
             return;
-            
+
+        if(GoodSound != "")
+            GameSound.gameSound.PlaySFX(GoodSound);
+        
         GameSound.gameSound.PlaySFX("tap");
         isGood = true;
         if (changeableColor)
