@@ -245,8 +245,6 @@ public class AvatarDecorator : MonoBehaviour {
 
 		Resources.UnloadUnusedAssets();
 	}
-
-
 	//remove attachments
 	//currentEquipsSkin.RemoveAttachment (bodySlotIndex, bodyKey);
 

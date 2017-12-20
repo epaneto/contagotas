@@ -6,6 +6,7 @@ public class AvatarCategoryButton : MonoBehaviour {
 
 	public void updateMenu()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		////disable all butons and load category
 		GameObject menu = GameObject.Find("menu");
 		AvatarMenuController menuController = menu.GetComponent (typeof (AvatarMenuController)) as AvatarMenuController;

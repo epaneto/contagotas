@@ -50,7 +50,9 @@ public class MapController : MonoBehaviour {
 				GameObject.Find ("bt_level_" + i).GetComponent<MapButton> ().SetOldSPrite ();
 			} else if (i == day) {
 				GameObject.Find ("bt_level_" + i).GetComponent<MapButton> ().SetActiveSprite ();
-			}
+            }else{
+                GameObject.Find("bt_level_" + i).GetComponent<Button>().interactable = false;
+            }
 		}
 
         if(isNextDay)

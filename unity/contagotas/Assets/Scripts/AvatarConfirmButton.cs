@@ -6,6 +6,8 @@ public class AvatarConfirmButton : MonoBehaviour {
 
 	public void SaveAvatar()
 	{
+        GameSound.gameSound.PlaySFX("button");
+
 		GameObject go = GameObject.Find ("avatar");
 		AvatarDecorator ad = go.GetComponent<AvatarDecorator> ();
 		ad.SaveUserDefaultAvatar ();

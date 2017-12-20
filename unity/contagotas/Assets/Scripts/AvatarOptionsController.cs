@@ -35,7 +35,7 @@ public class AvatarOptionsController : MonoBehaviour {
 	}
 
 	public void loadItemAtIndex(string itemIndex)
-	{
+    {
 		avatarController.UpdateTextures (activeSection, itemIndex);
 		Debug.Log (itemIndex);
 	}

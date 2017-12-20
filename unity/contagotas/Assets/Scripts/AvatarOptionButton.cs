@@ -14,6 +14,7 @@ public class AvatarOptionButton : MonoBehaviour {
 		optionsController.loadItemAtIndex (itemIndex);
 
 		//enable this button
+        GameSound.gameSound.PlaySFX("button");
 		ToogleButton button = gameObject.GetComponent<ToogleButton>();
 		button.EnableMenuButton ();
 	}
