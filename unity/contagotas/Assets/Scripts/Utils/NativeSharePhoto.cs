@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 using System;
 #else
 using UnityEngine;
+using System;
+
+
 #endif
 
 
@@ -73,20 +76,9 @@ public static class NativeSharePhoto
             {
                 // attach extra files (pictures, pdf, etc.)
                 using (AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri"))
-                using (AndroidJavaObject uris = new AndroidJavaObject("java.util.ArrayList"))
-                {
-                    for (int i = 0; i < filePaths.Length; i++)
-                    {
-                        //instantiate the object Uri with the parse of the url's file
-                        using (AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", "file://" + filePaths[i]))
-                        {
-                            uris.Call<bool>("add", uriObject);
-                        }
-                    }
-
-                    using (intentObject.Call<AndroidJavaObject>("putParcelableArrayListExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uris))
-                    { }
-                }
+				using (AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", filePaths[0]))
+				using (intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uriObject))
+				{ }
             }
 
             // finally start application
