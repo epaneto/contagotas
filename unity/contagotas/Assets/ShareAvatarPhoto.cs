@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Runtime.InteropServices;
 using System.IO;
+using UnityEngine.UI;
+using DG.Tweening;
+using System;
 
 public class ShareAvatarPhoto : MonoBehaviour {
 
@@ -10,10 +13,10 @@ public class ShareAvatarPhoto : MonoBehaviour {
     public GameObject confirmButton;
     public GameObject shareButton;
     public GameObject titleObject;
+	public GameObject screenshotTakenText;
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -33,12 +36,18 @@ public class ShareAvatarPhoto : MonoBehaviour {
         confirmButton.SetActive(false);
         shareButton.SetActive(false);
         titleObject.SetActive(false);
+		screenshotTakenText.SetActive (false);
 
-        //Application.CaptureScreenshot(ScreenshotName);
-        ScreenCapture.CaptureScreenshot(ScreenshotName);
-
-        StartCoroutine(delayedShare(screenShotPath, text));
+		#if UNITY_ANDROID
+			ScreenCapture.CaptureScreenshot( "../../../../DCIM/Camera/avatar" + UnityEngine.Random.Range(0,99999999) +".png");
+			StartCoroutine(ShowText());
+			StartCoroutine(HideText());
+		#elif UNITY_IOS
+			ScreenCapture.CaptureScreenshot(ScreenshotName);
+			StartCoroutine(delayedShare(screenShotPath, text));
+		#endif
     }
+
 
     //CaptureScreenshot runs asynchronously, so you'll need to either capture the screenshot early and wait a fixed time
     //for it to save, or set a unique image name and check if the file has been created yet before sharing.
@@ -55,7 +64,25 @@ public class ShareAvatarPhoto : MonoBehaviour {
         shareButton.SetActive(true);
         titleObject.SetActive(true);
 
-        NativeSharePhoto.Share("", screenShotPath, "", "", "image/png", true, "");
+		NativeSharePhoto.Share("", screenShotPath, "", "", "image/png", true, "");
+
     }
+
+	IEnumerator ShowText()
+	{
+		yield return new WaitForSeconds(0.3f);
+		screenshotTakenText.SetActive(true);
+	}
+
+	IEnumerator HideText()
+	{
+		yield return new WaitForSeconds(3f);
+		menuObject.SetActive(true);
+		optionsObject.SetActive(true);
+		confirmButton.SetActive(true);
+		shareButton.SetActive(true);
+		titleObject.SetActive(true);
+		screenshotTakenText.SetActive(false);
+	}
 
 }
