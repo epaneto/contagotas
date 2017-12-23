@@ -38,14 +38,21 @@ public class ShareAvatarPhoto : MonoBehaviour {
         titleObject.SetActive(false);
 		screenshotTakenText.SetActive (false);
 
-		#if UNITY_ANDROID
-			ScreenCapture.CaptureScreenshot( "../../../../DCIM/Camera/avatar" + UnityEngine.Random.Range(0,99999999) +".png");
-			StartCoroutine(ShowText());
-			StartCoroutine(HideText());
+        #if UNITY_ANDROID
+        ScreenshotManager.SaveScreenshot("avatar", "ContaGotas");
+		StartCoroutine(ShowText());
+		StartCoroutine(HideText());
 		#elif UNITY_IOS
 			ScreenCapture.CaptureScreenshot(ScreenshotName);
 			StartCoroutine(delayedShare(screenShotPath, text));
 		#endif
+    }
+
+    IEnumerator ScreenShotEncode()
+    {
+        yield return new WaitForEndOfFrame();
+        string datacion = System.DateTime.Now.ToFileTime().ToString();
+        ScreenCapture.CaptureScreenshot(datacion + ".png");
     }
 
 

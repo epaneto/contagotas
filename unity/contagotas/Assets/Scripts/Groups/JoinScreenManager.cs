@@ -14,6 +14,7 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 
 	public void SearchGroup()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		StartCoroutine(StartSearchGroup());
 	}
 
@@ -128,6 +129,7 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 
 	public void GoBack()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		screenManager.ShowNewGroupScene ();
 	}
 }

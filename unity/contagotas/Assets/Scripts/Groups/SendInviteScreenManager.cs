@@ -57,12 +57,14 @@ public class SendInviteScreenManager : BaseAssetsGroupManager {
 
 	public void Retry()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		SceneController.sceneController.FadeAndLoadScene("Group", true);
 		//UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
 	}
 
 	public void Share()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		NativeSharePhoto.Share("Olá! Jogue esse jogo que é demais! clique aqui: http://contagotas.online/services/redirect/", null, "contagotas.online/services/redirect/", "", "text/html", true, "");
 	}
 }

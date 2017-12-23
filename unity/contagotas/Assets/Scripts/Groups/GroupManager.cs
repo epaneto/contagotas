@@ -114,6 +114,7 @@ public class GroupManager : MonoBehaviour {
 
 	public void ShowCreateScreen()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		ShowGroup(ScreenType.CREATE_GROUP);
 	}
 
@@ -125,6 +126,7 @@ public class GroupManager : MonoBehaviour {
 
 	public void ShowJoinScreen()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		ShowGroup (ScreenType.JOIN_GROUP);
 		//joinGroupScreenManager.StartLoadSuggestedGroups ();
 	}

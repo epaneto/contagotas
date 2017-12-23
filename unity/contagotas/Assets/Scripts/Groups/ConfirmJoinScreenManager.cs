@@ -24,10 +24,13 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 
 	public void ClickedJoinWithPassword()
 	{
+        GameSound.gameSound.PlaySFX("button");
+
 		if (ConfirmJoinPasswordInput.text == "") {
 			joinConfirmFeedback.text = "Digite a senha";
 			return;
 		}
+
 
 		joinConfirmFeedback.text = "";
 		StartCoroutine(JoinWithPassword (temporaryGroupId, ConfirmJoinPasswordInput.text));
@@ -84,6 +87,7 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 
 	public void Retry()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		SceneController.sceneController.FadeAndLoadScene("Group", true);
 		//UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
 	}

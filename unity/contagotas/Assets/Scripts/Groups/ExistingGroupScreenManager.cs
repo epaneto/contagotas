@@ -58,6 +58,7 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 
 	public void ShowLeaveButton()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		ConfirmLeaveGroup.SetActive (true);
 	}
 
@@ -115,6 +116,7 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 
 	public void ShowMyGroupInfo()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		LoadingContent.SetActive (false);
 		MyGroupContent.SetActive (true);
 		RankingContent.SetActive (false);
@@ -125,16 +127,19 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 
 	public void ShowRankingScreen()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		StartCoroutine (LoadRanking ());
 	}
 
 	public void ShowSendInviteScreen()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		screenManager.ShowSendInviteScreen ();
 	}
 
 	public void GoToMapScreen()
 	{
+        GameSound.gameSound.PlaySFX("button");
         SceneController.sceneController.FadeAndLoadScene("Map", true);
 		//UnityEngine.SceneManagement.SceneManager.LoadScene ("Map");
 	}

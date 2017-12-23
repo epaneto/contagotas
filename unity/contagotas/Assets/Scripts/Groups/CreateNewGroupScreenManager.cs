@@ -20,6 +20,7 @@ public class CreateNewGroupScreenManager : BaseAssetsGroupManager {
 		if (string.IsNullOrEmpty (createInput.text) || string.IsNullOrEmpty (createPasswordInput.text))
 			return;
 
+        GameSound.gameSound.PlaySFX("button");
 		StartCoroutine (CreateGroup(createInput.text,createPasswordInput.text));
 	}
 
@@ -62,6 +63,7 @@ public class CreateNewGroupScreenManager : BaseAssetsGroupManager {
 
 	public void GoBack()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		screenManager.ShowNewGroupScene();
 	}
 

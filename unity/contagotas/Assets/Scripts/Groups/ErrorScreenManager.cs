@@ -15,6 +15,7 @@ public class ErrorScreenManager : BaseAssetsGroupManager {
 
 	public void Retry()
 	{
+        GameSound.gameSound.PlaySFX("button");
 		SceneController.sceneController.FadeAndLoadScene("Group", true);
 		//UnityEngine.SceneManagement.SceneManager.LoadScene ("Group");
 	}
