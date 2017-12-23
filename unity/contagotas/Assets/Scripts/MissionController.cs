@@ -56,13 +56,16 @@ public class MissionController : MonoBehaviour {
 		activeMission = UserData.userData.playerData.activeMission;
 
 		if (lastDate.Year != 1)  {
-			
-			if (isNextDay) {
-				
-				Debug.Log ("One day has passed.");
-				lastDate = today;
-				if(activeMission < maxDays)
-					activeMission++;
+
+            if (isNextDay)
+            {
+
+                Debug.Log("One day has passed.");
+                lastDate = today;
+
+                if (activeMission < maxDays) {
+                    activeMission++;
+                }
 
 				user.playerData.lastAccess = lastDate;
 				user.playerData.activeMission = activeMission;
@@ -84,14 +87,14 @@ public class MissionController : MonoBehaviour {
 			UserData.userData.Save ();
 		}
 
-		UpdateMap ();
+        UpdateMap (isNextDay);
 
 	}
 
-	public void UpdateMap()
+	public void UpdateMap(bool isNextDay)
 	{
 		MapController mapController = GameObject.FindObjectOfType<MapController> ();
-		mapController.UpdateMapBasedInPlayerProgress (activeMission, maxDays);
+        mapController.UpdateMapBasedInPlayerProgress (activeMission, maxDays, isNextDay);
 	}
 
 	public void OpenMiniGame(int ClickedDayIndex)

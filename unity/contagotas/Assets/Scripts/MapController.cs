@@ -30,10 +30,16 @@ public class MapController : MonoBehaviour {
             StartTutorial();
         }
 
+        if(PlayerPrefs.HasKey("show_next_day_tutorial"))
+        {
+            PlayerPrefs.DeleteKey("show_next_day_tutorial");
+            ShowNextDayTutorial();
+        }
+
         InfoObject.SetActive(false);
     }
 
-    public void UpdateMapBasedInPlayerProgress(int day, int maxDays)
+    public void UpdateMapBasedInPlayerProgress(int day, int maxDays, bool isNextDay)
 	{
 		Debug.Log("Hello player! Today its your " + day + "th day. let's update the map.");
 
@@ -45,6 +51,9 @@ public class MapController : MonoBehaviour {
 			}
 		}
 
+        if(isNextDay)
+            PlayerPrefs.SetString("show_next_day_tutorial", "true");
+        
         loadHints();
 	}
 
@@ -144,7 +153,7 @@ public class MapController : MonoBehaviour {
 
     public void AdvanceTutorial()
     {
-        if(tutorialIndex +1 < TutorialSteps.Count)
+        if(tutorialIndex +1 < TutorialSteps.Count-1)
         {
             step.SetActive(false);
             tutorialIndex++;
@@ -162,5 +171,14 @@ public class MapController : MonoBehaviour {
         PlayerPrefs.Save();
 
         TutorialObject.SetActive(false);
+    }
+
+    void ShowNextDayTutorial()
+    {
+        tutorialIndex = TutorialSteps.Count;
+
+        TutorialObject.SetActive(true); 
+        step = TutorialSteps[TutorialSteps.Count-1];
+        step.SetActive(true);
     }
 }

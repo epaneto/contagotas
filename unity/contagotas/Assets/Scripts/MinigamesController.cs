@@ -27,6 +27,7 @@ public class MinigamesController : MonoBehaviour {
     GameObject scoreGroup;
     GameObject scoreTxt;
     GameObject continueButton;
+    GameObject giveupButton;
     GameObject titleTxt;
     GameObject hintTxt;
     GameObject challengeTxt;
@@ -55,6 +56,7 @@ public class MinigamesController : MonoBehaviour {
         challengeTxt = GameObject.Find("desafio_txt");
         hintTxt = GameObject.Find("hint_txt");
         continueButton = GameObject.Find("bt_continuar_score");
+        giveupButton = GameObject.Find("bt_giveup");
         endBackground = GameObject.Find("endgamebackground");
         toogleButton = GameObject.Find("routine_toogle");
         toogleComponent = toogleButton.GetComponent<Toggle>();
@@ -149,8 +151,10 @@ public class MinigamesController : MonoBehaviour {
         titleTxt.transform.DOScale(new Vector3(0, 0, 1), 0.9f).SetEase(Ease.OutBack).From();
         challengeTxt.transform.DOScale(new Vector3(0, 0, 1), 1.0f).SetEase(Ease.OutBack).From();
         hintTxt.transform.DOScale(new Vector3(0, 0, 1), 1.1f).SetEase(Ease.OutBack).From();
-        continueButton.transform.DOScale(new Vector3(0, 0, 1.2f), 1.0f).SetEase(Ease.OutBack).From();
         toogleButton.transform.DOScale(new Vector3(0, 0, 1.2f), 1.1f).SetEase(Ease.OutBack).From();
+        continueButton.transform.DOScale(new Vector3(0, 0, 1.3f), 1.0f).SetEase(Ease.OutBack).From();
+        giveupButton.transform.DOScale(new Vector3(0, 0, 1.4f), 1.0f).SetEase(Ease.OutBack).From();
+
         endBackground.transform.DOMoveY(-1400,0.6f).SetEase(Ease.OutQuad).From();
 
         ///CHECK ACTIVITY STATUS
@@ -182,6 +186,7 @@ public class MinigamesController : MonoBehaviour {
         playerScore = 0;
         StartCoroutine("CountTo", score);
 
+        giveupButton.GetComponent<Button>().onClick.AddListener(GoToMap);
 		continueButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
 
 
@@ -252,6 +257,7 @@ public class MinigamesController : MonoBehaviour {
         ///if user came from win window, we need to hide
         hideTime();
 
+        giveupButton.GetComponent<Button>().onClick.RemoveAllListeners();
         continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
         continueLoseButton.GetComponent<Button>().onClick.RemoveAllListeners();
 
@@ -316,4 +322,17 @@ public class MinigamesController : MonoBehaviour {
         timeBarFill.transform.localScale = new Vector3(barScale, 1, 1);
     }
 
+    public void GoToMap()
+    {
+        giveupButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        continueLoseButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+        hideTime();
+        endGame.SetActive(false);
+        loseGame.SetActive(false);
+
+        GameSound.gameSound.PlayLoopMusic("main_bgm");
+        SceneController.sceneController.FadeAndLoadScene("Map", true);
+    }
 }
