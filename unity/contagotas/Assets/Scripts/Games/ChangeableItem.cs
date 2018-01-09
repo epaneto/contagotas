@@ -73,4 +73,12 @@ public class ChangeableItem : MonoBehaviour {
             itemSkeleton = this.gameObject.GetComponent<SkeletonGraphic>();
         itemSkeleton.AnimationState.SetAnimation(0, goodAnimation, false);
     }
+
+    public void ResetItem()
+    {
+        isGood = true;
+
+        if (colorFeedback)
+            changeableColor.ResetColor();
+    }
 }
