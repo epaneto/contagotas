@@ -28,7 +28,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
         GameSound.gameSound.PlayOneShotMusic("game_intro",1.0f);
 
 		controller = GameObject.FindObjectOfType<MinigamesController> ();
-        //controller.ShowIntro();
+        controller.ShowIntro();
 
 		graphic = gameAnimation.GetComponent<SkeletonGraphic> ();
 
@@ -37,7 +37,7 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 		//Debug.Log ("play the intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 		gameAnimation.SetActive (true);
 		graphic.AnimationState.SetAnimation(0,"enter_game",false);
-		graphic.AnimationState.Complete += EndedIntro;
+		//graphic.AnimationState.Complete += EndedIntro;
 
 
 	}
@@ -49,12 +49,12 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
         controller.blinkTimeBar();
     }
 
-	public void EndedIntro(Spine.TrackEntry entry)
-    //public void EndedIntro()
+	//public void EndedIntro(Spine.TrackEntry entry)
+    public void EndedIntro()
 	{
 		gameStarted = true;
         GameSound.gameSound.PlayLoopMusic("game_music",0.2f);
-		graphic.AnimationState.Complete -= EndedIntro;
+		//graphic.AnimationState.Complete -= EndedIntro;
 
 		Debug.Log("ended intro animation of " + "enter_game" + (controller.minigameIndex + 1));
 

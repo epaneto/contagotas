@@ -126,7 +126,7 @@ public class MinigamesController : MonoBehaviour {
 
 		endGame.SetActive (false);
 		loseGame.SetActive (false);
-        //skipIntroButton.SetActive(true);
+        skipIntroButton.SetActive(false);
 
 		minigameIndex = 0;
                    
@@ -136,15 +136,15 @@ public class MinigamesController : MonoBehaviour {
 
     public void ShowIntro()
     {
-        //skipIntroButton.SetActive(true);
+        skipIntroButton.SetActive(true);
     }
 
     public void SkipIntro()
     {
-        //skipIntroButton.SetActive(false);
+        skipIntroButton.SetActive(false);
 
-        //MiniGameDefaultBehavior mdb = GameObject.FindObjectOfType<MiniGameDefaultBehavior>();
-        //mdb.EndedIntro();
+        MiniGameDefaultBehavior mdb = GameObject.FindObjectOfType<MiniGameDefaultBehavior>();
+        mdb.EndedIntro();
     }
 
 	public void ShowLose()
