@@ -9,6 +9,8 @@ public class DuelGame : MonoBehaviour {
     public GameObject point1;
     public GameObject point2;
     public GameObject point3;
+    public GameObject point4;
+    public GameObject point5;
 
     public GameObject enemyObject;
     public GameObject playerObject;
@@ -18,6 +20,8 @@ public class DuelGame : MonoBehaviour {
     SkeletonGraphic p1Skeleton;
     SkeletonGraphic p2Skeleton;
     SkeletonGraphic p3Skeleton;
+    SkeletonGraphic p4Skeleton;
+    SkeletonGraphic p5Skeleton;
 
     bool isEnemyActive = false;
     MiniGameDefaultBehavior mdb;
@@ -26,7 +30,7 @@ public class DuelGame : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
+        mdb = GameObject.FindObjectOfType<MiniGameDefaultBehavior>();
         mdb.isTimeGame = false;
 
         enemySkeleton = enemyObject.GetComponent<SkeletonGraphic>();
@@ -35,12 +39,14 @@ public class DuelGame : MonoBehaviour {
         p1Skeleton = point1.GetComponent<SkeletonGraphic>();
         p2Skeleton = point2.GetComponent<SkeletonGraphic>();
         p3Skeleton = point3.GetComponent<SkeletonGraphic>();
+        p4Skeleton = point4.GetComponent<SkeletonGraphic>();
+        p5Skeleton = point5.GetComponent<SkeletonGraphic>();
 
-        InvokeRepeating("enemyAttack", 5.0f, 2.0f);
+        InvokeRepeating("enemyAttack", 2.0f, 2.0f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if (!mdb.gameStarted)
             return;
 
@@ -50,7 +56,7 @@ public class DuelGame : MonoBehaviour {
         if (isEnemyActive)
             mdb.loseTime(0.05f);
         
-        if (!mdb.hasTimeLeft() && numPoints < 3)
+        if (!mdb.hasTimeLeft() && numPoints < 5)
         {
             isPlaying = false;
             mdb.EndedGameLose();
@@ -60,6 +66,14 @@ public class DuelGame : MonoBehaviour {
 
     void enemyAttack()
     {
+        bool fakeAttack = Random.Range(0, 100) < 40;
+
+        if (fakeAttack)
+        {
+            enemySkeleton.AnimationState.SetAnimation(0, "up", false);
+            return;
+        }
+
         GameSound.gameSound.PlaySFX("toilet_flush");
         CancelInvoke();
         isEnemyActive = true;
@@ -89,19 +103,27 @@ public class DuelGame : MonoBehaviour {
         if(numPoints == 1)
         {
             p1Skeleton.AnimationState.SetAnimation(0, "idle", false);
-        }else if (numPoints == 2)
+        }
+        else if (numPoints == 2)
         {
             p2Skeleton.AnimationState.SetAnimation(0, "idle", false);
         }
-
-        if(numPoints == 3)
+        else if (numPoints == 3)
         {
-            p3Skeleton.AnimationState.Complete += EndGame;
             p3Skeleton.AnimationState.SetAnimation(0, "idle", false);
-
-        }else{
-            InvokeRepeating("enemyAttack", 2.0f, 2.0f);
         }
+        else if (numPoints == 4)
+        {
+            p4Skeleton.AnimationState.SetAnimation(0, "idle", false);
+        }
+        else if(numPoints == 5)
+        {
+            p5Skeleton.AnimationState.Complete += EndGame;
+            p5Skeleton.AnimationState.SetAnimation(0, "idle", false);
+            return;
+        }
+
+        InvokeRepeating("enemyAttack", 2.0f, 2.0f);
     }
 
     void EndGame(Spine.TrackEntry entry)

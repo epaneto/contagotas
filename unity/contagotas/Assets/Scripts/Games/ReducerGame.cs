@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
+using DG.Tweening;
 using Spine.Unity.Modules.AttachmentTools;
 
 public class ReducerGame : MonoBehaviour {
     public GameObject reducerObject;
     public GameObject faucetObject;
+    public GameObject sinkGroup;
 
     float initialRedutorPos;
     float tapSizeY;
+
+    float sinkX;
+    float sinkY;
+
+    int numSinks = 0;
+    int totalSinks = 3;
 
     SkeletonGraphic faucetSkeleton;
     MiniGameDefaultBehavior mdb;
@@ -21,6 +29,9 @@ public class ReducerGame : MonoBehaviour {
         faucetSkeleton = faucetObject.GetComponent<SkeletonGraphic>();
         initialRedutorPos = reducerObject.transform.position.y;
         tapSizeY = (faucetObject.transform.position.y - initialRedutorPos) / 15;
+
+        sinkX = sinkGroup.transform.position.x;
+        sinkY = sinkGroup.transform.position.y;
 	}
 	
 	// Update is called once per frame
@@ -54,11 +65,36 @@ public class ReducerGame : MonoBehaviour {
         reducerObject.transform.position += new Vector3(0, tapSizeY, 0);
         if (reducerObject.transform.position.y >= (faucetObject.transform.position.y + 20))
         {
-            Debug.Log("success!");
-            isPlaying = false;
-            faucetSkeleton.AnimationState.Complete += EndGame;
-            faucetSkeleton.AnimationState.SetAnimation(0, "faucet_off", false);
+            numSinks++;
+            if(numSinks == totalSinks)
+            {
+                Debug.Log("success!");
+                isPlaying = false;
+                faucetSkeleton.AnimationState.Complete += EndGame;
+                faucetSkeleton.AnimationState.SetAnimation(0, "faucet_off", false);
+            }else{
+                isPlaying = false;
+                HideSink();
+            }
+
         }
+    }
+
+    void HideSink()
+    {
+        faucetSkeleton.AnimationState.SetAnimation(0, "faucet_off", false);
+        sinkGroup.transform.DOMoveX(-1500, 0.5f).SetEase(Ease.InQuad).OnComplete(ShowNextSink);
+    }
+
+    void ShowNextSink()
+    {
+        faucetSkeleton.AnimationState.SetAnimation(0, "faucet_on", true);
+        reducerObject.transform.position = new Vector3(reducerObject.transform.position.x, initialRedutorPos, 0);
+
+        sinkGroup.transform.position = new Vector3(1500, sinkY, 0);
+        sinkGroup.transform.DOMoveX(sinkX, 0.5f).SetEase(Ease.OutQuad);
+
+        isPlaying = true;
     }
 
     void EndGame(Spine.TrackEntry entry)
@@ -66,4 +102,5 @@ public class ReducerGame : MonoBehaviour {
         faucetSkeleton.AnimationState.Complete -= EndGame;
         mdb.EndedGameWin(mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
     }
+
 }
