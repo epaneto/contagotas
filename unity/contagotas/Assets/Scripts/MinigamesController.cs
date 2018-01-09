@@ -18,6 +18,7 @@ public class MinigamesController : MonoBehaviour {
 
     public GameObject timeBar;
     public GameObject timeBarFill;
+    public GameObject skipIntroButton;
 
 	JArray Missions;
     JArray SelectedMissions;
@@ -88,42 +89,63 @@ public class MinigamesController : MonoBehaviour {
 
         if (SelectedDay == 0)
         {
-            FirstMission = Missions[SelectedDay];
+            //FirstMission = Missions[SelectedDay];
             FirstMissionIndex = SelectedDay;
+
+            SelectedMissions.Add(Missions[0]);
+            SelectedMissions.Add(Missions[1]);
+            SelectedMissions.Add(Missions[2]);
+            SelectedMissions.Add(Missions[3]);
+            SelectedMissions.Add(Missions[4]);
         }
         else
         {
             FirstMission = Missions[SelectedDay + 4];
             FirstMissionIndex = SelectedDay + 4;
+            SelectedMissions.Add(FirstMission);
         }
 
-        for (int i = 0; i <= SelectedDay + 4; i++)
-        {
-            if (i != FirstMissionIndex && SelectedMissions.Count < 10)
-                SelectedMissions.Add(Missions[i]);
-        }
+        //for (int i = 0; i <= SelectedDay + 4; i++)
+        //{
+        //    if (i != FirstMissionIndex && SelectedMissions.Count < 10)
+        //        SelectedMissions.Add(Missions[i]);
+        //}
 
-        ///shuffle selected missions
-        for (int i = 0; i < SelectedMissions.Count; i++)
-        {
-            JToken temp = SelectedMissions[i];
-            int randomIndex = Random.Range(i, SelectedMissions.Count);
-            SelectedMissions[i] = SelectedMissions[randomIndex];
-            SelectedMissions[randomIndex] = temp;
-        }
+        /////shuffle selected missions
+        //for (int i = 0; i < SelectedMissions.Count; i++)
+        //{
+        //    JToken temp = SelectedMissions[i];
+        //    int randomIndex = Random.Range(i, SelectedMissions.Count);
+        //    SelectedMissions[i] = SelectedMissions[randomIndex];
+        //    SelectedMissions[randomIndex] = temp;
+        //}
 
-        //add first mission
-        SelectedMissions.AddFirst(FirstMission);
+        ////add first mission
+        //SelectedMissions.AddFirst(FirstMission);
 
 
 		endGame.SetActive (false);
 		loseGame.SetActive (false);
+        //skipIntroButton.SetActive(true);
 
 		minigameIndex = 0;
                    
         JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
         SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
 	}
+
+    public void ShowIntro()
+    {
+        //skipIntroButton.SetActive(true);
+    }
+
+    public void SkipIntro()
+    {
+        //skipIntroButton.SetActive(false);
+
+        //MiniGameDefaultBehavior mdb = GameObject.FindObjectOfType<MiniGameDefaultBehavior>();
+        //mdb.EndedIntro();
+    }
 
 	public void ShowLose()
 	{
