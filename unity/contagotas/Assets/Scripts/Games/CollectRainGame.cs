@@ -15,8 +15,15 @@ public class CollectRainGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
-        InvokeRepeating("launchDrop", 4.5f, dropInterval);
+
+        EventManager.StartListening("MiniGameStarted", StartRain);
 	}
+
+    void StartRain()
+    {
+        EventManager.StopListening("MiniGameStarted", StartRain);
+        InvokeRepeating("launchDrop", 0.5f, dropInterval);
+    }
 	
 	// Update is called once per frame
 	void Update () {
