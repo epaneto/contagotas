@@ -17,8 +17,16 @@ public class PipeHolesGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
-        InvokeRepeating("launchDrop", 4.0f, dropInterval);
+
+        EventManager.StartListening("MiniGameStarted", StartHoles);
+
 	}
+
+    void StartHoles()
+    {
+        EventManager.StopListening("MiniGameStarted", StartHoles);
+        InvokeRepeating("launchDrop", 4.0f, dropInterval);
+    }
 	
     // Update is called once per frame
     void Update()
