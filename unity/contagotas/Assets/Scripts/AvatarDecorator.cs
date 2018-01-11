@@ -117,7 +117,8 @@ public class AvatarDecorator : MonoBehaviour {
 		}
 
 		AvatarMenuController menuController = GameObject.FindObjectOfType<AvatarMenuController> ();
-		menuController.Setup ();
+        if(menuController)
+            menuController.Setup ();
 	}
 
 	public void UpdateTextures(string itemCategory, string itemIndex) 

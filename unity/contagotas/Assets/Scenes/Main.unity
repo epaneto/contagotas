@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 287218904}
   - component: {fileID: 287218903}
   - component: {fileID: 287218902}
+  - component: {fileID: 287218901}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -319,6 +320,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &287218901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 287218900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e44007258d5341fa9ee7ac938a1201e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData:
+    playerName: 
+    playerCity: 
+    playerState: 
+    playerBody: 
+    playerEye: 
+    playerHair: 
+    playerMouth: 
+    playerAcc: 
+    playerShirt: 
+    playerPants: 
+    playerShoe: 
+    playerPoints: 0
+    activeMission: 0
 --- !u!124 &287218902
 Behaviour:
   m_ObjectHideFlags: 0
@@ -463,8 +489,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 417124416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 540, y: 960, z: 0}
-  m_LocalScale: {x: 0.84440994, y: 0.84440994, z: 0.84440994}
+  m_LocalPosition: {x: 190.5, y: 338.5, z: 0}
+  m_LocalScale: {x: 0.29781574, y: 0.29781574, z: 0.29781574}
   m_Children:
   - {fileID: 226876098}
   - {fileID: 862857341}
