@@ -396,6 +396,8 @@ MonoBehaviour:
   - {fileID: 1738147873}
   - {fileID: 1738147872}
   numBadCups: 4
+  gamePages: 3
+  activePage: 0
   gameBackground: {fileID: 1738147879}
   mainGroup: {fileID: 1304163783}
   Colors:

@@ -10,7 +10,7 @@ public class ChangeCupGame : MonoBehaviour {
     bool isPlaying = true;
     public List<GameObject> CupList;
     public int numBadCups = 3;
-    int gamePages = 2;
+    public int gamePages = 0;
     int activePage = 0;
     public GameObject gameBackground;
     public GameObject mainGroup;

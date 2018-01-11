@@ -16,6 +16,6 @@ public class OpenURL : MonoBehaviour {
 
     public void openLandPage()
     {
-        Application.OpenURL("http://google.com/");
+        Application.OpenURL("http://www.contagotascaixa.com.br/");
     }
 }

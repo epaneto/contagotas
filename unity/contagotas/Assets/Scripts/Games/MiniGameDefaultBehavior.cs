@@ -53,6 +53,9 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
     public void EndedIntro()
 	{
 		gameStarted = true;
+
+        EventManager.TriggerEvent("MiniGameStarted");
+
         GameSound.gameSound.PlayLoopMusic("game_music",0.2f);
 		//graphic.AnimationState.Complete -= EndedIntro;
 
@@ -66,6 +69,9 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
 
     public void EndedGameWin(float score)
 	{
+        if (!gameStarted)
+            return;
+        
         StartCoroutine(ExitSounds());
 
 		gameStarted = false;
