@@ -64,7 +64,7 @@ public class WallCleanGame : MonoBehaviour {
 
         if (c.a > 0)
         {
-            c.a -= 0.2f;
+            c.a -= 0.1f;
             colliderImage.color = c;
         }
     }
