@@ -54,28 +54,28 @@ public class FruitDragGame : MonoBehaviour {
 		GameObject drop;
 		switch (randomNumber) {
 		case 2:
-			drop = Instantiate (Resources.Load ("drop_trash_1", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_trash_1", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), 0, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 3:
-			drop = Instantiate (Resources.Load ("drop_trash_2", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_trash_2", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), 0, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 4:
-			drop = Instantiate (Resources.Load ("drop_trash_3", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_trash_3", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), 0, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 5:
-			drop = Instantiate (Resources.Load ("drop_orange", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_orange", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), 0, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 6:
-			drop = Instantiate (Resources.Load ("drop_pear", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_pear", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), 0, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 7:
 		case 8:
 		case 9:
-			drop = Instantiate (Resources.Load ("fruit_drop_special", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("fruit_drop_special", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), 0, 0), dropParent.transform.rotation) as GameObject;
 			break;
 
 		default:
-			drop = Instantiate(Resources.Load("drop_apple", typeof(GameObject)), new Vector3(Random.Range(-400,400),-220,0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate(Resources.Load("drop_apple", typeof(GameObject)), new Vector3(Random.Range(-400,400),0,0), dropParent.transform.rotation) as GameObject;
 			break;
 		}
 		drop.transform.SetParent(dropParent.transform, false);
