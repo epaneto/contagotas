@@ -9,7 +9,7 @@ public class CollectRainGame : MonoBehaviour {
     MiniGameDefaultBehavior mdb;
     bool isPlaying = true;
 
-    int neededDrops = 12;
+    int neededDrops = 20;
     int collectedDrops = 0;
 
 	// Use this for initialization
@@ -45,9 +45,36 @@ public class CollectRainGame : MonoBehaviour {
 
     void launchDrop()
     {
-        GameObject drop = Instantiate(Resources.Load("drop", typeof(GameObject)), new Vector3(Random.Range(-400,400),-220,0), dropParent.transform.rotation) as GameObject;
+		int randomNumber = (int)Random.Range (0, 10);
+
+		GameObject drop;
+		switch (randomNumber) {
+		case 2:
+			drop = Instantiate (Resources.Load ("drop_leaf", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		case 3:
+			drop = Instantiate (Resources.Load ("drop_stick", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		case 4:
+			drop = Instantiate (Resources.Load ("drop_stone", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		case 5:
+		case 6:
+		case 7:
+			drop = Instantiate (Resources.Load ("drop_special", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		default:
+			drop = Instantiate(Resources.Load("drop", typeof(GameObject)), new Vector3(Random.Range(-400,400),-220,0), dropParent.transform.rotation) as GameObject;
+			break;
+		}
         drop.transform.SetParent(dropParent.transform, false);
     }
+
+	public void SpecialCollected()
+	{
+		mdb.winTime(1.0f);
+		//mdb.EndedGameLose();
+	}
 
     public void missedDrop()
     {

@@ -49,6 +49,13 @@ public class MiniGameDefaultBehavior : MonoBehaviour {
         controller.blinkTimeBar();
     }
 
+	public void winTime(float timeWon)
+	{
+		totalTime -= timeWon;
+		controller.updateTime(1.0f - totalTime / maxTime);
+		controller.blinkTimeBar();
+	}
+
 	//public void EndedIntro(Spine.TrackEntry entry)
     public void EndedIntro()
 	{
