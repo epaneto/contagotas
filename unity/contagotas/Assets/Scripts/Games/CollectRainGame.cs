@@ -72,7 +72,7 @@ public class CollectRainGame : MonoBehaviour {
 
 	public void SpecialCollected()
 	{
-		mdb.winTime(1.0f);
+		mdb.winTime(2.0f);
 		//mdb.EndedGameLose();
 	}
 

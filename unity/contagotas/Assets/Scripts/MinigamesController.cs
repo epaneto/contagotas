@@ -328,6 +328,16 @@ public class MinigamesController : MonoBehaviour {
         mySequence.Append(timeBarFillMaterial.DOColor(Color.white, 0.2f));
     }
 
+	public void blinkSpecialTimeBar()
+	{
+		Image timeBarFillMaterial = timeBarFill.GetComponent<Image>();
+
+		Sequence mySequence = DOTween.Sequence();
+		mySequence.Append(timeBarFillMaterial.DOColor(Color.green, 0.2f));
+		mySequence.AppendInterval(0.2f);
+		mySequence.Append(timeBarFillMaterial.DOColor(Color.white, 0.2f));
+	}
+
     public void showTime()
     {
         timeBar.SetActive(true);

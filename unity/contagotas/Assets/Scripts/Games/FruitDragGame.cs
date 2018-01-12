@@ -8,49 +8,106 @@ using Spine.Unity.Modules.AttachmentTools;
 
 public class FruitDragGame : MonoBehaviour {
 
-	public List<GameObject> dishes;
-
+	float dropInterval = 0.5f;
+	public GameObject dropParent;
 	MiniGameDefaultBehavior mdb;
 	bool isPlaying = true;
-	bool allClothClean = false;
+
+	int neededDrops = 20;
+	int collectedDrops = 0;
 
 	// Use this for initialization
 	void Start () {
-		mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior> ();
+		mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
+
+		EventManager.StartListening("MiniGameStarted", StartRain);
 	}
-	
+
+	void StartRain()
+	{
+		EventManager.StopListening("MiniGameStarted", StartRain);
+		InvokeRepeating("launchDrop", 0.5f, dropInterval);
+	}
+
 	// Update is called once per frame
 	void Update () {
-		if (!mdb.gameStarted)
+		if(!mdb.gameStarted)
+
 			return;
 
 		if (!isPlaying)
 			return;
 
-		if (!mdb.hasTimeLeft() && !allClothClean) {
+		if (!mdb.hasTimeLeft() && collectedDrops < neededDrops)
+		{
+			CancelInvoke();
 			isPlaying = false;
-			mdb.EndedGameLose ();
+			mdb.EndedGameLose();
 			return;
 		}
+	}
 
+	void launchDrop()
+	{
+		int randomNumber = (int)Random.Range (0, 10);
 
-		allClothClean = true;
-		for (int i = 0; i < dishes.Count; i++) {
-			
-			DragableObject obj = dishes [i].GetComponent<DragableObject> ();
-			if (obj.isAtDestination == false) {
-				allClothClean = false;
-				break;
-			}
+		GameObject drop;
+		switch (randomNumber) {
+		case 2:
+			drop = Instantiate (Resources.Load ("drop_trash_1", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		case 3:
+			drop = Instantiate (Resources.Load ("drop_trash_2", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		case 4:
+			drop = Instantiate (Resources.Load ("drop_trash_3", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		case 5:
+			drop = Instantiate (Resources.Load ("drop_orange", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		case 6:
+			drop = Instantiate (Resources.Load ("drop_pear", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+		case 7:
+		case 8:
+		case 9:
+			drop = Instantiate (Resources.Load ("fruit_drop_special", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			break;
+
+		default:
+			drop = Instantiate(Resources.Load("drop_apple", typeof(GameObject)), new Vector3(Random.Range(-400,400),-220,0), dropParent.transform.rotation) as GameObject;
+			break;
+		}
+		drop.transform.SetParent(dropParent.transform, false);
+	}
+
+	public void SpecialCollected()
+	{
+		mdb.winTime(2.0f);
+		//mdb.EndedGameLose();
+	}
+
+	public void missedDrop()
+	{
+		mdb.loseTime(1.0f);
+		//mdb.EndedGameLose();
+	}
+
+	public void CollectedDrop()
+	{
+		collectedDrops++;
+		GameSound.gameSound.PlaySFX("rain_drop");
+		if(collectedDrops >= neededDrops)
+		{
+			EndGame();
 		}
 
-		if (allClothClean)
-			EndGame ();
 	}
 
 	void EndGame()
 	{
+		CancelInvoke();
 		isPlaying = false;
-		mdb.EndedGameWin (mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
+		mdb.EndedGameWin(mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
 	}
 }
