@@ -29,6 +29,7 @@ public class FruitTrash : MonoBehaviour {
 		if (other.CompareTag("DragDestination"))
 		{
 			Debug.Log("LIXO TOCOU");
+            GameSound.gameSound.PlaySFX("error");
 			controller.missedDrop();
 			Destroy(this.gameObject);
 		}
