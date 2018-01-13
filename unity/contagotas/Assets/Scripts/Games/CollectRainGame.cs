@@ -73,6 +73,7 @@ public class CollectRainGame : MonoBehaviour {
 	public void SpecialCollected()
 	{
 		mdb.winTime(2.0f);
+        GameSound.gameSound.PlaySFX("collect_X");
 		//mdb.EndedGameLose();
 	}
 

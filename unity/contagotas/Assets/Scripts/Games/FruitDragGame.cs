@@ -84,7 +84,7 @@ public class FruitDragGame : MonoBehaviour {
 	public void SpecialCollected()
 	{
 		mdb.winTime(2.0f);
-		//mdb.EndedGameLose();
+        GameSound.gameSound.PlaySFX("collect_X");
 	}
 
 	public void missedDrop()
