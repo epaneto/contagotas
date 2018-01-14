@@ -15,13 +15,6 @@ public class DragableObject : MonoBehaviour {
 		
 	}
 
-	// Update is called once per frame
-	bool isDraging = false;
-
-	void Update () {
-
-	}
-
 	public void onDragMe()
 	{
 		Vector3 mousePosition = Input.mousePosition;

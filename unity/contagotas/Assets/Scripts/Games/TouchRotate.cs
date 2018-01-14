@@ -19,6 +19,9 @@ public class TouchRotate : MonoBehaviour {
 
     public void RotateMe()
     {
+		if (!this.isActiveAndEnabled)
+			return;
+		
         //this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
         GameSound.gameSound.PlaySFX("tap");
         this.gameObject.transform.Rotate(new Vector3(0,0,90));
