@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PipeHolesGame : MonoBehaviour {
 
+	public List<GameObject> holes;
 
-    float dropInterval = 0.8f;
-    public GameObject dropParent;
+    public GameObject pipe;
     MiniGameDefaultBehavior mdb;
     bool isPlaying = true;
-    int maxDrops = 8;
-    int neededDrops = 5;
+    
+	int fixesNeed = 16;
     int collectedDrops = 0;
-    int createdDrops = 0;
+	float speed;
 
 	// Use this for initialization
 	void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
-
+		speed = -1;
         EventManager.StartListening("MiniGameStarted", StartHoles);
 
 	}
@@ -25,12 +25,19 @@ public class PipeHolesGame : MonoBehaviour {
     void StartHoles()
     {
         EventManager.StopListening("MiniGameStarted", StartHoles);
-        InvokeRepeating("launchDrop", 4.0f, dropInterval);
     }
+
+	void UpdatePipe ()
+	{
+		pipe.transform.Translate (0, speed * Time.deltaTime, 0);
+		speed -= (Time.deltaTime/2);
+	}
 	
     // Update is called once per frame
     void Update()
     {
+
+
         if (!mdb.gameStarted)
 
             return;
@@ -45,24 +52,15 @@ public class PipeHolesGame : MonoBehaviour {
             mdb.EndedGameLose();
             return;
         }
-    }
 
-    void launchDrop()
-    {
-        if (createdDrops >= maxDrops)
-            return;
-        
-        createdDrops++;
-
-        GameObject drop = Instantiate(Resources.Load("hole", typeof(GameObject)), new Vector3(Random.Range(-110, 110), -135, 0), dropParent.transform.rotation) as GameObject;
-        drop.transform.SetParent(dropParent.transform, false);
+		UpdatePipe ();
     }
 
     public void fixedPipe()
     {
         collectedDrops++;
-
-        if (collectedDrops >= neededDrops)
+		mdb.winTime (1.0f);
+        if (collectedDrops >= fixesNeed)
         {
             EndGame();
         }
