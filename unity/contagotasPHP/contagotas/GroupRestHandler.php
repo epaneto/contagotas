@@ -61,10 +61,27 @@ class GroupRestHandler extends SimpleRest {
 		$response->send($rawData);
 	}
 	
-	public function hasGroup($group_name) {
+	public function hasGroup($user_id) {
 
 		$group = new Group();
-		$rawData = $group->hasGroup($group_name);
+		$rawData = $group->hasGroup($user_id);
+		
+		$statusCode = 200;
+		
+		if($rawData)
+			$rawData = "true";
+		else
+			$rawData = "false";
+		
+		
+		$response = new Response();
+		$response->send($rawData);
+	}
+	
+	public function groupExists($group_name) {
+
+		$group = new Group();
+		$rawData = $group->groupExists($group_name);
 		
 		$statusCode = 200;
 		

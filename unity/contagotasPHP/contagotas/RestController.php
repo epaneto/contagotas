@@ -6,10 +6,10 @@ $view = "";
 if(isset($_GET["view"]))
 	$view = $_GET["view"];
 
-/*if($_SERVER['HTTP_USER_AGENT'] != "app-contagotas")
+if($_SERVER['HTTP_USER_AGENT'] != "app-contagotas")
 {
 	die("ERROR!");
-}*/
+}
 
 switch($view){
 
@@ -70,6 +70,12 @@ switch($view){
 		// to handle REST Url /group/hasGroup/<user_id>/
 		$groupRestHandler = new GroupRestHandler();
 		$groupRestHandler->hasGroup($_GET["user"]);
+		break;
+		
+	case "groupExists":
+		// to handle REST Url /group/exists/<user_name>/
+		$groupRestHandler = new GroupRestHandler();
+		$groupRestHandler->groupExists($_GET["group_name"]);
 		break;
 		
 	case "leave":

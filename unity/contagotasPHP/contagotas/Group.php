@@ -211,6 +211,32 @@ Class Group {
 		return $result->num_rows > 0;
 	}
 	
+	public function groupExists($group_name){
+
+		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");
+		
+		if (!$con)
+		{
+		  die('Could not connect: ' . mysqli_error($con));
+		}
+		 
+		mysqli_select_db($con,"contagotas_app");		 
+		
+		
+		$sql= "SELECT * FROM contagotas_app.group where group_name like '" . $group_name . "';";
+		
+		$result = mysqli_query($con,$sql);
+		
+		if (!$result)
+		{
+		  die('Error: ' . mysqli_error($con));
+		}
+			
+		mysqli_close($con);
+		return $result->num_rows > 0;
+	}
+	
+	
 	public function joinGroup($group,$user){
 
 		$con = mysqli_connect("mysql.contagotas.online","contagotas","c0nt4g0t4s");

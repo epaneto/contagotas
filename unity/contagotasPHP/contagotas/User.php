@@ -96,8 +96,11 @@ Class User {
 		}
 		 
 		mysqli_select_db($con,"contagotas_app");
-		 	 
-		$sql = "SELECT IFNULL(SUM(score), 0) as score FROM contagotas_app.user_score where userid = '" . $user_id . "'";
+		 	
+		$sql = "SELECT contagotas_app.users.name, IFNULL(SUM(contagotas_app.user_score.score), 0) as score 
+		FROM contagotas_app.users
+		LEFT OUTER  JOIN contagotas_app.user_score ON contagotas_app.users.userid=contagotas_app.user_score.userid
+        where contagotas_app.user_score.userid = '" . $user_id . "'";
 		
 		$result = $con->query($sql);
 		
@@ -111,10 +114,10 @@ Class User {
 		if ($result->num_rows > 0) {
 			// output data of each row
 			while($row = $result->fetch_assoc()) {
-				$return = $row["score"];
+				$return = "[{'playerName':'" . $row["name"]."','playerPoints':'" . $row["score"] . "'}]";
 			}
 		} 
-		
+			
 		mysqli_close($con);
 		
 		return $return;
@@ -143,7 +146,7 @@ Class User {
 		if ($result->num_rows > 0) {
 			// output data of each row
 			while($row = $result->fetch_assoc()) {
-				$json .= "{'Name':'" . $row["name"]."','score':'" . $row["score"] . "'},";
+				$json .= "{'playerName':'" . $row["name"]."','playerPoints':'" . $row["score"] . "'},";
 			}
 		} 
 		$json .= "]";
