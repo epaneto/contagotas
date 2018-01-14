@@ -8,11 +8,12 @@ public class TapHoleGame : MonoBehaviour {
     bool isPlaying = true;
 	int holesTapped = 1;
     int numHolesToTap = 0;
+	int numHolesLevel = 1;
 
     // Use this for initialization
     void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
-        numHolesToTap = 15;
+		numHolesToTap = numHolesLevel;
 		int holeIndex = Random.Range (0, holes.Count);
 		holes [holeIndex].SetActive (true);
     }
@@ -37,14 +38,16 @@ public class TapHoleGame : MonoBehaviour {
     {
         numHolesToTap--;
 		holesTapped++;
-		if(holesTapped <= 5)
-			RandomizeHoles (holesTapped);
-        
+		if (numHolesToTap == 0 && numHolesLevel < 5) {
+			numHolesLevel++;
+			numHolesToTap = numHolesLevel;
+			RandomizeHoles (numHolesLevel);
+		}
 		Debug.Log("update holes " + numHolesToTap);
 
         GameSound.gameSound.PlaySFX("tap");
 
-        if (numHolesToTap == 0)
+		if (numHolesToTap == 0 && numHolesLevel == 5)
             EndGame();
     }
 
