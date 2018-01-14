@@ -81,7 +81,7 @@ public class ExistingGroupScreenManager : BaseAssetsGroupManager {
 		Debug.Log ("url result = " + result.text);
 
 		if (result.text.ToUpper ().Contains ("ERROR") || result.text.ToUpper ().Contains ("TIMEOUT")) {
-			screenManager.ShowErrorScreen ("error leaving group:" + result.text);
+			screenManager.ShowErrorScreen ("error getting group info:" + result.text);
 			yield break;
 		} 
 

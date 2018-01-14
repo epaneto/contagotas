@@ -161,10 +161,7 @@ public class MinigamesController : MonoBehaviour {
 
 	public void ShowResults(int score)
     {
-        ///save player points
-        UserData.userData.playerData.playerPoints += score;
-        UserData.userData.Save();
-
+       
         //animate screen
         scoreGroup.transform.DOScale(new Vector3(0, 0, 1), 0.8f).SetEase(Ease.OutBack).From();
         titleTxt.transform.DOScale(new Vector3(0, 0, 1), 0.9f).SetEase(Ease.OutBack).From();
@@ -221,6 +218,10 @@ public class MinigamesController : MonoBehaviour {
                 Debug.Log("ERROR: Player não contem user id");
                 return;
             }
+
+			///save player points
+			UserData.userData.playerData.playerPoints += score;
+			UserData.userData.Save();
 
 			StartCoroutine(AddUserScore(score));
 
