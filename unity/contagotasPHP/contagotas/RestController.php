@@ -110,6 +110,21 @@ switch($view){
 		 
 		$userRestHandler->createUser(utf8_decode ($json_decoded->name),utf8_decode ($json_decoded->email),utf8_decode ($json_decoded->city), utf8_decode ($json_decoded->state), utf8_decode ($json_decoded->facebookId));
 		break;
+	case "user_score_insert":
+		// to handle REST Url /user/score/<user_id>/<score>/
+		$userRestHandler = new UserRestHandler();
+		$userRestHandler->insertScore($_GET["user_id"],$_GET["score"]);
+		break;
+	case "user_get_score":
+		// to handle REST Url /user/score/<user_id>/
+		$userRestHandler = new UserRestHandler();
+		$userRestHandler->getUserScore($_GET["user_id"]);
+		break;
+	case "user_score_ranking":
+		// to handle REST Url /user/score/top10/
+		$userRestHandler = new UserRestHandler();
+		$userRestHandler->getUserRanking();
+		break;
 	case "invite_create":
 		// to handle REST Url /group/invite/create/<user inviter id>/<user invite name>/
 		$groupRestHandler = new GroupRestHandler();
