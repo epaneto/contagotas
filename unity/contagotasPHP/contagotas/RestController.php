@@ -6,10 +6,10 @@ $view = "";
 if(isset($_GET["view"]))
 	$view = $_GET["view"];
 
-if($_SERVER['HTTP_USER_AGENT'] != "app-contagotas")
+/*if($_SERVER['HTTP_USER_AGENT'] != "app-contagotas")
 {
 	die("ERROR!");
-}
+}*/
 
 switch($view){
 

@@ -250,7 +250,7 @@ public class MinigamesController : MonoBehaviour {
 	IEnumerator AddUserScore(int score)
 	{
 		WWW result;
-		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://localhost/contagotas/user/score/" + PlayerPrefs.GetInt ("user_id").ToString() + "/" + score.ToString() + "/");
+		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://www.contagotas.online/services/user/score/" + PlayerPrefs.GetInt ("user_id").ToString() + "/" + score.ToString() + "/");
 		Debug.Log("url result = " + result.text);
 
 		if (result.text == "success")

@@ -35,7 +35,7 @@ public class PlayerRankingScoreScreenManager : PlayerRankingBaseAssetsGroupManag
 	IEnumerator LoadUserRanking()
 	{
 		WWW result;
-		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://localhost/contagotas/user/score/check/" + PlayerPrefs.GetInt ("user_id").ToString() + "/");
+		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://www.contagotas.online/services/user/score/check/" + PlayerPrefs.GetInt ("user_id").ToString() + "/");
 		Debug.Log ("url result = " + result.text);
 
 		if (result.text.ToUpper ().Contains ("ERROR")) {
@@ -59,7 +59,7 @@ public class PlayerRankingScoreScreenManager : PlayerRankingBaseAssetsGroupManag
 	IEnumerator LoadRanking()
 	{
 		WWW result;
-		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://localhost/contagotas/user/score/top10/");
+		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://www.contagotas.online/services/user/score/top10/");
 		Debug.Log ("url result = " + result.text);
 
 		if (result.text.ToUpper ().Contains ("ERROR")) {
