@@ -135,6 +135,12 @@ public class MapController : MonoBehaviour {
         SceneController.sceneController.FadeAndLoadScene("Group", true);
     }
 
+	public void OpenPlayerRanking()
+	{
+		GameSound.gameSound.PlaySFX("button");
+		SceneController.sceneController.FadeAndLoadScene("PlayerRanking", true);
+	}
+
     public void OpenAvatar()
     {
         GameSound.gameSound.PlaySFX("button");

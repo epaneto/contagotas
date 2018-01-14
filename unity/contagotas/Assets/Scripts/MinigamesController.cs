@@ -222,6 +222,8 @@ public class MinigamesController : MonoBehaviour {
                 return;
             }
 
+			StartCoroutine(AddUserScore(score));
+
 			var hasGroup = PlayerPrefs.HasKey ("group_id");
 			if (!hasGroup)
             {
@@ -244,6 +246,18 @@ public class MinigamesController : MonoBehaviour {
         else
             Debug.Log("ERROR:" + result.text);
     }
+
+	IEnumerator AddUserScore(int score)
+	{
+		WWW result;
+		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://localhost/contagotas/user/score/" + PlayerPrefs.GetInt ("user_id").ToString() + "/" + score.ToString() + "/");
+		Debug.Log("url result = " + result.text);
+
+		if (result.text == "success")
+			Debug.Log("Inserido score");
+		else
+			Debug.Log("ERROR:" + result.text);
+	}
 
     IEnumerator CountTo(int target)
     {

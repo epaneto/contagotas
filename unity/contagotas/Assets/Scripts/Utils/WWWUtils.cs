@@ -17,4 +17,11 @@ public static class WWWUtils {
 
 		return new WWW(finalUrl, Encoding.UTF8.GetBytes(data), headers);
 	}
+
+	public static WWW DoWebRequestWithSpecificURL(string url, string data = "data=")
+	{
+		Hashtable headers = new Hashtable ();
+		headers.Add ("User-Agent", "app-contagotas");
+		return new WWW(url, Encoding.UTF8.GetBytes(data), headers);
+	}
 }

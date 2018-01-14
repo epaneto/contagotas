@@ -12,14 +12,8 @@ using System.Text;
 public enum PlayerRankingScreenType 
 {
 	LOADING,
-	EXISTING_GROUP,
-	NEW_GROUP,
-	CREATE_GROUP,
-	JOIN_GROUP,
-	CONFIRM_JOIN_GROUP,
+	PLAYER_RANKING_SCREEN,
 	ERROR,
-	RECEIVE_INVITES,
-	SEND_INVITES
 }
 
 public class PlayerRankingScreenManager : MonoBehaviour {
@@ -35,18 +29,20 @@ public class PlayerRankingScreenManager : MonoBehaviour {
 
 	[Header("Existing Screen References")]
 	[SerializeField]
-	PlayerRankingScoreScreenManager existingGroupScreenManager;
+	PlayerRankingScoreScreenManager playerRankingScreenManager;
 
 	// Use this for initialization
 	void Start () {
 		InitiliazeManagers ();
+		playerRankingScreenManager.StartLoadRanking ();
+		ShowLoadingScreen ();
 	}
 
 	private void InitiliazeManagers()
 	{
 		loadingScreenManager.Initialize(this);
 		errorScreenManager.Initialize(this);
-		existingGroupScreenManager.Initialize(this);
+		playerRankingScreenManager.Initialize(this);
 	}
 
 
@@ -54,7 +50,7 @@ public class PlayerRankingScreenManager : MonoBehaviour {
 	{
 		loadingScreenManager.SetScreen (groupToShow == PlayerRankingScreenType.LOADING);
 		errorScreenManager.SetScreen(groupToShow == PlayerRankingScreenType.ERROR);
-		existingGroupScreenManager.SetScreen (groupToShow == PlayerRankingScreenType.EXISTING_GROUP);
+		playerRankingScreenManager.SetScreen (groupToShow == PlayerRankingScreenType.PLAYER_RANKING_SCREEN);
 	}
 
 	public void ShowLoadingScreen()

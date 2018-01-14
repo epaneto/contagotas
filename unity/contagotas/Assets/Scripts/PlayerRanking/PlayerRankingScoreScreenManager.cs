@@ -7,10 +7,10 @@ using Newtonsoft.Json;
 public class PlayerRankingScoreScreenManager : PlayerRankingBaseAssetsGroupManager {
 
 	[SerializeField]
-	Text groupName;
+	Text playerName;
 
 	[SerializeField]
-	Text groupScore;
+	Text playerScore;
 
 	[SerializeField]
 	Text[] PlayersName;
@@ -29,22 +29,46 @@ public class PlayerRankingScoreScreenManager : PlayerRankingBaseAssetsGroupManag
 
 	public void StartLoadRanking()
 	{
-		StartCoroutine (LoadRanking ());
+		StartCoroutine (LoadUserRanking ());
+	}
+
+	IEnumerator LoadUserRanking()
+	{
+		WWW result;
+		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://localhost/contagotas/user/score/check/" + PlayerPrefs.GetInt ("user_id").ToString() + "/");
+		Debug.Log ("url result = " + result.text);
+
+		if (result.text.ToUpper ().Contains ("ERROR")) {
+			screenManager.ShowErrorScreen ("error loading user score:" + result.text);
+			yield break;
+		} else {
+			string json = StringUtils.DecodeBytesForUTF8 (result.bytes);
+
+			List<PlayerData> player = JsonConvert.DeserializeObject<List<PlayerData>>(json);
+
+			playerName.text = player[0].playerName;
+			playerScore.text = player[0].playerPoints.ToString();
+
+			UserData.userData.playerData.playerPoints = player[0].playerPoints;
+			UserData.userData.Save();
+
+			StartCoroutine (LoadRanking ());
+		}
 	}
 
 	IEnumerator LoadRanking()
 	{
 		WWW result;
-		yield return result = WWWUtils.DoWebRequest("score/top/");
+		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://localhost/contagotas/user/score/top10/");
 		Debug.Log ("url result = " + result.text);
 
 		if (result.text.ToUpper ().Contains ("ERROR")) {
-			screenManager.ShowErrorScreen ("error leaving group:" + result.text);
+			screenManager.ShowErrorScreen ("error loading user ranking:" + result.text);
 			yield break;
 		} else {
 
 			//clearing all texts
-			for (int i = 0; i < 8; i++) {
+			for (int i = 0; i < 10; i++) {
 				PlayersName [i].text = "";
 				PlayersScore [i].text = "";
 			}
@@ -59,7 +83,7 @@ public class PlayerRankingScoreScreenManager : PlayerRankingBaseAssetsGroupManag
 				PlayersScore [index].text = playerData.playerPoints.ToString();
 				index++;
 			}
-
+			screenManager.ShowScreen (PlayerRankingScreenType.PLAYER_RANKING_SCREEN);
 		}
 	}
 
