@@ -89,3 +89,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Group.unity
     guid: 629a6ebfb956b6b4c875ba63f7ef26ea
+  - enabled: 1
+    path: Assets/Scenes/PlayerRanking.unity
+    guid: 212bd624d9bfe1f4a841db47a578d84a
