@@ -6,22 +6,10 @@ using Spine.Unity.Modules.AttachmentTools;
 
 public class WaterFlowerGame : MonoBehaviour {
     public GameObject waterPot;
-    public GameObject flower1;
-    public GameObject flower2;
-    public GameObject flower3;
-
-    SkeletonGraphic flower1Skeleton;
-    SkeletonGraphic flower2Skeleton;
-    SkeletonGraphic flower3Skeleton;
-
-    float flower1WaterLevel = 0;
-    float flower2WaterLevel = 0;
-    float flower3WaterLevel = 0;
+    public List<GameObject> flowers;
+    public List<bool> flowerReadyStatus;
+    public List<float> flowerWaterStatus;
     float waterDesired = 3.0f;
-
-    bool flower1Done = false;
-    bool flower2Done = false;
-    bool flower3Done = false;
 
     SkeletonGraphic potSkeleton;
     MiniGameDefaultBehavior mdb;
@@ -33,10 +21,16 @@ public class WaterFlowerGame : MonoBehaviour {
     void Start () {
 
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
-        flower1Skeleton = flower1.GetComponent<SkeletonGraphic>();
-        flower2Skeleton = flower2.GetComponent<SkeletonGraphic>();
-        flower3Skeleton = flower3.GetComponent<SkeletonGraphic>();
+        //flower1Skeleton = flower1.GetComponent<SkeletonGraphic>();
+        //flower2Skeleton = flower2.GetComponent<SkeletonGraphic>();
+        //flower3Skeleton = flower3.GetComponent<SkeletonGraphic>();
         potSkeleton = waterPot.GetComponent<SkeletonGraphic>();
+
+        for (int i = 0; i < flowers.Count; i++)
+        {
+            flowerReadyStatus.Add(false);
+            flowerWaterStatus.Add(0);
+        }
     }
 	
     public void turnPotOn(bool isOn)
@@ -55,9 +49,9 @@ public class WaterFlowerGame : MonoBehaviour {
             potSkeleton.AnimationState.Complete -= GoIdlePot;
             potSkeleton.AnimationState.SetAnimation(0, "off", false);
 
-            flower1Skeleton.AnimationState.SetAnimation(0, "down", true);
-            flower2Skeleton.AnimationState.SetAnimation(0, "down", true);
-            flower3Skeleton.AnimationState.SetAnimation(0, "down", true);
+            //flower1Skeleton.AnimationState.SetAnimation(0, "down", true);
+            //flower2Skeleton.AnimationState.SetAnimation(0, "down", true);
+            //flower3Skeleton.AnimationState.SetAnimation(0, "down", true);
         }
     }
 
@@ -67,12 +61,6 @@ public class WaterFlowerGame : MonoBehaviour {
         potSkeleton.AnimationState.SetAnimation(0, "idle", true);
     }
 
-    // Update is called once per frame
-
-    bool watering1 = false;
-    bool watering2 = false;
-    bool watering3 = false;
-
     void Update () {
         if (!mdb.gameStarted)
             return;
@@ -80,7 +68,14 @@ public class WaterFlowerGame : MonoBehaviour {
         if (!isPlaying)
             return;
 
-        allFlowersWatered = (flower1Done && flower2Done && flower3Done);
+        allFlowersWatered = true;
+        for (int i = 0; i < flowerReadyStatus.Count; i++)
+        {
+            if(flowerReadyStatus[i] == false){
+                allFlowersWatered = false;
+                break;
+            }
+        }
 
         if (!mdb.hasTimeLeft() && !allFlowersWatered)
         {
@@ -98,76 +93,32 @@ public class WaterFlowerGame : MonoBehaviour {
             return;
 
         //check flowers
-        if (Mathf.Abs((waterPot.transform.position.x + 150) - flower1.transform.position.x) < 80 && !flower1Done)
+        for (int i = 0; i < flowers.Count; i++)
         {
-           
-            if (flower1WaterLevel >= waterDesired)
+            GameObject flower = flowers[i];
+
+            if( Mathf.Abs((waterPot.transform.position.x + 150) - flower.transform.position.x) < 80 && (waterPot.transform.position.y - flower.transform.position.y) > 0 && (waterPot.transform.position.y - flower.transform.position.y) < 200)
             {
-                Debug.Log("flower 1 beauty!");
-                flower1Skeleton.AnimationState.SetAnimation(0, "beauty", false);
-                flower1Done = true;
-                return;
+                if (flowerReadyStatus[i] == true)
+                    return;
+                
+                SkeletonGraphic skeleton = flower.GetComponent<SkeletonGraphic>();
+                skeleton.AnimationState.SetAnimation(0, "idle", true);
+                flowerWaterStatus[i] += 0.1f;
+
+                if(flowerWaterStatus[i] >= waterDesired)
+                {
+                    flowerReadyStatus[i] = true;
+                    skeleton.AnimationState.SetAnimation(0, "beauty", false);
+                }
+            }else{
+
+                if (flowerReadyStatus[i] == false)
+                {
+                    SkeletonGraphic skeleton = flower.GetComponent<SkeletonGraphic>();
+                    skeleton.AnimationState.SetAnimation(0, "idle", true);
+                }
             }
-
-            if (!watering1)
-            {
-                Debug.Log("flower 1 idle");
-                flower1Skeleton.AnimationState.SetAnimation(0, "idle", true);
-            }
-            watering1 = true;
-
-            flower1WaterLevel += 0.1f;
-
-        }else{
-            if (watering1 && !flower1Done)
-            {
-                Debug.Log("flower 1 down");
-                flower1Skeleton.AnimationState.SetAnimation(0, "down", true);
-            }
-            watering1 = false;
-
-        }
-
-        if (Mathf.Abs((waterPot.transform.position.x + 150) - flower2.transform.position.x) < 80 && !flower2Done)
-        {
-            if (flower2WaterLevel >= waterDesired)
-            {
-                flower2Skeleton.AnimationState.SetAnimation(0, "beauty", false);
-                flower2Done = true;
-            }
-
-            flower2WaterLevel += 0.1f;
-
-            if (!watering2)
-                flower2Skeleton.AnimationState.SetAnimation(0, "idle", true);
-            watering2 = true;
-
-
-        }else
-        {
-            if (watering2 && !flower2Done)
-                flower2Skeleton.AnimationState.SetAnimation(0, "down", true);
-            watering2 = false;
-        }
-
-        if (Mathf.Abs((waterPot.transform.position.x + 150) - flower3.transform.position.x) < 80 && !flower3Done)
-        {
-            if (flower3WaterLevel >= waterDesired)
-            {
-                flower3Skeleton.AnimationState.SetAnimation(0, "beauty", false);
-                flower3Done = true;
-            }
-
-            flower3WaterLevel += 0.1f;
-
-            if (!watering3)
-                flower3Skeleton.AnimationState.SetAnimation(0, "idle", true);
-            watering3 = true;
-
-        }else{
-            if (watering3 && !flower3Done)
-                flower3Skeleton.AnimationState.SetAnimation(0, "down", true);
-            watering3 = false;
         }
 
     }
