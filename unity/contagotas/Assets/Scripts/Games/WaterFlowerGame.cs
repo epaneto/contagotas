@@ -9,7 +9,7 @@ public class WaterFlowerGame : MonoBehaviour {
     public List<GameObject> flowers;
     public List<bool> flowerReadyStatus;
     public List<float> flowerWaterStatus;
-    float waterDesired = 3.0f;
+    float waterDesired = 1.0f;
 
     SkeletonGraphic potSkeleton;
     MiniGameDefaultBehavior mdb;
@@ -97,28 +97,38 @@ public class WaterFlowerGame : MonoBehaviour {
         {
             GameObject flower = flowers[i];
 
-            if( Mathf.Abs((waterPot.transform.position.x + 150) - flower.transform.position.x) < 80 && (waterPot.transform.position.y - flower.transform.position.y) > 0 && (waterPot.transform.position.y - flower.transform.position.y) < 200)
+            if (Mathf.Abs((waterPot.transform.position.x + 150) - flower.transform.position.x) < 80 && (waterPot.transform.position.y - flower.transform.position.y) > 0 && (waterPot.transform.position.y - flower.transform.position.y) < 200)
             {
                 if (flowerReadyStatus[i] == true)
                     return;
-                
+
                 SkeletonGraphic skeleton = flower.GetComponent<SkeletonGraphic>();
-                skeleton.AnimationState.SetAnimation(0, "idle", true);
                 flowerWaterStatus[i] += 0.1f;
 
-                if(flowerWaterStatus[i] >= waterDesired)
+                if (flowerWaterStatus[i] >= (waterDesired + (i * 0.4f)))
                 {
+
                     flowerReadyStatus[i] = true;
                     skeleton.AnimationState.SetAnimation(0, "beauty", false);
+                } else {
+
+                    Debug.Log("is playing animation " + skeleton.AnimationState.GetCurrent(0).animation.name);
+                    if (skeleton.AnimationState.GetCurrent(0).animation.name == "idle")
+                        return;
+                    
+                    skeleton.AnimationState.SetAnimation(0, "idle", true);
+
                 }
-            }else{
+
+            } else {
 
                 if (flowerReadyStatus[i] == false)
                 {
                     SkeletonGraphic skeleton = flower.GetComponent<SkeletonGraphic>();
-                    skeleton.AnimationState.SetAnimation(0, "idle", true);
+                    skeleton.AnimationState.SetAnimation(0, "down", true);
                 }
             }
+
         }
 
     }
