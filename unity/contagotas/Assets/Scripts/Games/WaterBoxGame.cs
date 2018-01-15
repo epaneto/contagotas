@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class WaterBoxGame : MonoBehaviour {
     
     MiniGameDefaultBehavior mdb;
+    public List<GameObject> boxes;
+    public List<GameObject> covers;
+    GameObject cover;
+
+    int boxIndex = 0;
     bool isPlaying = true;
-    public GameObject cover;
 
 	// Use this for initialization
 	void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
+        cover = covers[boxIndex];
 	}
 	
 	// Update is called once per frame
@@ -71,8 +77,29 @@ public class WaterBoxGame : MonoBehaviour {
         if (cover.transform.localPosition.y >= -20)
         {
             isPlaying = false;
-            EndGame();
+
+            if(boxIndex + 1 < boxes.Count)
+            {
+                ShowNextBox();
+            }else{
+                EndGame();
+            }
+
         }
+    }
+
+    void ShowNextBox()
+    {
+        GameObject box = boxes[boxIndex];
+        GameObject nextBox = boxes[boxIndex + 1];
+        cover = covers[boxIndex + 1];
+
+        isPlaying = true;
+
+        box.transform.DOMoveX(-1500, 0.6f).SetEase(Ease.InQuad);
+        nextBox.transform.DOMoveX(Screen.width/2, 0.6f).SetEase(Ease.OutQuad);
+
+        boxIndex++;
     }
 
     IEnumerator smooth_move(Vector3 direction, float speed)
