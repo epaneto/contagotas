@@ -9,7 +9,7 @@ using Spine.Unity.Modules.AttachmentTools;
 public class DishesGame : MonoBehaviour {
 
 	public List<GameObject> dishes;
-
+    public GameObject sponge;
 	MiniGameDefaultBehavior mdb;
 	Vector3 lastMouseCoordinate = Vector3.zero;
 	bool isPlaying = true;
@@ -33,6 +33,12 @@ public class DishesGame : MonoBehaviour {
 			mdb.EndedGameLose ();
 			return;
 		}
+
+        if(sponge)
+        {
+            sponge.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y,0);
+            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition).x + " " + Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        }
 
 		RaycastHit2D hitInfo = Physics2D.Raycast (new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y), Vector2.zero, 0);
 

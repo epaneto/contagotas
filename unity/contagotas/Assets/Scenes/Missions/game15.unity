@@ -217,8 +217,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -343,8 +343,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -469,8 +469,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -709,8 +709,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -989,8 +989,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -1115,8 +1115,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -1293,8 +1293,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -1419,8 +1419,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -1545,8 +1545,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -1901,8 +1901,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -2005,7 +2005,7 @@ RectTransform:
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.004635866, y: 0.004635866, z: 0.004635866}
+  m_LocalScale: {x: 0.0044886577, y: 0.0044886577, z: 0.0044886577}
   m_Children:
   - {fileID: 945531208}
   - {fileID: 2138378239}
@@ -2196,8 +2196,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -2322,8 +2322,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -2500,8 +2500,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -2762,8 +2762,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -2941,8 +2941,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -3086,8 +3086,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
@@ -3212,8 +3212,8 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
-  startingLoop: 0
+  startingAnimation: on
+  startingLoop: 1
   timeScale: 1
   freeze: 0
   unscaledTime: 0
