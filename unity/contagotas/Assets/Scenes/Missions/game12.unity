@@ -209,6 +209,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1441367380834666, guid: 187cc792d397aea4baba9980ec7277fa, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 187cc792d397aea4baba9980ec7277fa, type: 2}
   m_IsPrefabParent: 0
@@ -253,6 +257,7 @@ MonoBehaviour:
   gameMechanic: {fileID: 895081621}
   gameAnimation: {fileID: 370392757}
   textIntro: {fileID: 1443844702}
+  isTimeGame: 1
   gameScore: 0
   gameStarted: 0
   maxTime: 10
@@ -375,8 +380,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: 640, z: 0}
-  m_LocalScale: {x: 0.5933908, y: 0.5933908, z: 0.5933908}
+  m_LocalPosition: {x: 300, y: 512, z: 0}
+  m_LocalScale: {x: 0.45963857, y: 0.45963857, z: 0.45963857}
   m_Children:
   - {fileID: 895081620}
   - {fileID: 370392756}
@@ -508,6 +513,31 @@ Prefab:
     - target: {fileID: 1270254061526612, guid: 2daca05bb2456124b878e72917e976d1, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224306076600174476, guid: 2daca05bb2456124b878e72917e976d1,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1376
+      objectReference: {fileID: 0}
+    - target: {fileID: 224306076600174476, guid: 2daca05bb2456124b878e72917e976d1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 1376
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097159601548872, guid: 2daca05bb2456124b878e72917e976d1,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.3019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097159601548872, guid: 2daca05bb2456124b878e72917e976d1,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.7960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097159601548872, guid: 2daca05bb2456124b878e72917e976d1,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.9294118
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2daca05bb2456124b878e72917e976d1, type: 2}

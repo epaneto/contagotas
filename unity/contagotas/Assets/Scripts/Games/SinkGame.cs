@@ -17,6 +17,7 @@ public class SinkGame : MonoBehaviour {
     public GameObject bearStep;
 
 	bool isPlaying = true;
+    bool faucetDone = false;
 	int maxTurns = 10;
 	int numTurns = 0;
     int beardHair = 11;
@@ -55,8 +56,10 @@ public class SinkGame : MonoBehaviour {
 
 	public void Swipe()
 	{
-		
-		
+
+        if (faucetDone)
+            return;
+        
 		if(Input.GetMouseButtonDown(0))
 		{
 			//save began touch 2d point
@@ -97,7 +100,7 @@ public class SinkGame : MonoBehaviour {
 				handler.AnimationState.SetAnimation(0,"loop",false);
 				numTurns++;
 				if (numTurns >= maxTurns) {
-					isPlaying = false;
+                    faucetDone = true;
 					faucet.AnimationState.SetAnimation(0,"faucet_off",false);
 					faucet.AnimationState.Complete += ShowBeard;
 				}
@@ -108,7 +111,6 @@ public class SinkGame : MonoBehaviour {
 
     void ShowBeard(Spine.TrackEntry entry)
     {
-        isPlaying = true;
         faucet.AnimationState.Complete -= ShowBeard;
         bearStep.SetActive(true);
         sinkStep.SetActive(false);

@@ -225,7 +225,7 @@ MonoBehaviour:
   isTimeGame: 1
   gameScore: 0
   gameStarted: 0
-  maxTime: 10
+  maxTime: 20
   totalTime: 0
   maxScore: 100
 --- !u!114 &411183920
@@ -445,6 +445,56 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -209
+      objectReference: {fileID: 0}
+    - target: {fileID: 114232855323315034, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: isFlowerPot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224281946067490224, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224514772486068268, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224997333504908394, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224667134505579428, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224181503394452418, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224558982719372568, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224033809908716496, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224922679084283664, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224746679382612328, guid: 52702fe148a0a7e4486b83cd2d891009,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52702fe148a0a7e4486b83cd2d891009, type: 2}
@@ -789,7 +839,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1315077464682626, guid: 09c5cef1ae288ce4bb637fe5a5f9c045, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09c5cef1ae288ce4bb637fe5a5f9c045, type: 2}

@@ -12,7 +12,7 @@ public class PipeHolesGame : MonoBehaviour {
     
 	int fixesNeed = 12;
     int collectedDrops = 0;
-	float speed;
+	float speed = -2.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +29,7 @@ public class PipeHolesGame : MonoBehaviour {
 
 	void UpdatePipe ()
 	{
+        Debug.Log(speed);
 		pipe.transform.Translate (0, speed * Time.deltaTime, 0);
 		speed -= (Time.deltaTime/2);
 	}
@@ -70,6 +71,7 @@ public class PipeHolesGame : MonoBehaviour {
 
     public void missedHole()
     {
+        GameSound.gameSound.PlaySFX("error");
         mdb.loseTime(1.0f);
         //mdb.EndedGameLose();
     }

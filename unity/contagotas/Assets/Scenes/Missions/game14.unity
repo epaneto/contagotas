@@ -323,7 +323,7 @@ MonoBehaviour:
   isTimeGame: 1
   gameScore: 0
   gameStarted: 0
-  maxTime: 10
+  maxTime: 20
   totalTime: 0
   maxScore: 100
 --- !u!114 &411183920
@@ -653,8 +653,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 540, y: 960, z: 0}
-  m_LocalScale: {x: 0.84440994, y: 0.84440994, z: 0.84440994}
+  m_LocalPosition: {x: 300, y: 512, z: 0}
+  m_LocalScale: {x: 0.45963857, y: 0.45963857, z: 0.45963857}
   m_Children:
   - {fileID: 395888166}
   - {fileID: 1114308238}
