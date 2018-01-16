@@ -12,7 +12,7 @@ public class PipeHolesGame : MonoBehaviour {
     
 	int fixesNeed = 12;
     int collectedDrops = 0;
-	float speed = -2.0f;
+	float speed = -10.0f;
 
 	// Use this for initialization
 	void Start () {
