@@ -54,23 +54,16 @@ public class MovingCupsGame : MonoBehaviour {
         if (!isPlaying)
             return;
 
-        int badcups = 0;
+        //int badcups = 0;
 
-        for (int i = 0; i < CupList.Count; i++)
-        {
-            ChangeableItem temp = CupList[i].GetComponent<ChangeableItem>();
-            if (!temp.isGood)
-            {
-                badcups++;
-            }
-        }
-
-        if(numBadCups - badcups >= neededCups)
-        {
-            isPlaying = false;
-            EndGame();
-            return;
-        }
+        //for (int i = 0; i < CupList.Count; i++)
+        //{
+        //    ChangeableItem temp = CupList[i].GetComponent<ChangeableItem>();
+        //    if (!temp.isGood)
+        //    {
+        //        badcups++;
+        //    }
+        //}
 
         if (!mdb.hasTimeLeft()){
             isPlaying = false;
@@ -79,6 +72,25 @@ public class MovingCupsGame : MonoBehaviour {
         }
 	}
 
+    public void ClickCup(GameObject obj)
+    {
+        ChangeableItem ci = obj.GetComponent<ChangeableItem>();
+        if(ci.isGood)
+        {
+            neededCups--;
+            mdb.winTime(0.5f);
+            GameSound.gameSound.PlaySFX("collect_X");
+            obj.SetActive(false);
+
+            if(neededCups == 0)
+            {
+                EndGame();
+            }
+        }else{
+            GameSound.gameSound.PlaySFX("error");
+            mdb.loseTime(1.0f);
+        }
+    }
 
     public void EndGameLose()
     {

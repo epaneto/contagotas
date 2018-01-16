@@ -124,8 +124,8 @@ GameObject:
   - component: {fileID: 118126206}
   - component: {fileID: 118126205}
   - component: {fileID: 118126204}
-  - component: {fileID: 118126203}
   - component: {fileID: 118126202}
+  - component: {fileID: 118126203}
   m_Layer: 0
   m_Name: cg3b
   m_TagString: Untagged
@@ -167,8 +167,7 @@ MonoBehaviour:
 --- !u!114 &118126203
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114808196068186186, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 118126200}
   m_Enabled: 1
@@ -181,12 +180,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 118126204}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 118126200}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -269,8 +268,8 @@ GameObject:
   - component: {fileID: 141909308}
   - component: {fileID: 141909307}
   - component: {fileID: 141909306}
-  - component: {fileID: 141909305}
   - component: {fileID: 141909304}
+  - component: {fileID: 141909305}
   m_Layer: 0
   m_Name: cg3f
   m_TagString: Untagged
@@ -312,8 +311,7 @@ MonoBehaviour:
 --- !u!114 &141909305
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141909302}
   m_Enabled: 1
@@ -326,12 +324,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 141909306}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 141909302}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -486,8 +484,8 @@ GameObject:
   - component: {fileID: 225507470}
   - component: {fileID: 225507469}
   - component: {fileID: 225507468}
-  - component: {fileID: 225507467}
   - component: {fileID: 225507466}
+  - component: {fileID: 225507467}
   m_Layer: 0
   m_Name: cg3a
   m_TagString: Untagged
@@ -529,8 +527,7 @@ MonoBehaviour:
 --- !u!114 &225507467
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114710740125573944, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 225507464}
   m_Enabled: 1
@@ -543,12 +540,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 225507468}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 225507464}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -631,8 +628,8 @@ GameObject:
   - component: {fileID: 243057221}
   - component: {fileID: 243057220}
   - component: {fileID: 243057219}
-  - component: {fileID: 243057218}
   - component: {fileID: 243057217}
+  - component: {fileID: 243057218}
   m_Layer: 0
   m_Name: cg2d
   m_TagString: Untagged
@@ -674,8 +671,7 @@ MonoBehaviour:
 --- !u!114 &243057218
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114200205839202048, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 243057215}
   m_Enabled: 1
@@ -688,12 +684,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 243057219}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 243057215}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -799,7 +795,7 @@ MonoBehaviour:
   isTimeGame: 1
   gameScore: 0
   gameStarted: 0
-  maxTime: 20
+  maxTime: 10
   totalTime: 0
   maxScore: 100
 --- !u!114 &411183920
@@ -845,7 +841,7 @@ MonoBehaviour:
   - {fileID: 2111367685}
   - {fileID: 1359203211}
   numBadCups: 15
-  neededCups: 13
+  neededCups: 10
 --- !u!4 &411183921
 Transform:
   m_ObjectHideFlags: 0
@@ -886,8 +882,8 @@ GameObject:
   - component: {fileID: 413618180}
   - component: {fileID: 413618179}
   - component: {fileID: 413618178}
-  - component: {fileID: 413618177}
   - component: {fileID: 413618176}
+  - component: {fileID: 413618177}
   m_Layer: 0
   m_Name: cg2e
   m_TagString: Untagged
@@ -929,8 +925,7 @@ MonoBehaviour:
 --- !u!114 &413618177
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114994869519486878, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 413618174}
   m_Enabled: 1
@@ -943,12 +938,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 413618178}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 413618174}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1031,8 +1026,8 @@ GameObject:
   - component: {fileID: 430629195}
   - component: {fileID: 430629194}
   - component: {fileID: 430629193}
-  - component: {fileID: 430629192}
   - component: {fileID: 430629191}
+  - component: {fileID: 430629192}
   m_Layer: 0
   m_Name: cg1j
   m_TagString: Untagged
@@ -1074,8 +1069,7 @@ MonoBehaviour:
 --- !u!114 &430629192
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 430629189}
   m_Enabled: 1
@@ -1088,12 +1082,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 430629193}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 430629189}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1214,8 +1208,8 @@ GameObject:
   - component: {fileID: 619659833}
   - component: {fileID: 619659832}
   - component: {fileID: 619659831}
-  - component: {fileID: 619659830}
   - component: {fileID: 619659829}
+  - component: {fileID: 619659830}
   m_Layer: 0
   m_Name: cg2g
   m_TagString: Untagged
@@ -1257,8 +1251,7 @@ MonoBehaviour:
 --- !u!114 &619659830
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114199396039348416, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619659827}
   m_Enabled: 1
@@ -1271,12 +1264,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 619659831}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 619659827}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1359,8 +1352,8 @@ GameObject:
   - component: {fileID: 624165643}
   - component: {fileID: 624165642}
   - component: {fileID: 624165641}
-  - component: {fileID: 624165640}
   - component: {fileID: 624165639}
+  - component: {fileID: 624165640}
   m_Layer: 0
   m_Name: cg3c
   m_TagString: Untagged
@@ -1402,8 +1395,7 @@ MonoBehaviour:
 --- !u!114 &624165640
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114199396039348416, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 624165637}
   m_Enabled: 1
@@ -1416,12 +1408,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 624165641}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 624165637}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1559,7 +1551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Transforme os copos de pl\xE1stico em copos de vidro!"
+  m_Text: Selecione apenas os copos de vidro!
 --- !u!222 &633519610
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1578,8 +1570,8 @@ GameObject:
   - component: {fileID: 851908357}
   - component: {fileID: 851908356}
   - component: {fileID: 851908355}
-  - component: {fileID: 851908354}
   - component: {fileID: 851908353}
+  - component: {fileID: 851908354}
   m_Layer: 0
   m_Name: cg3e
   m_TagString: Untagged
@@ -1621,8 +1613,7 @@ MonoBehaviour:
 --- !u!114 &851908354
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114994869519486878, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 851908351}
   m_Enabled: 1
@@ -1635,12 +1626,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 851908355}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 851908351}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1723,8 +1714,8 @@ GameObject:
   - component: {fileID: 871098705}
   - component: {fileID: 871098704}
   - component: {fileID: 871098703}
-  - component: {fileID: 871098702}
   - component: {fileID: 871098701}
+  - component: {fileID: 871098702}
   m_Layer: 0
   m_Name: cg2i
   m_TagString: Untagged
@@ -1766,8 +1757,7 @@ MonoBehaviour:
 --- !u!114 &871098702
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114994869519486878, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 871098699}
   m_Enabled: 1
@@ -1780,12 +1770,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 871098703}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 871098699}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1868,8 +1858,8 @@ GameObject:
   - component: {fileID: 961929996}
   - component: {fileID: 961929995}
   - component: {fileID: 961929994}
-  - component: {fileID: 961929993}
   - component: {fileID: 961929992}
+  - component: {fileID: 961929993}
   m_Layer: 0
   m_Name: cg2h
   m_TagString: Untagged
@@ -1911,8 +1901,7 @@ MonoBehaviour:
 --- !u!114 &961929993
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114200205839202048, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 961929990}
   m_Enabled: 1
@@ -1925,12 +1914,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 961929994}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 961929990}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2090,8 +2079,8 @@ GameObject:
   - component: {fileID: 1102305218}
   - component: {fileID: 1102305217}
   - component: {fileID: 1102305216}
-  - component: {fileID: 1102305215}
   - component: {fileID: 1102305209}
+  - component: {fileID: 1102305215}
   m_Layer: 0
   m_Name: cg1f
   m_TagString: Untagged
@@ -2111,8 +2100,8 @@ GameObject:
   - component: {fileID: 1102305228}
   - component: {fileID: 1102305227}
   - component: {fileID: 1102305226}
-  - component: {fileID: 1102305225}
   - component: {fileID: 1102305210}
+  - component: {fileID: 1102305225}
   m_Layer: 0
   m_Name: cg1e
   m_TagString: Untagged
@@ -2132,8 +2121,8 @@ GameObject:
   - component: {fileID: 1102305232}
   - component: {fileID: 1102305231}
   - component: {fileID: 1102305230}
-  - component: {fileID: 1102305229}
   - component: {fileID: 1102305211}
+  - component: {fileID: 1102305229}
   m_Layer: 0
   m_Name: cg1d
   m_TagString: Untagged
@@ -2153,8 +2142,8 @@ GameObject:
   - component: {fileID: 1102305236}
   - component: {fileID: 1102305235}
   - component: {fileID: 1102305234}
-  - component: {fileID: 1102305233}
   - component: {fileID: 1102305212}
+  - component: {fileID: 1102305233}
   m_Layer: 0
   m_Name: cg1c
   m_TagString: Untagged
@@ -2174,8 +2163,8 @@ GameObject:
   - component: {fileID: 1102305240}
   - component: {fileID: 1102305239}
   - component: {fileID: 1102305238}
-  - component: {fileID: 1102305237}
   - component: {fileID: 1102305213}
+  - component: {fileID: 1102305237}
   m_Layer: 0
   m_Name: cg1b
   m_TagString: Untagged
@@ -2279,8 +2268,7 @@ MonoBehaviour:
 --- !u!114 &1102305215
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102305203}
   m_Enabled: 1
@@ -2293,12 +2281,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1102305216}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1102305203}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2486,8 +2474,7 @@ RectTransform:
 --- !u!114 &1102305225
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114994869519486878, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102305204}
   m_Enabled: 1
@@ -2500,12 +2487,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1102305226}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1102305204}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2579,8 +2566,7 @@ CanvasRenderer:
 --- !u!114 &1102305229
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114200205839202048, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102305205}
   m_Enabled: 1
@@ -2593,12 +2579,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1102305230}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1102305205}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2672,8 +2658,7 @@ CanvasRenderer:
 --- !u!114 &1102305233
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114199396039348416, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102305206}
   m_Enabled: 1
@@ -2686,12 +2671,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1102305234}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1102305206}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2765,8 +2750,7 @@ CanvasRenderer:
 --- !u!114 &1102305237
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114808196068186186, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102305207}
   m_Enabled: 1
@@ -2779,12 +2763,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1102305238}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1102305207}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2872,12 +2856,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1102305242}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1102305208}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2960,8 +2944,8 @@ GameObject:
   - component: {fileID: 1197840840}
   - component: {fileID: 1197840839}
   - component: {fileID: 1197840838}
-  - component: {fileID: 1197840837}
   - component: {fileID: 1197840836}
+  - component: {fileID: 1197840837}
   m_Layer: 0
   m_Name: cg3g
   m_TagString: Untagged
@@ -3003,8 +2987,7 @@ MonoBehaviour:
 --- !u!114 &1197840837
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114199396039348416, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1197840834}
   m_Enabled: 1
@@ -3017,12 +3000,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1197840838}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1197840834}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3105,8 +3088,8 @@ GameObject:
   - component: {fileID: 1324624022}
   - component: {fileID: 1324624021}
   - component: {fileID: 1324624020}
-  - component: {fileID: 1324624019}
   - component: {fileID: 1324624018}
+  - component: {fileID: 1324624019}
   m_Layer: 0
   m_Name: cg3d
   m_TagString: Untagged
@@ -3148,8 +3131,7 @@ MonoBehaviour:
 --- !u!114 &1324624019
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114200205839202048, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1324624016}
   m_Enabled: 1
@@ -3162,12 +3144,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1324624020}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1324624016}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3489,8 +3471,8 @@ GameObject:
   - component: {fileID: 1356654367}
   - component: {fileID: 1356654366}
   - component: {fileID: 1356654365}
-  - component: {fileID: 1356654364}
   - component: {fileID: 1356654363}
+  - component: {fileID: 1356654364}
   m_Layer: 0
   m_Name: cg2c
   m_TagString: Untagged
@@ -3532,8 +3514,7 @@ MonoBehaviour:
 --- !u!114 &1356654364
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114199396039348416, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1356654361}
   m_Enabled: 1
@@ -3546,12 +3527,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1356654365}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1356654361}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3634,8 +3615,8 @@ GameObject:
   - component: {fileID: 1359203217}
   - component: {fileID: 1359203216}
   - component: {fileID: 1359203215}
-  - component: {fileID: 1359203214}
   - component: {fileID: 1359203213}
+  - component: {fileID: 1359203214}
   m_Layer: 0
   m_Name: cg3j
   m_TagString: Untagged
@@ -3677,8 +3658,7 @@ MonoBehaviour:
 --- !u!114 &1359203214
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1359203211}
   m_Enabled: 1
@@ -3691,12 +3671,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1359203215}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1359203211}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3849,8 +3829,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190.5, y: 338.5, z: 0}
-  m_LocalScale: {x: 0.29781574, y: 0.29781574, z: 0.29781574}
+  m_LocalPosition: {x: 300, y: 512, z: 0}
+  m_LocalScale: {x: 0.45963857, y: 0.45963857, z: 0.45963857}
   m_Children:
   - {fileID: 1328211224}
   - {fileID: 1102305201}
@@ -3876,8 +3856,8 @@ GameObject:
   - component: {fileID: 1407748489}
   - component: {fileID: 1407748488}
   - component: {fileID: 1407748487}
-  - component: {fileID: 1407748486}
   - component: {fileID: 1407748485}
+  - component: {fileID: 1407748486}
   m_Layer: 0
   m_Name: cg1g
   m_TagString: Untagged
@@ -3919,8 +3899,7 @@ MonoBehaviour:
 --- !u!114 &1407748486
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1407748483}
   m_Enabled: 1
@@ -3933,12 +3912,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1407748487}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1407748483}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4021,8 +4000,8 @@ GameObject:
   - component: {fileID: 1416035078}
   - component: {fileID: 1416035077}
   - component: {fileID: 1416035076}
-  - component: {fileID: 1416035075}
   - component: {fileID: 1416035074}
+  - component: {fileID: 1416035075}
   m_Layer: 0
   m_Name: cg2a
   m_TagString: Untagged
@@ -4064,8 +4043,7 @@ MonoBehaviour:
 --- !u!114 &1416035075
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114710740125573944, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416035072}
   m_Enabled: 1
@@ -4078,12 +4056,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1416035076}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1416035072}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4166,8 +4144,8 @@ GameObject:
   - component: {fileID: 1475704646}
   - component: {fileID: 1475704645}
   - component: {fileID: 1475704644}
-  - component: {fileID: 1475704643}
   - component: {fileID: 1475704642}
+  - component: {fileID: 1475704643}
   m_Layer: 0
   m_Name: cg3h
   m_TagString: Untagged
@@ -4209,8 +4187,7 @@ MonoBehaviour:
 --- !u!114 &1475704643
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114200205839202048, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1475704640}
   m_Enabled: 1
@@ -4223,12 +4200,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1475704644}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1475704640}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4311,8 +4288,8 @@ GameObject:
   - component: {fileID: 1526829480}
   - component: {fileID: 1526829479}
   - component: {fileID: 1526829478}
-  - component: {fileID: 1526829477}
   - component: {fileID: 1526829476}
+  - component: {fileID: 1526829477}
   m_Layer: 0
   m_Name: cg1h
   m_TagString: Untagged
@@ -4354,8 +4331,7 @@ MonoBehaviour:
 --- !u!114 &1526829477
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1526829474}
   m_Enabled: 1
@@ -4368,12 +4344,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1526829478}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1526829474}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4494,8 +4470,8 @@ GameObject:
   - component: {fileID: 1736899195}
   - component: {fileID: 1736899194}
   - component: {fileID: 1736899193}
-  - component: {fileID: 1736899192}
   - component: {fileID: 1736899191}
+  - component: {fileID: 1736899192}
   m_Layer: 0
   m_Name: cg2j
   m_TagString: Untagged
@@ -4537,8 +4513,7 @@ MonoBehaviour:
 --- !u!114 &1736899192
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1736899189}
   m_Enabled: 1
@@ -4551,12 +4526,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1736899193}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1736899189}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4701,8 +4676,8 @@ GameObject:
   - component: {fileID: 1953120655}
   - component: {fileID: 1953120654}
   - component: {fileID: 1953120653}
-  - component: {fileID: 1953120652}
   - component: {fileID: 1953120651}
+  - component: {fileID: 1953120652}
   m_Layer: 0
   m_Name: cg2f
   m_TagString: Untagged
@@ -4744,8 +4719,7 @@ MonoBehaviour:
 --- !u!114 &1953120652
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1953120649}
   m_Enabled: 1
@@ -4758,12 +4732,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1953120653}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1953120649}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4918,8 +4892,8 @@ GameObject:
   - component: {fileID: 1981579912}
   - component: {fileID: 1981579911}
   - component: {fileID: 1981579910}
-  - component: {fileID: 1981579909}
   - component: {fileID: 1981579908}
+  - component: {fileID: 1981579909}
   m_Layer: 0
   m_Name: cg2b
   m_TagString: Untagged
@@ -4961,8 +4935,7 @@ MonoBehaviour:
 --- !u!114 &1981579909
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114808196068186186, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981579906}
   m_Enabled: 1
@@ -4975,12 +4948,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1981579910}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1981579906}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -5063,8 +5036,8 @@ GameObject:
   - component: {fileID: 2054662033}
   - component: {fileID: 2054662032}
   - component: {fileID: 2054662031}
-  - component: {fileID: 2054662030}
   - component: {fileID: 2054662029}
+  - component: {fileID: 2054662030}
   m_Layer: 0
   m_Name: cg1i
   m_TagString: Untagged
@@ -5106,8 +5079,7 @@ MonoBehaviour:
 --- !u!114 &2054662030
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114723543781785032, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2054662027}
   m_Enabled: 1
@@ -5120,12 +5092,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2054662031}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 2054662027}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -5208,8 +5180,8 @@ GameObject:
   - component: {fileID: 2111367691}
   - component: {fileID: 2111367690}
   - component: {fileID: 2111367689}
-  - component: {fileID: 2111367688}
   - component: {fileID: 2111367687}
+  - component: {fileID: 2111367688}
   m_Layer: 0
   m_Name: cg3i
   m_TagString: Untagged
@@ -5251,8 +5223,7 @@ MonoBehaviour:
 --- !u!114 &2111367688
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114994869519486878, guid: b610c2452b5eb6340a327eb8b12e233e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2111367685}
   m_Enabled: 1
@@ -5265,12 +5236,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2111367689}
-          m_MethodName: setGoodState
-          m_Mode: 1
+        - m_Target: {fileID: 411183920}
+          m_MethodName: ClickCup
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 2111367685}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
