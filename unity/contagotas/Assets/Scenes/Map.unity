@@ -315,7 +315,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4966444777058540, guid: 4bf4f4d9574a02f48bef5667c4f34ffd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -38
+      value: -32.2
       objectReference: {fileID: 0}
     - target: {fileID: 224299791117465896, guid: 4bf4f4d9574a02f48bef5667c4f34ffd,
         type: 2}
@@ -346,6 +346,20 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 69.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224086886834939400, guid: 4bf4f4d9574a02f48bef5667c4f34ffd,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -192
+      objectReference: {fileID: 0}
+    - target: {fileID: 224086886834939400, guid: 4bf4f4d9574a02f48bef5667c4f34ffd,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -192
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346817640059440, guid: 4bf4f4d9574a02f48bef5667c4f34ffd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bf4f4d9574a02f48bef5667c4f34ffd, type: 2}
@@ -1121,6 +1135,7 @@ GameObject:
   - component: {fileID: 1145724575}
   - component: {fileID: 1145724574}
   - component: {fileID: 1145724573}
+  - component: {fileID: 1145724576}
   m_Layer: 0
   m_Name: bt_caixa
   m_TagString: Untagged
@@ -1184,7 +1199,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1145724574}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1145724576}
+        m_MethodName: openLandPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1145724574
@@ -1220,6 +1246,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1145724571}
+--- !u!114 &1145724576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1145724571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0b8969b1f174ccab73af48e34e6bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1154920588 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1249004943938034, guid: 69992eb892c19f14c8d96da894e32480,

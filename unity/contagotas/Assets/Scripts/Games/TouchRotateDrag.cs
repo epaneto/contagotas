@@ -5,6 +5,7 @@ using UnityEngine;
 public class TouchRotateDrag : MonoBehaviour {
 
 	private bool canDrag = true;
+    public bool isRight = false;
 	public string dragDestinatonName;
 	public TouchRotate TouchRotateScript;
 	// Use this for initialization
@@ -32,6 +33,7 @@ public class TouchRotateDrag : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(0.5f);
 		this.enabled = false;
+        isRight = true;
 		TouchRotateScript.canRotate = true;
 	}
 

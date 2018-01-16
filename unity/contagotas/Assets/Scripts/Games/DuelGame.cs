@@ -54,7 +54,7 @@ public class DuelGame : MonoBehaviour {
             return;
 
         if (isEnemyActive)
-            mdb.loseTime(0.05f);
+            mdb.loseTime(0.07f);
         
         if (!mdb.hasTimeLeft() && numPoints < 5)
         {

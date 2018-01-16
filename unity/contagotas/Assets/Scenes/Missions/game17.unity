@@ -407,7 +407,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 96664607}
-          m_MethodName: RotateMe
+          m_MethodName: DownInput
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -436,6 +436,23 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 96664607}
+          m_MethodName: RotateMe
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
 --- !u!114 &96664607
 MonoBehaviour:
@@ -450,6 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 0
   canRotate: 0
+  TouchRotateDragScript: {fileID: 96664612}
 --- !u!114 &96664608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +485,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 96664609}
-          m_MethodName: RotateMe
+          m_MethodName: DownInput
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -496,6 +514,23 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 96664609}
+          m_MethodName: RotateMe
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
 --- !u!114 &96664609
 MonoBehaviour:
@@ -510,6 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 0
   canRotate: 0
+  TouchRotateDragScript: {fileID: 96664613}
 --- !u!114 &96664610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 0
   canRotate: 0
+  TouchRotateDragScript: {fileID: 96664614}
 --- !u!114 &96664611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,7 +577,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 96664610}
-          m_MethodName: RotateMe
+          m_MethodName: DownInput
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -569,6 +606,23 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 96664610}
+          m_MethodName: RotateMe
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
 --- !u!114 &96664612
 MonoBehaviour:
@@ -581,6 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3df2fc52231584bb3681c2923da2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRight: 0
   dragDestinatonName: pipe3_hole
   TouchRotateScript: {fileID: 96664607}
 --- !u!114 &96664613
@@ -594,6 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3df2fc52231584bb3681c2923da2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRight: 0
   dragDestinatonName: pipe2_hole
   TouchRotateScript: {fileID: 96664609}
 --- !u!114 &96664614
@@ -607,6 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3df2fc52231584bb3681c2923da2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRight: 0
   dragDestinatonName: pipe1_hole
   TouchRotateScript: {fileID: 96664610}
 --- !u!58 &96664615
@@ -1011,8 +1068,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: 640, z: 0}
-  m_LocalScale: {x: 0.5933908, y: 0.5933908, z: 0.5933908}
+  m_LocalPosition: {x: 300, y: 512, z: 0}
+  m_LocalScale: {x: 0.45963857, y: 0.45963857, z: 0.45963857}
   m_Children:
   - {fileID: 1535295258}
   - {fileID: 1380690216}

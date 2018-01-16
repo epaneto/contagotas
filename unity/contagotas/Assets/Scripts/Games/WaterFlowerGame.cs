@@ -37,8 +37,14 @@ public class WaterFlowerGame : MonoBehaviour {
     {
         isPotOn = isOn;
 
+
+
         if(isPotOn)
         {
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = new Vector3(Input.mousePosition.x + 5.0f, Input.mousePosition.y - 50.0f, Input.mousePosition.z);
+            waterPot.transform.position = mousePosition;
+
             GameSound.gameSound.PlayLoopSFX("regador");
             potSkeleton.AnimationState.SetAnimation(0, "on", false);
             potSkeleton.AnimationState.Complete += GoIdlePot;

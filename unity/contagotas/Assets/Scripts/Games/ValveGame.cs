@@ -96,7 +96,7 @@ public class ValveGame : MonoBehaviour {
         totalRotations = 0;
         neededRotations = 10;
 
-        valveGroup.transform.DOLocalMoveX(-1900 * valveIndex, 0.6f).SetEase(Ease.InQuad).OnComplete(releaseGame);
+        valveGroup.transform.DOLocalMoveY(-400 + (-1800 * valveIndex), 0.6f).SetEase(Ease.InQuad).OnComplete(releaseGame);
     }
 
     void releaseGame()

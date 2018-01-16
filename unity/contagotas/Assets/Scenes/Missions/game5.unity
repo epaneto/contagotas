@@ -648,9 +648,13 @@ MonoBehaviour:
   dishes:
   - {fileID: 1767754586}
   - {fileID: 1767754585}
-  - {fileID: 1767754584}
-  - {fileID: 1767754583}
   - {fileID: 1767754582}
+  - {fileID: 1767754590}
+  - {fileID: 1767754583}
+  - {fileID: 1767754589}
+  - {fileID: 1767754588}
+  - {fileID: 1767754587}
+  - {fileID: 1767754584}
 --- !u!114 &1247561714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,6 +1096,26 @@ GameObject:
 --- !u!1 &1767754586 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1892925809531736, guid: 3735c5d52bca3f342afb20a0293be009,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767754580}
+--- !u!1 &1767754587 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1482287672205694, guid: 3735c5d52bca3f342afb20a0293be009,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767754580}
+--- !u!1 &1767754588 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1686045420571344, guid: 3735c5d52bca3f342afb20a0293be009,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767754580}
+--- !u!1 &1767754589 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1906961839659362, guid: 3735c5d52bca3f342afb20a0293be009,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767754580}
+--- !u!1 &1767754590 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1698394553221584, guid: 3735c5d52bca3f342afb20a0293be009,
     type: 2}
   m_PrefabInternal: {fileID: 1767754580}
 --- !u!224 &1826497593 stripped
