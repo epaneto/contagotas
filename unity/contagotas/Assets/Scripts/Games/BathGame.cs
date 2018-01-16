@@ -15,6 +15,7 @@ public class BathGame : MonoBehaviour {
 	Vector3 lastMouseCoordinate = Vector3.zero;
 	bool isPlaying = true;
 	float dirtAlpha = 0;
+    int objectsCleaned = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,7 @@ public class BathGame : MonoBehaviour {
 		if (!isPlaying)
 			return;
 
-		if (!mdb.hasTimeLeft() && dirtAlpha > 0) {
+        if (!mdb.hasTimeLeft() && objectsCleaned < 2) {
 			isPlaying = false;
 			mdb.EndedGameLose ();
 			return;
@@ -62,8 +63,12 @@ public class BathGame : MonoBehaviour {
 						colliderImage.color = c;
 
 						if (dirtAlpha <= 0) {
-							isPlaying = false;
-							EndGame ();
+                            objectsCleaned++;
+                            if (objectsCleaned == 2)
+                            {
+                                isPlaying = false;
+                                EndGame();
+                            }
 						}
 					}
 				}
