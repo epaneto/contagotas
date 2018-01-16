@@ -146,7 +146,7 @@ MonoBehaviour:
   isTimeGame: 1
   gameScore: 0
   gameStarted: 0
-  maxTime: 10
+  maxTime: 16
   totalTime: 0
   maxScore: 100
 --- !u!114 &411183920
