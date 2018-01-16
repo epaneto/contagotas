@@ -169,6 +169,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1719872995550416, guid: e1b5a47e61bc21d4b9e86e7ff3a81d32,
     type: 2}
   m_PrefabInternal: {fileID: 8650750}
+--- !u!1 &8650752 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1757804760004460, guid: e1b5a47e61bc21d4b9e86e7ff3a81d32,
+    type: 2}
+  m_PrefabInternal: {fileID: 8650750}
 --- !u!4 &262215398 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4347947996283820, guid: e1b5a47e61bc21d4b9e86e7ff3a81d32,
@@ -312,6 +317,11 @@ MonoBehaviour:
   reducerObject: {fileID: 286929781}
   faucetObject: {fileID: 286929780}
   sinkGroup: {fileID: 8650751}
+  background: {fileID: 8650752}
+  BGColors:
+  - {r: 0.81568635, g: 0.87843144, b: 0.89019614, a: 1}
+  - {r: 0.9679513, g: 1, b: 0.41911763, a: 1}
+  - {r: 0.46323532, g: 1, b: 0.7778905, a: 1}
 --- !u!114 &1247561714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,7 +599,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1276714560536026, guid: 456fea88f983f3346b6f408f83cbade4, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 456fea88f983f3346b6f408f83cbade4, type: 2}

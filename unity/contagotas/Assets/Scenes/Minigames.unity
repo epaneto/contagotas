@@ -952,6 +952,46 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114083806477761980, guid: 39385ed8873424ed3be8a795d6c29514,
+        type: 2}
+      propertyPath: m_Text
+      value: "T\xEDtulo"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083806477761980, guid: 39385ed8873424ed3be8a795d6c29514,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083806477761980, guid: 39385ed8873424ed3be8a795d6c29514,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083806477761980, guid: 39385ed8873424ed3be8a795d6c29514,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224135205533726940, guid: 39385ed8873424ed3be8a795d6c29514,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -54
+      objectReference: {fileID: 0}
+    - target: {fileID: 224135205533726940, guid: 39385ed8873424ed3be8a795d6c29514,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -54
+      objectReference: {fileID: 0}
+    - target: {fileID: 224444762113805666, guid: 39385ed8873424ed3be8a795d6c29514,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 224444762113805666, guid: 39385ed8873424ed3be8a795d6c29514,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 192
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39385ed8873424ed3be8a795d6c29514, type: 2}
   m_IsPrefabParent: 0

@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 using DG.Tweening;
+using DG.Tweening;
+using UnityEngine.UI;
+
 using Spine.Unity.Modules.AttachmentTools;
 
 public class ReducerGame : MonoBehaviour {
     public GameObject reducerObject;
     public GameObject faucetObject;
     public GameObject sinkGroup;
+    public GameObject background;
+    public List<Color> BGColors;
 
     float initialRedutorPos;
     float tapSizeY;
@@ -93,6 +98,9 @@ public class ReducerGame : MonoBehaviour {
 
     void ShowNextSink()
     {
+        Image bgimage = background.GetComponent<Image>();
+        bgimage.DOColor(BGColors[numSinks], 0.6f);
+
         string activeSink = sinkName + (numSinks+1);
         faucetSkeleton.Skeleton.SetSkin(activeSink);
 
