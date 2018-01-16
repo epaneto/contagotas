@@ -318,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationObject: {fileID: 1135378237}
   isAtDestination: 0
+  isFlowerPot: 0
 --- !u!61 &65992357
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -443,6 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationObject: {fileID: 1135378237}
   isAtDestination: 0
+  isFlowerPot: 0
 --- !u!61 &65992363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -568,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationObject: {fileID: 1135378237}
   isAtDestination: 0
+  isFlowerPot: 0
 --- !u!61 &65992369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -693,6 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationObject: {fileID: 1135378237}
   isAtDestination: 0
+  isFlowerPot: 0
 --- !u!61 &65992375
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -818,6 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationObject: {fileID: 1135378237}
   isAtDestination: 0
+  isFlowerPot: 0
 --- !u!61 &65992381
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -943,6 +948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationObject: {fileID: 1135378237}
   isAtDestination: 0
+  isFlowerPot: 0
 --- !u!61 &65992387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1914,8 +1920,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: 640, z: 0}
-  m_LocalScale: {x: 0.5933908, y: 0.5933908, z: 0.5933908}
+  m_LocalPosition: {x: 300, y: 512, z: 0}
+  m_LocalScale: {x: 0.45963857, y: 0.45963857, z: 0.45963857}
   m_Children:
   - {fileID: 1488560607}
   - {fileID: 2082460845}
@@ -2005,7 +2011,7 @@ RectTransform:
   m_LocalScale: {x: 0.6634245, y: 0.6634245, z: 0.6634245}
   m_Children: []
   m_Father: {fileID: 2082460845}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2025,6 +2031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationObject: {fileID: 0}
   isAtDestination: 0
+  isFlowerPot: 0
 --- !u!114 &1470221208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2202,7 +2209,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2082460845}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2548,8 +2555,8 @@ RectTransform:
   - {fileID: 65992360}
   - {fileID: 65992354}
   - {fileID: 1541546212}
-  - {fileID: 1470221206}
   - {fileID: 1732260812}
+  - {fileID: 1470221206}
   m_Father: {fileID: 1368282333}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
