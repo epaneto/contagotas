@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1247561713}
+    - target: {fileID: 114763905459305312, guid: e1b5a47e61bc21d4b9e86e7ff3a81d32,
+        type: 2}
+      propertyPath: initialSkinName
+      value: faulcet1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1b5a47e61bc21d4b9e86e7ff3a81d32, type: 2}
   m_IsPrefabParent: 0
@@ -409,8 +414,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368282329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190.5, y: 338.5, z: 0}
-  m_LocalScale: {x: 0.29781574, y: 0.29781574, z: 0.29781574}
+  m_LocalPosition: {x: 300, y: 512, z: 0}
+  m_LocalScale: {x: 0.45963857, y: 0.45963857, z: 0.45963857}
   m_Children:
   - {fileID: 1548700848}
   - {fileID: 262215398}
@@ -584,7 +589,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1276714560536026, guid: 456fea88f983f3346b6f408f83cbade4, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 456fea88f983f3346b6f408f83cbade4, type: 2}

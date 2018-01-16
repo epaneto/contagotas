@@ -18,6 +18,7 @@ public class ReducerGame : MonoBehaviour {
 
     int numSinks = 0;
     int totalSinks = 3;
+    string sinkName = "faulcet";
 
     SkeletonGraphic faucetSkeleton;
     MiniGameDefaultBehavior mdb;
@@ -27,6 +28,10 @@ public class ReducerGame : MonoBehaviour {
 	void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
         faucetSkeleton = faucetObject.GetComponent<SkeletonGraphic>();
+
+        string activeSink = sinkName + (numSinks + 1);
+        faucetSkeleton.Skeleton.SetSkin(activeSink);
+
         initialRedutorPos = reducerObject.transform.position.y;
         tapSizeY = (faucetObject.transform.position.y - initialRedutorPos) / 15;
 
@@ -88,6 +93,9 @@ public class ReducerGame : MonoBehaviour {
 
     void ShowNextSink()
     {
+        string activeSink = sinkName + (numSinks+1);
+        faucetSkeleton.Skeleton.SetSkin(activeSink);
+
         faucetSkeleton.AnimationState.SetAnimation(0, "faucet_on", true);
         reducerObject.transform.position = new Vector3(reducerObject.transform.position.x, initialRedutorPos, 0);
 
