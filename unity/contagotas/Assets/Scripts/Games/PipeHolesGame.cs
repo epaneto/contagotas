@@ -10,7 +10,7 @@ public class PipeHolesGame : MonoBehaviour {
     MiniGameDefaultBehavior mdb;
     bool isPlaying = true;
     
-	int fixesNeed = 10;
+	int fixesNeed = 14;
     int collectedDrops = 0;
 	float speed;
 
@@ -58,6 +58,7 @@ public class PipeHolesGame : MonoBehaviour {
 
     public void fixedPipe()
     {
+        GameSound.gameSound.PlaySFX("tap");
         collectedDrops++;
 		mdb.winTime (1.0f);
         if (collectedDrops >= fixesNeed)
