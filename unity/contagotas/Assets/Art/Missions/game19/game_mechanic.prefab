@@ -526,7 +526,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   skeletonDataAsset: {fileID: 11400000, guid: a2b13fcaead72aa4aa431944d3490628, type: 2}
-  initialSkinName: default
+  initialSkinName: faulcet1
   initialFlipX: 0
   initialFlipY: 0
   startingAnimation: faucet_on

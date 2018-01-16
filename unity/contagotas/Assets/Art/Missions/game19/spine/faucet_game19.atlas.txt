@@ -1,33 +1,47 @@
 
 faucet_game19.png
-size: 1024,256
+size: 2048,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-game1_faucet
+game19_faulcet1
   rotate: true
-  xy: 2, 82
-  size: 145, 475
-  orig: 145, 475
+  xy: 534, 2
+  size: 251, 530
+  orig: 251, 530
+  offset: 0, 0
+  index: -1
+game19_faulcet2
+  rotate: true
+  xy: 1066, 2
+  size: 251, 530
+  orig: 251, 530
+  offset: 0, 0
+  index: -1
+game19_faulcet3
+  rotate: true
+  xy: 2, 2
+  size: 251, 530
+  orig: 251, 530
   offset: 0, 0
   index: -1
 game1_water
   rotate: false
-  xy: 875, 99
+  xy: 1598, 14
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 game1_water_fx
   rotate: false
-  xy: 2, 2
+  xy: 1994, 175
   size: 9, 78
   orig: 9, 78
   offset: 0, 0
   index: -1
 water_side
   rotate: true
-  xy: 479, 118
+  xy: 1598, 144
   size: 109, 394
   orig: 109, 394
   offset: 0, 0
