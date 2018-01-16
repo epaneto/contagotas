@@ -13,14 +13,20 @@ public class SinkGame : MonoBehaviour {
 	public GameObject faucetObject;
 	public GameObject handlerObject;
 
+    public GameObject sinkStep;
+    public GameObject bearStep;
+
 	bool isPlaying = true;
 	int maxTurns = 10;
 	int numTurns = 0;
+    int beardHair = 11;
+
 	MiniGameDefaultBehavior mdb;
 
 	// Use this for initialization
 	void Start () {
 		mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior> ();
+        bearStep.SetActive(false);
 
 		faucet = faucetObject.GetComponent<SkeletonGraphic> ();
 		handler = handlerObject.GetComponent<SkeletonGraphic> ();
@@ -34,7 +40,7 @@ public class SinkGame : MonoBehaviour {
 		if (!isPlaying)
 			return;
 
-		if (!mdb.hasTimeLeft() && numTurns < maxTurns) {
+		if (!mdb.hasTimeLeft()) {
 			isPlaying = false;
 			mdb.EndedGameLose ();
 			return;
@@ -93,17 +99,39 @@ public class SinkGame : MonoBehaviour {
 				if (numTurns >= maxTurns) {
 					isPlaying = false;
 					faucet.AnimationState.SetAnimation(0,"faucet_off",false);
-					faucet.AnimationState.Complete += EndGame;
+					faucet.AnimationState.Complete += ShowBeard;
 				}
 			}
 		}
 			
 	}
 
-	void EndGame(Spine.TrackEntry entry)
-	{
-		faucet.AnimationState.Complete -= EndGame;
+    void ShowBeard(Spine.TrackEntry entry)
+    {
+        isPlaying = true;
+        faucet.AnimationState.Complete -= ShowBeard;
+        bearStep.SetActive(true);
+        sinkStep.SetActive(false);
 
+
+    }
+
+	void EndGame()
+	{
 		mdb.EndedGameWin (mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
 	}
+
+    public void RemoveBeard(GameObject hair)
+    {
+        Debug.Log("remove beard");
+
+        hair.SetActive(false);
+        beardHair--;
+
+        if(beardHair == 0)
+        {
+            isPlaying = false;
+            EndGame();
+        }
+    }
 }
