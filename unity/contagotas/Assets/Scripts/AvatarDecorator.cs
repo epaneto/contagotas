@@ -7,7 +7,7 @@ using Spine.Unity.Modules.AttachmentTools;
 
 public class AvatarDecorator : MonoBehaviour {
 
-	string avatarResourcesPath = "Art/Avatar/Characters/";
+	string avatarResourcesPath;
 
 	[SpineSkin] public string templateSkinName = "default";
 	public Material sourceMaterial;
@@ -44,36 +44,118 @@ public class AvatarDecorator : MonoBehaviour {
 	[SpineSlot] public string shoeSlot;
 	[SpineAttachment(slotField:"show_slot", skinField:"default")] public string showKey = "shoe";
 
+	public string bodyItem ;
+	public string eyeItem;
+	public string hairItem;
+	public string mouthItem;
+
+	public string accItem;
+	public string shirtItem;
+	public string pantsItem;
+	public string showItem;
+
 	IEnumerator Start () {
-		yield return new WaitForSeconds(1f); // Delay for one second before applying. For testing.
-//		UpdateTextures("","");
+		bodyItem = "1";
+		eyeItem = "1";
+		hairItem = "6";
+		mouthItem = "1";
+
+		accItem = "6";
+		shirtItem = "6";
+		pantsItem = "6";
+		showItem = "6";
+
+		avatarResourcesPath = "Art/Avatar/Characters/";
+		yield return new WaitForSeconds(0.1f); // Delay for one second before applying. For testing avatar changing from original to customized.
+		LoadUserDefaultAvatar();
 	}
 
-	public void UpdateTextures(string itemCategory, string itemName) {
-		Debug.Log ("change avatar item at category " + itemCategory + " with item named " + itemName);
+	public void SaveUserDefaultAvatar()
+	{
+		UserData.userData.playerData.playerBody = bodyItem;
+		UserData.userData.playerData.playerEye = eyeItem;
+		UserData.userData.playerData.playerHair = hairItem;
+		UserData.userData.playerData.playerMouth = mouthItem;
 
-		if(itemCategory == "body"){
+		UserData.userData.playerData.playerAcc = accItem;
+		UserData.userData.playerData.playerShirt = shirtItem;
+		UserData.userData.playerData.playerPants = pantsItem;
+		UserData.userData.playerData.playerShoe = showItem;
+
+		UserData.userData.Save ();
+
+		SceneController.sceneController.FadeAndLoadScene ("Map", true);
+	}
+
+	public void LoadUserDefaultAvatar()
+	{
+		UserData.userData.Load ();
+
+		if (UserData.userData.playerData.playerBody != "") {
+			Debug.Log ("Load User Default Avatar");
+			bodyItem = UserData.userData.playerData.playerBody;
+			eyeItem = UserData.userData.playerData.playerEye;
+			hairItem = UserData.userData.playerData.playerHair;
+			mouthItem = UserData.userData.playerData.playerMouth;
+
+			accItem = UserData.userData.playerData.playerAcc;
+			shirtItem = UserData.userData.playerData.playerShirt;
+			pantsItem = UserData.userData.playerData.playerPants;
+			showItem = UserData.userData.playerData.playerShoe;
+
+
+			bodySprite = Resources.Load (avatarResourcesPath + AvatarCategoryStrings.BODY + "/" + AvatarCategoryStrings.BODY + bodyItem, typeof(Sprite)) as Sprite;
+			eyeSprite = Resources.Load (avatarResourcesPath + AvatarCategoryStrings.EYE + "/" + AvatarCategoryStrings.EYE + eyeItem, typeof(Sprite)) as Sprite;
+			hairSprite = Resources.Load (avatarResourcesPath + AvatarCategoryStrings.HAIR + "/" + AvatarCategoryStrings.HAIR + hairItem, typeof(Sprite)) as Sprite;
+			mouthSprite = Resources.Load (avatarResourcesPath + AvatarCategoryStrings.MOUTH + "/" + AvatarCategoryStrings.MOUTH + mouthItem, typeof(Sprite)) as Sprite;
+			accSprite = Resources.Load (avatarResourcesPath + AvatarCategoryStrings.ACC + "/" + AvatarCategoryStrings.ACC + accItem, typeof(Sprite)) as Sprite;
+			shirtSprite = Resources.Load (avatarResourcesPath + AvatarCategoryStrings.SHIRT + "/" + AvatarCategoryStrings.SHIRT + shirtItem, typeof(Sprite)) as Sprite;
+			pantsSprite = Resources.Load (avatarResourcesPath + AvatarCategoryStrings.PANTS + "/" + AvatarCategoryStrings.PANTS + pantsItem, typeof(Sprite)) as Sprite;
+			shoeSprite = Resources.Load (avatarResourcesPath + AvatarCategoryStrings.SHOE + "/" + AvatarCategoryStrings.SHOE + showItem, typeof(Sprite)) as Sprite;
+
+			Apply ();
+		}
+
+		AvatarMenuController menuController = GameObject.FindObjectOfType<AvatarMenuController> ();
+        if(menuController)
+            menuController.Setup ();
+	}
+
+	public void UpdateTextures(string itemCategory, string itemIndex) 
+	{
+		string itemName = itemCategory + "/" + itemCategory + itemIndex;
+
+		if(itemCategory == AvatarCategoryStrings.BODY){
 			bodySprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
-		}else if(itemCategory == "eye"){
+			bodyItem = itemIndex;
+		}else if(itemCategory == AvatarCategoryStrings.EYE){
 			eyeSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
-		}else if(itemCategory == "hair"){
+			eyeItem = itemIndex;
+		}else if(itemCategory == AvatarCategoryStrings.HAIR){
 			hairSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
-		}else if(itemCategory == "mouth"){
+			hairItem = itemIndex;
+		}else if(itemCategory == AvatarCategoryStrings.MOUTH){
 			mouthSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
-		}else if(itemCategory == "accessories"){
+			mouthItem = itemIndex;
+		}else if(itemCategory == AvatarCategoryStrings.ACC){
 			accSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
-		}else if(itemCategory == "shirt"){
+			accItem = itemIndex;
+		}else if(itemCategory == AvatarCategoryStrings.SHIRT){
 			shirtSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
-		}else if(itemCategory == "pants"){
+			shirtItem = itemIndex;
+		}else if(itemCategory == AvatarCategoryStrings.PANTS){
 			pantsSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
-		}else if(itemCategory == "shoe"){
+			pantsItem = itemIndex;
+		}else if(itemCategory == AvatarCategoryStrings.SHOE){
 			shoeSprite = Resources.Load(avatarResourcesPath + itemName, typeof(Sprite)) as Sprite;
+			showItem = itemIndex;
 		}
 
 		Apply();
 	}
 
-	void Apply () {
+	void Apply () 
+	{
 		SkeletonAnimation skeletonAnimation = GetComponent<SkeletonAnimation>();
 		Skeleton skeleton = skeletonAnimation.skeleton;
 		SkeletonData skeletonData = skeleton.Data;
@@ -164,8 +246,6 @@ public class AvatarDecorator : MonoBehaviour {
 
 		Resources.UnloadUnusedAssets();
 	}
-
-
 	//remove attachments
 	//currentEquipsSkin.RemoveAttachment (bodySlotIndex, bodyKey);
 

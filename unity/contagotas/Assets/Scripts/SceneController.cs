@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour {
 
 	public CanvasGroup transitionCanvas;
-	public float fadeDuration = 1f;
-	public string startingSceneName = "Home";
+	public float fadeDuration = 0.1f;
+	string startingSceneName = "Home";
 
 	public event Action BeforeSceneUnload;
 	public event Action AfterSceneLoad;
 
 	private bool isFading;
+
+	private Animator anim;
 
 	public static SceneController sceneController;
 
@@ -26,21 +28,41 @@ public class SceneController : MonoBehaviour {
 	}
 
 	private IEnumerator Start () {
+        
+		anim = GameObject.Find("transition").GetComponent<Animator> ();
+		anim.Play ("transition_empty");
+
+        if (PlayerPrefs.HasKey("signed") && PlayerPrefs.GetInt("signed") == 1)
+        {
+            Debug.Log("Ja Logado... deveria ir para outra cena");
+            startingSceneName = "Map";
+        }
+
 		transitionCanvas.alpha = 1f;
 		yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));
+
+        GameSound.gameSound.PlayLoopMusic("main_bgm");
+        if (PlayerPrefs.GetString("sound","on") == "off")
+        {
+            GameSound.gameSound.MuteUnmuteSound();
+        }
+
+
 		StartCoroutine (Fade (0f));
 	}
 
-	public void FadeAndLoadScene (string sceneName)
+	public void FadeAndLoadScene (string sceneName, bool hasTransition = false)
 	{
 		if (!isFading)
 		{
-			StartCoroutine (FadeAndSwitchScenes (sceneName));
+			StartCoroutine (FadeAndSwitchScenes (sceneName, hasTransition));
 		}
 	}
 
-	private IEnumerator FadeAndSwitchScenes (string sceneName)
+	private IEnumerator FadeAndSwitchScenes (string sceneName, bool hasTransition)
 	{
+		if(hasTransition)
+			anim.Play ("transition_in");
 		yield return StartCoroutine (Fade (1f));
 		if (BeforeSceneUnload != null)
 			BeforeSceneUnload ();
@@ -51,6 +73,8 @@ public class SceneController : MonoBehaviour {
 		if (AfterSceneLoad != null)
 			AfterSceneLoad ();
 
+		if(hasTransition)
+			anim.Play ("transition_out");
 		yield return StartCoroutine (Fade (0f));
 	}
 

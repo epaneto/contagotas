@@ -1,0 +1,104 @@
+
+game6.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+apple2
+  rotate: true
+  xy: 971, 286
+  size: 221, 274
+  orig: 221, 274
+  offset: 0, 0
+  index: -1
+arm_L
+  rotate: true
+  xy: 1247, 413
+  size: 94, 238
+  orig: 94, 238
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: true
+  xy: 1787, 422
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: true
+  xy: 1487, 433
+  size: 74, 163
+  orig: 74, 163
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 441, 255
+  size: 528, 37
+  orig: 528, 37
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 441, 294
+  size: 528, 213
+  orig: 528, 213
+  offset: 0, 0
+  index: -1
+bucket
+  rotate: false
+  xy: 2, 166
+  size: 437, 341
+  orig: 437, 341
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: true
+  xy: 1247, 286
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: false
+  xy: 441, 217
+  size: 312, 36
+  orig: 312, 36
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: false
+  xy: 2, 2
+  size: 113, 46
+  orig: 113, 46
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 1247, 351
+  size: 60, 207
+  orig: 60, 207
+  offset: 0, 0
+  index: -1
+mouth_eating
+  rotate: false
+  xy: 1652, 418
+  size: 133, 89
+  orig: 133, 89
+  offset: 0, 0
+  index: -1
+mouth_open
+  rotate: false
+  xy: 1904, 439
+  size: 97, 68
+  orig: 97, 68
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 50
+  size: 390, 114
+  orig: 390, 114
+  offset: 0, 0
+  index: -1

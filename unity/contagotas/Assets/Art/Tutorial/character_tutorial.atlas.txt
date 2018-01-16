@@ -1,0 +1,48 @@
+
+character_tutorial.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm
+  rotate: true
+  xy: 404, 83
+  size: 47, 119
+  orig: 47, 119
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 739, 127
+  size: 264, 338
+  orig: 264, 338
+  offset: 0, 0
+  index: -1
+character_holder
+  rotate: false
+  xy: 2, 49
+  size: 400, 416
+  orig: 400, 416
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 2, 29
+  size: 156, 18
+  orig: 156, 18
+  offset: 0, 0
+  index: -1
+legs
+  rotate: false
+  xy: 404, 132
+  size: 333, 333
+  orig: 333, 333
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 2, 2
+  size: 48, 25
+  orig: 48, 25
+  offset: 0, 0
+  index: -1

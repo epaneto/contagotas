@@ -15,7 +15,7 @@ public class ToogleButton : MonoBehaviour {
 		gameObject.GetComponent<Image>().sprite = pressedSprite;
 
 		if(MyIcon)
-			MyIcon.GetComponent<Image>().color = Color.red;	
+			MyIcon.GetComponent<Image>().color = new Color32( 0xBF, 0x48, 0x01, 0xFF );// 0xBF4801;	
 	}
 
 	public void DisableMenuButton() {

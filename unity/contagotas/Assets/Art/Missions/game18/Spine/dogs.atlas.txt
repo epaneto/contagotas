@@ -1,0 +1,139 @@
+
+dogs.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bark
+  rotate: false
+  xy: 2, 2
+  size: 88, 20
+  orig: 88, 20
+  offset: 0, 0
+  index: -1
+dirt1
+  rotate: false
+  xy: 963, 400
+  size: 56, 110
+  orig: 56, 110
+  offset: 0, 0
+  index: -1
+dirt2
+  rotate: false
+  xy: 701, 23
+  size: 56, 110
+  orig: 56, 110
+  offset: 0, 0
+  index: -1
+dog1
+  rotate: false
+  xy: 2, 135
+  size: 305, 375
+  orig: 305, 375
+  offset: 0, 0
+  index: -1
+dog1_tail
+  rotate: false
+  xy: 269, 12
+  size: 142, 121
+  orig: 142, 121
+  offset: 0, 0
+  index: -1
+dog2
+  rotate: false
+  xy: 309, 135
+  size: 305, 375
+  orig: 305, 375
+  offset: 0, 0
+  index: -1
+dog2_tail
+  rotate: false
+  xy: 413, 12
+  size: 142, 121
+  orig: 142, 121
+  offset: 0, 0
+  index: -1
+dog3
+  rotate: false
+  xy: 616, 135
+  size: 305, 375
+  orig: 305, 375
+  offset: 0, 0
+  index: -1
+dog3_tail
+  rotate: false
+  xy: 557, 12
+  size: 142, 121
+  orig: 142, 121
+  offset: 0, 0
+  index: -1
+dog_eye
+  rotate: false
+  xy: 2, 24
+  size: 125, 29
+  orig: 125, 29
+  offset: 0, 0
+  index: -1
+dog_mouth1
+  rotate: false
+  xy: 759, 86
+  size: 103, 47
+  orig: 103, 47
+  offset: 0, 0
+  index: -1
+dog_mouth2
+  rotate: false
+  xy: 759, 37
+  size: 103, 47
+  orig: 103, 47
+  offset: 0, 0
+  index: -1
+dog_mouth3
+  rotate: true
+  xy: 864, 30
+  size: 103, 47
+  orig: 103, 47
+  offset: 0, 0
+  index: -1
+dog_thongue
+  rotate: false
+  xy: 923, 193
+  size: 38, 43
+  orig: 38, 43
+  offset: 0, 0
+  index: -1
+fly
+  rotate: false
+  xy: 129, 30
+  size: 57, 23
+  orig: 57, 23
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 923, 306
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+mouth_open
+  rotate: true
+  xy: 923, 238
+  size: 66, 46
+  orig: 66, 46
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 55
+  size: 265, 78
+  orig: 265, 78
+  offset: 0, 0
+  index: -1
+smoke
+  rotate: false
+  xy: 923, 381
+  size: 38, 129
+  orig: 38, 129
+  offset: 0, 0
+  index: -1

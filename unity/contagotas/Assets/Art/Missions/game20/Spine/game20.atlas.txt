@@ -1,0 +1,167 @@
+
+game20.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_R1
+  rotate: false
+  xy: 269, 87
+  size: 58, 78
+  orig: 58, 78
+  offset: 0, 0
+  index: -1
+arm_R1_orange
+  rotate: true
+  xy: 582, 93
+  size: 58, 78
+  orig: 58, 78
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: true
+  xy: 469, 101
+  size: 50, 111
+  orig: 50, 111
+  offset: 0, 0
+  index: -1
+arm_R2_orange
+  rotate: true
+  xy: 329, 59
+  size: 50, 111
+  orig: 50, 111
+  offset: 0, 0
+  index: -1
+black_stripe
+  rotate: false
+  xy: 878, 371
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 331, 180
+  size: 359, 25
+  orig: 359, 25
+  offset: 0, 0
+  index: -1
+body_middle_orange
+  rotate: false
+  xy: 331, 153
+  size: 359, 25
+  orig: 359, 25
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 331, 354
+  size: 359, 145
+  orig: 359, 145
+  offset: 0, 0
+  index: -1
+body_round_orange
+  rotate: false
+  xy: 331, 207
+  size: 359, 145
+  orig: 359, 145
+  offset: 0, 0
+  index: -1
+eye_big
+  rotate: false
+  xy: 692, 175
+  size: 153, 153
+  orig: 153, 153
+  offset: 0, 0
+  index: -1
+eye_dead
+  rotate: false
+  xy: 2, 31
+  size: 282, 54
+  orig: 282, 54
+  offset: 0, 0
+  index: -1
+eye_mad
+  rotate: false
+  xy: 2, 2
+  size: 250, 27
+  orig: 250, 27
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: true
+  xy: 847, 116
+  size: 212, 24
+  orig: 212, 24
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: true
+  xy: 286, 8
+  size: 77, 31
+  orig: 77, 31
+  offset: 0, 0
+  index: -1
+green_big
+  rotate: false
+  xy: 878, 241
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+leg_L_green
+  rotate: true
+  xy: 692, 133
+  size: 40, 138
+  orig: 40, 138
+  offset: 0, 0
+  index: -1
+leg_L_orange
+  rotate: true
+  xy: 329, 111
+  size: 40, 138
+  orig: 40, 138
+  offset: 0, 0
+  index: -1
+mouth1_serious
+  rotate: true
+  xy: 1003, 146
+  size: 93, 17
+  orig: 93, 17
+  offset: 0, 0
+  index: -1
+mouth_dead
+  rotate: false
+  xy: 442, 62
+  size: 25, 47
+  orig: 25, 47
+  offset: 0, 0
+  index: -1
+pink_big
+  rotate: false
+  xy: 873, 111
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 87
+  size: 265, 78
+  orig: 265, 78
+  offset: 0, 0
+  index: -1
+vase
+  rotate: false
+  xy: 2, 167
+  size: 327, 332
+  orig: 327, 332
+  offset: 0, 0
+  index: -1
+wall_button
+  rotate: false
+  xy: 692, 330
+  size: 184, 169
+  orig: 184, 169
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,48 @@
+
+shower.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+drop_little
+  rotate: false
+  xy: 2, 2
+  size: 31, 52
+  orig: 31, 52
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 1610, 434
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+glow
+  rotate: false
+  xy: 2, 56
+  size: 189, 189
+  orig: 189, 189
+  offset: 0, 0
+  index: -1
+shower_little1
+  rotate: false
+  xy: 2, 247
+  size: 534, 260
+  orig: 534, 260
+  offset: 0, 0
+  index: -1
+shower_little2
+  rotate: false
+  xy: 538, 247
+  size: 534, 260
+  orig: 534, 260
+  offset: 0, 0
+  index: -1
+shower_little3
+  rotate: false
+  xy: 1074, 247
+  size: 534, 260
+  orig: 534, 260
+  offset: 0, 0
+  index: -1

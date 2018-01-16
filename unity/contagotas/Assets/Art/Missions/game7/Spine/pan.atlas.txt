@@ -1,0 +1,34 @@
+
+pan.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+handler
+  rotate: false
+  xy: 2, 2
+  size: 540, 90
+  orig: 540, 90
+  offset: 0, 0
+  index: -1
+oil
+  rotate: false
+  xy: 724, 176
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+pan_bottom
+  rotate: false
+  xy: 2, 94
+  size: 720, 277
+  orig: 720, 277
+  offset: 0, 0
+  index: -1
+pan_top
+  rotate: false
+  xy: 724, 214
+  size: 760, 157
+  orig: 760, 157
+  offset: 0, 0
+  index: -1

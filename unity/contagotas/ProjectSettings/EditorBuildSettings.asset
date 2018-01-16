@@ -15,32 +15,80 @@ EditorBuildSettings:
     path: Assets/Scenes/Signup.unity
     guid: e7b80bbe806ca4d768da1e53af5445a7
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/AccessTokenMenu.unity
-    guid: 67cb5b2387b8e4ec9b2fa69ad9510e9b
+    path: Assets/Scenes/Avatar.unity
+    guid: 86c0175bac56f4a04a41e57992c1ebe3
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/AppEvents.unity
-    guid: 68ab940fa15e34433bff18301686b080
+    path: Assets/Scenes/Map.unity
+    guid: cecb98ac2e8e04e4db847da503e04870
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/AppInvites.unity
-    guid: 1beb7e4efae1b4e8d87bb52689540adf
+    path: Assets/Scenes/Minigames.unity
+    guid: 5eafa478d60904545afae1f18574aaaf
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/AppLinks.unity
-    guid: 4ac12dfde6570493291366d0ab3eb20d
+    path: Assets/Scenes/Missions/game1.unity
+    guid: 6b694a4df2876f24287e95eaa1f47e29
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/AppRequests.unity
-    guid: c2250c9c5cf00425384401321f8dffb4
+    path: Assets/Scenes/Missions/game2.unity
+    guid: 887b98681d7e94e029e40bb93212f156
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/DialogShare.unity
-    guid: 190c345841ecc464e9a122f04369757e
+    path: Assets/Scenes/Missions/game16.unity
+    guid: f7066373842cbc14bacfc139f74a5a67
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/GraphRequest.unity
-    guid: 444ae7ddf432b457a97bfe42021075e3
+    path: Assets/Scenes/Missions/game4.unity
+    guid: df118e8d71dd2c241b863d7523ad917c
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/LogView.unity
-    guid: c07ff0bf6bea74c2eb681ac0cae44265
+    path: Assets/Scenes/Missions/game5.unity
+    guid: 81d6c25f16454f941830bed1246c7ffa
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/MainMenu.unity
-    guid: 7c38a8c9adc9d5c4b869612e4033ead8
+    path: Assets/Scenes/Missions/game6.unity
+    guid: 8a22b5cb02e0a0542b86c20d53c72ded
   - enabled: 1
-    path: Assets/FacebookSDK/Examples/Pay.unity
-    guid: 3ee189cdb21ea4bdb9d7022a0780c44c
+    path: Assets/Scenes/Missions/game7.unity
+    guid: 5a530a26be9c7ec4eaa319481c94b1dd
+  - enabled: 1
+    path: Assets/Scenes/Missions/game8.unity
+    guid: 27fa9a64dc57e014aad9ab5cbf59a0a6
+  - enabled: 1
+    path: Assets/Scenes/Missions/game9.unity
+    guid: 197587723a7263e489f892790cdddbdb
+  - enabled: 1
+    path: Assets/Scenes/Missions/game10.unity
+    guid: 0a504ce994ca6024a9e0ae41fd714670
+  - enabled: 1
+    path: Assets/Scenes/Missions/game11.unity
+    guid: 494ab389207d5e5428ad20a492d943d8
+  - enabled: 1
+    path: Assets/Scenes/Missions/game3.unity
+    guid: e06b755b4a8e54b4188a23629fdfa851
+  - enabled: 1
+    path: Assets/Scenes/Missions/game12.unity
+    guid: b0cd383a6a0c2ca4e8284210324dac9c
+  - enabled: 1
+    path: Assets/Scenes/Missions/game13.unity
+    guid: d3a977b4dab23bf43bce66604debfe94
+  - enabled: 1
+    path: Assets/Scenes/Missions/game14.unity
+    guid: 016146e433e549d4ebc41369a2c879e1
+  - enabled: 1
+    path: Assets/Scenes/Missions/game15.unity
+    guid: edc5b6f49d8254e44a53f01879a2e424
+  - enabled: 1
+    path: Assets/Scenes/Missions/game17.unity
+    guid: 9610fd75774a28343bf6ef8bb927acf7
+  - enabled: 1
+    path: Assets/Scenes/Missions/game18.unity
+    guid: 81bb790c1ee185f428af21cb30eb2809
+  - enabled: 1
+    path: Assets/Scenes/Missions/game21.unity
+    guid: 9c802e9dfdd1b0649bc706703243940b
+  - enabled: 1
+    path: Assets/Scenes/Missions/game20.unity
+    guid: 11dd6148b0a9d3349bb889c927080cb7
+  - enabled: 1
+    path: Assets/Scenes/Missions/game19.unity
+    guid: e3db100cee3067c48bc4e985d733f35c
+  - enabled: 1
+    path: Assets/Scenes/Group.unity
+    guid: 629a6ebfb956b6b4c875ba63f7ef26ea
+  - enabled: 1
+    path: Assets/Scenes/PlayerRanking.unity
+    guid: 212bd624d9bfe1f4a841db47a578d84a

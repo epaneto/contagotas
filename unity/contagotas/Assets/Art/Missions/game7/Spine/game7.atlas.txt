@@ -1,0 +1,153 @@
+
+game7.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 1126, 103
+  size: 94, 238
+  orig: 94, 238
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: true
+  xy: 1366, 112
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: true
+  xy: 1687, 347
+  size: 74, 163
+  orig: 74, 163
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 2, 40
+  size: 528, 37
+  orig: 528, 37
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: true
+  xy: 1687, 485
+  size: 528, 213
+  orig: 528, 213
+  offset: 0, 0
+  index: -1
+bubble
+  rotate: false
+  xy: 316, 8
+  size: 62, 30
+  orig: 62, 30
+  offset: 0, 0
+  index: -1
+character_bottle
+  rotate: true
+  xy: 724, 52
+  size: 145, 400
+  orig: 145, 400
+  offset: 0, 0
+  index: -1
+fire
+  rotate: true
+  xy: 532, 45
+  size: 32, 62
+  orig: 32, 62
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: false
+  xy: 1686, 272
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: false
+  xy: 2, 2
+  size: 312, 36
+  orig: 312, 36
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: false
+  xy: 1126, 55
+  size: 113, 46
+  orig: 113, 46
+  offset: 0, 0
+  index: -1
+handler
+  rotate: false
+  xy: 1145, 358
+  size: 540, 90
+  orig: 540, 90
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 1687, 423
+  size: 60, 207
+  orig: 60, 207
+  offset: 0, 0
+  index: -1
+mouth_eating
+  rotate: true
+  xy: 1902, 488
+  size: 133, 89
+  orig: 133, 89
+  offset: 0, 0
+  index: -1
+mouth_open
+  rotate: true
+  xy: 1616, 259
+  size: 97, 68
+  orig: 97, 68
+  offset: 0, 0
+  index: -1
+pan_bottom
+  rotate: false
+  xy: 2, 79
+  size: 720, 277
+  orig: 720, 277
+  offset: 0, 0
+  index: -1
+pan_top
+  rotate: false
+  xy: 724, 199
+  size: 760, 157
+  orig: 760, 157
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 1902, 623
+  size: 390, 114
+  orig: 390, 114
+  offset: 0, 0
+  index: -1
+stove
+  rotate: false
+  xy: 2, 358
+  size: 1141, 655
+  orig: 1141, 655
+  offset: 0, 0
+  index: -1
+stove_oil_galoon
+  rotate: false
+  xy: 1145, 450
+  size: 540, 563
+  orig: 540, 563
+  offset: 0, 0
+  index: -1
+street_ground
+  rotate: false
+  xy: 1486, 228
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

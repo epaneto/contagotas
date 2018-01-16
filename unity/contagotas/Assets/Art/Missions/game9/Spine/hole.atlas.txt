@@ -1,0 +1,27 @@
+
+hole.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bandaid
+  rotate: false
+  xy: 2, 65
+  size: 284, 165
+  orig: 284, 165
+  offset: 0, 0
+  index: -1
+drops
+  rotate: true
+  xy: 2, 2
+  size: 61, 106
+  orig: 61, 106
+  offset: 0, 0
+  index: -1
+hole
+  rotate: false
+  xy: 288, 102
+  size: 129, 128
+  orig: 129, 128
+  offset: 0, 0
+  index: -1

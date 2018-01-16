@@ -1,0 +1,160 @@
+
+game9.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 999, 42
+  size: 64, 162
+  orig: 64, 162
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: true
+  xy: 1432, 48
+  size: 58, 78
+  orig: 58, 78
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: false
+  xy: 1980, 19
+  size: 50, 111
+  orig: 50, 111
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 2, 40
+  size: 359, 25
+  orig: 359, 25
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: true
+  xy: 1867, 132
+  size: 359, 145
+  orig: 359, 145
+  offset: 0, 0
+  index: -1
+bucket_hole
+  rotate: false
+  xy: 1846, 152
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+bucket_little
+  rotate: true
+  xy: 1801, 3
+  size: 127, 177
+  orig: 127, 177
+  offset: 0, 0
+  index: -1
+car
+  rotate: false
+  xy: 2, 67
+  size: 995, 424
+  orig: 995, 424
+  offset: 0, 0
+  index: -1
+car_dirt
+  rotate: false
+  xy: 1163, 49
+  size: 127, 57
+  orig: 127, 57
+  offset: 0, 0
+  index: -1
+cloud
+  rotate: false
+  xy: 999, 108
+  size: 533, 168
+  orig: 533, 168
+  offset: 0, 0
+  index: -1
+drop
+  rotate: false
+  xy: 2014, 243
+  size: 13, 28
+  orig: 13, 28
+  offset: 0, 0
+  index: -1
+eye_closed
+  rotate: true
+  xy: 2014, 273
+  size: 218, 22
+  orig: 218, 22
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: true
+  xy: 525, 2
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: false
+  xy: 2, 14
+  size: 212, 24
+  orig: 212, 24
+  offset: 0, 0
+  index: -1
+game1_mouth1
+  rotate: false
+  xy: 1801, 140
+  size: 43, 31
+  orig: 43, 31
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: false
+  xy: 446, 34
+  size: 77, 31
+  orig: 77, 31
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 1292, 66
+  size: 40, 138
+  orig: 40, 138
+  offset: 0, 0
+  index: -1
+mouth_open
+  rotate: false
+  xy: 600, 19
+  size: 66, 46
+  orig: 66, 46
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1534, 93
+  size: 265, 78
+  orig: 265, 78
+  offset: 0, 0
+  index: -1
+sponge
+  rotate: false
+  xy: 363, 34
+  size: 81, 31
+  orig: 81, 31
+  offset: 0, 0
+  index: -1
+sun
+  rotate: false
+  xy: 1547, 173
+  size: 318, 318
+  orig: 318, 318
+  offset: 0, 0
+  index: -1
+water
+  rotate: false
+  xy: 999, 278
+  size: 546, 213
+  orig: 546, 213
+  offset: 0, 0
+  index: -1

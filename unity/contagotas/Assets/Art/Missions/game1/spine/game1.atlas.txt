@@ -1,0 +1,125 @@
+
+game1.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 1768, 416
+  size: 94, 238
+  orig: 94, 238
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: true
+  xy: 1409, 172
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: true
+  xy: 954, 65
+  size: 74, 163
+  orig: 74, 163
+  offset: 0, 0
+  index: -1
+body_middle
+  rotate: false
+  xy: 2, 5
+  size: 528, 37
+  orig: 528, 37
+  offset: 0, 0
+  index: -1
+body_round
+  rotate: false
+  xy: 1238, 297
+  size: 528, 213
+  orig: 528, 213
+  offset: 0, 0
+  index: -1
+game1_beard
+  rotate: false
+  xy: 718, 257
+  size: 518, 253
+  orig: 518, 253
+  offset: 0, 0
+  index: -1
+game1_bright
+  rotate: true
+  xy: 817, 7
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+game1_eye1
+  rotate: false
+  xy: 1238, 259
+  size: 312, 36
+  orig: 312, 36
+  offset: 0, 0
+  index: -1
+game1_mouth1
+  rotate: false
+  xy: 1552, 264
+  size: 43, 31
+  orig: 43, 31
+  offset: 0, 0
+  index: -1
+game1_mouth2
+  rotate: false
+  xy: 1768, 306
+  size: 113, 46
+  orig: 113, 46
+  offset: 0, 0
+  index: -1
+game1_sink
+  rotate: false
+  xy: 2, 44
+  size: 714, 466
+  orig: 714, 466
+  offset: 0, 0
+  index: -1
+game2_mouth
+  rotate: false
+  xy: 1258, 183
+  size: 149, 74
+  orig: 149, 74
+  offset: 0, 0
+  index: -1
+game2_mouth_open
+  rotate: false
+  xy: 718, 2
+  size: 97, 68
+  orig: 97, 68
+  offset: 0, 0
+  index: -1
+gilete
+  rotate: true
+  xy: 1110, 161
+  size: 94, 146
+  orig: 94, 146
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 1768, 354
+  size: 60, 207
+  orig: 60, 207
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 718, 141
+  size: 390, 114
+  orig: 390, 114
+  offset: 0, 0
+  index: -1
+teethbrush
+  rotate: false
+  xy: 718, 72
+  size: 234, 67
+  orig: 234, 67
+  offset: 0, 0
+  index: -1
