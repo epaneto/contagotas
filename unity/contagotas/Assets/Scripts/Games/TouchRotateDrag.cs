@@ -7,7 +7,7 @@ public class TouchRotateDrag : MonoBehaviour {
 	private bool canDrag = true;
     public bool isRight = false;
 	public string dragDestinatonName;
-	public TouchRotate TouchRotateScript;
+    public TouchRotate TouchRotateScript;
 	// Use this for initialization
 
 	public void onDragMe()
@@ -21,20 +21,13 @@ public class TouchRotateDrag : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("DragDestination")) {
 			if (dragDestinatonName == other.gameObject.name) {
-				canDrag = false;
+				
 				this.transform.position = other.gameObject.transform.position;
-				TouchRotateScript.enabled = true;
-				StartCoroutine (ActiveRotateScript());
+                canDrag = false;
+                isRight = true;
+                TouchRotateScript.CheckPipe();
 			}
 		}
-	}
-
-	IEnumerator ActiveRotateScript()
-	{
-		yield return new WaitForSeconds(0.5f);
-		this.enabled = false;
-        isRight = true;
-		TouchRotateScript.canRotate = true;
 	}
 
 }

@@ -26,13 +26,14 @@ public class DragableObject : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag ("DragDestination")) {
+        if (other.gameObject == destinationObject) {
 			isAtDestination = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
-		if (other.CompareTag ("DragDestination")) {
+        if (other.gameObject == destinationObject)
+        {
 			isAtDestination = false;
 		}
 	}
