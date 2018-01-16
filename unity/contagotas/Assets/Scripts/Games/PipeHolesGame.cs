@@ -10,7 +10,7 @@ public class PipeHolesGame : MonoBehaviour {
     MiniGameDefaultBehavior mdb;
     bool isPlaying = true;
     
-	int fixesNeed = 14;
+	int fixesNeed = 12;
     int collectedDrops = 0;
 	float speed;
 
