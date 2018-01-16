@@ -4,6 +4,7 @@ using UnityEngine;
 using Spine;
 using Spine.Unity;
 using Spine.Unity.Modules.AttachmentTools;
+using UnityEngine.UI;
 
 public class BrushTeethGame : MonoBehaviour {
 
@@ -13,6 +14,9 @@ public class BrushTeethGame : MonoBehaviour {
 	public GameObject faucetObject;
 	public GameObject handlerObject;
 
+    public GameObject sinkStep;
+    public GameObject mouthStep;
+
 	bool isPlaying = true;
 	int maxTurns = 10;
 	int numTurns = 0;
@@ -21,7 +25,7 @@ public class BrushTeethGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior> ();
-
+        mouthStep.SetActive(false);
 		faucet = faucetObject.GetComponent<SkeletonGraphic> ();
 		handler = handlerObject.GetComponent<SkeletonGraphic> ();
 	}
@@ -34,7 +38,7 @@ public class BrushTeethGame : MonoBehaviour {
 		if (!isPlaying)
 			return;
 
-		if (!mdb.hasTimeLeft() && numTurns < maxTurns) {
+		if (!mdb.hasTimeLeft()) {
 			isPlaying = false;
 			mdb.EndedGameLose ();
 			return;
@@ -76,17 +80,37 @@ public class BrushTeethGame : MonoBehaviour {
 				if (numTurns >= maxTurns) {
 					isPlaying = false;
 					faucet.AnimationState.SetAnimation(0,"faucet_off",false);
-					faucet.AnimationState.Complete += EndGame;
+                    faucet.AnimationState.Complete += ShowMouthStep;
 				}
 			}
 		}
 			
 	}
 
-	void EndGame(Spine.TrackEntry entry)
-	{
-		faucet.AnimationState.Complete -= EndGame;
+    void ShowMouthStep(Spine.TrackEntry entry)
+    {
+        isPlaying = true;
+        faucet.AnimationState.Complete -= ShowMouthStep;
+        mouthStep.SetActive(true);
+        sinkStep.SetActive(false);
+    }
 
+    public void cleanTeeth(GameObject teeth)
+    {
+        Image teethImage = teeth.GetComponent<Image>();
+        Color c = teethImage.color;
+        c.a -= 0.05f;
+        teethImage.color = c;
+
+        if(c.a <= 0)
+        {
+            isPlaying = false;
+            EndGame();
+        }
+    }
+
+	void EndGame()
+	{
 		mdb.EndedGameWin (mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
 	}
 }
