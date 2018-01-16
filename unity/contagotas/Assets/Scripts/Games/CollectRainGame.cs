@@ -49,18 +49,16 @@ public class CollectRainGame : MonoBehaviour {
 
 		GameObject drop;
 		switch (randomNumber) {
-		case 2:
+		case 1:
 			drop = Instantiate (Resources.Load ("drop_leaf", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
-		case 3:
+		case 2:
 			drop = Instantiate (Resources.Load ("drop_stick", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
-		case 4:
+		case 3:
 			drop = Instantiate (Resources.Load ("drop_stone", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
-		case 5:
-		case 6:
-		case 7:
+		case 4:
 			drop = Instantiate (Resources.Load ("drop_special", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		default:

@@ -74,11 +74,14 @@ public class MovingCupsGame : MonoBehaviour {
 
     public void ClickCup(GameObject obj)
     {
+        if (!isPlaying)
+            return;
+        
         ChangeableItem ci = obj.GetComponent<ChangeableItem>();
         if(ci.isGood)
         {
             neededCups--;
-            mdb.winTime(0.5f);
+            mdb.winTime(0.3f);
             GameSound.gameSound.PlaySFX("collect_X");
             obj.SetActive(false);
 

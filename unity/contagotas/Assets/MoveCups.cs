@@ -23,11 +23,11 @@ public class MoveCups : MonoBehaviour {
             float point = (Screen.width * 3.8f);
             if (i == CupGroups.Count - 1)
             {
-                group.transform.DOMoveX(point, 18.0f - i * 2.0f).SetEase(Ease.Linear).OnComplete(EndGame);
+                group.transform.DOMoveX(point, 9.0f - i * 0.5f).SetEase(Ease.Linear).OnComplete(EndGame);
             }
             else
             {
-                group.transform.DOMoveX(point, 18.0f - i * 2.0f).SetEase(Ease.Linear);
+                group.transform.DOMoveX(point, 9.0f - i * 0.5f).SetEase(Ease.Linear);
             }
         }
     }
