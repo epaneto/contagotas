@@ -13,6 +13,7 @@ public class FillBottleGame : MonoBehaviour {
 	public GameObject[] bottleObjects;
 
 	private GameObject fillObject;
+    private GameObject bottleObject;
 	private int fillOBjectIndex = 0;
 	public GameObject panObject;
 	MiniGameDefaultBehavior mdb;
@@ -27,6 +28,7 @@ public class FillBottleGame : MonoBehaviour {
 		mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior> ();
 		panGraph = panObject.GetComponent<SkeletonGraphic> ();
 		fillObject = oilObjects [fillOBjectIndex];
+        bottleObject = bottleObjects[fillOBjectIndex];
 	}
 	
 	// Update is called once per frame
@@ -49,6 +51,7 @@ public class FillBottleGame : MonoBehaviour {
 
 			if (fillObject.transform.localScale.y > maxOilFill) {
 				isPlaying = false;
+                GameSound.gameSound.StopSFX();
 				mdb.EndedGameLose ();
 				return;
 			}
@@ -73,8 +76,6 @@ public class FillBottleGame : MonoBehaviour {
 			
 			if (fillOBjectIndex < 2) {
 				TranslateBottle ();
-				fillOBjectIndex++;
-				fillObject = oilObjects [fillOBjectIndex];
 			} else {
 				isPlaying = false;
 				EndGame ();
@@ -84,17 +85,28 @@ public class FillBottleGame : MonoBehaviour {
 
 	private void TranslateBottle()
 	{
-		oilObjects [0].transform.DOMoveX (oilObjects [0].transform.position.x - 3, 1f);
-		bottleObjects [0].transform.DOMoveX (bottleObjects [0].transform.position.x - 3, 1f);
-		oilObjects [1].transform.DOMoveX (oilObjects [1].transform.position.x - 3, 1f);
-		bottleObjects [1].transform.DOMoveX (bottleObjects [1].transform.position.x - 3, 1f);
-		oilObjects [2].transform.DOMoveX (oilObjects [2].transform.position.x - 3, 1f);
-		bottleObjects [2].transform.DOMoveX (bottleObjects [2].transform.position.x - 3, 1f);
+        bottleObject.transform.DOLocalMoveX (-1000, 1f);
+        fillObject.transform.DOLocalMoveX(-1000, 1f);
+
+        fillOBjectIndex++;
+        fillObject = oilObjects[fillOBjectIndex];
+        bottleObject = bottleObjects[fillOBjectIndex];
+
+        bottleObject.transform.DOLocalMoveX(0, 1f);
+        fillObject.transform.DOLocalMoveX(0, 1f);
+
+        if(fillOBjectIndex < 2)
+        {
+            oilObjects[fillOBjectIndex + 1].transform.DOLocalMoveX(650, 1f);
+            bottleObjects[fillOBjectIndex + 1].transform.DOLocalMoveX(650, 1f);
+        }
+
 	}
 
 	void EndGame()
 	{
 		isPlaying = false;
+        GameSound.gameSound.StopSFX();
 		mdb.EndedGameWin (mdb.maxScore - (mdb.maxScore * mdb.getTimeProgress()));
 	}
 }
