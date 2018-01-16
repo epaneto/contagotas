@@ -12,6 +12,7 @@ public class SinkGame : MonoBehaviour {
 
 	public GameObject faucetObject;
 	public GameObject handlerObject;
+    public GameObject followObject;
 
     public GameObject sinkStep;
     public GameObject bearStep;
@@ -46,6 +47,12 @@ public class SinkGame : MonoBehaviour {
 			mdb.EndedGameLose ();
 			return;
 		}
+
+        if (bearStep && followObject)
+        {
+            followObject.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y,0);
+
+        }
 
 		Swipe ();
 	}

@@ -13,10 +13,10 @@ public class BrushTeethGame : MonoBehaviour {
 
 	public GameObject faucetObject;
 	public GameObject handlerObject;
-
+    public GameObject followObject;
     public GameObject sinkStep;
     public GameObject mouthStep;
-
+    bool isMouthStep = false;
 	bool isPlaying = true;
 	int maxTurns = 10;
 	int numTurns = 0;
@@ -44,6 +44,12 @@ public class BrushTeethGame : MonoBehaviour {
 			return;
 		}
 
+        if (isMouthStep && followObject)
+        {
+            followObject.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+
+        }
+
 		Swipe ();
 	}
 
@@ -53,6 +59,9 @@ public class BrushTeethGame : MonoBehaviour {
 
 	public void Swipe()
 	{
+
+        if (isMouthStep)
+            return;
 		
 		
 		if(Input.GetMouseButtonDown(0))
@@ -90,6 +99,7 @@ public class BrushTeethGame : MonoBehaviour {
     void ShowMouthStep(Spine.TrackEntry entry)
     {
         isPlaying = true;
+        isMouthStep = true;
         faucet.AnimationState.Complete -= ShowMouthStep;
         mouthStep.SetActive(true);
         sinkStep.SetActive(false);
