@@ -219,9 +219,7 @@ public class MinigamesController : MonoBehaviour {
                 return;
             }
 
-			///save player points
-			UserData.userData.playerData.playerPoints += score;
-			UserData.userData.Save();
+		
 
 			StartCoroutine(AddUserScore(score));
 
@@ -254,8 +252,11 @@ public class MinigamesController : MonoBehaviour {
 		yield return result = WWWUtils.DoWebRequestWithSpecificURL("http://www.contagotas.online/services/user/score/" + PlayerPrefs.GetInt ("user_id").ToString() + "/" + score.ToString() + "/");
 		Debug.Log("url result = " + result.text);
 
-		if (result.text == "success")
-			Debug.Log("Inserido score");
+		if (result.text == "success") {
+			///save player points
+			UserData.userData.playerData.playerPoints += score;
+			UserData.userData.Save ();
+		}
 		else
 			Debug.Log("ERROR:" + result.text);
 	}
