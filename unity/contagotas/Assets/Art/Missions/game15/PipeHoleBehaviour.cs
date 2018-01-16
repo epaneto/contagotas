@@ -40,6 +40,9 @@ public class PipeHoleBehaviour : MonoBehaviour {
 
 	public void TappedHole()
 	{
+		if (isClosed)
+			return;
+		
 		isClosed = true;
 		controller.fixedPipe();
 		SkeletonGraphic graphic = this.GetComponent<SkeletonGraphic> ();
