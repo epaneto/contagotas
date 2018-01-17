@@ -1,7 +1,7 @@
 <?php
 
-$ipadLink = "http://www.uol.com.br";
-$androidLink = "http://www.globo.com.br";
+$ipadLink = "https://play.google.com/store/apps/details?id=br.gov.caixa.contagotas&hl=pt_BR";
+$androidLink = "https://play.google.com/store/apps/details?id=br.gov.caixa.contagotas&hl=pt_BR";
 
 //Detect special conditions devices
 $iPod    = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
