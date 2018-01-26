@@ -42,7 +42,13 @@ public class DuelGame : MonoBehaviour {
         p4Skeleton = point4.GetComponent<SkeletonGraphic>();
         p5Skeleton = point5.GetComponent<SkeletonGraphic>();
 
-        InvokeRepeating("enemyAttack", 2.0f, 2.0f);
+		EventManager.StartListening("MiniGameStarted", OnMiniGameStarted);
+
+	}
+
+	void OnMiniGameStarted()
+	{
+		InvokeRepeating("enemyAttack", 2.0f, 2.0f);
 	}
 
     // Update is called once per frame

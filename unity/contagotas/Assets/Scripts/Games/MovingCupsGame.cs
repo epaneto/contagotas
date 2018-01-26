@@ -65,7 +65,7 @@ public class MovingCupsGame : MonoBehaviour {
         //    }
         //}
 
-        if (!mdb.hasTimeLeft()){
+		if (!mdb.hasTimeLeft() && neededCups > 0){
             isPlaying = false;
             mdb.EndedGameLose();
             return;
@@ -97,6 +97,9 @@ public class MovingCupsGame : MonoBehaviour {
 
     public void EndGameLose()
     {
+		if (!isPlaying)
+			return;
+		
         isPlaying = false;
         mdb.EndedGameLose();
     }
