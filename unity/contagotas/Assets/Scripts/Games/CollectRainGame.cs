@@ -50,24 +50,25 @@ public class CollectRainGame : MonoBehaviour {
 		GameObject drop;
 		switch (randomNumber) {
 		case 1:
-			drop = Instantiate (Resources.Load ("drop_leaf", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_leaf", typeof(GameObject)), new Vector3 (Random.Range (-Screen.width*0.4f, Screen.width*0.4f), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 2:
-			drop = Instantiate (Resources.Load ("drop_stick", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_stick", typeof(GameObject)), new Vector3 (Random.Range (-Screen.width*0.4f, Screen.width*0.4f), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 3:
-			drop = Instantiate (Resources.Load ("drop_stone", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_stone", typeof(GameObject)), new Vector3 (Random.Range (-Screen.width*0.4f, Screen.width*0.4f), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 4:
-			drop = Instantiate (Resources.Load ("drop_leaf", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_leaf", typeof(GameObject)), new Vector3 (Random.Range (-Screen.width*0.4f, Screen.width*0.4f), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		case 5:
-			drop = Instantiate (Resources.Load ("drop_special", typeof(GameObject)), new Vector3 (Random.Range (-400, 400), -220, 0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate (Resources.Load ("drop_special", typeof(GameObject)), new Vector3 (Random.Range (-Screen.width*0.4f, Screen.width*0.4f), -220, 0), dropParent.transform.rotation) as GameObject;
 			break;
 		default:
-			drop = Instantiate(Resources.Load("drop", typeof(GameObject)), new Vector3(Random.Range(-400,400),-220,0), dropParent.transform.rotation) as GameObject;
+			drop = Instantiate(Resources.Load("drop", typeof(GameObject)), new Vector3(Random.Range(-Screen.width*0.4f, Screen.width*0.4f),-220,0), dropParent.transform.rotation) as GameObject;
 			break;
 		}
+		drop.transform.position = new Vector3 (Random.Range (-Screen.currentResolution.width * 0.4f, Screen.currentResolution.width * 0.4f), -220, 0);
         drop.transform.SetParent(dropParent.transform, false);
     }
 

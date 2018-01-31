@@ -78,6 +78,7 @@ public class FruitDragGame : MonoBehaviour {
 			drop = Instantiate(Resources.Load("drop_apple", typeof(GameObject)), new Vector3(Random.Range(-400,400),0,0), dropParent.transform.rotation) as GameObject;
 			break;
 		}
+		drop.transform.position = new Vector3 (Random.Range (-Screen.currentResolution.width * 0.4f, Screen.currentResolution.width * 0.4f), -220, 0);
 		drop.transform.SetParent(dropParent.transform, false);
 	}
 
