@@ -67,6 +67,7 @@ public class MinigamesController : MonoBehaviour {
         continueLoseButton = GameObject.Find("bt_continuar_lose");
         loseGameSadChar = GameObject.Find("character_sad");
 
+		timeBar.transform.position = new Vector3 (timeBar.transform.parent.position.x, Screen.height * 0.95f);
         timeBar.SetActive(false);
 
 		///load mission json

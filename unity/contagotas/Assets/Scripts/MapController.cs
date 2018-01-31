@@ -43,7 +43,6 @@ public class MapController : MonoBehaviour {
 
     public void UpdateMapBasedInPlayerProgress(int day, int maxDays, bool isNextDay)
 	{
-		day = 21;
 		Debug.Log("Hello player! Today its your " + day + "th day. let's update the map.");
 		for (int i = 1; i <= maxDays; i++) {
 			if (i < day) {

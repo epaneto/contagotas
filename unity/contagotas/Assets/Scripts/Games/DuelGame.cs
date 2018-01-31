@@ -48,6 +48,7 @@ public class DuelGame : MonoBehaviour {
 
 	void OnMiniGameStarted()
 	{
+		EventManager.StopListening("MiniGameStarted", OnMiniGameStarted);
 		InvokeRepeating("enemyAttack", 2.0f, 2.0f);
 	}
 
