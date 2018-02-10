@@ -1,27 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ValveGame : MonoBehaviour {
-
-    public GameObject valveObject;
+    
+    public List<GameObject> valves;
     MiniGameDefaultBehavior mdb;
     bool isPlaying = true;
+    public GameObject valveGroup;
 
     Vector3 mouse_pos;
     Transform target;
     Vector3 object_pos;
     float angle;
-    public bool isLocal;
     float prevAngle;
     float totalAnglesRotated = 0;
     float totalRotations = 0;
     float neededRotations = 10;
+    int valveIndex = 0;
+    GameObject valveObject;
+
 
 
     // Use this for initialization
     void Start () {
         mdb = this.gameObject.GetComponent<MiniGameDefaultBehavior>();
+        valveObject = valves[valveIndex];
     }
 	
 	// Update is called once per frame
@@ -44,6 +49,9 @@ public class ValveGame : MonoBehaviour {
 
     public void onDragValve()
     {
+        if (!isPlaying)
+            return;
+        
         mouse_pos = Input.mousePosition;
         mouse_pos.z = -20;
         object_pos = Camera.main.WorldToScreenPoint(valveObject.transform.position);
@@ -60,13 +68,42 @@ public class ValveGame : MonoBehaviour {
             Debug.Log(totalRotations);
             if (totalRotations >= neededRotations)
             {
-                isPlaying = false;
-                EndGame();
+                if(valveIndex + 1 < valves.Count)
+                {
+                    isPlaying = false;
+                    ShowNextValve();
+                }else{
+                    isPlaying = false;
+                    EndGame();
+                }
+
             }
         }
         
         prevAngle = angle;
     }
+
+    void ShowNextValve()
+    {
+        Debug.Log("Show Next Valve");
+
+        valveIndex++;
+        valveObject = valves[valveIndex];
+
+        angle = 0;
+        prevAngle = 0;
+        totalAnglesRotated = 0;
+        totalRotations = 0;
+        neededRotations = 10;
+
+        valveGroup.transform.DOLocalMoveX(-1900 * valveIndex, 0.6f).SetEase(Ease.InQuad).OnComplete(releaseGame);
+    }
+
+    void releaseGame()
+    {
+        isPlaying = true;
+    }
+
 
     void EndGame()
     {

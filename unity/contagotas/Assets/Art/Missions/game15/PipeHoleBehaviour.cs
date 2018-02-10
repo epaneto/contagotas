@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public class PipeHoleBehaviour : MonoBehaviour {
 
@@ -39,8 +40,12 @@ public class PipeHoleBehaviour : MonoBehaviour {
 
 	public void TappedHole()
 	{
+		if (isClosed)
+			return;
+		
 		isClosed = true;
 		controller.fixedPipe();
-		this.gameObject.SetActive (false);
+		SkeletonGraphic graphic = this.GetComponent<SkeletonGraphic> ();
+		graphic.AnimationState.SetAnimation(0,"off",false);
 	}
 }

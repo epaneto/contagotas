@@ -23,9 +23,16 @@ public class TouchRotateDrag : MonoBehaviour {
 				canDrag = false;
 				this.transform.position = other.gameObject.transform.position;
 				TouchRotateScript.enabled = true;
-				this.enabled = false;
+				StartCoroutine (ActiveRotateScript());
 			}
 		}
+	}
+
+	IEnumerator ActiveRotateScript()
+	{
+		yield return new WaitForSeconds(0.5f);
+		this.enabled = false;
+		TouchRotateScript.canRotate = true;
 	}
 
 }
