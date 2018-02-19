@@ -163,7 +163,7 @@ public class MinigamesController : MonoBehaviour {
 
 	public void ShowResults(int score)
     {
-       
+		GameSound.gameSound.PlayOneShotMusic ("jingle_caixa");
         //animate screen
         scoreGroup.transform.DOScale(new Vector3(0, 0, 1), 0.8f).SetEase(Ease.OutBack).From();
         titleTxt.transform.DOScale(new Vector3(0, 0, 1), 0.9f).SetEase(Ease.OutBack).From();
