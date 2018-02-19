@@ -21,6 +21,8 @@ public class MinigamesController : MonoBehaviour {
     public GameObject skipIntroButton;
 	public GameObject retryButton;
 
+	public GameObject loseHintField;
+
 	JArray Missions;
     JArray SelectedMissions;
 
@@ -149,6 +151,10 @@ public class MinigamesController : MonoBehaviour {
 
 	public void ShowLose()
 	{
+		JToken hintString = SelectedMissions[minigameIndex]["hintlose"];
+		Text hintField = loseHintField.GetComponent<Text>();
+		hintField.text = hintString.ToString();
+
 		///REMOVE ACTIVE MINIGAME FROM SCREEN
         JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
 		SceneManager.UnloadSceneAsync (sceneName.ToString());
