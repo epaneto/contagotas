@@ -19,6 +19,7 @@ public class MinigamesController : MonoBehaviour {
     public GameObject timeBar;
     public GameObject timeBarFill;
     public GameObject skipIntroButton;
+	public GameObject retryButton;
 
 	JArray Missions;
     JArray SelectedMissions;
@@ -331,6 +332,20 @@ public class MinigamesController : MonoBehaviour {
             GoToMap();
         }
     }
+
+	public void RetryMiniGame()
+	{
+		JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
+		SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Additive);
+
+		GameSound.gameSound.PlaySFX("button");
+
+		continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
+		continueLoseButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+		endGame.SetActive(false);
+		loseGame.SetActive(false);
+	}
 
     public void blinkTimeBar()
     {
