@@ -218,6 +218,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39385ed8873424ed3be8a795d6c29514, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &87916929 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1477426220728796, guid: 39385ed8873424ed3be8a795d6c29514,
+    type: 2}
+  m_PrefabInternal: {fileID: 87916928}
 --- !u!224 &402504812 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224453321114732394, guid: 39385ed8873424ed3be8a795d6c29514,
@@ -351,6 +356,11 @@ RectTransform:
 --- !u!1 &562382425 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1285137357704942, guid: d3d86d318a7c68b4591f97ab106c5bfa,
+    type: 2}
+  m_PrefabInternal: {fileID: 562382423}
+--- !u!1 &562382426 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1074892887697846, guid: d3d86d318a7c68b4591f97ab106c5bfa,
     type: 2}
   m_PrefabInternal: {fileID: 562382423}
 --- !u!1 &582150666
@@ -556,6 +566,8 @@ MonoBehaviour:
   timeBarFill: {fileID: 1786260531}
   skipIntroButton: {fileID: 1536909713}
   retryButton: {fileID: 1959744395}
+  continueWinText: {fileID: 87916929}
+  continueLoseText: {fileID: 562382426}
   loseHintField: {fileID: 562382425}
 --- !u!4 &669736061
 Transform:

@@ -66,6 +66,7 @@ public class DuelGame : MonoBehaviour {
         if (!mdb.hasTimeLeft() && numPoints < 5)
         {
             isPlaying = false;
+			GameSound.gameSound.StopSFX();
             mdb.EndedGameLose();
             return;
         }

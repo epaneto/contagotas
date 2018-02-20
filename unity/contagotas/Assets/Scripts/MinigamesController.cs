@@ -20,6 +20,8 @@ public class MinigamesController : MonoBehaviour {
     public GameObject timeBarFill;
     public GameObject skipIntroButton;
 	public GameObject retryButton;
+	public GameObject continueWinText;
+	public GameObject continueLoseText;
 
 	public GameObject loseHintField;
 
@@ -164,6 +166,13 @@ public class MinigamesController : MonoBehaviour {
 		SkeletonGraphic graphic = loseGameSadChar.GetComponent<SkeletonGraphic> ();
 		graphic.AnimationState.SetAnimation(0,"sad",false);
 
+		Text continueText = continueLoseText.GetComponent<Text>();
+		if (minigameIndex + 1 >= SelectedMissions.Count) {
+			continueText.text = "Voltar para o mapa";
+		} else {
+			continueText.text = "Continuar";
+		}
+
 		continueLoseButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
 	}
 
@@ -206,6 +215,14 @@ public class MinigamesController : MonoBehaviour {
         //challengeField.text = "Desafio Real #" + (minigameIndex + 1).ToString();
 
 		endGame.SetActive(true);
+
+		////IF LAST MINIGAME, CHANGE CONTINUE BUTTON TEXT
+		Text continueText = continueWinText.GetComponent<Text>();
+		if (minigameIndex + 1 >= SelectedMissions.Count) {
+			continueText.text = "Voltar para o mapa";
+		} else {
+			continueText.text = "Continuar";
+		}
 
         playerScore = 0;
         StartCoroutine("CountTo", score);
