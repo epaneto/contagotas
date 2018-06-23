@@ -106,7 +106,7 @@ public class SignUpController : MonoBehaviour {
 		string username = GameObject.Find ("input_name").GetComponent<InputField> ().text;
 		string email = GameObject.Find ("input_email").GetComponent<InputField> ().text;
 
-		if (username == "Nome" || email == "E-mail")
+		if (username == "" || email == "")
 			return;
 		
 		string state = stateDropDown.options [stateDropDown.value].text;

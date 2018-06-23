@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Newtonsoft.Json.Linq;
 using UnityEngine.UI;
+using I2.Loc;
 
 
 public class MapController : MonoBehaviour {
@@ -81,11 +82,12 @@ public class MapController : MonoBehaviour {
 
 
             Text titleField = hint.transform.GetChild(1).GetComponent<Text>();
-            titleField.text = "Desafio #" + (i+1);
+            titleField.text = "#" + LocalizationManager.GetTranslation("MinigameHintTitle") + " " + (i+1);
 
 
             Text hintField = hint.transform.GetChild(0).GetComponent<Text>();
-            hintField.text = hintString.ToString();
+            //hintField.text = hintString.ToString();
+            hintField.text = LocalizationManager.GetTranslation(hintString.ToString());
         }
 
     }

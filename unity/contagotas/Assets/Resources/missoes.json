@@ -3,82 +3,82 @@
     {
       "title": "Ganhou no jogo!",
       "sceneid": "game20",
-      "hint": "Troque a descarga de parede pela acoplada na sua casa. Economize até 50% e dê adeus ao desperdício.",
-	  "hintlose": "Você vai perceber que trocar a descarga de parede pela acoplada pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint20",
+      "hintlose": "MinigameHintLose20"
     },
     {
       "title": "Ihul!",
       "sceneid": "game19",
-      "hint": "Você deu um banho no encanador. Instale o redutor de vazão na sua casa e poupe até 6 litros de água por minuto.",
-	  "hintlose": "Você vai perceber que um Redutor de Vazão pode trazer mais economia para o seu dia a dia."
+      "hint": "MinigameHint19",
+      "hintlose": "MinigameHintLose19"
     },
     {
       "title": "Que beleza!",
       "sceneid": "game21",
-      "hint": "Faça bonito no desafio da vida real.  Evite lavar o cabelo mais do que o necessário.",
-	  "hintlose": "Você vai perceber que lavar os cabelos apenas quando for necessário também pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint21",
+      "hintlose": "MinigameHintLose21"
     },
     {
       "title": "Jogada de mestre!",
       "sceneid": "game17",
-      "hint": "É hora de levar esse truque para a sua rotina. Reúse a água do enxágue da máquina e aproveite até 100 litros de água. ",
-	  "hintlose": "Você vai perceber que lavar roupas utilizando a capacidade máxima da sua máquina também pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint17",
+      "hintlose": "MinigameHintLose17"
     },
     {
       "title": "Você agora é um caça-vazamentos!",
       "sceneid": "game15",
-      "hint": "Um buraquinho no cano da sua casa desperdiça quase 100 mil litros por mês. Investigue. ",
-	  "hintlose": "Você vai perceber que corrigir possíveis vazamentos na sua casa logo no início também pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint15",
+      "hintlose": "MinigameHintLose15"
     },
     {
       "title": "Está na chuva, é para economizar!",
       "sceneid": "game12",
-      "hint": "Use baldes, calhas, sistema de captação e aproveite em casa a economia que cai do céu.",
-	  "hintlose": "Você vai perceber que utilizar baldes, calhas e sistemas de captação de água pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint12",
+      "hintlose": "MinigameHintLose12"
     },
     {
       "title": "Foi o bicho!",
       "sceneid": "game18",
-      "hint": "Leve o jogo para casa ou pet shop: siga a frequência de banhos indicada para seu bichinho. Exagerar é uma fria! ",
-	  "hintlose": "Você vai perceber que seguir a frequência de banhos indicada para seu pet pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint18",
+      "hintlose": "MinigameHintLose18"
     },
     {
       "title": "Desafio vencido!",
       "sceneid": "game14",
-      "hint": "A missão agora é na sua casa. Mantenha a caixa tampada e fique de olho nos vazamentos com manutenção.",
-	  "hintlose": "Você vai perceber que manter a caixa-d’água tampada e verificar se existem vazamentos também pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint14",
+      "hintlose": "MinigameHintLose14"
     },
     {
       "title": "Ufa, você ganhou!",
       "sceneid": "game13",
-      "hint": "Troque o copo descartável pelo reutilizável, economize água e dindim. Leve o desafio para sua rotina.",
-	  "hintlose": "Você vai perceber que trocar copos descartáveis por reutilizáveis também pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint13",
+      "hintlose": "MinigameHintLose13"
     },
 
     {
       "title": "Adeus, pinga-pinga!",
       "sceneid": "game16",
-      "hint": "Ele desperdiça até 750 litros por dia. Deixe os olhos abertos, mas as torneiras e chuveiros bem fechados em casa.",
-	  "hintlose": "Você vai perceber que conferir se as torneiras e os chuveiros estão bem fechados também pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint16",
+      "hintlose": "MinigameHintLose16"
     },
 
     {
         "title": "Barra limpa!",
         "sceneid": "game11",
-        "hint": "Agora vença o desperdício em casa. Troque lavagens por pano úmido + álcool. Economize cerca de 25 litros por faxina.",
-	  "hintlose": "Você vai perceber que utilizar pano úmido com álcool na limpeza da casa pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint11",
+      "hintlose": "MinigameHintLose11"
     },
   {
         "title": "Yeah!",
         "sceneid": "game10",
-        "hint": "Use sempre o regador no lugar da mangueira e colha os frutos dessa economia. Leve esse desafio para casa.",
-	  "hintlose": "Você vai perceber que utilizar regador em vez de mangueira também pode trazer muita economia para o seu dia a dia."
+        "hint": "MinigameHint10",
+        "hintlose": "MinigameHintLose10"
 	},
 	{
         "title": "Vitória brilhante!",
         "sceneid": "game9",
-        "hint": "Aposente a mangueira para lavar seu carro e dê um balde de água fria no desperdício de quase 500 litros. ",
-	  "hintlose": "Você vai perceber que usar balde em vez de mangueira na hora de lavar o carro também pode trazer muita economia para o seu dia a dia."
+        "hint": "MinigameHint9",
+    "hintlose": "MinigameHintLose9"
 	},
    {
         "title": "Sem noção derrotado!",
@@ -89,46 +89,46 @@
     {
         "title": "Você ganhou!",
         "sceneid": "game7",
-        "hint": "1 litro de óleo pode contaminar até 1 milhão de litros de água. Na sua casa, armazene em garrafas PET e descarte corretamente.",
-	  "hintlose": "Você vai perceber que armazenar o óleo usado em garrafas PET e descartá-lo corretamente evita a contaminação de muitos litros de água."
+        "hint": "MinigameHint7",
+        "hintlose": "MinigameHintLose7"
     },
     {
       "title": "Você ganhou!",
       "sceneid": "game1",
-      "hint": "O desafio em casa é não se barbear no chuveiro e poupar cerca de 10 litros. Tire as barbas de molho e entre em ação.",
-	  "hintlose": "Você vai perceber que evitar fazer a barba durante o banho também pode trazer muita economia para o seu dia a dia."
+      "hint": "MinigameHint1",
+      "hintlose": "MinigameHintLose1"
     },
   {
         "title": "Lavou, ganhou!",
         "sceneid": "game6",
-        "hint": "Coloque de molho alimentos com cloro ou água sanitária de uso geral e poupe cerca de 70 litros de água na sua casa.",
-	  "hintlose": "Você vai perceber que o hábito de colocar alimentos de molho no cloro ou na água sanitária pode trazer muita economia para o seu dia a dia."
+        "hint": "MinigameHint6",
+        "hintlose": "MinigameHintLose6"
     },
   
   {
         "title": "Vitória limpa!",
         "sceneid": "game5",
-        "hint": "Uma máquina usa cerca de 135 litros por lavagem. Use sempre com a capacidade máxima de roupas. Desafie-se em casa.",
-	  "hintlose": "Você vai perceber que lavar roupas utilizando a capacidade máxima da sua máquina também pode trazer muita economia para o seu dia a dia."
+        "hint": "MinigameHint5",
+        "hintlose": "MinigameHintLose5"
     },
     {
         "title": "Yeah!",
         "sceneid": "game4",
-        "hint": "Agora enfrente a pilha de louça de casa evitando o desperdício. Enxágue tudo na pia cheia e poupe até 15 litros por minuto.",
-	  "hintlose": "Você vai perceber que enxaguar toda a louça na pia cheia pode trazer muita economia para o seu dia a dia."
+        "hint": "MinigameHint4",
+        "hintlose": "MinigameHintLose4"
     },
     {
         "title": "Vilão derrotado!",
         "sceneid": "game3",
-        "hint": "Um minuto a menos no chuveiro pode economizar até 23 litros. Acabe com o banho demorado também na sua casa.",
-	  "hintlose": "Você vai perceber que um minuto a menos no banho também pode trazer muita economia para o seu dia a dia."
+        "hint": "MinigameHint3",
+        "hintlose": "MinigameHintLose3"
     },
     
     {
         "title": "Pode sorrir!",
         "sceneid": "game2",
-        "hint": "Agora os dentistas e todos recomendam o desafio na sua escovação. Feche a torneira, use um copo e poupe até 11 litros.",
-	  "hintlose": "Você vai perceber que usar um copo com água para enxaguar a boca após escovar os dentes pode trazer muita economia para o seu dia a dia."
+        "hint": "MinigameHint2",
+        "hintlose": "MinigameHintLose2"
     }
       
     ]

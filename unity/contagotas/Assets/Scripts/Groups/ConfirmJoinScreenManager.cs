@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
 using Newtonsoft.Json;
+using I2.Loc;
 
 public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 
@@ -27,7 +28,7 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
         GameSound.gameSound.PlaySFX("button");
 
 		if (ConfirmJoinPasswordInput.text == "") {
-			joinConfirmFeedback.text = "Digite a senha";
+            joinConfirmFeedback.text = LocalizationManager.GetTranslation("GroupPassword");
 			return;
 		}
 
@@ -71,7 +72,7 @@ public class ConfirmJoinScreenManager : BaseAssetsGroupManager {
 
 			if (data == "wrong password") {
 				ConfirmJoinPasswordInput.text = "";
-				joinConfirmFeedback.text = "Senha errada";
+                joinConfirmFeedback.text = LocalizationManager.GetTranslation("GroupWrongPass");
 				screenManager.ShowGroup (ScreenType.CONFIRM_JOIN_GROUP);
 				Debug.Log ("Wrong Password");
 			}

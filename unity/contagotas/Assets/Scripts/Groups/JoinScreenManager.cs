@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 using System.Text;
+using I2.Loc;
 
 public class JoinScreenManager : BaseAssetsGroupManager {
 
@@ -29,7 +30,7 @@ public class JoinScreenManager : BaseAssetsGroupManager {
 		Debug.Log ("url result = " + result.text);
 
 		if (result.text == "[]") {
-			screenManager.ShowErrorScreen ("Grupo nao encontrado");
+            screenManager.ShowErrorScreen (LocalizationManager.GetTranslation("GroupNotFound"));
 			yield break;
 		}
 

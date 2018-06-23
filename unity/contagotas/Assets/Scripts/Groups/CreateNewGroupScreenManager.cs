@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
+using I2.Loc;
 
 public class CreateNewGroupScreenManager : BaseAssetsGroupManager {
 
@@ -99,7 +100,7 @@ public class CreateNewGroupScreenManager : BaseAssetsGroupManager {
 	public void ShowGroupExistentErrorScreen()
 	{
 		existentGroupErrorScreen.SetActive (true);
-		existentGroupErrorText.text = "Infelizmente já existe um grupo chamado " + createInput.text + ". Tente outro nome.";
+        existentGroupErrorText.text = LocalizationManager.GetTranslation("GroupExists1") + createInput.text + ". " + LocalizationManager.GetTranslation("GroupExists2");
 	}
 
 	public void HideGroupExistentErrorScreen()

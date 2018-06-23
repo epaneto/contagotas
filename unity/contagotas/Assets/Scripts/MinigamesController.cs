@@ -9,6 +9,7 @@ using Spine;
 using Spine.Unity;
 using Spine.Unity.Modules.AttachmentTools;
 using DG.Tweening;
+using I2.Loc;
 
 public class MinigamesController : MonoBehaviour {
 
@@ -155,7 +156,8 @@ public class MinigamesController : MonoBehaviour {
 	{
 		JToken hintString = SelectedMissions[minigameIndex]["hintlose"];
 		Text hintField = loseHintField.GetComponent<Text>();
-		hintField.text = hintString.ToString();
+		//hintField.text = hintString.ToString();
+        hintField.text = LocalizationManager.GetTranslation(hintString.ToString());
 
 		///REMOVE ACTIVE MINIGAME FROM SCREEN
         JToken sceneName = SelectedMissions[minigameIndex]["sceneid"];
@@ -168,9 +170,9 @@ public class MinigamesController : MonoBehaviour {
 
 		Text continueText = continueLoseText.GetComponent<Text>();
 		if (minigameIndex + 1 >= SelectedMissions.Count) {
-			continueText.text = "Voltar para o mapa";
+            continueText.text = LocalizationManager.GetTranslation("MinigameBackToMap");
 		} else {
-			continueText.text = "Continuar";
+            continueText.text = LocalizationManager.GetTranslation("MinigameContinueLocaleKey");
 		}
 
 		continueLoseButton.GetComponent<Button> ().onClick.AddListener (PlayNextMiniGame);
@@ -209,7 +211,7 @@ public class MinigamesController : MonoBehaviour {
 
         JToken hintString = SelectedMissions[minigameIndex]["hint"];
         Text hintField = hintTxt.GetComponent<Text>();
-        hintField.text = hintString.ToString();
+        hintField.text = LocalizationManager.GetTranslation(hintString.ToString());
 
         //Text challengeField = challengeTxt.GetComponent<Text>();
         //challengeField.text = "Desafio Real #" + (minigameIndex + 1).ToString();
@@ -219,9 +221,9 @@ public class MinigamesController : MonoBehaviour {
 		////IF LAST MINIGAME, CHANGE CONTINUE BUTTON TEXT
 		Text continueText = continueWinText.GetComponent<Text>();
 		if (minigameIndex + 1 >= SelectedMissions.Count) {
-			continueText.text = "Voltar para o mapa";
+            continueText.text = LocalizationManager.GetTranslation("MinigameBackToMap");
 		} else {
-			continueText.text = "Continuar";
+            continueText.text = LocalizationManager.GetTranslation("MinigameContinueLocaleKey");
 		}
 
         playerScore = 0;
