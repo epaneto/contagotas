@@ -56,15 +56,19 @@ public class MapController : MonoBehaviour {
             }
 		}
 
-        if(isNextDay)
+        if (isNextDay)
             PlayerPrefs.SetString("show_next_day_tutorial", "true");
-        
-        loadHints();
 	}
 
     void loadHints()
     {
         Debug.Log("LOAD HINTS");
+
+        foreach (Transform child in hintContainer.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         ///load mission json
         TextAsset t = (TextAsset)Resources.Load("missoes", typeof(TextAsset));
         string DataAsJSON = t.text;
@@ -94,6 +98,8 @@ public class MapController : MonoBehaviour {
 
     public void openHints()
     {
+        loadHints();
+
         GameSound.gameSound.PlaySFX("button");
         InfoObject.SetActive(true);
         InfoObject.transform.DOMoveY(-1400, 0.6f).SetEase(Ease.OutQuad).From();

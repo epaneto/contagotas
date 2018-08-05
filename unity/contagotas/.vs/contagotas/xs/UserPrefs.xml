@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{32636551-C14F-6A5E-FE76-110ECDBE1B88}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SceneController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utils/WWWUtils.cs">
     <Files>
-      <File FileName="Assets/Scripts/MapController.cs" Line="89" Column="54" />
+      <File FileName="Assets/Scripts/MapController.cs" Line="69" Column="39" />
       <File FileName="Assets/Resources/missoes.json" Line="135" Column="2" />
       <File FileName="Assets/Scripts/MinigamesController.cs" Line="224" Column="88" />
-      <File FileName="Assets/Scripts/Groups/CreateNewGroupScreenManager.cs" Line="6" Column="14" />
+      <File FileName="Assets/Scripts/Groups/CreateNewGroupScreenManager.cs" Line="63" Column="21" />
       <File FileName="Assets/Scripts/PlayerRanking/PlayerRankingScoreScreenManager.cs" Line="24" Column="71" />
       <File FileName="Assets/Scripts/Groups/ExistingGroupScreenManager.cs" Line="86" Column="5" />
       <File FileName="Assets/Scripts/SceneController.cs" Line="31" Column="9" />
+      <File FileName="Assets/Scripts/Utils/WWWUtils.cs" Line="17" Column="9" />
+      <File FileName="Assets/Scripts/Groups/ConfirmJoinScreenManager.cs" Line="62" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

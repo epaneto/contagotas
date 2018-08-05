@@ -63,10 +63,10 @@ MonoBehaviour:
   Google_WebServiceURL: https://script.google.com/macros/s/AKfycbyvn26gqDrL_Mm0YaA94cG9OgSxg84wGxxbEH-Y2gegNK5S008/exec
   Google_SpreadsheetKey: 17mYH69ic8YIncsWixX7W8Q54Fj4uVkj0hrLQMO0Ujaw
   Google_SpreadsheetName: I2Loc Conta Gotas Localization
-  Google_LastUpdatedVersion: 1529775219854
+  Google_LastUpdatedVersion: 1533502188200
   Google_Password: c0nt4g0t4s4pp
-  GoogleUpdateFrequency: 0
-  GoogleInEditorCheckFrequency: 2
+  GoogleUpdateFrequency: 2
+  GoogleInEditorCheckFrequency: 0
   GoogleUpdateDelay: 5
   mLanguages:
   - Name: Description
@@ -84,67 +84,7 @@ MonoBehaviour:
   IgnoreDeviceLanguage: 0
   _AllowUnloadingLanguages: 1
   mTerms:
-  - Term: SignUpButtonLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Cadastrar
-    - Register
-    - Registro
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: SignUpTitleLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Criar Conta
-    - Create An Account
-    - Crear Cuenta
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: SignUpNameLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Nome
-    - Name
-    - Nombre
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: SignUpEmailLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - E-mail
-    - Mail
-    - E-mail
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: SignUpLoadingLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - carregando...
-    - Loading...
-    - cargando ...
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: SignUpFieldWarningLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Todos os campos s\xE3o obrigat\xF3rios"
-    - All fields are mandatory
-    - Todos los campos son obligatorios
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: SignUpConfirmLocaleKey
+  - Term: AvatarConfirmLocaleKey
     TermType: 0
     Description: 
     Languages:
@@ -152,116 +92,6 @@ MonoBehaviour:
     - Confirmar
     - Confirm
     - Confirmar
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: SignUpBackLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Voltar
-    - Back
-    - Regreso
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MapsMyScoreTitleLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Minhas Gotas
-    - My Drops
-    - Mis Gotas
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MapsDayLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Dia
-    - Day
-    - "D\xEDa"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: HintsTitleLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Dicas de Consumo
-    - Consumer Tips
-    - Consejos de Consumo
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: SettingsTitleLocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Configura\xE7\xF5es"
-    - Settings
-    - Ajustes
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: TutorialStep1LocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Bem-vindo ao Conta Gotas! Aprenda a economizar \xE1gua se divertindo de mont\xE3o!
-      Vamos l\xE1?"
-    - Welcome to Drops Account! Learn how to save water by having lots of fun! Come
-      on?
-    - "Bienvenido a la cuenta de Gotas! \xA1Aprende a ahorrar agua divirti\xE9ndose
-      de mont\xF3n! \xBFVamos all\xE1?"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: TutorialStep2LocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Jogue minigames e aprenda a economizar \xE1gua! Todos os dias um novo minigame
-      ser\xE1 desbloqueado!"
-    - Play minigames and learn how to save water! Every day a new minigame will be
-      unlocked!
-    - "Juega minijuegos y aprende a ahorrar agua! Todos los d\xEDas un nuevo minigame
-      ser\xE1 desbloqueado!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: TutorialStep3LocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Divirta-se convidando seus amigos para jogar em grupo e disputar o ranking dos
-      melhores!
-    - Have fun inviting your friends to play in a group and compete for the ranking
-      of the best!
-    - "\xA1Divi\xE9rtete invitando a tus amigos a jugar en grupo y disputar el ranking
-      de los mejores!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: TutorialStep4LocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA pode acessar diversas dicas de economia neste bot\xE3o!"
-    - You can access several saving tips on this button!
-    - "Usted puede acceder a varios consejos de ahorro en este bot\xF3n!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: TutorialStep5LocaleKey
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Volte amanh\xE3 para jogar novos minigames! A cada dia um novo desafio!"
-    - Come back tomorrow to play new minigames! Every day a new challenge!
-    - "\xA1Vuelve ma\xF1ana para jugar nuevos minijuegos! \xA1Cada d\xEDa un nuevo
-      desaf\xEDo!"
     Flags: 00000000
     Languages_Touch: []
   - Term: AvatarTitleLocaleKey
@@ -274,124 +104,136 @@ MonoBehaviour:
     - Monte su avatar
     Flags: 00000000
     Languages_Touch: []
-  - Term: AvatarConfirmLocaleKey
+  - Term: GroupAccept
     TermType: 0
     Description: 
     Languages:
     - 
-    - Confirmar
-    - Confirm
-    - Confirmar
+    - Aceitar
+    - Accept
+    - Aceptar
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameCHallengeTitleLocaleKey
+  - Term: GroupAcceptWarning
     TermType: 0
     Description: 
     Languages:
     - 
-    - Desafio real
-    - Real challenge
-    - "Desaf\xEDo real"
+    - "Lembre-se: Voc\xEA s\xF3 pode aceitar um convite!"
+    - 'Reminder: You may only accept one invitation!'
+    - "Recuerde: \xA1Usted solo puede aceptar una invitaci\xF3n!"
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameContinueLocaleKey
+  - Term: GroupCreate
     TermType: 0
     Description: 
     Languages:
     - 
-    - Continuar
-    - Continue
-    - Continuar
+    - Criar grupo
+    - Create group
+    - Crear grupo
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameStartLocaleKey
+  - Term: GroupCreateGroup
     TermType: 0
     Description: 
     Languages:
     - 
-    - Iniciar
-    - Start
-    - Comienzo
+    - Criar grupo
+    - Create group
+    - Crear grupo
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameTryAgainLocaleKey
+  - Term: GroupCreateOne
     TermType: 0
     Description: 
     Languages:
     - 
-    - Tentar novamente
-    - Try again
-    - Intentar nuevamente
+    - Criar
+    - Create
+    - Crear
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameSuccessLocaleKey
+  - Term: GroupDrops
     TermType: 0
     Description: 
     Languages:
     - 
-    - Sucesso!
-    - Success!
-    - "\xC9xito!"
+    - "Gotas Contribu\xEDdas"
+    - Saved Drops
+    - Gotas Contribuidas
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameScoreTitleLocaleKey
+  - Term: GroupEnter
     TermType: 0
     Description: 
     Languages:
     - 
-    - Gotas acumuladas
-    - Accumulated drops
-    - Gotas acumuladas
+    - Crie um grupo ou entre em um
+    - Create or join a group.
+    - Cree un grupo o entre en uno.
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameRoutineLocaleKey
+  - Term: GroupEnterTerm
     TermType: 0
     Description: 
     Languages:
     - 
-    - "J\xE1 estou fazendo isso na minha rotina!"
-    - I'm already doing it in my routine!
-    - "\xA1Ya lo estoy haciendo en mi rutina!"
+    - Entrar
+    - Join
+    - Entrar
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameEndDrops
+  - Term: GroupErrorMessage
     TermType: 0
     Description: 
     Languages:
     - 
-    - Gotas
-    - Drops
-    - Gotas
+    - "Alguma coisa est\xE1 errada. Por favor, verifique sua conex\xE3o com a internet
+      e tente novamente."
+    - Something is wrong. Please check your internet connection and try again.
+    - "Algo sucedi\xF3 mal. Por favor, compruebe su conexi\xF3n a Internet y vuelva
+      a intentarlo."
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameBackToMap
+  - Term: GroupExists1
     TermType: 0
     Description: 
     Languages:
     - 
-    - Voltar para o mapa
-    - Back to map
-    - Volver al mapa
+    - "Infelizmente, j\xE1 existe um grupo chamado "
+    - Unfortunately there is already a group called
+    - Desafortunadamente ya existe un grupo llamado
     Flags: 00000000
     Languages_Touch: []
-  - Term: MinigameMapLocaleKeu
+  - Term: GroupExists2
     TermType: 0
     Description: 
     Languages:
     - 
-    - Mapa
-    - Map
-    - Mapa
+    - Tente outro nome
+    - Please try another name
+    - Intenta otro nombre.
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupScoreTitle
+  - Term: GroupInvite
     TermType: 0
     Description: 
     Languages:
     - 
-    - Gotas
-    - Drops
-    - Gotas
+    - Convidar
+    - Invite
+    - Invitar
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupInvited
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Te convidou para participar do grupo
+    - You were invited to joint the group
+    - Le ha invitado a participar en el grupo
     Flags: 00000000
     Languages_Touch: []
   - Term: GroupInviteFriend
@@ -404,6 +246,36 @@ MonoBehaviour:
     - Invitar amigo
     Flags: 00000000
     Languages_Touch: []
+  - Term: GroupInviteFriends
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Convide seus amigos para fazerem parte de seu grupo
+    - Invite your friends to join your group
+    - Invite a sus amigos a formar parte de su grupo
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupInviteFriendsText
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Quanto mais amigos melhor \xE9 a brincadeira"
+    - The more friends you have, the more funny it becomes
+    - "Mientras m\xE1s amigos mejor es el juego"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupKeepWarning
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Guarde com cuidado!
+    - Keep it in a safe place!
+    - "\xA1Gu\xE1rdela con cuidado!"
+    Flags: 00000000
+    Languages_Touch: []
   - Term: GroupLeaveGroup
     TermType: 0
     Description: 
@@ -414,14 +286,96 @@ MonoBehaviour:
     - Salir del grupo
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupTerm
+  - Term: GroupLoading
     TermType: 0
     Description: 
     Languages:
     - 
-    - Grupo
-    - Group
-    - Grupo
+    - Carregando
+    - Loading
+    - Carga
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupMembers
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Membros
+    - Members
+    - Miembros
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupName
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Nome do grupo
+    - Name of group
+    - Nombre del grupo
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupNameTerm
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Nome do grupo
+    - Name of group
+    - Nombre del grupo
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupNotFound
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Grupo n\xE3o encontrado"
+    - Group not found
+    - Grupo no encontrado
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupOK
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - OK
+    - OK
+    - OK
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupPass
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Senha
+    - Password
+    - "Contrase\xF1a"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupPassword
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Digite sua senha
+    - Insert your password
+    - "Introduzca su contrase\xF1a"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupPasswordWarning
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "* Caso algu\xE9m queira entrar no seu grupo sem ser convidado, essa senha ser\xE1
+      necess\xE1ria!"
+    - '* For joining your group without invitation, this password will be required!'
+    - "* Si alguien quiere entrar en su grupo sin ser invitado, \xA1esta contrase\xF1a
+      ser\xE1 necesaria!"
     Flags: 00000000
     Languages_Touch: []
   - Term: GroupRanking
@@ -429,9 +383,19 @@ MonoBehaviour:
     Description: 
     Languages:
     - 
+    - "Classifica\xE7\xE3o"
     - Ranking
     - Ranking
-    - Ranking
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupRankingClosePlayers
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Jogadores se aproximando do topo.
+    - Players approaching the top.
+    - Los jugadores se acercan a la cima.
     Flags: 00000000
     Languages_Touch: []
   - Term: GroupRankingTitle
@@ -439,8 +403,8 @@ MonoBehaviour:
     Description: 
     Languages:
     - 
-    - Ranking de Jogadores
-    - Player Ranking
+    - "Classifica\xE7\xE3o de jogadores"
+    - Player ranking
     - Ranking de jugadores
     Flags: 00000000
     Languages_Touch: []
@@ -454,96 +418,44 @@ MonoBehaviour:
     - "\xA1Los 3 jugadores de la cima!"
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupRankingClosePlayers
+  - Term: GroupReceivedInvites
     TermType: 0
     Description: 
     Languages:
     - 
-    - Jogadores se aproximando do topo.
-    - Players approaching the top.
-    - Los jugadores se acercan a la cima.
+    - Convites recebidos
+    - Invitations received
+    - Invitaciones recibidas
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupMembers
+  - Term: GroupRefuse
     TermType: 0
     Description: 
     Languages:
     - 
-    - Membros
-    - Members
-    - Miembros
+    - Recusar
+    - Decline
+    - Rehusar
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupDrops
+  - Term: GroupResearch
     TermType: 0
     Description: 
     Languages:
     - 
-    - "Gotas Contribu\xEDdas"
-    - Contributed Drops
-    - Gotas Contribuidas
+    - Pesquisar
+    - Search
+    - Investigar
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupWarningMessage
+  - Term: GroupScoreTitle
     TermType: 0
     Description: 
     Languages:
     - 
-    - "*Gotas contribu\xEDdas durante sua perman\xEAncia no grupo"
-    - '* Drops contributed during his stay in the group'
-    - '* Gotas contribuidas durante su permanencia en el grupo'
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupLoading
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Carregando
-    - Loading
-    - Carga
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupErrorMessage
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Alguma coisa aconteceu de errado. Por favor verifique sua conex\xE3o com a
-      internet e tente novamente."
-    - Something has gone wrong. Please check your internet connection and try again.
-    - "Algo sucedi\xF3 mal. Por favor, compruebe su conexi\xF3n a Internet y vuelva
-      a intentarlo."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupTryAgain
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Tentar novamente
-    - Try again
-    - Intentar nuevamente
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupEnter
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Crie um grupo ou entre em um.
-    - Create a group or join a group.
-    - Cree un grupo o entre en uno.
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupCreate
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Criar grupo
-    - Create group
-    - Crear grupo
+    - Gotas
+    - Drops
+    - Gotas
     Flags: 00000000
     Languages_Touch: []
   - Term: GroupSearch
@@ -556,79 +468,6 @@ MonoBehaviour:
     - Buscar
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupCreateGroup
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Criar grupo
-    - Create group
-    - Crear grupo
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupName
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Nome do grupo
-    - Group's name
-    - Nombre del grupo
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupPassword
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Digite sua senha
-    - Type your password
-    - "Introduzca su contrase\xF1a"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupPasswordWarning
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "* Caso algu\xE9m queira entrar no seu grupo sem ser convidado, essa senha ser\xE1
-      necess\xE1ria!"
-    - '* If someone wants to join your group without being invited, this password
-      will be required!'
-    - "* Si alguien quiere entrar en su grupo sin ser invitado, esa contrase\xF1a
-      ser\xE1 necesaria!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupKeepWarning
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Guarde com cuidado!
-    - Keep carefully!
-    - "\xA1Guarde con cuidado!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupCreateOne
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Criar
-    - Create
-    - Crear
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupResearch
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Pesquisar
-    - Search
-    - "Investigaci\xF3n"
-    Flags: 00000000
-    Languages_Touch: []
   - Term: GroupSearchTerm
     TermType: 0
     Description: 
@@ -639,94 +478,24 @@ MonoBehaviour:
     - Buscar
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupEnterTerm
+  - Term: GroupTerm
     TermType: 0
     Description: 
     Languages:
     - 
-    - Entrar
-    - Log In
-    - Entrar
+    - Grupo
+    - Group
+    - Grupo
     Flags: 00000000
     Languages_Touch: []
-  - Term: GroupReceivedInvites
+  - Term: GroupTryAgain
     TermType: 0
     Description: 
     Languages:
     - 
-    - Convites recebidos
-    - Invitations received
-    - Invitaciones recibidas
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupAcceptWarning
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Lembre-se: Voc\xEA s\xF3 pode aceitar um convite!"
-    - 'Remember: You can only accept one invitation!'
-    - "Recuerde: Usted s\xF3lo puede aceptar una invitaci\xF3n!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupInvited
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Te convidou para participar do grupo
-    - Invited you to join the group
-    - Te invito a participar en el grupo
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupRefuse
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Recusar
-    - Refuse
-    - Rechazar
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupAccept
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Aceitar
-    - Accept
-    - Aceptar
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupInviteFriends
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Convide seus amigos para fazerem parte de seu grupo
-    - Invite your friends to join your group
-    - Invita a tus amigos a formar parte de tu grupo
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupInviteFriendsText
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Quanto mais amigos melhor \xE9 a brincadeira"
-    - The more friends, the better the joke.
-    - "Cuanto m\xE1s amigos mejor es la broma"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupInvite
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Convidar
-    - Invite
-    - Invitar
+    - Tentar novamente
+    - Try again
+    - Intentar nuevamente
     Flags: 00000000
     Languages_Touch: []
   - Term: GroupTypePassword
@@ -734,99 +503,9 @@ MonoBehaviour:
     Description: 
     Languages:
     - 
-    - Por favor digite a senha para entrar no grupo
-    - Please enter the password to join the group
-    - "Por favor, introduzca la contrase\xF1a para entrar en el grupo"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupNameTerm
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Nome do grupo
-    - Group's name
-    - Nombre del grupo
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupPass
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Senha
-    - Password
-    - "Contrase\xF1a"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupWrongPass
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Senha errada
-    - Wrong Password
-    - "Contrase\xF1a incorrecta"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupOK
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - OK
-    - OK
-    - Bien
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupNotFound
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Grupo n\xE3o encontrado"
-    - Group not found
-    - Grupo no encontrado
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupExists1
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Infelizmente j\xE1 existe um grupo chamado "
-    - Unfortunately there is already a group called
-    - Desafortunadamente ya existe un grupo llamado
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: GroupExists2
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Tente outro nome.
-    - Please try another name.
-    - Intenta otro nombre.
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Yes
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Sim
-    - Yes
-    - "S\xED"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: No
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "N\xE3o"
-    - No
-    - No
+    - Por favor, digite a senha para entrar no grupo
+    - Please insert the password to join the group
+    - "Por favor introduzca la contrase\xF1a para entrar en el grupo"
     Flags: 00000000
     Languages_Touch: []
   - Term: GroupWarningLeave
@@ -844,14 +523,186 @@ MonoBehaviour:
       de grupo se perder\xE1."
     Flags: 00000000
     Languages_Touch: []
+  - Term: GroupWarningMessage
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "*Gotas contribu\xEDdas durante sua perman\xEAncia no grupo"
+    - '*Drops saved during his stay in the group'
+    - '* Gotas contribuidas durante su permanencia en el grupo'
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: GroupWrongPass
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Senha incorreta
+    - Wrong password
+    - "Contrase\xF1a incorrecta"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: HintsTitleLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Dicas de Consumo
+    - Consumer Tips
+    - Consejos de Consumo
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MapsDayLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Dia
+    - Day
+    - "D\xEDa"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MapsMyScoreTitleLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Minhas Gotas
+    - My Drops
+    - Mis Gotas
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame10Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Regue as rosas!
+    - Shower the roses!
+    - "\xA1Riegue las rosas!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame11Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Esfregue para limpar a poeira!
+    - Scrub to wipe away dust!
+    - "\xA1Frote para limpiar el polvo!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame12Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Colete \xE1gua da chuva!"
+    - Collect rainwater!
+    - "\xA1Recoja el agua de la lluvia!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame13Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Selecione apenas os copos de vidro!
+    - Select only glass cups!
+    - "\xA1Seleccione s\xF3lo los vasos de vidrio!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame14Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Tampe a caixa de \xE1gua deslizando o dedo sobre a tela!"
+    - Cover the water box by sliding your finger on the screen!
+    - "\xA1Tapa el reservatorio de agua deslizando el dedo sobre la pantalla!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame15Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Toque nos furos para consertar o cano!
+    - Tap the holes to fix the pipe!
+    - "\xA1Toque los agujeros para reparar el tubo!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame16Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Toque nos chuveiros que est\xE3o pingando para fech\xE1-los!"
+    - Touch the dripping showers to close them!
+    - "\xA1Toque las duchas que est\xE1n goteando para cerrarlas!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame17Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Arraste os canos para os lugares corretos e rotacione-os para liberar o fluxo
+      de \xE1gua!"
+    - Drag the pipes to the right places and rotate them to release the water flow!
+    - "\xA1Arrastre los tubos a los lugares correctos y los rota para liberar el flujo
+      de agua!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame18Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Limpe os pets que est\xE3o sujos!"
+    - Clean dirty pets!
+    - "\xA1Limpie las mascotas que est\xE1n sucias!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame19Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Instale o redutor tocando rapidamente!
+    - Install reduction by tapping quickly!
+    - "\xA1Instale el reductor tocando r\xE1pidamente!"
+    Flags: 00000000
+    Languages_Touch: []
   - Term: Minigame1Intro
     TermType: 0
     Description: 
     Languages:
     - 
-    - "Feche a torneira \re s\xF3 depois fa\xE7a a barba tocando nos p\xEAlos!"
-    - "Turn off the tap\rand then shave your hair!"
+    - "Feche a torneira \ne s\xF3 depois fa\xE7a a barba tocando nos pelos!"
+    - Turn off the tap while shaving!
     - "Cierre el grifo\ry s\xF3lo despu\xE9s haz la barba tocando en los vellos!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame20Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Bata na m\xE3o do amiguinho que quer desperdi\xE7ar \xE1gua da privada!"
+    - Hit the hand of the buddy who wants to waste water from the toilet!
+    - "\xA1Bata en la mano del amiguito que quiere desperdiciar agua del  inodoro!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Minigame21Intro
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "D\xEA um trato nos cabelos que est\xE3o desarrumados!"
+    - Fix messy hair!
+    - "\xA1D\xE9 un trato en el cabello que est\xE1 desordenado!"
     Flags: 00000000
     Languages_Touch: []
   - Term: Minigame2Intro
@@ -859,7 +710,7 @@ MonoBehaviour:
     Description: 
     Languages:
     - 
-    - "Feche a torneira \re s\xF3 depois escove os dentes!"
+    - "Feche a torneira\ne s\xF3 depois escove os dentes!"
     - "Turn off the tap\rand only then brush your teeth!"
     - "Cierre el grifo\ry s\xF3lo despu\xE9s cepille los dientes!"
     Flags: 00000000
@@ -903,7 +754,7 @@ MonoBehaviour:
     - 
     - Coloque somente as frutas para lavar na bacia!
     - Put only the fruits to wash in the bowl!
-    - "\xA1Coloque solamente las frutas para lavar en el taz\xF3n de fuente!"
+    - "\xA1Coloque solamente las frutas para lavar en el lavabo!"
     Flags: 00000000
     Languages_Touch: []
   - Term: Minigame7Intro
@@ -923,7 +774,7 @@ MonoBehaviour:
     - 
     - "Fa\xE7a movimentos circulares para fechar a v\xE1lvula e cortar o fluxo de
       \xE1gua!"
-    - Make circular motions to close the valve and cut off the water flow!
+    - Make circular moves to close the valve and cut off the water flow!
     - "\xA1Haga movimientos circulares para cerrar la v\xE1lvula y cortar el flujo
       de agua!"
     Flags: 00000000
@@ -938,126 +789,44 @@ MonoBehaviour:
     - "\xA1Toque los agujeros del cubo para taparlos!"
     Flags: 00000000
     Languages_Touch: []
-  - Term: Minigame10Intro
+  - Term: MinigameBackToMap
     TermType: 0
     Description: 
     Languages:
     - 
-    - Regue as rosas!
-    - Shower the roses!
-    - "\xA1Regale las rosas!"
+    - Voltar para o mapa
+    - Back to map
+    - Volver al mapa
     Flags: 00000000
     Languages_Touch: []
-  - Term: Minigame11Intro
+  - Term: MinigameCHallengeTitleLocaleKey
     TermType: 0
     Description: 
     Languages:
     - 
-    - Esfregue para limpar a poeira!
-    - Scrub to wipe away dust!
-    - "\xA1Frote para limpiar el polvo!"
+    - Desafio real
+    - Real challenge
+    - "Desaf\xEDo real"
     Flags: 00000000
     Languages_Touch: []
-  - Term: Minigame12Intro
+  - Term: MinigameContinueLocaleKey
     TermType: 0
     Description: 
     Languages:
     - 
-    - "Colete \xE1gua da chuva!"
-    - Collect rainwater!
-    - "\xA1Recoja el agua de la lluvia!"
+    - Continuar
+    - Continue
+    - Continuar
     Flags: 00000000
     Languages_Touch: []
-  - Term: Minigame13Intro
+  - Term: MinigameEndDrops
     TermType: 0
     Description: 
     Languages:
     - 
-    - Selecione apenas os copos de vidro!
-    - Select only glass cups!
-    - "\xA1Seleccione s\xF3lo los vasos de cristal!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Minigame14Intro
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Tampe a caixa de \xE1gua deslizando o dedo sobre a tela!"
-    - Cover the water box by sliding your finger on the screen!
-    - "\xA1Tapa la caja de agua deslizando el dedo sobre la pantalla!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Minigame15Intro
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Toque nos furos para consertar o cano!
-    - Tap the holes to fix the barrel!
-    - "\xA1Toque los agujeros para reparar el tubo!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Minigame16Intro
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Toque nos chuveiros que est\xE3o pingando para fech\xE1-los!"
-    - Touch the dripping showers to close them!
-    - "\xA1Toque las duchas que est\xE1n goteando para cerrarlas!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Minigame17Intro
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Arraste os canos para os lugares corretos e rotacione-os para liberar o fluxo
-      de \xE1gua!"
-    - Drag the pipes to the right places and rotate them to release the flow of water!
-    - "\xA1Arrastre las ca\xF1er\xEDas a los lugares correctos y los rota para liberar
-      el flujo de agua!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Minigame18Intro
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Limpe os pets que est\xE3o sujos!"
-    - Clean pets that are dirty!
-    - "\xA1Limpia las mascotas que est\xE1n sucias!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Minigame19Intro
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Instale o redutor tocando rapidamente!
-    - Install the gear unit by tapping quickly!
-    - "\xA1Instale el reductor tocando r\xE1pidamente!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Minigame20Intro
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Bata na m\xE3o do amiguinho que quer desperdi\xE7ar \xE1gua da privada!"
-    - Hit the hand of the little friend who wants to waste water from the toilet!
-    - "\xA1Bata en la mano del amiguito que quiere desperdiciar agua de la privada!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: Minigame21Intro
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "D\xEA um trato nos cabelos que est\xE3o desarrumados!"
-    - Give a hair treatment that is messy!
-    - "\xA1D\xE9 un trato en los cabellos que est\xE1n desordenados!"
+    - Gotas
+    - Drops
+    - Gotas
     Flags: 00000000
     Languages_Touch: []
   - Term: MinigameHint1
@@ -1067,10 +836,139 @@ MonoBehaviour:
     - 
     - "O desafio em casa \xE9 n\xE3o se barbear no chuveiro e poupar cerca de 10 litros.
       Tire as barbas de molho e entre em a\xE7\xE3o."
-    - The challenge at home is not to shave in the shower and save about 10 liters.
-      Take out the beards of sauce and take action.
+    - The challenge at home is not shaving in the shower and saving about 10 liters.
+      Take action.
     - "El desaf\xEDo en casa es no afeitarse en la ducha y ahorrar unos 10 litros.
-      Tira las barbas de salsa y entra en acci\xF3n."
+      Salga de la comodidad y entre en acci\xF3n."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint10
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Use sempre o regador no lugar da mangueira e colha os frutos dessa economia.
+      Leve esse desafio para casa.
+    - Always use the watering can instead of the hose and earn the fruits of this
+      economy. Take this challenge home.
+    - "Utilice siempre el regador en lugar de la manguera y recoja los frutos de ese
+      ahorro. Lleva ese desaf\xEDo a casa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint11
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Agora ven\xE7a o desperd\xEDcio em casa. Troque lavagens por pano \xFAmido
+      + \xE1lcool. Economize cerca de 25 litros por faxina."
+    - Overcome now the waste at home. Stop washing and use damp cloth + alcohol instead.
+      Save about 25 liters per cleanse.
+    - "Ahora venza el desperdicio en casa. Cambie los lavados por pa\xF1o h\xFAmedo
+      + alcohol. Ahorre cerca de 25 litros por limpieza."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint12
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Use baldes, calhas, sistema de capta\xE7\xE3o e aproveite em casa a economia
+      que cai do c\xE9u."
+    - Use buckets, gutters, water reuse system and enjoy at home the economy that
+      falls from the sky.
+    - "Utilice baldes, canales, sistema de captaci\xF3n y aproveche en casa el ahorro
+      que cae del cielo."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint13
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Troque o copo descart\xE1vel pelo reutiliz\xE1vel, economize \xE1gua e dindim.
+      Leve o desafio para sua rotina."
+    - Replace disposable cup with reusable ones, save water and cash. Take this challenge
+      to your routine.
+    - "Cambie el vaso desechable por uno reutilizable, ahorre agua y dinero. Lleve
+      el desaf\xEDo para su rutina."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint14
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "A miss\xE3o agora \xE9 na sua casa. Mantenha a caixa tampada e fique de olho
+      nos vazamentos com manuten\xE7\xE3o."
+    - The mission is now in your house. Keep the water tank capped and keep an eye
+      on maintenance leaks.
+    - "La misi\xF3n ahora es en su casa. Mantenga el reservatorio tapado y verifique
+      fugas con mantenimiento."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint15
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Um buraquinho no cano da sua casa desperdi\xE7a quase 100 mil litros por m\xEAs.
+      Investigue."
+    - A little hole in your house's pipes wastes almost 100,000 liters per month.
+      Check out.
+    - Un agujero en el tubo de su casa desperdicia casi 100 mil litros al mes. Investigue.
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint16
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Ele desperdi\xE7a at\xE9 750 litros por dia. Deixe os olhos abertos, mas as
+      torneiras e chuveiros bem fechados em casa."
+    - It wastes up to 750 liters per day. Keep your eyes wide open, but the taps and
+      showers as tightly closed as possible at home.
+    - "\xC9l pierde hasta 750 litros al d\xEDa. Mantenga los ojos abiertos, pero los
+      grifos y duchas bien cerrados en casa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint17
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "\xC9 hora de levar esse truque para a sua rotina. Re\xFAse a \xE1gua do enx\xE1gue
+      da m\xE1quina e aproveite at\xE9 100 litros de \xE1gua."
+    - It's time to do this trick to your routine. Reuse the rinse water from the washing
+      machine and save up to 100 liters of water.
+    - "Es hora de llevar este truco a su rutina. Reutilice el agua del enjuague de
+      la m\xE1quina y aproveche hasta 100 litros de agua."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint18
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Leve o jogo para casa ou pet shop: siga a frequ\xEAncia de banhos indicada
+      para seu bichinho. Exagerar \xE9 uma fria!"
+    - 'Take this game home or the pet shop: follow the recommended bathing schedule
+      for your pet. Overdoing is a chill!'
+    - "Lleve el juego a casa o la tienda de mascotas: siga la frecuencia de ba\xF1o
+      indicada para su mascota. \xA1Exagerar no est\xE1 bueno!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint19
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA deu um banho no encanador. Instale o redutor de vaz\xE3o na sua casa
+      e poupe at\xE9 6 litros de \xE1gua por minuto."
+    - You've outsmarted the plumber. Install flow reducers in your home and save up
+      to 6 liters of water per minute.
+    - "Usted dio un ba\xF1o en el fontanero. Instale el reductor de flujo en su casa
+      y ahorre hasta 6 litros de agua por minuto."
     Flags: 00000000
     Languages_Touch: []
   - Term: MinigameHint2
@@ -1080,10 +978,35 @@ MonoBehaviour:
     - 
     - "Agora os dentistas e todos recomendam o desafio na sua escova\xE7\xE3o. Feche
       a torneira, use um copo e poupe at\xE9 11 litros."
-    - Now dentists and all recommend the challenge in their brushing. Turn off the
-      tap, use a glass and save up to 11 liters.
+    - All dentists are now recommending the brushing challenge. Turn off the tap,
+      use a glass and save up o 11 liters.
     - "Ahora los dentistas y todos recomiendan el desaf\xEDo en su cepillado. Cierre
       el grifo, utilice un vaso y ahorre hasta 11 litros."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint20
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Troque a descarga de parede pela acoplada na sua casa. Economize at\xE9 50%
+      e d\xEA adeus ao desperd\xEDcio."
+    - Replace flushometers and use tank toilets instead in your home. Save up to 50%
+      and stop wasting.
+    - "Cambie la descarga de pared por la acoplada a su casa. Ahorre hasta un 50%
+      y d\xE9 adi\xF3s al desperdicio."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHint21
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Fa\xE7a bonito no desafio da vida real. Evite lavar o cabelo mais do que o
+      necess\xE1rio."
+    - Do well in your real-life challenge. Avoid washing your hair more than necessary.
+    - "H\xE1galo bien en el desaf\xEDo de la vida real. Evite lavar el pelo m\xE1s
+      de lo necesario."
     Flags: 00000000
     Languages_Touch: []
   - Term: MinigameHint3
@@ -1093,7 +1016,7 @@ MonoBehaviour:
     - 
     - "Um minuto a menos no chuveiro pode economizar at\xE9 23 litros. Acabe com o
       banho demorado tamb\xE9m na sua casa."
-    - One minute less in the shower can save up to 23 liters. End your bath too late
+    - One minute less in the shower can save up to 23 liters. Put a stop to long showers
       in your home.
     - "Un minuto menos en la ducha puede ahorrar hasta 23 litros. Acabe con el ba\xF1o
       demorado tambi\xE9n en su casa."
@@ -1106,8 +1029,8 @@ MonoBehaviour:
     - 
     - "Agora enfrente a pilha de lou\xE7a de casa evitando o desperd\xEDcio. Enx\xE1gue
       tudo na pia cheia e poupe at\xE9 15 litros por minuto."
-    - Now face the stack of household crockery avoiding waste. Rinse everything in
-      the sink and save up to 15 liters per minute.
+    - Do the pile of dishes at home but avoid waste. Fill the sink and rinse everything
+      to save up to 15 liters per minute.
     - Ahora enfrente la pila de vajilla de casa evitando el desperdicio. Enjuague
       todo en el fregadero lleno y ahorre hasta 15 litros por minuto.
     Flags: 00000000
@@ -1119,8 +1042,8 @@ MonoBehaviour:
     - 
     - "Uma m\xE1quina usa cerca de 135 litros por lavagem. Use sempre com a capacidade
       m\xE1xima de roupas. Desafie-se em casa."
-    - One machine uses about 135 liters per wash. Always wear with maximum clothing
-      capacity. Challenge yourself at home.
+    - One washing machine uses about 135 liters per cycle. Put always the maximum
+      amount of clothes. Challenge yourself at home.
     - "Una m\xE1quina utiliza unos 135 litros por lavado. Utilice siempre con la m\xE1xima
       capacidad de ropa. Desaf\xEDese en casa."
     Flags: 00000000
@@ -1134,7 +1057,7 @@ MonoBehaviour:
       poupe cerca de 70 litros de \xE1gua na sua casa."
     - Soak foods with chlorine or bleach for general use and save about 70 liters
       of water in your home.
-    - Coloque en remojo alimentos con cloro o agua sanitaria de uso general y ahorre
+    - Coloque en remojo alimentos con cloro o blanqueador de uso general y ahorre
       cerca de 70 litros de agua en su casa.
     Flags: 00000000
     Languages_Touch: []
@@ -1145,8 +1068,8 @@ MonoBehaviour:
     - 
     - "1 litro de \xF3leo pode contaminar at\xE9 1 milh\xE3o de litros de \xE1gua.
       Na sua casa, armazene em garrafas PET e descarte corretamente."
-    - 1 liter of oil can contaminate up to 1 million liters of water. In your home,
-      store in PET bottles and discard properly.
+    - 1 liter of oil can contaminate up to 1 million liters of water. Store PET bottles
+      at home and discard properly.
     - "1 litro de aceite puede contaminar hasta 1 mill\xF3n de litros de agua. En
       su casa, almacene en botellas PET y deseche correctamente."
     Flags: 00000000
@@ -1158,10 +1081,10 @@ MonoBehaviour:
     - 
     - "Uma lavagem de cal\xE7ada gasta at\xE9 280 litros. O desafio est\xE1 lan\xE7ado:
       troque a \xE1gua pela vassoura em casa."
-    - 'A sidewalk wash spends up to 280 liters. The challenge is set: change the water
-      by the broom at home.'
-    - "Un lavado de caldera gasta hasta 280 litros. El desaf\xEDo est\xE1 lanzado:
-      cambie el agua por la escoba en casa."
+    - 'A sidewalk wash takes up to 280 liters. The challenge is out: use the broom
+      instead of water at home.'
+    - "Un lavado de acera gasta hasta 280 litros. El desaf\xEDo est\xE1 lanzado: cambie
+      el agua por la escoba en casa."
     Flags: 00000000
     Languages_Touch: []
   - Term: MinigameHint9
@@ -1171,166 +1094,10 @@ MonoBehaviour:
     - 
     - "Aposente a mangueira para lavar seu carro e d\xEA um balde de \xE1gua fria
       no desperd\xEDcio de quase 500 litros."
-    - Retire the hose to wash your car and give a bucket of cold water to the waste
-      of almost 500 liters.
-    - "Retire la manguera para lavar su coche y d\xE9 un cubo de agua fr\xEDa en el
+    - Forget the hose to wash your car and hit the waste with a bucket of cold water
+      to save almost 500 liters.
+    - "Jubile la manguera para lavar su coche y eche un cubo de agua fr\xEDa en el
       desperdicio de casi 500 litros."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint10
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - Use sempre o regador no lugar da mangueira e colha os frutos dessa economia.
-      Leve esse desafio para casa.
-    - Always use the watering can in place of the hose and reap the rewards of this
-      economy. Take this challenge home.
-    - "Utilice siempre el regador en lugar de la manguera y recoja los frutos de esta
-      econom\xEDa. Lleva ese desaf\xEDo a casa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint11
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Agora ven\xE7a o desperd\xEDcio em casa. Troque lavagens por pano \xFAmido
-      + \xE1lcool. Economize cerca de 25 litros por faxina."
-    - Now waste the waste at home. Change washes by damp cloth + alcohol. Save about
-      25 liters per cleanse.
-    - "Ahora venza el desperdicio en casa. Cambie los lavados por pa\xF1o h\xFAmedo
-      y alcohol. Ahorre cerca de 25 litros por fax."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint12
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Use baldes, calhas, sistema de capta\xE7\xE3o e aproveite em casa a economia
-      que cai do c\xE9u."
-    - Use buckets, gutters, capturing system and enjoy at home the economy that falls
-      from the sky.
-    - "Utilice baldes, canales, sistema de captaci\xF3n y aproveche en casa la econom\xEDa
-      que cae del cielo."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint13
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Troque o copo descart\xE1vel pelo reutiliz\xE1vel, economize \xE1gua e dindim.
-      Leve o desafio para sua rotina."
-    - Replace disposable cup with reusable, save water and dindim. Take the challenge
-      to your routine.
-    - "Cambia el vaso desechable por el reutilizable, ahorra agua y d\xEDn. Lleve
-      el desaf\xEDo para su rutina."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint14
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "A miss\xE3o agora \xE9 na sua casa. Mantenha a caixa tampada e fique de olho
-      nos vazamentos com manuten\xE7\xE3o."
-    - The mission is now in your house. Keep the carton capped and keep an eye out
-      for maintenance leaks.
-    - "La misi\xF3n ahora es en su casa. Mantenga la caja tapada y observe las fugas
-      con mantenimiento."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint15
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Um buraquinho no cano da sua casa desperdi\xE7a quase 100 mil litros por m\xEAs.
-      Investigue."
-    - A little hole in the barrel of your house wastes almost 100,000 liters per month.
-      Investigate.
-    - "Un agujero en el ca\xF1\xF3n de su casa desperdicia casi 100 mil litros al
-      mes. Investigar."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint16
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Ele desperdi\xE7a at\xE9 750 litros por dia. Deixe os olhos abertos, mas as
-      torneiras e chuveiros bem fechados em casa."
-    - It wastes up to 750 liters per day. Leave your eyes open, but the taps and showers
-      are tightly closed at home.
-    - "Se pierde hasta 750 litros al d\xEDa. Deje los ojos abiertos, pero los grifos
-      y duchas bien cerrados en casa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint17
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "\xC9 hora de levar esse truque para a sua rotina. Re\xFAse a \xE1gua do enx\xE1gue
-      da m\xE1quina e aproveite at\xE9 100 litros de \xE1gua."
-    - It's time to take this trick to your routine. Rinse the rinse water from the
-      machine and seize up to 100 liters of water.
-    - "Es hora de llevar este truco a su rutina. Regule el agua del enjuague de la
-      m\xE1quina y aproveche hasta 100 litros de agua."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint18
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Leve o jogo para casa ou pet shop: siga a frequ\xEAncia de banhos indicada
-      para seu bichinho. Exagerar \xE9 uma fria!"
-    - 'Take the game home or pet shop: Follow the bathing frequency indicated for
-      your pet. Overdoing is a chill!'
-    - "Lleva el juego a casa o pet shop: sigue la frecuencia de ba\xF1os indicada
-      para tu mascota. \xA1Exagerar es una fr\xEDa!"
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint19
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA deu um banho no encanador. Instale o redutor de vaz\xE3o na sua casa
-      e poupe at\xE9 6 litros de \xE1gua por minuto."
-    - You took a bath in the plumber. Install the flow reducer in your home and save
-      up to 6 liters of water per minute.
-    - "Usted dio un ba\xF1o en el fontanero. Instale el reductor de flujo en su casa
-      y ahorre hasta 6 litros de agua por minuto."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint20
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Troque a descarga de parede pela acoplada na sua casa. Economize at\xE9 50%
-      e d\xEA adeus ao desperd\xEDcio."
-    - Replace the wall outlet with the trailer in your home. Save up to 50% and bid
-      farewell to waste.
-    - "Cambie la descarga de pared por la acoplada a su casa. Ahorre hasta un 50%
-      y d\xE9 adi\xF3s al desperdicio."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHint21
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Fa\xE7a bonito no desafio da vida real. Evite lavar o cabelo mais do que o
-      necess\xE1rio."
-    - Make it beautiful in the real life challenge. Avoid washing your hair more than
-      necessary.
-    - "Haga bonito en el desaf\xEDo de la vida real. Evite lavar el pelo m\xE1s de
-      lo necesario."
     Flags: 00000000
     Languages_Touch: []
   - Term: MinigameHintLose1
@@ -1339,11 +1106,139 @@ MonoBehaviour:
     Languages:
     - 
     - "Voc\xEA vai perceber que evitar fazer a barba durante o banho tamb\xE9m pode
-      trazer muita economia para o seu dia a dia."
-    - You will realize that avoiding shaving during bathing can also bring a lot of
-      savings to your day to day.
+      trazer muita economia."
+    - You will realize that avoiding shaving while bathing can also bring you a lot
+      of savings.
     - "Usted se dar\xE1 cuenta de que evitar la barba durante el ba\xF1o tambi\xE9n
       puede traer mucha econom\xEDa a su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose10
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que utilizar regador em vez de mangueira tamb\xE9m pode
+      trazer muita economia."
+    - You will realize that using watering can instead of hose can also bring you
+      lots of savings.
+    - "Usted se dar\xE1 cuenta de que el uso de regador en lugar de manguera tambi\xE9n
+      puede traer mucha econom\xEDa a su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose11
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que utilizar pano \xFAmido com \xE1lcool na limpeza da
+      casa pode trazer muita economia."
+    - You will realize that using damp cloth with alcohol in house cleaning can bring
+      you lots of savings.
+    - "Usted se dar\xE1 cuenta de que el uso de pa\xF1o h\xFAmedo con alcohol en la
+      limpieza de la casa puede traer mucha econom\xEDa a su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose12
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que utilizar baldes, calhas e sistemas de capta\xE7\xE3o
+      de \xE1gua pode trazer muita economia."
+    - You will realize that using buckets, gutters and water reuse systems can bring
+      you a lot of savings.
+    - "Usted se dar\xE1 cuenta de que el uso de baldes, canales y sistemas de captaci\xF3n
+      de agua puede traer mucha econom\xEDa a su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose13
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que trocar copos descart\xE1veis por reutiliz\xE1veis
+      tamb\xE9m pode trazer muita economia."
+    - You will realize that replacing disposable cups with reusable ones can also
+      bring you a lot of savings.
+    - "Usted se dar\xE1 cuenta de que el cambio de vasos desechables por reutilizables
+      tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose14
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que manter a caixa d\u2019\xE1gua tampada e verificar
+      se existem vazamentos tamb\xE9m pode trazer muita economia."
+    - You will realize that covering the water box and checking for leaks can also
+      bring you a lot of savings.
+    - "Usted percibir\xE1 que mantener la caja de agua tapada y comprobar si hay fugas
+      tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose15
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que consertar vazamentos na sua casa logo no in\xEDcio
+      tamb\xE9m pode trazer muita economia."
+    - You will realize that fixing leaks in your home early on can also bring you
+      a lot of savings.
+    - "Usted percibir\xE1 que corregir posibles fugas en su casa al principio tambi\xE9n
+      puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose16
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que conferir se as torneiras e os chuveiros est\xE3o bem
+      fechados tamb\xE9m pode trazer muita economia."
+    - You will realize that checking if the taps and showers are tightly closed can
+      also bring you a lot of savings.
+    - "Usted se dar\xE1 cuenta de que comprobar si los grifos y las duchas est\xE1n
+      bien cerrados tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose17
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que lavar roupas utilizando a capacidade m\xE1xima da
+      sua m\xE1quina de lavar tamb\xE9m pode trazer muita economia."
+    - You will realize that washing clothes using the maximum capacity of your washing
+      machine can also bring you a lot of saving.
+    - "Usted percibir\xE1 que lavar la ropa utilizando la capacidad m\xE1xima de su
+      m\xE1quina tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose18
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que seguir a frequ\xEAncia de banhos indicada para seu
+      pet pode trazer muita economia."
+    - You will realize that following the recommended bathing schedule for your pet
+      can bring you a lot of savings.
+    - "Usted percibir\xE1 que seguir la frecuencia de ba\xF1o indicado para su mascota
+      puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose19
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que um redutor de vaz\xE3o pode trazer mais economia."
+    - You will realize that a flow reducer can bring you more savings.
+    - "Usted percibir\xE1 que un reductor de caudal puede traer m\xE1s econom\xEDa
+      para su d\xEDa a d\xEDa."
     Flags: 00000000
     Languages_Touch: []
   - Term: MinigameHintLose2
@@ -1352,12 +1247,38 @@ MonoBehaviour:
     Languages:
     - 
     - "Voc\xEA vai perceber que usar um copo com \xE1gua para enxaguar a boca ap\xF3s
-      escovar os dentes pode trazer muita economia para o seu dia a dia."
+      escovar os dentes pode trazer muita economia."
     - You will realize that using a glass of water to rinse your mouth after brushing
-      your teeth can bring a lot of savings to your day to day.
+      your teeth can bring you a lot of savings.
     - "Usted se dar\xE1 cuenta de que usar un vaso con agua para enjuagar la boca
       despu\xE9s de cepillarse los dientes puede traer mucha econom\xEDa para su d\xEDa
       a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose20
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que trocar a descarga de parede pela acoplada pode trazer
+      muita economia."
+    - You will realize that replacing flushometers with tank toilets can bring you
+      a lot of savings.
+    - "Usted percibir\xE1 que cambiar la descarga de pared por la acoplada puede traer
+      mucha econom\xEDa para su d\xEDa a d\xEDa."
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameHintLose21
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA vai perceber que lavar os cabelos apenas quando for necess\xE1rio tamb\xE9m
+      pode trazer muita economia."
+    - You will realize that washing your hair only when necessary can also bring you
+      a lot of savings.
+    - "Usted percibir\xE1 que lavar los cabellos s\xF3lo cuando sea necesario tambi\xE9n
+      puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
     Flags: 00000000
     Languages_Touch: []
   - Term: MinigameHintLose3
@@ -1366,9 +1287,9 @@ MonoBehaviour:
     Languages:
     - 
     - "Voc\xEA vai perceber que um minuto a menos no banho tamb\xE9m pode trazer muita
-      economia para o seu dia a dia."
-    - You will realize that one minute less in the shower can also bring lots of savings
-      to your day to day.
+      economia."
+    - You will realize that one minute less in the shower can also bring you lots
+      of savings.
     - "Usted percibir\xE1 que un minuto menos en el ba\xF1o tambi\xE9n puede traer
       mucha econom\xEDa para su d\xEDa a d\xEDa."
     Flags: 00000000
@@ -1379,9 +1300,9 @@ MonoBehaviour:
     Languages:
     - 
     - "Voc\xEA vai perceber que enxaguar toda a lou\xE7a na pia cheia pode trazer
-      muita economia para o seu dia a dia."
-    - You will realize that rinsing all the dishes in the full sink can bring a lot
-      of savings to your day to day.
+      muita economia."
+    - You will realize that rinsing all the dishes at once can bring you a lot of
+      savings.
     - "Usted percibir\xE1 que enjuagar toda la vajilla en el fregadero lleno puede
       traer mucha econom\xEDa para su d\xEDa a d\xEDa."
     Flags: 00000000
@@ -1392,9 +1313,9 @@ MonoBehaviour:
     Languages:
     - 
     - "Voc\xEA vai perceber que lavar roupas utilizando a capacidade m\xE1xima da
-      sua m\xE1quina tamb\xE9m pode trazer muita economia para o seu dia a dia."
-    - You will realize that washing clothes using the maximum capacity of your machine
-      can also bring a lot of savings to your day to day.
+      sua m\xE1quina de lavar tamb\xE9m pode trazer muita economia."
+    - You will realize that washing clothes using the maximum capacity of your washing
+      machine can also bring you a lot of saving.
     - "Usted percibir\xE1 que lavar la ropa utilizando la capacidad m\xE1xima de su
       m\xE1quina tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
     Flags: 00000000
@@ -1404,10 +1325,10 @@ MonoBehaviour:
     Description: 
     Languages:
     - 
-    - "Voc\xEA vai perceber que o h\xE1bito de colocar alimentos de molho no cloro
-      ou na \xE1gua sanit\xE1ria pode trazer muita economia para o seu dia a dia."
-    - You will realize that the habit of putting food from soaking in chlorine or
-      bleach can bring a lot of savings to your day to day.
+    - "Voc\xEA vai perceber que colocar alimentos de molho no cloro ou na \xE1gua
+      sanit\xE1ria pode trazer muita economia."
+    - You will realize that soaking food in chlorine or bleach can bring you a lot
+      of savings.
     - "Usted percibir\xE1 que el h\xE1bito de poner alimentos de salsa en el cloro
       o en el agua sanitaria puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
     Flags: 00000000
@@ -1417,10 +1338,10 @@ MonoBehaviour:
     Description: 
     Languages:
     - 
-    - "Voc\xEA vai perceber que armazenar o \xF3leo usado em garrafas PET e descart\xE1-lo
-      corretamente evita a contamina\xE7\xE3o de muitos litros de \xE1gua."
-    - You will realize that storing the used oil in PET bottles and discarding it
-      correctly avoids the contamination of many gallons of water.
+    - "Voc\xEA vai perceber que descartar corretamente o \xF3leo usado em garrafas
+      PET evita a contamina\xE7\xE3o de muitos litros de \xE1gua."
+    - You will realize that discarding the used oil correctly in PET bottles avoids
+      the contamination of many gallons of water.
     - "Usted percibir\xE1 que almacenar el aceite usado en botellas PET y descartarlo
       correctamente evita la contaminaci\xF3n de muchos litros de agua."
     Flags: 00000000
@@ -1441,168 +1362,11 @@ MonoBehaviour:
     Languages:
     - 
     - "Voc\xEA vai perceber que usar balde em vez de mangueira na hora de lavar o
-      carro tamb\xE9m pode trazer muita economia para o seu dia a dia."
-    - You will realize that using bucket instead of hose when washing the car can
-      also bring a lot of savings to your day to day.
+      carro tamb\xE9m pode trazer muita economia."
+    - You will realize that using buckets instead of ahose while washing the car can
+      also bring you  a lot of savings.
     - "Usted se dar\xE1 cuenta de que el uso de balde en lugar de manguera a la hora
       de lavar el coche tambi\xE9n puede traer mucha econom\xEDa a su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose10
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que utilizar regador em vez de mangueira tamb\xE9m pode
-      trazer muita economia para o seu dia a dia."
-    - You will realize that using watering can instead of hose can also bring lots
-      of savings to your day to day.
-    - "Usted se dar\xE1 cuenta de que el uso de regador en lugar de manguera tambi\xE9n
-      puede traer mucha econom\xEDa a su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose11
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que utilizar pano \xFAmido com \xE1lcool na limpeza da
-      casa pode trazer muita economia para o seu dia a dia."
-    - You will realize that using damp cloth with alcohol in house cleaning can bring
-      lots of savings for your day to day living.
-    - "Usted se dar\xE1 cuenta de que el uso de pa\xF1o h\xFAmedo con alcohol en la
-      limpieza de la casa puede traer mucha econom\xEDa a su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose12
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que utilizar baldes, calhas e sistemas de capta\xE7\xE3o
-      de \xE1gua pode trazer muita economia para o seu dia a dia."
-    - You will realize that using buckets, gutters and water pickup systems can bring
-      a lot of savings to your day to day.
-    - "Usted se dar\xE1 cuenta de que el uso de baldes, canales y sistemas de captaci\xF3n
-      de agua puede traer mucha econom\xEDa a su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose13
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que trocar copos descart\xE1veis por reutiliz\xE1veis
-      tamb\xE9m pode trazer muita economia para o seu dia a dia."
-    - You will realize that swapping disposable cups for reusable ones can also bring
-      a lot of savings to your day to day.
-    - "Usted se dar\xE1 cuenta de que el cambio de vasos desechables por reutilizables
-      tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose14
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que manter a caixa-d\u2019\xE1gua tampada e verificar
-      se existem vazamentos tamb\xE9m pode trazer muita economia para o seu dia a
-      dia."
-    - You will realize that keeping the water box capped and checking for leaks can
-      also bring a lot of savings to your day to day.
-    - "Usted percibir\xE1 que mantener la caja de agua tapada y comprobar si hay fugas
-      tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose15
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que corrigir poss\xEDveis vazamentos na sua casa logo
-      no in\xEDcio tamb\xE9m pode trazer muita economia para o seu dia a dia."
-    - You will realize that correcting possible leaks in your home early on can also
-      bring a lot of savings to your day to day.
-    - "Usted percibir\xE1 que corregir posibles fugas en su casa al principio tambi\xE9n
-      puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose16
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que conferir se as torneiras e os chuveiros est\xE3o bem
-      fechados tamb\xE9m pode trazer muita economia para o seu dia a dia."
-    - You will realize that checking if the taps and showers are tightly closed can
-      also bring a lot of savings to your day to day.
-    - "Usted se dar\xE1 cuenta de que comprobar si los grifos y las duchas est\xE1n
-      bien cerrados tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose17
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que lavar roupas utilizando a capacidade m\xE1xima da
-      sua m\xE1quina tamb\xE9m pode trazer muita economia para o seu dia a dia."
-    - You will realize that washing clothes using the maximum capacity of your machine
-      can also bring a lot of savings to your day to day.
-    - "Usted percibir\xE1 que lavar la ropa utilizando la capacidad m\xE1xima de su
-      m\xE1quina tambi\xE9n puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose18
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que seguir a frequ\xEAncia de banhos indicada para seu
-      pet pode trazer muita economia para o seu dia a dia."
-    - You will realize that following the frequency of bathing indicated for your
-      pet can bring a lot of savings to your day to day.
-    - "Usted percibir\xE1 que seguir la frecuencia de ba\xF1o indicado para su mascota
-      puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose19
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que um Redutor de Vaz\xE3o pode trazer mais economia para
-      o seu dia a dia."
-    - You will realize that a Flow Rate Reducer can bring more savings to your day
-      to day.
-    - "Usted percibir\xE1 que un reductor de caudal puede traer m\xE1s econom\xEDa
-      para su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose20
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que trocar a descarga de parede pela acoplada pode trazer
-      muita economia para o seu dia a dia."
-    - You will realize that swapping the wall discharge through the trailer can bring
-      a lot of savings to your day to day.
-    - "Usted percibir\xE1 que cambiar la descarga de pared por la acoplada puede traer
-      mucha econom\xEDa para su d\xEDa a d\xEDa."
-    Flags: 00000000
-    Languages_Touch: []
-  - Term: MinigameHintLose21
-    TermType: 0
-    Description: 
-    Languages:
-    - 
-    - "Voc\xEA vai perceber que lavar os cabelos apenas quando for necess\xE1rio tamb\xE9m
-      pode trazer muita economia para o seu dia a dia."
-    - You will realize that washing your hair only when it is needed can also bring
-      a lot of savings to your day to day.
-    - "Usted percibir\xE1 que lavar los cabellos s\xF3lo cuando sea necesario tambi\xE9n
-      puede traer mucha econom\xEDa para su d\xEDa a d\xEDa."
     Flags: 00000000
     Languages_Touch: []
   - Term: MinigameHintTitle
@@ -1623,8 +1387,237 @@ MonoBehaviour:
     - "N\xE3o foi dessa vez, hein?\nTente mais uma vez!"
     - 'Not this time, huh?
 
-      Try one more time!'
+      Try once more!'
     - "\xBFNo fue esta vez, eh?\n\xA1Intente una vez m\xE1s!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameMapLocaleKeu
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Mapa
+    - Map
+    - Mapa
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameRoutineLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "J\xE1 estou fazendo isso na minha rotina!"
+    - I'm already doing it in my routine!
+    - "\xA1Ya lo estoy haciendo en mi rutina!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameScoreTitleLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Gotas acumuladas
+    - Drops saved
+    - Gotas acumuladas
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameStartLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Iniciar
+    - Start
+    - Empezar
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameSuccessLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Sucesso!
+    - Success!
+    - "\xC9xito!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: MinigameTryAgainLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Tentar novamente
+    - Try again
+    - Intentar nuevamente
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: No
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "N\xE3o"
+    - No
+    - No
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SettingsTitleLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Configura\xE7\xF5es"
+    - Settings
+    - Ajustes
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SignUpBackLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Voltar
+    - Back
+    - Regreso
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SignUpButtonLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Cadastrar
+    - Register
+    - Registro
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SignUpConfirmLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Confirmar
+    - Confirm
+    - Confirmar
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SignUpEmailLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Email
+    - Email
+    - Email
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SignUpFieldWarningLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Todos os campos s\xE3o obrigat\xF3rios"
+    - All the fields are required
+    - Todos los campos son obligatorios
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SignUpLoadingLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Carregando...
+    - Loading...
+    - Cargando ...
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SignUpNameLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Nome
+    - Name
+    - Nombre
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: SignUpTitleLocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Criar conta
+    - Create an account
+    - Crear cuenta
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: TutorialStep1LocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Bem-vindo ao Conta Gotas! Aprenda a economizar \xE1gua se divertindo de mont\xE3o!
+      Vamos l\xE1?"
+    - Welcome to Drops Account! Learn how to save water by having lots of fun! Let's
+      go?
+    - "Bienvenido a la cuenta de Gotas! \xA1Aprende a ahorrar agua divirti\xE9ndose
+      de mont\xF3n! \xBFVamos all\xE1?"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: TutorialStep2LocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Jogue minigames e aprenda a economizar \xE1gua! Todos os dias um novo minigame
+      ser\xE1 desbloqueado!"
+    - Play minigames and learn how to save water! Every day a new minigame will be
+      unlocked!
+    - "Juega minijuegos y aprende a ahorrar agua! Todos los d\xEDas un nuevo minigame
+      ser\xE1 desbloqueado!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: TutorialStep3LocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Divirta-se convidando seus amigos para jogar em grupo e disputar o ranking dos
+      melhores!
+    - Invite your friends and have fun playing in a group. Compete for the top ranking!
+    - "\xA1Divi\xE9rtete invitando a tus amigos a jugar en grupo y disputar el ranking
+      de los mejores!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: TutorialStep4LocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Voc\xEA pode acessar diversas dicas de economia neste bot\xE3o!"
+    - You can access several saving tips on this button!
+    - "Usted puede acceder a varios consejos de ahorro en este bot\xF3n!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: TutorialStep5LocaleKey
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - "Volte amanh\xE3 para jogar novos minigames! A cada dia um novo desafio!"
+    - Come back tomorrow to play new minigames! Every day a new challenge!
+    - "\xA1Vuelve ma\xF1ana para jugar nuevos minijuegos! \xA1Cada d\xEDa un nuevo
+      desaf\xEDo!"
+    Flags: 00000000
+    Languages_Touch: []
+  - Term: Yes
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Sim
+    - Yes
+    - "S\xED"
     Flags: 00000000
     Languages_Touch: []
   CaseInsensitiveTerms: 0

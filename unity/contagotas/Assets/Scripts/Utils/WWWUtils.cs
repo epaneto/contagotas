@@ -21,7 +21,8 @@ public static class WWWUtils {
 	public static WWW DoWebRequestWithSpecificURL(string url, string data = "data=")
 	{
 		Hashtable headers = new Hashtable ();
-		headers.Add ("User-Agent", "app-contagotas");
+        headers.Add("User-Agent", "app-contagotas");
+
 		return new WWW(url, Encoding.UTF8.GetBytes(data), headers);
 	}
 }
